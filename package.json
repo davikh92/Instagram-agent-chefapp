@@ -1,0 +1,12 @@
+{
+  "name": "luiza-agents",
+  "version": "1.0.0",
+  "description": "Equipe de agentes de conteúdo Instagram — Luiza na Cozinha",
+  "scripts": {
+    "screenshot": "node scripts/screenshot.js",
+    "dev": "node scripts/screenshot.js --watch"
+  },
+  "dependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}

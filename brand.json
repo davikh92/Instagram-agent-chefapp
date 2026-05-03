@@ -1,0 +1,68 @@
+{
+  "_comment": "Fonte única de verdade — todos os agentes leem este arquivo. Edite aqui, nunca nos templates.",
+
+  "brand": {
+    "name": "Luiza na Cozinha",
+    "handle": "@luizanacozinha",
+    "url": "luizanacozinha.lovable.app",
+    "tagline": "Planeje sua semana, cozinhe com amor."
+  },
+
+  "colors": {
+    "terracota":       "#C8572A",
+    "terracota_light": "#E8784F",
+    "sage":            "#5C7A5E",
+    "charcoal":        "#1E1810",
+    "creme":           "#F7F2EA",
+    "espresso":        "#3D2B1F",
+    "latte":           "#9B7B5E",
+    "sand":            "#EDE4D3",
+    "gold":            "#C49A3C",
+    "white_warm":      "#FFFDF9"
+  },
+
+  "fonts": {
+    "display":  "Playfair Display",
+    "body":     "DM Sans",
+    "mono":     "DM Mono"
+  },
+
+  "google_fonts_url": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap",
+
+  "dimensions": {
+    "square":   { "width": 1080, "height": 1080 },
+    "vertical": { "width": 1080, "height": 1350 },
+    "story":    { "width": 1080, "height": 1920 }
+  },
+
+  "templates": {
+    "hero_terracota":  "Fundo terracota sólido — frases de impacto, hooks",
+    "cream_sage":      "Fundo creme com detalhes sage — receitas, dicas práticas",
+    "dark_carousel":   "Fundo charcoal — séries, top 5, passo a passo numerado",
+    "lista_steps":     "Fundo sand com círculos terracota — como funciona o app",
+    "depoimento":      "Fundo sage — social proof, citações da chef",
+    "enquete":         "Fundo creme com cards coloridos — engajamento"
+  },
+
+  "pillars": {
+    "A": "Luiza Personagem — humor, auto-ironia, identificação emocional",
+    "B": "O Caos do Cotidiano — situações que todo mundo já viveu",
+    "C": "Magia do App — como funciona, resultados, jornada do usuário",
+    "D": "Comunidade — perguntas abertas, bastidores, social proof"
+  },
+
+  "posting_schedule": {
+    "monday":    "18:00",
+    "wednesday": "18:00",
+    "thursday":  "12:00",
+    "friday":    "12:00",
+    "sunday":    "10:00"
+  },
+
+  "ctas": {
+    "humor":     "Salva esse post e marca quem também passa por isso 👇",
+    "app":       "Link na bio pra testar grátis →",
+    "engagement":"Comenta aqui a sua! 👇",
+    "story":     "Arrasta pra cima e começa agora →"
+  }
+}

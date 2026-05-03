@@ -1,0 +1,10 @@
+node_modules/
+ready-to-post/
+templates/generated/*.html
+*.log
+.env
+
+# Arquivos de trabalho da quinzena (regeneráveis)
+data/briefing-*.json
+data/plano-*.json
+data/queue.json
