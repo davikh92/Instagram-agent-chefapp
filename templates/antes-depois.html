@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: {{HEIGHT}}px;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Before (left) — charcoal */
+  .side-before {
+    background: #1E1810; color: #FFFDF9;
+    padding: 90px 64px 80px;
+    position: relative; height: {{HEIGHT}}px;
+    box-sizing: border-box;
+  }
+
+  /* After (right) — creme */
+  .side-after {
+    background: #F7F2EA; color: #3D2B1F;
+    padding: 90px 64px 80px;
+    position: relative; height: {{HEIGHT}}px;
+    box-sizing: border-box;
+    border-left: 2px solid #C8572A;
+  }
+
+  /* Labels */
+  .label {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .label::before { content: ""; display: inline-block; width: 24px; height: 1px; background: currentColor; }
+  .side-before .label { color: #E8784F; }
+  .side-after .label { color: #5C7A5E; }
+
+  /* Headlines */
+  h2 {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: {{HEADLINE_SIZE}}px; line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 40px;
+  }
+  .side-before h2 em { font-style: italic; color: #E8784F; }
+  .side-after h2 em { font-style: italic; color: #C8572A; font-weight: 400; }
+
+  /* List items */
+  ul { list-style: none; padding: 0; margin: 0; }
+  li {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 28px; line-height: 1.45; padding: 16px 0;
+    display: flex; gap: 16px; align-items: baseline;
+  }
+  .side-before li { border-bottom: 1px dashed rgba(255,253,249,0.15); color: rgba(255,253,249,0.85); }
+  .side-after li { border-bottom: 1px dashed rgba(30,24,16,0.15); color: #3D2B1F; }
+  .side-before li::before { content: "—"; opacity: 0.5; flex-shrink: 0; }
+  .side-after li::before {
+    content: "✓"; color: #5C7A5E;
+    font-style: normal; font-family: 'DM Sans', sans-serif;
+    font-weight: 700; flex-shrink: 0;
+  }
+
+  /* Central arrow button */
+  .arrow-btn {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%) translateX(-50%);
+    width: 120px; height: 120px; border-radius: 50%;
+    background: #C8572A; color: #FFFDF9;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700;
+    z-index: 10; box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    pointer-events: none;
+  }
+
+  /* Footers */
+  .footer-before {
+    position: absolute; bottom: 56px; left: 64px;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,253,249,0.5);
+  }
+  .footer-after {
+    position: absolute; bottom: 56px; right: 64px;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #9B7B5E; text-align: right;
+  }
+</style>
+</head>
+<body>
+  <!-- Before side -->
+  <div class="side-before">
+    <div class="label">Antes</div>
+    <h2>{{BEFORE_HEADLINE}}</h2>
+    <ul>
+      <li>{{BEFORE_1}}</li>
+      <li>{{BEFORE_2}}</li>
+      <li>{{BEFORE_3}}</li>
+      <li>{{BEFORE_4}}</li>
+    </ul>
+    <div class="footer-before">Luiza na Cozinha</div>
+  </div>
+
+  <!-- After side -->
+  <div class="side-after">
+    <div class="label">Depois</div>
+    <h2>{{AFTER_HEADLINE}}</h2>
+    <ul>
+      <li>{{AFTER_1}}</li>
+      <li>{{AFTER_2}}</li>
+      <li>{{AFTER_3}}</li>
+      <li>{{AFTER_4}}</li>
+    </ul>
+    <div class="footer-after">luizanacozinha.app</div>
+  </div>
+
+  <!-- Central divider arrow -->
+  <div class="arrow-btn">→</div>
+</body>
+</html>

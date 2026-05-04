@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Visual — Luiza na Cozinha</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --terra: #C8572A;
+    --terra-lt: #E8784F;
+    --terra-dark: #9E3D18;
+    --sage: #5C7A5E;
+    --coal: #1E1810;
+    --creme: #F7F2EA;
+    --sand: #EDE4D3;
+    --latte: #9B7B5E;
+    --espresso: #3D2B1F;
+    --white: #FFFDF9;
+    --gold: #C49A3C;
+  }
+
+  body {
+    background: #0F0B08;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--terra-lt);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--terra-lt);
+  }
+  .header-sub {
+    margin-top: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow-x: auto;
+  }
+  .nav-btn {
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .nav-btn.active {
+    color: var(--terra-lt);
+    border-bottom-color: var(--terra);
+  }
+
+  /* ── SECTIONS ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── INTRO ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  @media (max-width: 700px) { .intro-grid { grid-template-columns: 1fr; } }
+  .intro-card {
+    padding: 40px;
+    background: #0F0B08;
+  }
+  .intro-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--latte);
+    margin-bottom: 16px;
+  }
+  .intro-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .intro-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+  .mix-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 20px 0 8px;
+  }
+  .mix-seg { height: 100%; }
+  .mix-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin: 4px 3px;
+  }
+
+  /* ── POST PREVIEW GRID ── */
+  .posts-header {
+    padding: 40px 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .posts-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .posts-header p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    padding: 0 2px 2px;
+  }
+
+  /* ── POST CARDS (square 1:1) ── */
+  .post {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .post:hover .post-overlay { opacity: 1; }
+  .post-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: white;
+  }
+
+  /* ───────────────────────────────────────────
+     POST 1 — BOLD HERO terracota
+     Tipografia como protagonista absoluto
+  ─────────────────────────────────────────── */
+  .p1 {
+    background: var(--terra);
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .p1-top {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.5);
+  }
+  .p1-body { flex: 1; display: flex; align-items: flex-end; padding-bottom: 8px; }
+  .p1-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 80px);
+    line-height: 0.9;
+    letter-spacing: -1px;
+    color: var(--white);
+  }
+  .p1-text .accent {
+    display: block;
+    color: var(--coal);
+    background: var(--white);
+    padding: 0 8px;
+    margin-left: -8px;
+    margin-top: 4px;
+    width: fit-content;
+  }
+  .p1-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .p1-url { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+  .p1-save { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+
+  /* ───────────────────────────────────────────
+     POST 2 — CARROSSEL slide 1 (dark)
+     Número gigante + tensão visual
+  ─────────────────────────────────────────── */
+  .p2 {
+    background: var(--coal);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .p2-num {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(180px, 30vw, 240px);
+    line-height: 1;
+    color: rgba(200,87,42,0.08);
+    right: -20px;
+    bottom: -30px;
+    user-select: none;
+  }
+  .p2-top { display: flex; justify-content: space-between; align-items: center; }
+  .p2-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--terra-lt); }
+  .p2-counter { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.25); }
+  .p2-emoji { font-size: 56px; line-height: 1; margin: 16px 0 12px; }
+  .p2-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--white);
+  }
+  .p2-headline em { font-style: italic; color: var(--terra-lt); display: block; }
+  .p2-body { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 10px; max-width: 85%; }
+  .p2-progress { display: flex; gap: 5px; margin-top: 16px; }
+  .p2-dot { height: 2px; flex: 1; border-radius: 1px; background: rgba(255,255,255,0.1); }
+  .p2-dot.on { background: var(--terra); flex: 1.8; }
+
+  /* ───────────────────────────────────────────
+     POST 3 — TIPOGRAFIA EDITORIAL
+     Bold + italic mix, sem fundo pesado
+  ─────────────────────────────────────────── */
+  .p3 {
+    background: var(--creme);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .p3-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--latte); }
+  .p3-content { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+  .p3-line1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7.5vw, 72px);
+    line-height: 0.9;
+    color: var(--espresso);
+    letter-spacing: 0.5px;
+  }
+  .p3-line2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 42px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--terra);
+    line-height: 1.1;
+    margin-top: 4px;
+  }
+  .p3-line3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7.5vw, 72px);
+    line-height: 0.9;
+    color: var(--espresso);
+    letter-spacing: 0.5px;
+    margin-top: 0;
+  }
+  .p3-divider { width: 40px; height: 2px; background: var(--terra); margin: 16px 0; }
+  .p3-body { font-size: 12px; color: var(--latte); line-height: 1.6; }
+  .p3-footer { display: flex; justify-content: space-between; }
+  .p3-brand { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--latte); }
+
+  /* ───────────────────────────────────────────
+     POST 4 — ENQUETE BOLD
+     Opções em stacked pill, visualmente mais forte
+  ─────────────────────────────────────────── */
+  .p4 {
+    background: var(--sand);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .p4-top { display: flex; justify-content: space-between; }
+  .p4-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--latte); }
+  .p4-emoji { font-size: 44px; line-height: 1; margin: 12px 0 8px; }
+  .p4-q {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3.2vw, 28px);
+    font-weight: 700;
+    color: var(--espresso);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .p4-opts { display: flex; flex-direction: column; gap: 6px; }
+  .p4-opt {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--espresso);
+    background: rgba(61,43,31,0.08);
+    border-left: 3px solid transparent;
+  }
+  .p4-opt.hot {
+    background: var(--terra);
+    color: var(--white);
+    border-left-color: var(--terra-dark);
+  }
+  .p4-cta { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--latte); margin-top: 12px; }
+
+  /* ───────────────────────────────────────────
+     POST 5 — REEL FRAME CONCEPT
+     Mostra como seria o primeiro frame de um reel
+  ─────────────────────────────────────────── */
+  .p5 {
+    background: #0A0704;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .p5-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(200,87,42,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(92,122,94,0.1) 0%, transparent 50%);
+  }
+  .p5-grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+  .p5-inner { position: relative; z-index: 2; padding: 28px; display: flex; flex-direction: column; height: 100%; }
+  .p5-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(200,87,42,0.2);
+    border: 1px solid rgba(200,87,42,0.4);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--terra-lt);
+    width: fit-content;
+  }
+  .p5-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--terra); animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+  .p5-main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .p5-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 12vw, 100px);
+    line-height: 0.85;
+    color: rgba(255,255,255,0.08);
+    margin-bottom: 8px;
+  }
+  .p5-hook {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .p5-hook em { color: var(--terra-lt); font-style: italic; }
+  .p5-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 8px; line-height: 1.5; }
+  .p5-bottom { display: flex; justify-content: space-between; align-items: center; }
+  .p5-reel-label {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.3);
+  }
+  .p5-play {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--terra); display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+
+  /* ───────────────────────────────────────────
+     POST 6 — CARROSSEL DARK slide 2 (numbered)
+  ─────────────────────────────────────────── */
+  .p6 {
+    background: #13100D;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 3px solid var(--terra);
+  }
+  .p6-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .p6-num-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 120px);
+    line-height: 0.85;
+    color: var(--terra);
+    margin: -8px 0 0;
+  }
+  .p6-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.25); text-align: right; }
+  .p6-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin: 8px 0;
+  }
+  .p6-headline em { color: var(--terra-lt); font-style: italic; }
+  .p6-body { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.65; }
+  .p6-swipe {
+    display: flex; align-items: center; gap: 8px; margin-top: 16px;
+    font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; color: rgba(255,255,255,0.2);
+  }
+  .p6-arrow { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--terra)); }
+
+  /* ── REEL CONCEPT SECTION ── */
+  .reel-section { padding: 40px; }
+  .reel-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .reel-section .sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 32px; line-height: 1.6; }
+
+  .reel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* Reel card — 9:16 proportion */
+  .reel-card {
+    position: relative;
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0A0704;
+    max-width: 240px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Reel tipo 1 — B-roll + texto sobreposto */
+  .r1 { background: linear-gradient(160deg, #1A120A 0%, #0A0704 100%); }
+  .r1-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 40% 55%, rgba(200,87,42,0.2) 0%, transparent 60%);
+  }
+  .r1-inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; padding: 20px 16px; }
+  .r1-profile { display: flex; align-items: center; gap: 8px; }
+  .r1-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--terra);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 8px; color: white; font-weight: 500;
+  }
+  .r1-handle { font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.8); }
+  .r1-main { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 8px; }
+  .r1-time-bg {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 0.9;
+    color: rgba(255,255,255,0.04);
+    margin-bottom: -10px;
+  }
+  .r1-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .r1-text em { color: var(--terra-lt); font-style: italic; }
+  .r1-sub { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 6px; line-height: 1.5; }
+  .r1-music {
+    display: flex; align-items: center; gap: 6px; margin-top: 12px;
+    font-size: 9px; color: rgba(255,255,255,0.4);
+  }
+  .r1-music-icon { font-size: 10px; animation: spin 3s linear infinite; display: inline-block; }
+  @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+  .r1-actions {
+    display: flex; flex-direction: column; gap: 16px;
+    position: absolute; right: 12px; bottom: 60px;
+    align-items: center;
+  }
+  .r1-action { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .r1-action-icon { font-size: 20px; }
+  .r1-action-count { font-size: 8px; color: rgba(255,255,255,0.5); }
+
+  /* Reel tipo 2 — Kinetic typography */
+  .r2 { background: var(--terra); }
+  .r2-inner { height: 100%; display: flex; flex-direction: column; padding: 20px 16px; position: relative; }
+  .r2-pattern {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 40%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent, transparent 20px,
+      rgba(0,0,0,0.05) 20px, rgba(0,0,0,0.05) 21px
+    );
+  }
+  .r2-main { flex: 1; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+  .r2-word {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 0.85;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+  .r2-word.italic-line {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    line-height: 1;
+    margin: 4px 0;
+  }
+  .r2-word.inverted {
+    background: var(--white);
+    color: var(--terra);
+    padding: 2px 8px;
+    margin-left: -8px;
+    width: fit-content;
+  }
+  .r2-bottom { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+
+  /* Reel tipo 3 — Before/after split */
+  .r3 { background: #0A0704; }
+  .r3-top { height: 50%; background: #13100D; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-bottom: 2px solid var(--terra); }
+  .r3-bottom { height: 50%; background: var(--creme); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+  .r3-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    width: fit-content;
+  }
+  .r3-badge.before { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
+  .r3-badge.after { background: var(--terra); color: white; }
+  .r3-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .r3-text.light { color: rgba(255,255,255,0.7); }
+  .r3-text.dark { color: var(--espresso); }
+  .r3-list { font-size: 10px; line-height: 1.8; }
+  .r3-list.light { color: rgba(255,255,255,0.4); }
+  .r3-list.dark { color: var(--latte); }
+
+  /* ── STRATEGY SECTION ── */
+  .strategy { padding: 40px; }
+  .strategy h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .strategy .sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 32px; line-height: 1.6; }
+
+  .mix-visual {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .mix-visual h3 { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--latte); margin-bottom: 20px; }
+  .mix-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .mix-pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    width: 64px;
+    flex-shrink: 0;
+  }
+  .mix-info h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .mix-info p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+  .mix-bar-h { height: 3px; border-radius: 2px; margin-top: 8px; }
+
+  .insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 500px) { .insight-grid { grid-template-columns: 1fr; } }
+  .insight-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .insight-card .ico { font-size: 24px; margin-bottom: 10px; }
+  .insight-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .insight-card p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+  /* ── TYPOGRAPHY SECTION ── */
+  .typo { padding: 40px; }
+  .typo h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .typo .sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 32px; }
+  .typo-demo {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 16px;
+  }
+  .typo-demo .label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--latte); margin-bottom: 16px; }
+
+  /* Footer */
+  .footer { padding: 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer p { font-size: 12px; color: rgba(255,255,255,0.25); line-height: 1.6; }
+  .footer strong { color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">LUIZA NA COZINHA — PROPOSTA VISUAL</div>
+  <h1>O nível <em>acima.</em></h1>
+  <p class="header-sub">Análise de direção criativa + proposta visual de posts e Reels. Não é o que está sendo feito agora — é onde devemos chegar. Bold, pop, movimento, impacto.</p>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="show('posts')">📱 Posts Estáticos</button>
+  <button class="nav-btn" onclick="show('reels')">🎬 Conceito Reels</button>
+  <button class="nav-btn" onclick="show('strategy')">📊 Mix Estratégico</button>
+  <button class="nav-btn" onclick="show('typo')">✏️ Tipografia</button>
+</nav>
+
+<!-- ════════════ POSTS ════════════ -->
+<div class="section active" id="posts">
+  <div class="posts-header">
+    <div>
+      <h2>Posts — Nível Acima</h2>
+      <p>Bold/pop com toque editorial. Tipografia como elemento gráfico principal.</p>
+    </div>
+  </div>
+
+  <div class="posts-grid">
+
+    <!-- POST 1: Hero Bold -->
+    <div class="post">
+      <div class="p1">
+        <div class="p1-top">LUIZA NA COZINHA</div>
+        <div class="p1-body">
+          <div class="p1-text">
+            VOCÊ NÃO ODEIA
+            <span class="accent">COZINHAR.</span>
+            VOCÊ ODEIA NÃO
+            <span class="accent">SABER.</span>
+          </div>
+        </div>
+        <div class="p1-bottom">
+          <span class="p1-url">luizanacozinha.app</span>
+          <span class="p1-save">🔖 SALVA</span>
+        </div>
+      </div>
+      <div class="post-overlay">HERO TERRACOTA — NOVO</div>
+    </div>
+
+    <!-- POST 2: Carrossel dark slide 1 -->
+    <div class="post">
+      <div class="p2">
+        <div class="p2-num">5</div>
+        <div class="p2-top">
+          <div class="p2-label">VOCÊ SE IDENTIFICA?</div>
+          <div class="p2-counter">01/07</div>
+        </div>
+        <div class="p2-emoji">🧊</div>
+        <div class="p2-headline">
+          Abrir a geladeira
+          <em>pela quinta vez.</em>
+        </div>
+        <div class="p2-body">18h07. Você sabe que nada mudou. Mas vai lá de qualquer jeito.</div>
+        <div class="p2-progress">
+          <div class="p2-dot on"></div>
+          <div class="p2-dot"></div>
+          <div class="p2-dot"></div>
+          <div class="p2-dot"></div>
+          <div class="p2-dot"></div>
+          <div class="p2-dot"></div>
+          <div class="p2-dot"></div>
+        </div>
+      </div>
+      <div class="post-overlay">CARROSSEL DARK — HUMOR</div>
+    </div>
+
+    <!-- POST 3: Tipografia editorial mix -->
+    <div class="post">
+      <div class="p3">
+        <div class="p3-tag">LUIZA NA COZINHA</div>
+        <div class="p3-content">
+          <div class="p3-line1">GELADEIRA</div>
+          <div class="p3-line2">cheia.</div>
+          <div class="p3-line3">CABEÇA</div>
+          <div class="p3-line2" style="color:var(--terra-dark)">vazia.</div>
+          <div class="p3-divider"></div>
+          <div class="p3-body">Isso tem solução. E leva 2 minutos.</div>
+        </div>
+        <div class="p3-footer">
+          <div class="p3-brand">luizanacozinha.app</div>
+          <div class="p3-brand">🔖 SALVA</div>
+        </div>
+      </div>
+      <div class="post-overlay">TIPOGRAFIA MIX — EDITORIAL</div>
+    </div>
+
+    <!-- POST 4: Enquete bold -->
+    <div class="post">
+      <div class="p4">
+        <div class="p4-top">
+          <div class="p4-tag">ENQUETE</div>
+          <div class="p4-tag" style="color:var(--terra)">PILAR D</div>
+        </div>
+        <div class="p4-emoji">🤯</div>
+        <div class="p4-q">Qual é o seu maior pesadelo às 18h?</div>
+        <div class="p4-opts">
+          <div class="p4-opt hot">Geladeira vazia 😩</div>
+          <div class="p4-opt">Não sei o que fazer 🤯</div>
+          <div class="p4-opt">Sem tempo 😤</div>
+          <div class="p4-opt">Faço sempre a mesma coisa 😴</div>
+        </div>
+        <div class="p4-cta">Comenta aqui a sua! 👇</div>
+      </div>
+      <div class="post-overlay">ENQUETE — PILAR D</div>
+    </div>
+
+    <!-- POST 5: Reel first frame -->
+    <div class="post">
+      <div class="p5">
+        <div class="p5-bg"></div>
+        <div class="p5-grain"></div>
+        <div class="p5-inner">
+          <div class="p5-badge">
+            <div class="p5-badge-dot"></div>
+            REEL — PRIMEIRO FRAME
+          </div>
+          <div class="p5-main">
+            <div class="p5-time">18h</div>
+            <div class="p5-hook">Sou chef.<br>Às vezes também<br><em>peço delivery.</em></div>
+            <div class="p5-sub">E não me arrependo. Mas agora faço isso com um plano.</div>
+          </div>
+          <div class="p5-bottom">
+            <div class="p5-reel-label">▶ CONCEPT REEL</div>
+            <div class="p5-play">▶</div>
+          </div>
+        </div>
+      </div>
+      <div class="post-overlay">FRAME DE ABERTURA — REEL</div>
+    </div>
+
+    <!-- POST 6: Carrossel numbered -->
+    <div class="post">
+      <div class="p6">
+        <div class="p6-top">
+          <div class="p6-num-big">02</div>
+          <div class="p6-label">PENSAMENTO<br>02/05</div>
+        </div>
+        <div class="p6-headline">
+          "Podia pedir delivery,<br>
+          <em>mas eu disse que ia cozinhar."</em>
+        </div>
+        <div class="p6-body">A culpa falou mais alto. Mas o iFood tá ali, esperando.</div>
+        <div class="p6-swipe">
+          <span>ARRASTA</span>
+          <div class="p6-arrow"></div>
+        </div>
+      </div>
+      <div class="post-overlay">CARROSSEL DARK — SLIDE 2</div>
+    </div>
+
+  </div>
+
+  <div style="padding: 24px 40px; border-top: 1px solid rgba(255,255,255,0.04);">
+    <div style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:3px; color:var(--latte); margin-bottom:16px;">O QUE MUDA — NÍVEL ACIMA</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px;">
+        <div style="font-size:18px;margin-bottom:8px;">✍️</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Bebas Neue entra</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6;">Display ultra bold para criar tensão com o Playfair italic. O contraste entre os dois é o que cria caráter.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px;">
+        <div style="font-size:18px;margin-bottom:8px;">🔢</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Números sangram o frame</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6;">O "5" gigante no carrossel e o "02" no slide criam hierarquia visual sem precisar de elementos gráficos extras.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px;">
+        <div style="font-size:18px;margin-bottom:8px;">🎭</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Fundo escuro como base</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6;">Charcoal profundo em vez de preto frio. Os carrosséis principais em dark — creme só entra em posts mais suaves.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px;">
+        <div style="font-size:18px;margin-bottom:8px;">⚡</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Texto como bloco invertido</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6;">A palavra "COZINHAR" em bloco branco sobre o fundo terracota cria eye-catching imediato. Técnica editorial.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ REELS ════════════ -->
+<div class="section" id="reels">
+  <div class="reel-section">
+    <h2>Conceito de Reels</h2>
+    <p class="sub">3 formatos viáveis sem equipe de produção. O primeiro frame é o que decide o alcance. O texto é o conteúdo. O B-roll de cozinha é o pano de fundo.</p>
+
+    <div class="reel-grid">
+
+      <!-- Reel 1: B-roll + texto -->
+      <div class="reel-card r1">
+        <div class="r1-bg"></div>
+        <div class="r1-inner">
+          <div class="r1-profile">
+            <div class="r1-avatar">LH</div>
+            <div class="r1-handle">@luizanacozinha</div>
+          </div>
+          <div class="r1-main">
+            <div class="r1-time-bg">18h</div>
+            <div class="r1-text">
+              Sou chef.<br>
+              Às vezes também<br>
+              <em>peço delivery.</em>
+            </div>
+            <div class="r1-sub">E não me arrependo. Mas agora faço isso com um plano da semana.</div>
+            <div class="r1-music">
+              <span class="r1-music-icon">♪</span>
+              Carefree — música relaxante
+            </div>
+          </div>
+          <div class="r1-actions">
+            <div class="r1-action"><div class="r1-action-icon">🤍</div><div class="r1-action-count">3.2k</div></div>
+            <div class="r1-action"><div class="r1-action-icon">💬</div><div class="r1-action-count">847</div></div>
+            <div class="r1-action"><div class="r1-action-icon">↗️</div><div class="r1-action-count">710</div></div>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.8));">
+          <div style="font-size:10px;color:rgba(255,255,255,0.6);line-height:1.4;">"Sou chef e às vezes peço delivery" — a confissão que humaniza a marca 👇</div>
+        </div>
+      </div>
+
+      <!-- Reel 2: Kinetic typography -->
+      <div class="reel-card r2">
+        <div class="r2-inner">
+          <div class="r2-pattern"></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.5);position:relative;z-index:2;padding-top:8px;">LUIZA NA COZINHA</div>
+          <div class="r2-main">
+            <div class="r2-word">CHEGA</div>
+            <div class="r2-word italic-line">de pensar</div>
+            <div class="r2-word inverted">O QUE COZINHAR</div>
+            <div style="margin-top:20px;">
+              <div class="r2-word" style="font-size:36px;">CARDÁPIO</div>
+              <div class="r2-word italic-line" style="color:rgba(255,255,255,0.6);">da semana em</div>
+              <div class="r2-word" style="font-size:52px;">2 MIN.</div>
+            </div>
+          </div>
+          <div class="r2-bottom">luizanacozinha.app ↑</div>
+        </div>
+      </div>
+
+      <!-- Reel 3: Before/after -->
+      <div class="reel-card r3">
+        <div class="r3-top">
+          <div class="r3-badge before">ANTES</div>
+          <div class="r3-text light">Geladeira aberta 5x. Sem ideia. Delivery por culpa.</div>
+          <div class="r3-list light">😩 Angústia das 18h<br>📱 iFood novamente<br>💸 R$80 que poderiam ser R$0</div>
+        </div>
+        <div class="r3-bottom">
+          <div class="r3-badge after">DEPOIS</div>
+          <div class="r3-text dark">Semana planejada. Compras feitas. Culpa zero.</div>
+          <div class="r3-list dark">✅ Cardápio pronto em 2 min<br>🛒 Lista de compras automática<br>🍳 Receitas da Chef Luiza</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:rgba(200,87,42,0.08);border:1px solid rgba(200,87,42,0.2);border-radius:16px;padding:28px;">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--terra-lt);margin-bottom:16px;">COMO PRODUZIR REELS SEM EQUIPE</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--white);">Formato 1 — B-roll + texto</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.7;">A Luiza filma 30 min cozinhando: picando, mexendo, temperando. Você tem B-roll para semanas. Os agentes geram o texto sobreposto. Higgsfield anima se necessário.</div>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--white);">Formato 2 — Kinetic typography</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.7;">Zero filmagem. Texto animado com música. Higgsfield Vibe Motion gera isso. Altíssimo impacto em contas que não têm equipe de vídeo. Fácil de manter.</div>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--white);">Formato 3 — Talking head 15s</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.7;">A Luiza fala por 15 segundos. Uma confissão, uma dica, uma reação. Sem roteiro longo. Os agentes preparam o hook e o gancho. Autenticidade que carrossel não entrega.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ STRATEGY ════════════ -->
+<div class="section" id="strategy">
+  <div class="strategy">
+    <h2>Mix Estratégico</h2>
+    <p class="sub">Baseado no comportamento do algoritmo do Instagram em 2025–2026. Estático sozinho não cresce. Mas carrossel sem Reel não tem alcance. A combinação certa é o que escala.</p>
+
+    <div class="mix-visual">
+      <h3>DISTRIBUIÇÃO MENSAL RECOMENDADA — 16 POSTS</h3>
+
+      <div class="mix-row">
+        <div class="mix-pct" style="color:var(--terra);">70%</div>
+        <div class="mix-info" style="flex:1">
+          <h4>Reels — Motor de Descoberta</h4>
+          <p>11–12 Reels por mês. B-roll + texto, kinetic typography, talking head. Alcance orgânico 5–10x maior que estático. É onde novos seguidores chegam.</p>
+          <div class="mix-bar-h" style="background:var(--terra);width:70%;"></div>
+        </div>
+      </div>
+
+      <div class="mix-row">
+        <div class="mix-pct" style="color:var(--sage);">20%</div>
+        <div class="mix-info" style="flex:1">
+          <h4>Carrossel — Motor de Salvamento</h4>
+          <p>3–4 carrosséis por mês. Os "5 pensamentos", "como funciona", "antes/depois". Alta taxa de salvamento. Sinaliza relevância pro algoritmo. Converte quem chegou pelo Reel.</p>
+          <div class="mix-bar-h" style="background:var(--sage);width:20%;"></div>
+        </div>
+      </div>
+
+      <div class="mix-row">
+        <div class="mix-pct" style="color:var(--latte);">10%</div>
+        <div class="mix-info" style="flex:1">
+          <h4>Estático — Âncora do Feed</h4>
+          <p>1–2 posts estáticos por mês. Frases hero terracota. Mais identidade visual do perfil do que motor de alcance. Dão ritmo e respiro no grid.</p>
+          <div class="mix-bar-h" style="background:var(--latte);width:10%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="ico">🎯</div>
+        <h4>O primeiro 0,3 segundo decide tudo</h4>
+        <p>Reel: primeiro frame + som. Carrossel: primeira imagem. Estático: hook da imagem. Os agentes precisam otimizar esse momento acima de tudo.</p>
+      </div>
+      <div class="insight-card">
+        <div class="ico">💾</div>
+        <h4>Salvamento é o sinal mais forte</h4>
+        <p>O algoritmo usa salvamentos para decidir alcance. Carrosséis de "5 coisas" e "como funciona" têm taxa de salvamento 3–5x maior que posts genéricos.</p>
+      </div>
+      <div class="insight-card">
+        <div class="ico">🔊</div>
+        <h4>Som não é opcional no Reel</h4>
+        <p>70% dos usuários assistem Reels com som. Música trending aumenta alcance. Os agentes devem sugerir categoria de música para cada Reel gerado.</p>
+      </div>
+      <div class="insight-card">
+        <div class="ico">🔄</div>
+        <h4>Reutilização inteligente</h4>
+        <p>Um carrossel de 7 slides vira 7 Stories, vira 1 Reel de kinetic typography, vira 1 post estático com o melhor slide. Um conteúdo, 4 formatos.</p>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:28px;">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--latte);margin-bottom:16px;">PRÓXIMO PASSO REAL</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;">O sistema atual produz carrosséis e estáticos muito bem. A lacuna é o Reel. A forma mais rápida de fechar isso: a Luiza filma 30 minutos em casa cozinhando qualquer coisa — sem roteiro, só cozinhando naturalmente. Esse material vira B-roll para 4–6 semanas de Reels com texto gerado pelos agentes sobreposto via Higgsfield ou CapCut. É o desbloqueador mais impactante que existe agora.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ TIPOGRAFIA ════════════ -->
+<div class="section" id="typo">
+  <div class="typo">
+    <h2>Sistema Tipográfico Ampliado</h2>
+    <p class="sub">O que está no brand.json está certo. O que proponho é adicionar Bebas Neue como display ultra bold — sem substituir o Playfair, mas criando contraste dramático com ele.</p>
+
+    <div class="typo-demo">
+      <div class="label">COMBINAÇÃO 1 — BEBAS + PLAYFAIR (o contraste que cria caráter)</div>
+      <div style="line-height:0.88;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--white);letter-spacing:1px;">GELADEIRA CHEIA.</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:38px;color:var(--terra-lt);font-weight:400;">Cabeça vazia.</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--white);letter-spacing:1px;">ISSO TEM</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:38px;color:var(--terra);font-weight:700;">solução.</div>
+      </div>
+    </div>
+
+    <div class="typo-demo">
+      <div class="label">COMBINAÇÃO 2 — TEXTO INVERTIDO (bloco branco no fundo terracota)</div>
+      <div style="background:var(--terra);padding:28px;margin:-4px;border-radius:8px;line-height:0.9;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--white);">VOCÊ NÃO</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--white);">ODEIA</div>
+        <div style="background:var(--white);display:inline-block;padding:2px 12px;margin:4px 0;">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--terra);">COZINHAR.</span>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:28px;color:rgba(255,255,255,0.7);margin-top:8px;">Você odeia não saber o que cozinhar.</div>
+      </div>
+    </div>
+
+    <div class="typo-demo">
+      <div class="label">COMBINAÇÃO 3 — NÚMERO SANGRADO (carrossel dark)</div>
+      <div style="background:#13100D;padding:28px;margin:-4px;border-radius:8px;position:relative;overflow:hidden;">
+        <div style="position:absolute;right:-16px;bottom:-20px;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(200,87,42,0.07);line-height:1;user-select:none;">01</div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:rgba(255,255,255,0.25);margin-bottom:12px;">PENSAMENTO 01/05</div>
+        <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--white);line-height:1.05;">Abrir a geladeira<br><em style="color:var(--terra-lt);">pela quinta vez.</em></div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px;line-height:1.6;">18h07. Você sabe que nada mudou. Mas vai lá de qualquer jeito.</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;margin-top:8px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--latte);margin-bottom:12px;">NOTA SOBRE BEBAS NEUE</div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;">Bebas Neue é grátis no Google Fonts. Adicionar uma linha no <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">google_fonts_url</code> do brand.json. Não substitui Playfair — coexiste com ele. O contraste entre os dois é o que cria a tensão visual que diferencia o feed.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>Esta proposta visual</strong> mostra a direção, não o produto final. Os posts aqui são mockups em HTML — o sistema do Open Carrusel vai gerar os PNGs reais com as mesmas proporções e identidade. O que muda concretamente: adicionar Bebas Neue ao brand.json, ajustar os templates de carrossel para usar números sangrados, e iniciar a coleta de B-roll da Luiza para os Reels.</p>
+</div>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

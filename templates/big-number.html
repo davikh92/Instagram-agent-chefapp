@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Caveat:wght@400;700&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: {{HEIGHT}}px;
+    background: #FFFDF9;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Topbar */
+  .topbar {
+    position: absolute; top: 56px; left: 72px; right: 72px;
+    display: flex; justify-content: space-between;
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #9B7B5E;
+    z-index: 10;
+  }
+  .topbar .live { color: #C8572A; }
+  .topbar .live::before { content: "●"; margin-right: 8px; }
+
+  /* Stat label */
+  .stat-label {
+    position: absolute; top: 130px; left: 72px;
+    font-family: 'DM Mono', monospace; font-size: 14px;
+    letter-spacing: 0.25em; text-transform: uppercase; color: #C8572A;
+    z-index: 6;
+  }
+
+  /* The big number — main visual element */
+  .number {
+    position: absolute; top: 200px; left: 60px; right: 0;
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 580px; line-height: 0.82;
+    color: #C8572A; letter-spacing: -0.06em; z-index: 4;
+  }
+  .number .suffix {
+    font-style: italic; font-weight: 400;
+    font-size: 180px; color: #1E1810; vertical-align: super;
+  }
+  .number .pct { font-style: italic; font-weight: 400; color: #C49A3C; }
+
+  /* Caption below number */
+  .caption {
+    position: absolute; bottom: 280px; left: 72px; right: 72px;
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: {{HEADLINE_SIZE}}px; line-height: 0.98;
+    color: #1E1810; letter-spacing: -0.02em; max-width: 880px; z-index: 6;
+  }
+  .caption em { font-style: italic; font-weight: 400; color: #C8572A; }
+
+  /* Source */
+  .source {
+    position: absolute; bottom: 200px; left: 72px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    letter-spacing: 0.15em; color: #9B7B5E; z-index: 6;
+  }
+  .source::before { content: "*"; color: #C8572A; margin-right: 8px; }
+
+  /* Caveat annotation */
+  .annotation {
+    position: absolute; top: 600px; right: 90px;
+    font-family: 'Caveat', cursive; font-size: 40px;
+    color: #5C7A5E; transform: rotate(-5deg);
+    max-width: 280px; line-height: 1.1; z-index: 7;
+  }
+
+  /* Footer */
+  .footer {
+    position: absolute; bottom: 56px; left: 72px; right: 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 20px; border-top: 1px solid rgba(30,24,16,0.15);
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #3D2B1F;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="live">{{LIVE_LABEL}}</span>
+    <span>luizanacozinha.app</span>
+  </div>
+
+  <div class="stat-label">{{STAT_LABEL}}</div>
+
+  <div class="number">{{NUMBER}}<span class="suffix">{{SUFFIX}}</span></div>
+
+  <div class="annotation">{{ANNOTATION}}</div>
+
+  <div class="caption">{{HEADLINE}}</div>
+
+  <div class="source">{{SOURCE}}</div>
+
+  <div class="footer">
+    <span>Luiza na Cozinha</span>
+    <span>{{CTA}}</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Luiza na Cozinha — Reels Animados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&family=Caveat:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #1a1612; font-family: 'DM Sans', sans-serif; color: #FFFDF9; min-height: 100vh; }
+
+  :root {
+    --terracota: #C8572A;
+    --terracota-light: #E8784F;
+    --sage: #5C7A5E;
+    --charcoal: #1E1810;
+    --creme: #F7F2EA;
+    --espresso: #3D2B1F;
+    --latte: #9B7B5E;
+    --sand: #EDE4D3;
+    --gold: #C49A3C;
+    --warm-white: #FFFDF9;
+  }
+
+  .page-head {
+    padding: 60px 80px 40px;
+    border-bottom: 1px solid rgba(255,253,249,0.08);
+    margin-bottom: 30px;
+  }
+  .page-head .kicker {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--terracota-light); margin-bottom: 20px;
+  }
+  .page-head h1 {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 72px; line-height: 0.95; margin: 0 0 20px 0;
+    letter-spacing: -0.025em; max-width: 900px;
+  }
+  .page-head h1 em { font-style: italic; color: var(--terracota-light); font-weight: 400; }
+  .page-head p { font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 22px; color: rgba(255,253,249,0.65); max-width: 700px; line-height: 1.5; }
+
+  .reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 40px;
+    padding: 0 80px 80px;
+    max-width: 1900px;
+  }
+
+  .reel-card {
+    background: #0f0c08;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255,253,249,0.08);
+  }
+
+  .reel-meta {
+    padding: 22px 28px;
+    border-bottom: 1px solid rgba(255,253,249,0.08);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .reel-meta .title { color: var(--warm-white); font-size: 14px; letter-spacing: 0.05em; text-transform: none; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 22px; }
+  .reel-meta .badge { color: var(--terracota-light); }
+
+  .reel-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #000;
+  }
+
+  .reel-desc {
+    padding: 18px 28px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: rgba(255,253,249,0.55);
+    line-height: 1.5;
+  }
+  .reel-desc strong { color: var(--terracota-light); font-weight: 500; }
+
+  /* ============ Reel canvas styles (rendered inside Stage) ============ */
+  .canvas-base {
+    width: 100%; height: 100%;
+    position: relative; overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Grain helpers */
+  .grain-fx {
+    position: absolute; inset: 0; pointer-events: none; z-index: 50;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply; opacity: 0.4;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <div class="kicker">★ PROPOSTA · ANIMADOS · MAIO 2026</div>
+  <h1>Reels animados<br/><em>para o feed.</em></h1>
+  <p>Quatro reels verticais (1080×1920) com narrativas em movimento. Cada um explora uma estética diferente: editorial, contagem, ticker, quebra-cabeça. Use barra de espaço para play/pause.</p>
+</div>
+
+<div class="reels-grid">
+  <div class="reel-card">
+    <div class="reel-meta">
+      <div class="title">01 · O Relógio das 18h</div>
+      <div class="badge">EDITORIAL · 8s</div>
+    </div>
+    <div class="reel-frame" id="reel-1"></div>
+    <div class="reel-desc"><strong>Ritmo:</strong> Relógio editorial em itálico, cenas que se sucedem como atos de teatro. Hook → cena → solução. Pilar B.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-meta">
+      <div class="title">02 · Contagem Regressiva</div>
+      <div class="badge">TIPOGRAFIA · 6s</div>
+    </div>
+    <div class="reel-frame" id="reel-2"></div>
+    <div class="reel-desc"><strong>Ritmo:</strong> Tipografia gigante que pulsa de 5 a 1, entregando a promessa "2 minutos · cardápio pronto". Pilar C.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-meta">
+      <div class="title">03 · Ticker da Geladeira</div>
+      <div class="badge">SCROLL · 7s</div>
+    </div>
+    <div class="reel-frame" id="reel-3"></div>
+    <div class="reel-desc"><strong>Ritmo:</strong> Lista que rola tipo bolsa de valores — "ovo mexido… miojo… delivery…" — até quebrar com a solução. Pilar A.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-meta">
+      <div class="title">04 · Antes × Depois</div>
+      <div class="badge">SPLIT · 7s</div>
+    </div>
+    <div class="reel-frame" id="reel-4"></div>
+    <div class="reel-desc"><strong>Ritmo:</strong> Tela rasga ao meio. Esquerda caótica, direita serena. Comparação visual em transição. Pilar B/C.</div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="reels.jsx"></script>
+
+</body>
+</html>

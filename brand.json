@@ -1,68 +1,296 @@
 {
   "_comment": "Fonte única de verdade — todos os agentes leem este arquivo. Edite aqui, nunca nos templates.",
+  "_updated": "Maio 2026 — inclui direção de arte cinematográfica, mix de Reels e sistema tipográfico ampliado.",
 
   "brand": {
     "name": "Luiza na Cozinha",
     "handle": "@luizanacozinha",
     "url": "luizanacozinha.lovable.app",
-    "tagline": "Planeje sua semana, cozinhe com amor."
+    "tagline": "Planeje sua semana, cozinhe com amor.",
+    "chef": "Luiza Hoffmann",
+    "instagram": "@luizanacozinha"
   },
 
   "colors": {
     "terracota":       "#C8572A",
     "terracota_light": "#E8784F",
+    "terracota_dark":  "#9E3D18",
     "sage":            "#5C7A5E",
+    "sage_light":      "#8FAF91",
     "charcoal":        "#1E1810",
-    "creme":           "#F7F2EA",
+    "charcoal_mid":    "#13100D",
     "espresso":        "#3D2B1F",
+    "creme":           "#F7F2EA",
     "latte":           "#9B7B5E",
     "sand":            "#EDE4D3",
     "gold":            "#C49A3C",
     "white_warm":      "#FFFDF9"
   },
 
-  "fonts": {
-    "display":  "Playfair Display",
-    "body":     "DM Sans",
-    "mono":     "DM Mono"
+  "color_combinations": {
+    "_comment": "Combinações aprovadas — nunca dois fundos iguais seguidos no grid",
+    "impact":      { "bg": "#C8572A", "text": "#FFFDF9", "accent": "#C49A3C", "use": "Frases de impacto, CTAs, abertura de semana" },
+    "dark_series": { "bg": "#1E1810", "text": "#FFFDF9", "accent": "#E8784F", "use": "Carrosséis de humor, séries numeradas" },
+    "editorial":   { "bg": "#3D2B1F", "text": "#FFFDF9", "accent": "#E8784F", "use": "Capa de carrossel premium, narrativas longas" },
+    "light_day":   { "bg": "#F7F2EA", "text": "#3D2B1F", "accent": "#C8572A", "use": "Receitas, dicas práticas, posts leves" },
+    "nature":      { "bg": "#5C7A5E", "text": "#FFFDF9", "accent": "#C49A3C", "use": "Depoimentos, social proof, quotes" },
+    "neutral":     { "bg": "#EDE4D3", "text": "#3D2B1F", "accent": "#C8572A", "use": "Enquetes, listas de steps, engajamento" },
+    "stat":        { "bg": "#FFFDF9", "text": "#1E1810", "accent": "#C8572A", "use": "Big number / stat post — número gigante em terracota" }
   },
 
-  "google_fonts_url": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap",
+  "fonts": {
+    "display_bold":    "Bebas Neue",
+    "display_serif":   "Playfair Display",
+    "display_italic":  "Instrument Serif",
+    "handwritten":     "Caveat",
+    "body":            "DM Sans",
+    "mono":            "DM Mono",
+    "_note": "Bebas Neue = impacto bold. Playfair = elegância editorial. Instrument Serif italic = leveza literária. Caveat = anotação de caderno da chef."
+  },
+
+  "google_fonts_url": "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap",
+
+  "typography_system": {
+    "H1_massive":    { "font": "Playfair Display 900", "size_range": "160–480px", "use": "Número ou palavra como elemento gráfico — ocupa o frame" },
+    "H1_impact":     { "font": "Bebas Neue", "size_range": "64–96px", "use": "Palavra ou frase curta — máximo impacto visual" },
+    "H1_editorial":  { "font": "Playfair Display Bold", "size_range": "72–144px", "use": "Título principal de carrossel ou hero" },
+    "H2_italic":     { "font": "Playfair Display Italic", "size_range": "32–88px", "use": "Complemento do título, gancho emocional — cor terracota" },
+    "H2_literary":   { "font": "Instrument Serif Italic", "size_range": "22–36px", "use": "Sub-título elegante, frase de abertura de carrossel" },
+    "annotation":    { "font": "Caveat", "size_range": "32–48px", "use": "Anotação da chef — sempre em ângulo (-4° a -8°), cor sage ou terracota" },
+    "body":          { "font": "DM Sans Regular", "size_range": "18–24px", "use": "Corpo do texto, descrições" },
+    "label":         { "font": "DM Mono", "size_range": "10–14px", "use": "Tags, URL, rodapé, kickers, contadores" },
+    "combination_1": "Playfair 900 (enorme, estrutural) + Instrument Serif italic (leve, literário)",
+    "combination_2": "Bebas Neue (impacto) + Playfair italic (complemento emocional)",
+    "combination_3": "Playfair Bold (título) + Caveat (anotação) + DM Mono (label)"
+  },
+
+  "typography_techniques": {
+    "inverted_block":   "Texto em bloco branco sobre fundo terracota — palavra chave com background invertido",
+    "bleeding_number":  "Número gigante (Playfair 900 ou Bebas Neue, opacity 6-8%) sangrando para fora do frame — profundidade e hierarquia",
+    "bold_italic_mix":  "Linha Playfair bold + linha seguinte Playfair italic — tensão visual que para o scroll",
+    "caveat_annotation":"Frase em Caveat rotacionada (-4° a -8°) com seta — voz pessoal da chef, humaniza o post",
+    "grain_texture":    "SVG feTurbulence (fractalNoise, opacity 0.18) em mix-blend-mode multiply — sensação de papel/película",
+    "gold_kicker":      "Linha DM Mono uppercase com linha decorativa dourada antes do título — elegância editorial",
+    "_example": "VOCÊ NÃO ODEIA / cozinhar. / VOCÊ ODEIA / não saber / o que cozinhar."
+  },
 
   "dimensions": {
-    "square":   { "width": 1080, "height": 1080 },
-    "vertical": { "width": 1080, "height": 1350 },
-    "story":    { "width": 1080, "height": 1920 }
+    "square":    { "width": 1080, "height": 1080, "use": "Post de feed principal, carrossel" },
+    "vertical":  { "width": 1080, "height": 1350, "use": "Post vertical — ocupa mais tela, maior alcance" },
+    "story":     { "width": 1080, "height": 1920, "use": "Stories e Reels" },
+    "safe_zone": { "margin_horizontal": "72px", "margin_vertical": "56px", "note": "Nunca texto fora da zona segura" }
   },
 
   "templates": {
-    "hero_terracota":  "Fundo terracota sólido — frases de impacto, hooks",
-    "cream_sage":      "Fundo creme com detalhes sage — receitas, dicas práticas",
-    "dark_carousel":   "Fundo charcoal — séries, top 5, passo a passo numerado",
-    "lista_steps":     "Fundo sand com círculos terracota — como funciona o app",
-    "depoimento":      "Fundo sage — social proof, citações da chef",
-    "enquete":         "Fundo creme com cards coloridos — engajamento"
+    "hero_terracota":  "Fundo #C8572A — Playfair massive + Instrument Serif italic — frases de impacto, hooks, abertura de semana",
+    "dark_carousel":   "Fundo #1E1810 — número sangrando + Playfair bold — séries de humor, top 5, carrossel narrativo (capa + cenas + CTA)",
+    "cream_editorial": "Fundo #F7F2EA — número gigante em terracota + Caveat annotation — frases editoriais, receitas leves",
+    "lista_steps":     "Fundo #EDE4D3 — círculos numerados terracota — como funciona o app, processos passo a passo",
+    "depoimento":      "Fundo #5C7A5E — Playfair italic enorme + gold stamp — social proof, citações da chef",
+    "enquete":         "Fundo #EDE4D3 — cards empilhados, opção hot em terracota — engajamento, perguntas abertas",
+    "reel_frame":      "Fundo #0A0704 escuro 9:16 — grain + radial gradient — primeiro frame cinematográfico de Reel",
+    "antes_depois":    "Split 50/50 — charcoal (antes) + creme (depois) — botão terracota central — Pilar C",
+    "big_number":      "Fundo #FFFDF9 — número 580px em terracota + Caveat annotation — stat post, dado de impacto"
   },
 
   "pillars": {
-    "A": "Luiza Personagem — humor, auto-ironia, identificação emocional",
-    "B": "O Caos do Cotidiano — situações que todo mundo já viveu",
-    "C": "Magia do App — como funciona, resultados, jornada do usuário",
-    "D": "Comunidade — perguntas abertas, bastidores, social proof"
+    "A": {
+      "name": "Luiza Personagem",
+      "description": "Humor, auto-ironia, identificação emocional. A chef é humana — erra, ri de si mesma, tem opiniões.",
+      "templates": ["dark_carousel", "hero_terracota", "cream_editorial"],
+      "formats": ["carrossel_humor", "hero_estatico", "reel_confissao"]
+    },
+    "B": {
+      "name": "O Caos do Cotidiano",
+      "description": "Situações que todo mundo já viveu. A dor universal das 18h com geladeira vazia.",
+      "templates": ["dark_carousel", "enquete", "cream_editorial"],
+      "formats": ["carrossel_humor", "enquete_engajamento", "reel_broll"]
+    },
+    "C": {
+      "name": "Magia do App",
+      "description": "Como funciona, resultados, jornada do usuário. Foco na emoção, não no tutorial.",
+      "templates": ["lista_steps", "hero_terracota", "antes_depois", "big_number"],
+      "formats": ["app_carousel", "hero_estatico", "reel_antes_depois"]
+    },
+    "D": {
+      "name": "Comunidade",
+      "description": "Perguntas abertas, bastidores, social proof. Criar o clube antes de ter membros.",
+      "templates": ["enquete", "depoimento"],
+      "formats": ["enquete_engajamento", "reel_bastidor"]
+    }
   },
 
+  "content_mix": {
+    "_comment": "Mix mensal — 16 posts. Reels são o motor de crescimento. Carrossel é motor de salvamento.",
+    "reels":     { "percentage": 70, "monthly_count": "11-12", "role": "Descoberta e alcance — novos seguidores" },
+    "carrossel": { "percentage": 20, "monthly_count": "3-4",   "role": "Salvamento e engajamento — converte quem chegou pelo Reel" },
+    "estatico":  { "percentage": 10, "monthly_count": "1-2",   "role": "Âncora do feed — identidade visual do perfil" }
+  },
+
+  "reel_formats": {
+    "relogio_18h": {
+      "name": "O Relógio das 18h",
+      "description": "Relógio editorial em Playfair italic + cenas que se sucedem como atos de teatro. Hook → cena → solução.",
+      "animation": "Stage/Sprite — fade+slide por cena, wipe circular na transição final",
+      "duration": "8 segundos",
+      "pillar": "B",
+      "best_for": "Identificação emocional — todo mundo às 18h sem saber o que jantar"
+    },
+    "contagem_regressiva": {
+      "name": "Contagem Regressiva",
+      "description": "Números gigantes 5→1 pulsando, cada um com cor de fundo diferente, entregando promessa no final.",
+      "animation": "Stage/Sprite — background flip por Sprite, easeOutBack para 'pop' dos números",
+      "duration": "6 segundos",
+      "pillar": "C",
+      "best_for": "Mostrar velocidade do app — cardápio em 2 minutos"
+    },
+    "ticker_geladeira": {
+      "name": "Ticker da Geladeira",
+      "description": "Lista de jantares improvisados rolando como cotação de bolsa até freiar em 'chega.' com a solução.",
+      "animation": "Stage/Sprite — translateY linear scrolling, mask-image gradiente nas bordas",
+      "duration": "7 segundos",
+      "pillar": "A",
+      "best_for": "Humor — lista absurda de improvisações que todo mundo já fez"
+    },
+    "antes_depois_reel": {
+      "name": "Antes × Depois",
+      "description": "Tela rasga ao meio. Metade superior charcoal (caos), inferior creme (calma). Fusão em CTA terracota.",
+      "animation": "Stage/Sprite — splitProgress anima height das duas metades, transição wipe",
+      "duration": "7 segundos",
+      "pillar": "B/C",
+      "best_for": "Comparação visual — transformação que o app gera"
+    },
+    "food_animated": {
+      "name": "Imagem de comida animada",
+      "description": "Imagem cinematográfica (Midjourney/Flux Pro) + movimento sutil (zoom, paralax, vapor) + música trend",
+      "image_tool": "Midjourney v7 ou Flux Pro",
+      "animation_tool": "Kling 2.0 ou Seedance 2.0",
+      "duration": "8-15 segundos",
+      "pillar": "A/C",
+      "best_for": "Mostrar comida que dá vontade — sem texto necessário"
+    },
+    "kinetic_typography": {
+      "name": "Kinetic typography",
+      "description": "Texto aparece palavra por palavra no ritmo da música. Fundo em movimento sutil.",
+      "image_tool": "Midjourney v7 (fundo)",
+      "animation_tool": "Higgsfield Vibe Motion ou CapCut",
+      "duration": "10-20 segundos",
+      "pillar": "A/B",
+      "best_for": "Frases de impacto, hooks"
+    }
+  },
+
+  "art_direction": {
+    "_comment": "Direção de arte cinematográfica — toda imagem de comida gerada segue esses princípios",
+    "principles": {
+      "1_light":      "Luz dramática e direcional — fonte única, sombras profundas, temperatura quente 3200-4500K. Escuro é aliado.",
+      "2_movement":   "Movimento capturado — ingredientes caindo, vapor subindo, mão em ação. A foto tem um instante decisivo.",
+      "3_framing":    "Enquadramento teatral — ângulos inesperados, corte de corpo proposital, prato pequeno em frame grande.",
+      "4_atmosphere": "Atmosfera antes de informação — fundo contextual real, madeira, plantas. Nunca fundo branco ou neutro.",
+      "5_contrast":   "Contraste cromático intencional — um elemento vibrante em ambiente de baixa saturação."
+    },
+    "never": [
+      "Foto overhead com fundo branco",
+      "Iluminação de estúdio flat e uniforme",
+      "Ingredientes organizados em flat lay perfeito",
+      "Alta saturação em tudo simultaneamente",
+      "Cozinha clean e perfeita de revistinha"
+    ],
+    "reference_mood": "Pampa Café + editorial food magazine. Sentimento: 'dá vontade de estar nessa cozinha'.",
+    "prompt_base": "dramatic single-source side lighting, warm golden hour 3800K, deep shadows composing the frame, hands entering frame without showing face, dark moody kitchen background, worn wooden surfaces, lush green plants out of focus, motion captured at decisive moment, film photography grain, one vibrant color hero element against muted palette, 4K, 4:5 vertical"
+  },
+
+  "photography_scenes": [
+    "Ervas frescas sendo espalhadas sobre bowl escuro — contraluz pela janela, partículas no ar",
+    "Prato finalizado com garfos/facas entrando pelo frame — spotlight no prato, fundo escuro",
+    "Azeite sendo regado sobre legumes — fio dourado contra fundo de madeira escura",
+    "Mão temperando com sal — partículas caindo, luz lateral dramática",
+    "Bowl de massa sendo sovado — farinha no ar, ambiente de cozinha quente",
+    "Prato servido de lado — vapor subindo, luz quente de janela ao fundo",
+    "Ingredientes frescos sobre tábua rústica — tomate, ervas, alho — composição teatral",
+    "Colher de pau mexendo panela — vapor e reflexo de chama no fundo escuro",
+    "Limão sendo espremido sobre prato — respingo capturado, luz flash sutil",
+    "Mesa posta com prato principal — vela acesa, plantas, clima de refeição especial"
+  ],
+
   "posting_schedule": {
-    "monday":    "18:00",
-    "wednesday": "18:00",
-    "thursday":  "12:00",
-    "friday":    "12:00",
-    "sunday":    "10:00"
+    "monday":    { "time": "18:00", "pillar": "A ou B", "format": "Reel ou Carrossel" },
+    "wednesday": { "time": "18:00", "pillar": "A ou C", "format": "Reel ou Estático" },
+    "thursday":  { "time": "12:00", "pillar": "C",      "format": "Reel ou Carrossel" },
+    "friday":    { "time": "12:00", "pillar": "B ou D", "format": "Reel" },
+    "sunday":    { "time": "10:00", "pillar": "D",      "format": "Estático ou Carrossel" }
   },
 
   "ctas": {
-    "humor":     "Salva esse post e marca quem também passa por isso 👇",
-    "app":       "Link na bio pra testar grátis →",
-    "engagement":"Comenta aqui a sua! 👇",
-    "story":     "Arrasta pra cima e começa agora →"
+    "humor":       "Salva esse post e marca quem também passa por isso 👇",
+    "app":         "Link na bio pra testar grátis →",
+    "engagement":  "Comenta aqui a sua! 👇",
+    "story":       "Arrasta pra cima e começa agora →",
+    "reel_food":   "Segue pra mais receitas assim 🍳",
+    "reel_impact": "Salva esse vídeo — vai precisar na sexta 🔖"
+  },
+
+  "hooks": {
+    "_comment": "Primeiros 0.3 segundos decidem tudo — todo Reel e post começa com um desses modelos",
+    "patterns": [
+      "Você não [problema]. Você [reframe inesperado].",
+      "[Número] [situação que todo mundo já viveu].",
+      "[Horário]. [Cena que qualquer pessoa reconhece].",
+      "Spoiler: [confissão inesperada de uma chef].",
+      "Salva esse post antes de abrir o iFood.",
+      "Sou chef. [Confissão humana inesperada]."
+    ],
+    "ready_to_use": [
+      "Você não odeia cozinhar. Você odeia não saber o que cozinhar.",
+      "Ninguém deveria gastar 20 minutos pensando no que jantar.",
+      "Geladeira cheia. Cabeça vazia.",
+      "Semana planejada. Delivery evitado. Culpa zero.",
+      "Sou chef. Às vezes também peço delivery.",
+      "O cardápio da semana em 2 minutos. Sim, é real.",
+      "18h. Geladeira aberta pela quinta vez. Soa familiar?"
+    ]
+  },
+
+  "tone_of_voice": {
+    "is":     ["Conversa como amiga que cozinha bem", "Humor leve e auto-irônico", "Brasileira, do dia a dia", "Opinião própria — não é neutra", "Direta e sem frescura"],
+    "is_not": ["Tom de especialista distante", "Jargão de coach ou nutricionista", "Formalidade ou linguagem técnica", "Perfeição — a imperfeição humaniza", "Tom fitness extremo"]
+  },
+
+  "hashtags": {
+    "large":    ["#cozinhafacil", "#receitasfaceis", "#dicasdecozinha", "#comidasaudavel", "#vidapratica", "#organizacaofamiliar", "#rotinasaudavel", "#cozinhando"],
+    "medium":   ["#planejamentoalimentar", "#cardapiosemanal", "#cozinhainteligente", "#listadecompras", "#semanaorganizada", "#comidareal", "#prepmeal"],
+    "niche":    ["#luizanacozinha", "#cardapiopersonalizado", "#appculinario", "#cozinhacomia", "#semdelivery", "#semanaplanejada", "#chefluiza"],
+    "mix_rule": "12-15 hashtags por post: 3-4 grandes + 5-6 médias + 3-4 nicho"
+  },
+
+  "music_direction": {
+    "food_cinematic": "Instrumental ambiente, Lo-fi, Jazz leve — para imagens de comida animadas",
+    "high_energy":    "Trending pop ou eletrônico suave — para kinetic typography e antes/depois",
+    "cozy_kitchen":   "Acoustic, bossa nova leve, piano — para bastidor e conteúdo mais íntimo",
+    "rule":           "Sincronizar cortes e aparecimento de texto com o beat da música sempre que possível"
+  },
+
+  "quality_checklist": {
+    "visual": [
+      "Identidade visual correta — paleta, fontes, template certo para o tipo de post",
+      "Contraste legível em tela pequena de celular",
+      "Primeiro slide do carrossel funciona como post independente",
+      "Marca 'Luiza na Cozinha' ou URL presente em todo post",
+      "Margem lateral mínima de 72px respeitada"
+    ],
+    "content": [
+      "Mensagem principal clara nos primeiros 2 segundos",
+      "Tom da Luiza — conversacional, brasileiro, sem formalidade",
+      "Hook forte no início",
+      "CTA claro no final — comentar, salvar ou link na bio",
+      "Carrossel: máximo 7 slides"
+    ],
+    "reel": [
+      "Primeiro frame tem impacto visual imediato",
+      "Música selecionada e sincronizada",
+      "Duração: 6-20 segundos para máximo alcance",
+      "Proporção 9:16 correta (1080×1920px)",
+      "Caption tem hook na primeira linha"
+    ]
   }
 }

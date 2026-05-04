@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #0A0704;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cinematic radial gradients */
+  .bg-glow-1 {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(200,87,42,0.15) 0%, transparent 60%);
+    z-index: 1;
+  }
+  .bg-glow-2 {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(92,122,94,0.08) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  /* Film grain */
+  .grain {
+    position: absolute; inset: 0; pointer-events: none; z-index: 50;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply; opacity: 0.4;
+  }
+
+  /* Profile strip (top) */
+  .profile {
+    position: absolute; top: 100px; left: 60px; right: 60px;
+    display: flex; align-items: center; gap: 16px;
+    z-index: 10;
+  }
+  .avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #C8572A;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 16px; color: white; font-weight: 500;
+    border: 2px solid rgba(255,253,249,0.3);
+  }
+  .handle {
+    font-family: 'DM Sans', sans-serif; font-size: 18px;
+    font-weight: 500; color: rgba(255,253,249,0.85);
+  }
+
+  /* Live badge */
+  .live-badge {
+    position: absolute; top: 100px; right: 60px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,87,42,0.2);
+    border: 1px solid rgba(200,87,42,0.5);
+    padding: 8px 16px; border-radius: 20px;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #E8784F;
+    z-index: 10;
+  }
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #C8572A;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  /* Main content — bottom third */
+  .main {
+    position: absolute; bottom: 200px; left: 60px; right: 60px; z-index: 10;
+  }
+
+  /* Large time/number as background text */
+  .time-bg {
+    font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+    font-size: 200px; line-height: 0.85;
+    color: rgba(255,253,249,0.05); margin-bottom: -24px;
+    letter-spacing: -0.03em;
+  }
+
+  /* Hook — main text */
+  .hook {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: {{HEADLINE_SIZE}}px; line-height: 1.1;
+    color: #FFFDF9; margin-bottom: 16px;
+  }
+  .hook em { color: #E8784F; font-style: italic; }
+
+  /* Sub — Instrument Serif */
+  .hook-sub {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 28px; line-height: 1.45;
+    color: rgba(255,253,249,0.55); margin-bottom: 28px;
+  }
+
+  /* Music strip */
+  .music {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    letter-spacing: 0.1em; color: rgba(255,253,249,0.4);
+  }
+  .music-icon { font-size: 16px; animation: spin 3s linear infinite; display: inline-block; }
+  @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+  /* Instagram actions (right column) */
+  .actions {
+    position: absolute; right: 40px; bottom: 360px;
+    display: flex; flex-direction: column; gap: 28px;
+    align-items: center; z-index: 10;
+  }
+  .action { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .action-icon { font-size: 38px; }
+  .action-count {
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    color: rgba(255,253,249,0.6); letter-spacing: 0.05em;
+  }
+
+  /* Bottom caption bar */
+  .bottom-bar {
+    position: absolute; bottom: 60px; left: 60px; right: 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 10;
+  }
+  .caption-text {
+    font-family: 'DM Sans', sans-serif; font-size: 16px;
+    color: rgba(255,253,249,0.6); max-width: 600px; line-height: 1.4;
+  }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #C8572A; display: flex; align-items: center;
+    justify-content: center; font-size: 20px; color: white; flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+  <div class="grain"></div>
+
+  <div class="profile">
+    <div class="avatar">L</div>
+    <div class="handle">@luizanacozinha</div>
+  </div>
+
+  <div class="live-badge">
+    <div class="live-dot"></div>
+    {{BADGE_LABEL}}
+  </div>
+
+  <div class="main">
+    <div class="time-bg">{{TIME_BG}}</div>
+    <div class="hook">{{HEADLINE}}</div>
+    <div class="hook-sub">{{SUBTEXT}}</div>
+    <div class="music">
+      <span class="music-icon">♪</span>
+      <span>{{MUSIC_LABEL}}</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="action">
+      <div class="action-icon">❤️</div>
+      <div class="action-count">{{LIKES}}</div>
+    </div>
+    <div class="action">
+      <div class="action-icon">💬</div>
+      <div class="action-count">{{COMMENTS}}</div>
+    </div>
+    <div class="action">
+      <div class="action-icon">🔖</div>
+      <div class="action-count">{{SAVES}}</div>
+    </div>
+    <div class="action">
+      <div class="action-icon">➦</div>
+      <div class="action-count">{{SHARES}}</div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="caption-text">{{CAPTION_PREVIEW}}</div>
+    <div class="play-btn">▶</div>
+  </div>
+</body>
+</html>
