@@ -109,6 +109,8 @@ async function captureFrames(page, durationSec, fps, tmpDir) {
  * Compila frames PNG → MP4 com ffmpeg
  */
 function compilarMP4(tmpDir, outPath, fps) {
+  // ffmpeg não lida bem com caminhos Unicode no Windows — compila em temp e move depois
+  const tmpOut = path.join(os.tmpdir(), `reel-record-${Date.now()}.mp4`);
   return new Promise((resolve, reject) => {
     ffmpeg()
       .input(path.join(tmpDir, 'frame-%05d.png'))
@@ -120,15 +122,19 @@ function compilarMP4(tmpDir, outPath, fps) {
         '-pix_fmt yuv420p',
         '-movflags +faststart',
       ])
-      .output(outPath)
+      .output(tmpOut)
       .on('progress', (p) => {
         if (p.percent) process.stdout.write(`\r  🎬 Compilando MP4: ${Math.round(p.percent)}%  `);
       })
       .on('end', () => {
+        fs.renameSync(tmpOut, outPath);
         console.log(`\r  ✓ reel.mp4 → ${path.relative(ROOT, outPath)}         `);
         resolve();
       })
-      .on('error', reject)
+      .on('error', (err) => {
+        if (fs.existsSync(tmpOut)) fs.unlinkSync(tmpOut);
+        reject(err);
+      })
       .run();
   });
 }
@@ -218,7 +224,7 @@ async function main() {
     const vars     = varsPath ? JSON.parse(fs.readFileSync(path.resolve(varsPath), 'utf8')) : {};
 
     reels = [{
-      id:       `reel-${template}-${Date.now()}`,
+      id:       `${template}-${Date.now()}`,
       date:     new Date().toISOString().split('T')[0],
       template,
       vars,

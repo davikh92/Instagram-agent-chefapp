@@ -17,7 +17,7 @@ const ffmpeg       = require('fluent-ffmpeg');
 const ffmpegStatic = require('ffmpeg-static');
 const fs           = require('fs');
 const path         = require('path');
-const { glob }     = require('fs');
+const os           = require('os');
 
 ffmpeg.setFfmpegPath(ffmpegStatic);
 
@@ -86,23 +86,33 @@ async function makeSlideshowMP4(postDir) {
     return;
   }
 
-  const postId  = path.basename(postDir);
-  const outPath = path.join(postDir, 'reel.mp4');
+  const postId   = path.basename(postDir);
+  const finalOut = path.join(postDir, 'reel.mp4');
+  // ffmpeg-static no Windows não lida bem com caminhos Unicode —
+  // copia PNGs para temp com nomes ASCII e compila lá
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), `slideshow-`));
+  const tmpOut = path.join(tmpDir, 'reel.mp4');
   console.log(`\n🎬 Gerando reel.mp4 para ${postId} (${pngs.length} slides)...`);
+
+  // Copia PNGs para temp com nomes seguros
+  const tmpPngs = pngs.map((src, i) => {
+    const dst = path.join(tmpDir, `slide-${String(i).padStart(3,'0')}.png`);
+    fs.copyFileSync(src, dst);
+    return dst;
+  });
 
   return new Promise((resolve, reject) => {
     const cmd = ffmpeg();
+    const n = tmpPngs.length;
 
-    // Adiciona cada PNG como input com duração
-    pngs.forEach(png => {
-      cmd.input(png).inputOptions([`-loop 1`, `-t ${SLIDE_DURATION}`]);
+    // Adiciona cada PNG como input
+    tmpPngs.forEach(png => {
+      cmd.input(png).inputOptions([`-loop 1`, `-t ${SLIDE_DURATION + FADE_DURATION}`]);
     });
 
     // Filtros: scale + pad + xfade
-    const n = pngs.length;
     const filterParts = [];
-
-    pngs.forEach((_, i) => {
+    tmpPngs.forEach((_, i) => {
       filterParts.push(
         `[${i}:v]fps=${FPS},` +
         `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=decrease,` +
@@ -128,7 +138,6 @@ async function makeSlideshowMP4(postDir) {
     cmd
       .complexFilter(filterParts.join(';'), 'v')
       .outputOptions([
-        '-map [v]',
         '-c:v libx264',
         '-preset fast',
         '-crf 18',
@@ -136,7 +145,7 @@ async function makeSlideshowMP4(postDir) {
         `-t ${n * SLIDE_DURATION}`,
         '-movflags +faststart',
       ])
-      .output(outPath)
+      .output(tmpOut)
       .on('start', (cmdLine) => {
         if (process.env.DEBUG) console.log('  ffmpeg:', cmdLine);
       })
@@ -144,10 +153,13 @@ async function makeSlideshowMP4(postDir) {
         if (p.percent) process.stdout.write(`\r  ⏳ ${Math.round(p.percent)}%  `);
       })
       .on('end', () => {
-        console.log(`\r  ✓ reel.mp4 → ${path.relative(ROOT, outPath)}`);
-        resolve(outPath);
+        fs.copyFileSync(tmpOut, finalOut);
+        fs.rmSync(tmpDir, { recursive: true, force: true });
+        console.log(`\r  ✓ reel.mp4 → ${path.relative(ROOT, finalOut)}`);
+        resolve(finalOut);
       })
       .on('error', (err) => {
+        fs.rmSync(tmpDir, { recursive: true, force: true });
         console.error(`\r  ✗ Erro: ${err.message}`);
         reject(err);
       })
