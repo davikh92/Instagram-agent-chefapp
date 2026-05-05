@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    width:1080px; height:1920px;
+    background:#1E1810;
+    font-family:'DM Sans',sans-serif;
+    overflow:hidden; position:relative;
+  }
+
+  /* Grain */
+  body::after {
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:50;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode:multiply; opacity:0.4;
+  }
+
+  /* Topbar */
+  .topbar {
+    position:absolute; top:80px; left:60px; right:60px; z-index:10;
+    display:flex; justify-content:space-between;
+    font-family:'DM Mono',monospace; font-size:18px;
+    letter-spacing:0.25em; text-transform:uppercase;
+    color:rgba(255,253,249,0.5);
+  }
+
+  /* Header: "CARDÁPIO DA GELADEIRA" estilo bolsa */
+  .bolsa-header {
+    position:absolute; top:160px; left:60px; right:60px; z-index:10;
+    border-bottom:1px solid rgba(200,87,42,0.3); padding-bottom:16px;
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .bolsa-title {
+    font-family:'DM Mono',monospace; font-size:18px; letter-spacing:0.3em;
+    text-transform:uppercase; color:#E8784F;
+  }
+  .bolsa-date {
+    font-family:'DM Mono',monospace; font-size:14px; letter-spacing:0.1em;
+    color:rgba(255,253,249,0.35);
+  }
+
+  /* Ticker area — lista rolando */
+  .ticker-wrap {
+    position:absolute; top:220px; left:60px; right:60px; bottom:460px;
+    overflow:hidden; z-index:5;
+    /* mask gradiente nas bordas para fade */
+    -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image:linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .ticker-list {
+    display:flex; flex-direction:column;
+    animation:scroll-up 3.5s 0.5s linear forwards;
+  }
+  @keyframes scroll-up {
+    0%   { transform:translateY(0); }
+    75%  { transform:translateY(-{{SCROLL_OFFSET}}px); }
+    100% { transform:translateY(-{{SCROLL_OFFSET}}px); }
+  }
+
+  .ticker-item {
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:22px 0; border-bottom:1px solid rgba(255,253,249,0.06);
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:52px; color:rgba(255,253,249,0.7); letter-spacing:-0.01em;
+  }
+  .ticker-item .val {
+    font-family:'DM Mono',monospace; font-style:normal;
+    font-size:20px; letter-spacing:0.1em; color:#E8784F;
+  }
+  .ticker-item.highlight { color:#FFFDF9; }
+  .ticker-item.highlight .val { color:#C49A3C; }
+
+  /* "CHEGA." que aparece de repente */
+  .chega {
+    position:absolute; left:0; right:0; top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    font-family:'Playfair Display',serif; font-weight:900;
+    font-size:260px; line-height:0.85; letter-spacing:-0.04em;
+    color:#C8572A;
+    opacity:0;
+    animation:explode-in 0.3s 4.0s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    z-index:8;
+  }
+  @keyframes explode-in {
+    from { opacity:0; transform:translateY(-50%) scale(0.5); }
+    to   { opacity:1; transform:translateY(-50%) scale(1); }
+  }
+
+  /* Solução que entra após "chega" */
+  .solucao {
+    position:absolute; bottom:0; left:0; right:0; height:600px;
+    background:#C8572A;
+    display:flex; flex-direction:column; justify-content:center; padding:0 60px;
+    transform:translateY(100%);
+    animation:slide-up-panel 0.5s 4.3s ease-out forwards;
+    z-index:9;
+  }
+  @keyframes slide-up-panel {
+    to { transform:translateY(0); }
+  }
+
+  .solucao-kicker {
+    font-family:'DM Mono',monospace; font-size:18px; letter-spacing:0.3em;
+    text-transform:uppercase; color:rgba(255,253,249,0.75);
+    margin-bottom:20px;
+    opacity:0; animation:fadein 0.4s 4.5s forwards;
+  }
+  .solucao-headline {
+    font-family:'Playfair Display',serif; font-weight:700;
+    font-size:100px; line-height:0.92; color:#FFFDF9; letter-spacing:-0.025em;
+    opacity:0; animation:slide-up 0.4s 4.6s ease-out forwards;
+  }
+  .solucao-headline em { font-style:italic; font-weight:400; color:#1E1810; }
+  .solucao-sub {
+    font-family:'Instrument Serif',serif; font-style:italic;
+    font-size:30px; color:rgba(255,253,249,0.85); margin-top:24px; line-height:1.4;
+    opacity:0; animation:slide-up 0.4s 4.9s ease-out forwards;
+  }
+  .solucao-cta {
+    display:inline-block; background:#1E1810; color:#FFFDF9;
+    font-family:'DM Mono',monospace; font-size:16px; letter-spacing:0.2em;
+    text-transform:uppercase; padding:18px 36px; border-radius:999px;
+    margin-top:24px; width:fit-content;
+    opacity:0; animation:fadein 0.4s 5.3s forwards;
+  }
+
+  .footer {
+    position:absolute; bottom:24px; left:60px; right:60px; z-index:20;
+    display:flex; justify-content:space-between;
+    font-family:'DM Mono',monospace; font-size:14px;
+    letter-spacing:0.2em; text-transform:uppercase;
+    color:rgba(255,253,249,0.35);
+  }
+
+  @keyframes fadein  { to { opacity:1; } }
+  @keyframes slide-up {
+    from { opacity:0; transform:translateY(24px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span>● LUIZA NA COZINHA</span>
+    <span>{{KICKER}}</span>
+  </div>
+
+  <div class="bolsa-header">
+    <span class="bolsa-title">CARDÁPIO DA GELADEIRA</span>
+    <span class="bolsa-date">hoje, 18h</span>
+  </div>
+
+  <!-- Lista rolando -->
+  <div class="ticker-wrap">
+    <div class="ticker-list">
+      <div class="ticker-item"><span>{{ITEM_1}}</span><span class="val">😩</span></div>
+      <div class="ticker-item highlight"><span>{{ITEM_2}}</span><span class="val">↑↑</span></div>
+      <div class="ticker-item"><span>{{ITEM_3}}</span><span class="val">🤷</span></div>
+      <div class="ticker-item"><span>{{ITEM_4}}</span><span class="val">😅</span></div>
+      <div class="ticker-item highlight"><span>{{ITEM_5}}</span><span class="val">↑↑</span></div>
+      <div class="ticker-item"><span>{{ITEM_6}}</span><span class="val">😭</span></div>
+      <div class="ticker-item"><span>{{ITEM_7}}</span><span class="val">🍳</span></div>
+      <div class="ticker-item highlight"><span>{{ITEM_8}}</span><span class="val">↑↑</span></div>
+      <!-- duplica pra loop visual -->
+      <div class="ticker-item"><span>{{ITEM_1}}</span><span class="val">😩</span></div>
+      <div class="ticker-item"><span>{{ITEM_2}}</span><span class="val">↑↑</span></div>
+    </div>
+  </div>
+
+  <!-- "CHEGA." explode no meio -->
+  <div class="chega">CHEGA.</div>
+
+  <!-- Solução sobe do fundo -->
+  <div class="solucao">
+    <div class="solucao-kicker">{{SOLUCAO_KICKER}}</div>
+    <div class="solucao-headline">{{HEADLINE}}</div>
+    <div class="solucao-sub">{{SUBTEXT}}</div>
+    <div class="solucao-cta">{{CTA}} →</div>
+  </div>
+
+  <div class="footer">
+    <span>luizanacozinha.app</span>
+    <span>@luizanacozinha</span>
+  </div>
+</body>
+</html>

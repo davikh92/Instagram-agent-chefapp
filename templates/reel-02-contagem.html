@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    width:1080px; height:1920px;
+    font-family:'DM Sans',sans-serif;
+    overflow:hidden; position:relative;
+  }
+
+  /* Grain */
+  body::after {
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:50;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode:multiply; opacity:0.35;
+  }
+
+  /* Cada frame de contagem — 5 fundos, um por segundo */
+  .frame {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    opacity:0;
+  }
+
+  /* 5 frames com fundos alternando */
+  .f5 { background:#3D2B1F; animation:pop 1.2s 0.0s ease-out forwards; }
+  .f4 { background:#1E1810; animation:pop 1.2s 1.2s ease-out forwards; }
+  .f3 { background:#C8572A; animation:pop 1.2s 2.4s ease-out forwards; }
+  .f2 { background:#5C7A5E; animation:pop 1.2s 3.6s ease-out forwards; }
+  .f1 { background:#C49A3C; animation:pop 1.2s 4.8s ease-out forwards; }
+
+  @keyframes pop {
+    0%  { opacity:0; transform:scale(0.85); }
+    15% { opacity:1; transform:scale(1.04); }
+    25% { transform:scale(1.0); }
+    85% { opacity:1; transform:scale(1.0); }
+    100%{ opacity:0; }
+  }
+
+  /* Número gigante pulsando */
+  .num {
+    font-family:'Playfair Display',serif; font-weight:900;
+    font-size:680px; line-height:0.85; letter-spacing:-0.06em;
+    color:#FFFDF9; text-align:center;
+    animation:num-pulse 1.2s ease-out;
+  }
+  .f3 .num { color:#FFFDF9; }
+  .f2 .num { color:#FFFDF9; }
+  .f1 .num { color:#1E1810; }
+
+  @keyframes num-pulse {
+    0%  { transform:scale(0.7); opacity:0; }
+    30% { transform:scale(1.06); opacity:1; }
+    50% { transform:scale(1.0); }
+    100%{ transform:scale(1.0); opacity:1; }
+  }
+
+  .num-label {
+    font-family:'DM Mono',monospace; font-size:22px; letter-spacing:0.35em;
+    text-transform:uppercase; margin-top:-20px;
+  }
+  .f5 .num-label { color:rgba(255,253,249,0.6); }
+  .f4 .num-label { color:#E8784F; }
+  .f3 .num-label { color:rgba(255,253,249,0.7); }
+  .f2 .num-label { color:rgba(255,253,249,0.7); }
+  .f1 .num-label { color:#3D2B1F; }
+
+  /* Frame final — resolução */
+  .final {
+    position:absolute; inset:0; background:#C8572A;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:0 80px; text-align:center;
+    opacity:0; animation:fadein 0.5s 5.5s ease-out forwards;
+  }
+  @keyframes fadein { to { opacity:1; } }
+
+  .final-small {
+    font-family:'DM Mono',monospace; font-size:18px; letter-spacing:0.3em;
+    text-transform:uppercase; color:rgba(255,253,249,0.7);
+    margin-bottom:24px;
+    opacity:0; animation:slide-up 0.5s 5.6s ease-out forwards;
+  }
+  .final-headline {
+    font-family:'Playfair Display',serif; font-weight:700;
+    font-size:116px; line-height:0.92; color:#FFFDF9; letter-spacing:-0.025em;
+    opacity:0; animation:slide-up 0.5s 5.8s ease-out forwards;
+  }
+  .final-headline em { font-style:italic; font-weight:400; color:#1E1810; }
+  .final-sub {
+    font-family:'Instrument Serif',serif; font-style:italic;
+    font-size:36px; color:rgba(255,253,249,0.85); margin-top:32px; line-height:1.4;
+    opacity:0; animation:slide-up 0.4s 6.2s ease-out forwards;
+  }
+
+  .topbar {
+    position:absolute; top:80px; left:60px; right:60px; z-index:40;
+    display:flex; justify-content:space-between;
+    font-family:'DM Mono',monospace; font-size:18px;
+    letter-spacing:0.25em; text-transform:uppercase;
+    color:rgba(255,253,249,0.5);
+  }
+
+  .footer {
+    position:absolute; bottom:60px; left:60px; right:60px; z-index:40;
+    display:flex; justify-content:space-between;
+    font-family:'DM Mono',monospace; font-size:14px;
+    letter-spacing:0.2em; text-transform:uppercase;
+    color:rgba(255,253,249,0.4);
+  }
+
+  @keyframes slide-up {
+    from { opacity:0; transform:translateY(30px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span>● LUIZA NA COZINHA</span>
+    <span>{{KICKER}}</span>
+  </div>
+
+  <!-- Contagem 5→1 -->
+  <div class="frame f5">
+    <div class="num">5</div>
+    <div class="num-label">{{LABEL_5}}</div>
+  </div>
+  <div class="frame f4">
+    <div class="num">4</div>
+    <div class="num-label">{{LABEL_4}}</div>
+  </div>
+  <div class="frame f3">
+    <div class="num">3</div>
+    <div class="num-label">{{LABEL_3}}</div>
+  </div>
+  <div class="frame f2">
+    <div class="num">2</div>
+    <div class="num-label">{{LABEL_2}}</div>
+  </div>
+  <div class="frame f1">
+    <div class="num">1</div>
+    <div class="num-label">{{LABEL_1}}</div>
+  </div>
+
+  <!-- Frame final: resolução -->
+  <div class="final">
+    <div class="final-small">{{FINAL_KICKER}}</div>
+    <div class="final-headline">{{HEADLINE}}</div>
+    <div class="final-sub">{{SUBTEXT}}</div>
+  </div>
+
+  <div class="footer">
+    <span>luizanacozinha.app</span>
+    <span>@luizanacozinha</span>
+  </div>
+</body>
+</html>

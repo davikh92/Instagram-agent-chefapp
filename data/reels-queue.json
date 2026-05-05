@@ -1,0 +1,79 @@
+[
+  {
+    "id": "reel-01-semana01",
+    "date": "2026-05-06",
+    "template": "reel-01-relogio",
+    "vars": {
+      "HORA_MIN": "47",
+      "CENA1_SUB": "e você ainda não sabe o que vai jantar.",
+      "CENA2_PERGUNTA": "hoje?",
+      "CENA3_KICKER": "A Luiza na Cozinha resolve",
+      "HEADLINE": "Jantar <em>pronto</em><br>em 15 min",
+      "SUBTEXT": "O app planeja, você só cozinha.",
+      "CTA": "Experimente grátis"
+    },
+    "caption": "São 18h47 e a geladeira te olha. Você olha pra geladeira. Ninguém pisca.\n\nA Luiza na Cozinha transforma o que você tem em receitas de verdade — em segundos. ✨\n\nLink na bio pra experimentar grátis 👆",
+    "hashtags": "#luizanacozinha #cozinharemeio #jantarrapido #planejamentoalimentar #receitasfaceis"
+  },
+  {
+    "id": "reel-03-semana01",
+    "date": "2026-05-07",
+    "template": "reel-03-ticker",
+    "vars": {
+      "KICKER": "hoje, 18h",
+      "ITEM_1": "frango misterioso",
+      "ITEM_2": "abobrinha murcha",
+      "ITEM_3": "macarrão sem molho",
+      "ITEM_4": "ovo de ontem",
+      "ITEM_5": "queijo duvidoso",
+      "ITEM_6": "arroz de segunda",
+      "ITEM_7": "tomate meio mole",
+      "ITEM_8": "cebola partida",
+      "SCROLL_OFFSET": "520",
+      "SOLUCAO_KICKER": "Chega de improvisar",
+      "HEADLINE": "Luiza na<br><em>Cozinha</em>",
+      "SUBTEXT": "O app que transforma o que tem na geladeira em receitas de verdade.",
+      "CTA": "Experimentar grátis"
+    },
+    "caption": "A geladeira da segunda-feira... conhece? 😅\n\nChega de inventar combinações duvidosas. A Luiza na Cozinha te diz exatamente o que fazer com o que você tem. Link na bio 👆",
+    "hashtags": "#luizanacozinha #geladeira #improvisonacozinha #receitasrapidas #cozinhar"
+  },
+  {
+    "id": "reel-04-semana01",
+    "date": "2026-05-09",
+    "template": "reel-04-split",
+    "vars": {
+      "KICKER": "antes × depois",
+      "BEFORE_TITLE": "O <em>caos</em><br>de todo dia",
+      "BEFORE_1": "abre a geladeira 5 vezes",
+      "BEFORE_2": "não sabe o que comprar",
+      "BEFORE_3": "pede delivery de novo",
+      "BEFORE_4": "joga comida fora",
+      "AFTER_TITLE": "Com o<br><em>app</em>",
+      "AFTER_1": "cardápio da semana pronto",
+      "AFTER_2": "lista de compras automática",
+      "AFTER_3": "receitas que você consegue fazer",
+      "CTA": "Comece grátis hoje"
+    },
+    "caption": "Antes: geladeira cheia, ideia vazia. Depois: planejamento feito, semana resolvida. ✨\n\nA Luiza na Cozinha faz o trabalho pesado por você. Link na bio 👆",
+    "hashtags": "#luizanacozinha #planejamentoalimentar #antesdepois #cozinhar #organizacao"
+  },
+  {
+    "id": "reel-02-semana01",
+    "date": "2026-05-11",
+    "template": "reel-02-contagem",
+    "vars": {
+      "KICKER": "motivos reais",
+      "LABEL_5": "sem inspiração",
+      "LABEL_4": "geladeira vazia",
+      "LABEL_3": "sem tempo",
+      "LABEL_2": "detesta lavar louça",
+      "LABEL_1": "Luiza na Cozinha",
+      "FINAL_KICKER": "O app que resolve tudo isso",
+      "HEADLINE": "Planeje <em>uma vez,</em><br>coma bem",
+      "SUBTEXT": "IA que entende sua geladeira, seu tempo e seu gosto."
+    },
+    "caption": "5 motivos pra não cozinhar... e 1 pra começar hoje. 🍳\n\nO app da Luiza na Cozinha transforma o caos da semana em refeições reais. Experimente grátis — link na bio! 👆",
+    "hashtags": "#luizanacozinha #cozinhar #planejamentoalimentar #receitasrapidas #comerbem"
+  }
+]
