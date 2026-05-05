@@ -61,27 +61,37 @@ async function captureFrames(page, durationSec, fps, tmpDir) {
 
   console.log(`  📷 Capturando ${totalFrames} frames a ${fps}fps...`);
 
-  // Pausa todas as animações
+  // Fase 1: lê e armazena os delays ORIGINAIS de cada elemento animado
+  // (antes de qualquer modificação) em data-orig-delay.
+  // O seek correto é: newDelay = originalDelay - currentTime
+  // → elementos cujo originalDelay > currentTime ainda não começaram (delay positivo)
+  // → elementos cujo originalDelay < currentTime estão em progresso (delay negativo)
   await page.evaluate(() => {
     document.querySelectorAll('*').forEach(el => {
-      el.style.animationPlayState = 'paused';
+      const style = window.getComputedStyle(el);
+      const dur   = style.animationDuration;
+      if (dur && dur !== '0s') {
+        // Pode ter múltiplas animações separadas por vírgula
+        el.dataset.origDelay = style.animationDelay;
+        el.style.animationPlayState = 'paused';
+      }
     });
   });
 
   for (let i = 0; i < totalFrames; i++) {
     const currentTime = i / fps;
 
-    // Seek animações via animation-delay negativo
+    // Fase 2: seek — para cada animação, new_delay = originalDelay - currentTime
     await page.evaluate((t) => {
       document.querySelectorAll('*').forEach(el => {
-        const style = window.getComputedStyle(el);
-        const dur   = style.animationDuration;
-        const delay = style.animationDelay;
-        if (dur && dur !== '0s') {
-          // Injeta delay negativo para simular t atual
-          el.style.animationDelay = `-${t}s`;
-          el.style.animationPlayState = 'paused';
-        }
+        if (el.dataset.origDelay === undefined) return;
+        // Suporta múltiplas animações: "0.4s, 0.6s, 1.2s"
+        const delays = el.dataset.origDelay.split(',').map(d => {
+          const sec = parseFloat(d.trim()) || 0;
+          return `${sec - t}s`;
+        });
+        el.style.animationDelay    = delays.join(', ');
+        el.style.animationPlayState = 'paused';
       });
     }, currentTime);
 
