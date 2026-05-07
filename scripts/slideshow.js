@@ -179,16 +179,17 @@ async function main() {
     dirs = [path.resolve(args[postFlag + 1])];
 
   } else if (allFlag) {
-    // Processa todos os posts em ready-to-post/ que tenham slides mas não tenham reel.mp4
-    const dateDirs = fs.readdirSync(READY_DIR).map(d => path.join(READY_DIR, d));
-    for (const dateDir of dateDirs) {
-      if (!fs.statSync(dateDir).isDirectory()) continue;
-      const postDirs = fs.readdirSync(dateDir).map(d => path.join(dateDir, d));
-      for (const postDir of postDirs) {
-        if (!fs.statSync(postDir).isDirectory()) continue;
-        const hasPNGs = fs.readdirSync(postDir).some(f => f.match(/^slide-\d+\.png$/));
-        const hasMP4  = fs.existsSync(path.join(postDir, 'reel.mp4'));
-        if (hasPNGs && !hasMP4) dirs.push(postDir);
+    // Processa todos os posts em ready-to-post/YYYY-MM/YYYY-MM-DD/ que tenham slides mas não tenham reel.mp4
+    const monthDirs = fs.readdirSync(READY_DIR).map(d => path.join(READY_DIR, d)).filter(d => fs.statSync(d).isDirectory());
+    for (const monthDir of monthDirs) {
+      const dateDirs = fs.readdirSync(monthDir).map(d => path.join(monthDir, d)).filter(d => fs.statSync(d).isDirectory());
+      for (const dateDir of dateDirs) {
+        const postDirs = fs.readdirSync(dateDir).map(d => path.join(dateDir, d)).filter(d => fs.statSync(d).isDirectory());
+        for (const postDir of postDirs) {
+          const hasPNGs = fs.readdirSync(postDir).some(f => f.match(/^slide-\d+\.png$/));
+          const hasMP4  = fs.existsSync(path.join(postDir, 'reel.mp4'));
+          if (hasPNGs && !hasMP4) dirs.push(postDir);
+        }
       }
     }
     console.log(`📋 ${dirs.length} post(s) sem reel.mp4 encontrado(s).`);

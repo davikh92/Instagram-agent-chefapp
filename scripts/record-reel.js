@@ -158,8 +158,9 @@ async function processReel(reelConfig) {
     return;
   }
 
-  const duration = REEL_DURATIONS[template] ?? 8.0;
-  const outDir   = path.join(READY_DIR, date, id);
+  const duration  = REEL_DURATIONS[template] ?? 8.0;
+  const month     = date.slice(0, 7);                        // "2026-05"
+  const outDir    = path.join(READY_DIR, month, date, id);   // ready-to-post/2026-05/2026-05-06/reel-01-relogio
   fs.mkdirSync(outDir, { recursive: true });
 
   console.log(`\n🎬 Gerando ${id} (template: ${template}, ${duration}s)...`);

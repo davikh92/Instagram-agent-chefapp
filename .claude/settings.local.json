@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude --version)",
+      "Bash(git init *)",
+      "Bash(npm install *)",
+      "Bash(node scripts/screenshot.js --input templates/generated/post-teste.json)",
+      "Bash(mkdir -p data)",
+      "Bash(echo \"\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh repo *)",
+      "Bash(node scripts/screenshot.js --input templates/generated/post-carousel-teste.json)",
+      "Bash(git push *)",
+      "WebFetch(domain:api.anthropic.com)",
+      "WebSearch",
+      "Bash(ffmpeg -version)",
+      "Bash(node -e \"const ffmpegPath = require\\('ffmpeg-static'\\); console.log\\('ffmpeg:', ffmpegPath\\);\")",
+      "Bash(ls data/)",
+      "Bash(ls ready-to-post/)",
+      "Bash(node scripts/slideshow.js --post \"ready-to-post/2026-05-03/post-carousel-teste\")",
+      "Bash(DEBUG=1 node scripts/slideshow.js --post \"ready-to-post/2026-05-03/post-carousel-teste\")",
+      "Bash(node scripts/record-reel.js --template reel-01-relogio --vars data/reels/reel-01.json)",
+      "Bash(node scripts/record-reel.js --all)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "mcp__Claude_in_Chrome__computer",
+      "Bash(node -e ' *)",
+      "Read(//c/Users/davi_/AppData/Local/Temp/**)",
+      "Bash(dir /b \"C:\\\\Users\\\\davi_\\\\AppData\\\\Local\\\\Temp\\\\\" | grep \"^f-\")",
+      "Bash(rm -f 01_Briefing_Completo_Projeto.docx 02_Setup_Agentes_Claude_Code.docx 03_Biblioteca_Prompts_Posts.docx 04_Expansoes_Arte_Pinterest_Animacao.docx 'CLAUDE - Copia.md' 'brand - Copia.json' proposta_visual_luiza.html templates/cream-sage.html templates/reel-frame.html)",
+      "Bash(rm -f templates/generated/*.html templates/generated/*.json)",
+      "Bash(mkdir -p ready-to-post/2026-05/2026-05-06/reel-01-relogio ready-to-post/2026-05/2026-05-07/reel-03-ticker ready-to-post/2026-05/2026-05-09/reel-04-split ready-to-post/2026-05/2026-05-11/reel-02-contagem)",
+      "Bash(cp -r \"ready-to-post/2026-05-06/reel-01-semana01/.\" \"ready-to-post/2026-05/2026-05-06/reel-01-relogio/\")",
+      "Bash(cp -r \"ready-to-post/2026-05-07/reel-03-semana01/.\" \"ready-to-post/2026-05/2026-05-07/reel-03-ticker/\")",
+      "Bash(cp -r \"ready-to-post/2026-05-09/reel-04-semana01/.\" \"ready-to-post/2026-05/2026-05-09/reel-04-split/\")",
+      "Bash(cp -r \"ready-to-post/2026-05-11/reel-02-semana01/.\" \"ready-to-post/2026-05/2026-05-11/reel-02-contagem/\")"
+    ]
+  }
+}

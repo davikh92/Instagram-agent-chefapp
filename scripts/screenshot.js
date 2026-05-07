@@ -84,8 +84,9 @@ async function processPost(postConfig, browser) {
     return;
   }
 
-  // Pasta de saída: ready-to-post/[data]/[post-id]/
-  const outDir = path.join(READY_DIR, postConfig.date, postConfig.id);
+  // Pasta de saída: ready-to-post/[YYYY-MM]/[data]/[post-id]/
+  const month  = postConfig.date.slice(0, 7);
+  const outDir = path.join(READY_DIR, month, postConfig.date, postConfig.id);
   fs.mkdirSync(outDir, { recursive: true });
 
   console.log(`\n📸 Gerando ${postConfig.id} (${postConfig.slides.length} slide(s))...`);
