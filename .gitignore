@@ -8,3 +8,9 @@ templates/generated/*.html
 data/briefing-*.json
 data/plano-*.json
 data/queue.json
+
+# Gerados localmente — não precisam de versionamento
+dashboard.html
+
+# Configurações locais do Claude Code
+.claude/

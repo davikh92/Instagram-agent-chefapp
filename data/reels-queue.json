@@ -3,6 +3,8 @@
     "id": "reel-01-semana01",
     "date": "2026-05-06",
     "template": "reel-01-relogio",
+    "pilar": "B",
+    "gancho": "Horário crítico 18h — geladeira como personagem",
     "vars": {
       "HORA_MIN": "47",
       "CENA1_SUB": "e você ainda não sabe o que vai jantar.",
@@ -19,6 +21,8 @@
     "id": "reel-03-semana01",
     "date": "2026-05-07",
     "template": "reel-03-ticker",
+    "pilar": "A",
+    "gancho": "Lista absurda da geladeira como ticker financeiro",
     "vars": {
       "KICKER": "hoje, 18h",
       "ITEM_1": "frango misterioso",
@@ -42,6 +46,8 @@
     "id": "reel-04-semana01",
     "date": "2026-05-09",
     "template": "reel-04-split",
+    "pilar": "B/C",
+    "gancho": "Split visual: caos vs. organização — sem esforço, não sem mérito",
     "vars": {
       "KICKER": "antes × depois",
       "BEFORE_TITLE": "O <em>caos</em><br>de todo dia",
@@ -62,6 +68,8 @@
     "id": "reel-02-semana01",
     "date": "2026-05-11",
     "template": "reel-02-contagem",
+    "pilar": "A",
+    "gancho": "Valida todas as desculpas pra não cozinhar — e resolve de uma vez",
     "vars": {
       "KICKER": "motivos reais",
       "LABEL_5": "sem inspiração",
@@ -75,5 +83,191 @@
     },
     "caption": "5 motivos pra não cozinhar... e 1 pra começar hoje. 🍳\n\nO app da Luiza na Cozinha transforma o caos da semana em refeições reais. Experimente grátis — link na bio! 👆",
     "hashtags": "#luizanacozinha #cozinhar #planejamentoalimentar #receitasrapidas #comerbem"
+  },
+  {
+    "id": "reel-01-semana02",
+    "date": "2026-05-12",
+    "template": "reel-01-relogio",
+    "pilar": "C",
+    "gancho": "Inversão do 18h: mesmo horário crítico, mas com sensação de controle",
+    "vars": {
+      "HORA_MIN": "02",
+      "CENA1_SUB": "e você já sabe exatamente o que vai jantar.",
+      "CENA2_PERGUNTA": "resolvido?",
+      "CENA3_KICKER": "Semana planejada desde domingo",
+      "HEADLINE": "<em>Essa</em> é a<br>sensação",
+      "SUBTEXT": "Quem usa a Luiza na Cozinha não improvisa mais.",
+      "CTA": "Quero isso também"
+    },
+    "caption": "São 18h02 e você já sabe o que vai jantar. A lista de compras já foi. O cardápio da semana, feito.\n\nEssa é a sensação de quem usa a Luiza na Cozinha — planejar uma vez e não pensar mais nisso. ✨\n\nLink na bio 👆",
+    "hashtags": "#luizanacozinha #planejamentoalimentar #organizacao #cozinhar #semanaresolvida #produtividade"
+  },
+  {
+    "id": "reel-03-semana02",
+    "date": "2026-05-14",
+    "template": "reel-03-ticker",
+    "pilar": "B",
+    "gancho": "Monólogo interno às 18h — dúvida → abre app → resolve",
+    "vars": {
+      "KICKER": "18h, sua cabeça:",
+      "ITEM_1": "pedir delivery?",
+      "ITEM_2": "mas tô tentando economizar",
+      "ITEM_3": "aquele frango vai vencer",
+      "ITEM_4": "não sei o que fazer",
+      "ITEM_5": "abre o app",
+      "ITEM_6": "cardápio pronto",
+      "ITEM_7": "ingredientes: tenho tudo",
+      "ITEM_8": "ufa.",
+      "SCROLL_OFFSET": "480",
+      "SOLUCAO_KICKER": "É assim que funciona",
+      "HEADLINE": "Luiza na<br><em>Cozinha</em>",
+      "SUBTEXT": "Abre o app. Informa o que tem. Recebe o cardápio. Simples assim.",
+      "CTA": "Experimentar grátis"
+    },
+    "caption": "O barulho dentro da cabeça às 18h é real. 😅\n\nA Luiza na Cozinha silencia tudo isso — você abre o app, informa o que tem na geladeira, e recebe o cardápio da semana na hora. Sem drama.\n\nLink na bio 👆",
+    "hashtags": "#luizanacozinha #cozinhar #jantarrapido #receitasfaceis #planejamentoalimentar #delivery"
+  },
+  {
+    "id": "reel-02-semana02",
+    "date": "2026-05-18",
+    "template": "reel-02-contagem",
+    "pilar": "A",
+    "gancho": "Comportamentos reais da semana — o espectador acumula 'sim' até o CTA",
+    "vars": {
+      "KICKER": "essa semana você...",
+      "LABEL_5": "improvisou algo estranho",
+      "LABEL_4": "pediu delivery sem querer",
+      "LABEL_3": "jogou comida fora",
+      "LABEL_2": "comprou sem lista",
+      "LABEL_1": "hora de resolver isso",
+      "FINAL_KICKER": "A Luiza na Cozinha muda isso",
+      "HEADLINE": "Zero <em>julgamento.</em><br>Só solução.",
+      "SUBTEXT": "Planejamento em 2 minutos. Toda semana."
+    },
+    "caption": "Essa semana você fez quantos desses? 😅\n\nZero julgamento — isso é só o que acontece quando a semana não tem planejamento. A gente resolve isso em 2 minutos.\n\nTesta grátis. Link na bio 👆",
+    "hashtags": "#luizanacozinha #comerbem #cozinhar #planejamentoalimentar #organizacao #rotina"
+  },
+  {
+    "id": "reel-01-semana03",
+    "date": "2026-05-21",
+    "template": "reel-01-relogio",
+    "pilar": "A",
+    "gancho": "Novo horário crítico: 11h30 de sábado — família chegando, nada decidido",
+    "vars": {
+      "HORA_MIN": "30",
+      "CENA1_SUB": "sábado. família chegando. geladeira aberta.",
+      "CENA2_PERGUNTA": "o que vai ser?",
+      "CENA3_KICKER": "Planejou desde domingo?",
+      "HEADLINE": "Semana <em>planejada.</em><br>Sábado resolvido.",
+      "SUBTEXT": "Quem usa a Luiza na Cozinha não improvisa nem no fim de semana.",
+      "CTA": "Testar grátis"
+    },
+    "caption": "São 11h30 de sábado. Família vai chegar pra almoço. Geladeira aberta, nada decidido. 😅\n\nÉ aqui que a Luiza na Cozinha te salva — cardápio pronto, lista feita, semana resolvida desde domingo.\n\nLink na bio 👆",
+    "hashtags": "#luizanacozinha #sabado #almoco #familianacozinha #planejamentoalimentar #receitasrapidas"
+  },
+  {
+    "id": "reel-02-semana03",
+    "date": "2026-05-25",
+    "template": "reel-02-contagem",
+    "pilar": "A",
+    "gancho": "Vozes internas antes de decidir o que comer — valida o caos mental",
+    "vars": {
+      "KICKER": "seu cérebro às 18h:",
+      "LABEL_5": "será que o frango ainda tá bom?",
+      "LABEL_4": "não tenho molho pra isso",
+      "LABEL_3": "ia fazer aquela receita mas...",
+      "LABEL_2": "já pedi delivery segunda passada",
+      "LABEL_1": "tem solução.",
+      "FINAL_KICKER": "A Luiza na Cozinha pensa por você",
+      "HEADLINE": "Sem <em>drama.</em><br>Sem estresse.",
+      "SUBTEXT": "Cardápio da semana em 2 minutos."
+    },
+    "caption": "Seu cérebro às 18h. 🧠😅\n\nEsses pensamentos aparecem porque você não tem um plano. E um plano a gente monta em 2 minutos.\n\nLink na bio 👆",
+    "hashtags": "#luizanacozinha #alimentacao #cozinhar #decisoes #planejamentoalimentar #jantarrapido"
+  },
+  {
+    "id": "reel-04-semana04",
+    "date": "2026-05-26",
+    "template": "reel-04-split",
+    "pilar": "B",
+    "gancho": "iFood como benchmark comportamental — compara esforço, não qualidade",
+    "vars": {
+      "KICKER": "enquanto você decide...",
+      "BEFORE_TITLE": "No <em>iFood</em>",
+      "BEFORE_1": "abre o app",
+      "BEFORE_2": "scroll interminável",
+      "BEFORE_3": "escolhe, desiste",
+      "BEFORE_4": "confirma o pedido",
+      "AFTER_TITLE": "Na <em>Luiza</em>",
+      "AFTER_1": "informa o que tem",
+      "AFTER_2": "cardápio da semana gerado",
+      "AFTER_3": "lista de compras pronta",
+      "CTA": "Experimenta. É grátis."
+    },
+    "caption": "Enquanto você decide o que pedir no iFood, a Luiza na Cozinha já resolveu sua semana inteira. 😅\n\nTesta grátis. Link na bio 👆",
+    "hashtags": "#luizanacozinha #ifood #delivery #planejamentoalimentar #cozinharcaseiro #semanaplanejada"
+  },
+  {
+    "id": "reel-01-semana04",
+    "date": "2026-05-29",
+    "template": "reel-01-relogio",
+    "pilar": "B",
+    "gancho": "A promessa de tempo '2 minutos' como personagem principal",
+    "vars": {
+      "HORA_MIN": "00",
+      "CENA1_SUB": "Em 2 minutos, você pode ter a semana resolvida.",
+      "CENA2_PERGUNTA": "começar?",
+      "CENA3_KICKER": "Cardápio → Lista → Receitas. Pronto.",
+      "HEADLINE": "<em>2 minutos.</em><br>Semana feita.",
+      "SUBTEXT": "É isso que a Luiza na Cozinha entrega. Todo domingo.",
+      "CTA": "Testar agora"
+    },
+    "caption": "São 18h. Em 2 minutos você pode ter a semana inteira resolvida. ⏱️\n\nInforma o que tem → cardápio gerado → lista de compras pronta. É isso.\n\nTesta grátis. Link na bio 👆",
+    "hashtags": "#luizanacozinha #2minutos #planejamentoalimentar #produtividade #cozinhar #semanaplanejada"
+  },
+  {
+    "id": "reel-03-semana04",
+    "date": "2026-06-01",
+    "template": "reel-03-ticker",
+    "pilar": "C",
+    "gancho": "Conquistas do mês 1 como ticker de notícia — momentum social",
+    "vars": {
+      "KICKER": "mês 1 no ar:",
+      "ITEM_1": "cardápios gerados",
+      "ITEM_2": "listas criadas",
+      "ITEM_3": "refeições planejadas",
+      "ITEM_4": "ingredientes aproveitados",
+      "ITEM_5": "deliveries evitados",
+      "ITEM_6": "domingos sem ansiedade",
+      "ITEM_7": "geladeiras mais organizadas",
+      "ITEM_8": "e só começou.",
+      "SCROLL_OFFSET": "450",
+      "SOLUCAO_KICKER": "Entra nessa",
+      "HEADLINE": "Luiza na<br><em>Cozinha</em>",
+      "SUBTEXT": "O app que está mudando a relação das pessoas com a cozinha.",
+      "CTA": "Link na bio"
+    },
+    "caption": "Primeiro mês da Luiza na Cozinha no ar. Os números chegaram. 📊\n\nCada linha dessa lista é uma semana resolvida, uma decisão a menos, uma geladeira mais aproveitada.\n\nQuer entrar nessa? Link na bio 👆",
+    "hashtags": "#luizanacozinha #lancamento #mes1 #planejamentoalimentar #beta #resultados"
+  },
+  {
+    "id": "reel-02-semana04",
+    "date": "2026-06-04",
+    "template": "reel-02-contagem",
+    "pilar": "B",
+    "gancho": "Feature discovery via dúvidas reais — humaniza o assistente IA",
+    "vars": {
+      "KICKER": "perguntas da semana:",
+      "LABEL_5": "posso substituir manteiga por óleo?",
+      "LABEL_4": "o frango tá cozinhado?",
+      "LABEL_3": "quanto tempo dura o arroz na geladeira?",
+      "LABEL_2": "tem receita com o que eu tenho?",
+      "LABEL_1": "ela responde qualquer coisa.",
+      "FINAL_KICKER": "Assistente da Chef Luiza — no app",
+      "HEADLINE": "Uma <em>chef</em><br>ao seu lado.",
+      "SUBTEXT": "Disponível toda vez que você precisar."
+    },
+    "caption": "A assistente da Luiza na Cozinha já respondeu milhares de perguntas assim. 👩‍🍳\n\nEla está disponível no app toda vez que você precisar — como ter uma chef do seu lado.\n\nTesta grátis. Link na bio 👆",
+    "hashtags": "#luizanacozinha #assistente #duvidas #cozinhar #receitasfaceis #planejamentoalimentar"
   }
 ]

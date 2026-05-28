@@ -107,26 +107,47 @@ async function deleteFromCloudinary(publicId, resourceType = 'video') {
  * Cria container de mídia no Instagram.
  * Para Reels: media_type=REELS + video_url
  * Para imagem única: image_url
- * Para carrossel: media_type=CAROUSEL (implementação futura)
+ * Para carrossel: cria container filho (sem caption)
  */
 async function createMediaContainer(opts) {
-  const { mediaType, mediaUrl, caption } = opts;
-  const body = new URLSearchParams({
-    access_token: INSTAGRAM_ACCESS_TOKEN,
-    caption,
-  });
+  const { mediaType, mediaUrl, caption, isCarouselChild = false, coverUrl = null } = opts;
+  const body = new URLSearchParams({ access_token: INSTAGRAM_ACCESS_TOKEN });
+
+  if (!isCarouselChild && caption) body.append('caption', caption);
 
   if (mediaType === 'REELS' || mediaType === 'VIDEO') {
     body.append('media_type', 'REELS');
     body.append('video_url', mediaUrl);
+    // Capa personalizada para o feed grid (cover.png da pasta)
+    if (coverUrl) {
+      body.append('cover_url', coverUrl);
+      console.log(`  🖼️  Capa personalizada: ${coverUrl.split('/').pop()}`);
+    }
   } else {
     body.append('image_url', mediaUrl);
+    if (isCarouselChild) body.append('is_carousel_item', 'true');
   }
 
   const res  = await fetch(`${IG_BASE}/${INSTAGRAM_USER_ID}/media`, { method: 'POST', body });
   const data = await res.json();
 
   if (data.error) throw new Error(`Instagram API: ${data.error.message}`);
+  return data.id;
+}
+
+/**
+ * Cria o container pai de um carrossel com os IDs dos filhos já criados.
+ */
+async function createCarouselContainer(childrenIds, caption) {
+  const body = new URLSearchParams({
+    access_token: INSTAGRAM_ACCESS_TOKEN,
+    media_type:   'CAROUSEL',
+    children:     childrenIds.join(','),
+    caption,
+  });
+  const res  = await fetch(`${IG_BASE}/${INSTAGRAM_USER_ID}/media`, { method: 'POST', body });
+  const data = await res.json();
+  if (data.error) throw new Error(`Carousel container: ${data.error.message}`);
   return data.id;
 }
 
@@ -189,80 +210,125 @@ async function publishFolder(folderPath) {
     return;
   }
 
-  // Detecta tipo: reel-final.mp4 (CapCut) > reel.mp4 > slide-01.png (estático)
-  const reelFinal = path.join(folderPath, 'reel-final.mp4'); // exportado do CapCut com música
-  const reelOrig  = path.join(folderPath, 'reel.mp4');
-  const hasReel   = fs.existsSync(reelFinal) || fs.existsSync(reelOrig);
-  const hasSlide  = fs.existsSync(path.join(folderPath, 'slide-01.png'));
+  // Detecta tipo: reel-final.mp4 (CapCut) > reel.mp4 > slides PNG
+  const reelFinal  = path.join(folderPath, 'reel-final.mp4');
+  const reelOrig   = path.join(folderPath, 'reel.mp4');
+  const hasReel    = fs.existsSync(reelFinal) || fs.existsSync(reelOrig);
 
-  if (!hasReel && !hasSlide) {
-    console.log(`  ✗ ${name} — sem reel.mp4 nem slide-01.png, pulando`);
+  // Coleta todos os slides em ordem
+  const slides = fs.readdirSync(folderPath)
+    .filter(f => /^slide-\d+\.png$/.test(f))
+    .sort()
+    .map(f => path.join(folderPath, f));
+
+  const isCarousel = !hasReel && slides.length > 1;
+  const isImage    = !hasReel && slides.length === 1;
+
+  if (!hasReel && slides.length === 0) {
+    console.log(`  ✗ ${name} — sem reel.mp4 nem slides PNG, pulando`);
     return;
   }
 
-  // Lê caption (legenda Instagram)
+  // Lê caption
   const captionFile = path.join(folderPath, 'caption.txt');
   const caption = fs.existsSync(captionFile)
     ? fs.readFileSync(captionFile, 'utf8').trim()
     : '';
 
-  if (!caption) {
-    console.warn(`  ⚠️  ${name} — caption.txt vazio`);
-  }
+  if (!caption) console.warn(`  ⚠️  ${name} — caption.txt vazio`);
 
-  console.log(`\n📤 Publicando ${name}...`);
+  const tipo = hasReel ? '🎬 Reel' : isCarousel ? `🖼️  Carrossel (${slides.length} slides)` : '📄 Post';
+  console.log(`\n📤 Publicando ${name}... ${tipo}`);
 
-  let cloudPublicId;
+  const uploadedIds = []; // { publicId, resourceType }
   let mediaId;
 
   try {
-    // 1. Upload para Cloudinary
-    // Prefere reel-final.mp4 (com música do CapCut) se existir
-    const mediaFile = hasReel
-      ? (fs.existsSync(reelFinal) ? reelFinal : reelOrig)
-      : path.join(folderPath, 'slide-01.png');
-
-    if (hasReel && fs.existsSync(reelFinal)) {
-      console.log(`  🎵 Usando reel-final.mp4 (editado no CapCut)`);
-    }
-
-    const { url, publicId } = await uploadToCloudinary(mediaFile);
-    cloudPublicId = publicId;
-
-    // 2. Cria container no Instagram
-    const mediaType  = hasReel ? 'REELS' : 'IMAGE';
-    const containerId = await createMediaContainer({ mediaType, mediaUrl: url, caption });
-    console.log(`  ✓ Container criado: ${containerId}`);
-
-    // 3. Aguarda processamento (só necessário para vídeo)
     if (hasReel) {
+      // ── REEL ────────────────────────────────────────────────────────────────
+      const mediaFile = fs.existsSync(reelFinal) ? reelFinal : reelOrig;
+      if (fs.existsSync(reelFinal)) console.log(`  🎵 Usando reel-final.mp4 (CapCut)`);
+
+      const { url, publicId } = await uploadToCloudinary(mediaFile);
+      uploadedIds.push({ publicId, resourceType: 'video' });
+
+      // Capa personalizada: sobe cover.png se existir na pasta
+      let coverUrl = null;
+      const coverFile = path.join(folderPath, 'cover.png');
+      if (fs.existsSync(coverFile)) {
+        console.log(`  🖼️  Subindo cover.png para Cloudinary...`);
+        const { url: cUrl, publicId: cId } = await uploadToCloudinary(coverFile);
+        uploadedIds.push({ publicId: cId, resourceType: 'image' });
+        coverUrl = cUrl;
+      }
+
+      const containerId = await createMediaContainer({ mediaType: 'REELS', mediaUrl: url, caption, coverUrl });
+      console.log(`  ✓ Container reel: ${containerId}`);
       await waitForContainer(containerId);
+      mediaId = await publishContainer(containerId);
+
+    } else if (isCarousel) {
+      // ── CARROSSEL ───────────────────────────────────────────────────────────
+      console.log(`  ☁️  Subindo ${slides.length} slides para Cloudinary...`);
+      const childIds = [];
+
+      for (let i = 0; i < slides.length; i++) {
+        const { url, publicId } = await uploadToCloudinary(slides[i]);
+        uploadedIds.push({ publicId, resourceType: 'image' });
+        const childId = await createMediaContainer({
+          mediaType: 'IMAGE',
+          mediaUrl: url,
+          isCarouselChild: true,
+        });
+        childIds.push(childId);
+        console.log(`  ✓ Slide ${i + 1}/${slides.length} container: ${childId}`);
+      }
+
+      const carouselId = await createCarouselContainer(childIds, caption);
+      console.log(`  ✓ Carousel container: ${carouselId}`);
+      // Instagram precisa de alguns segundos para processar os containers filhos
+      console.log(`  ⏳ Aguardando Instagram processar os slides...`);
+      await sleep(8000);
+      mediaId = await publishContainer(carouselId);
+
+    } else {
+      // ── IMAGEM ÚNICA ────────────────────────────────────────────────────────
+      const { url, publicId } = await uploadToCloudinary(slides[0]);
+      uploadedIds.push({ publicId, resourceType: 'image' });
+
+      const containerId = await createMediaContainer({ mediaType: 'IMAGE', mediaUrl: url, caption });
+      console.log(`  ✓ Container imagem: ${containerId}`);
+      mediaId = await publishContainer(containerId);
     }
 
-    // 4. Publica
-    mediaId = await publishContainer(containerId);
     console.log(`  ✅ Publicado! Instagram media ID: ${mediaId}`);
 
-    // 5. Salva flag de publicado
     fs.writeFileSync(publishedFlag, JSON.stringify({
       instagram_media_id: mediaId,
       published_at: new Date().toISOString(),
+      type: hasReel ? 'reel' : isCarousel ? 'carousel' : 'image',
+      slides_count: isCarousel ? slides.length : 1,
       caption_preview: caption.slice(0, 100),
     }, null, 2));
 
   } finally {
-    // Limpa Cloudinary independente de sucesso/falha
-    if (cloudPublicId) {
-      const resourceType = hasReel ? 'video' : 'image';
-      await deleteFromCloudinary(cloudPublicId, resourceType);
+    for (const { publicId, resourceType } of uploadedIds) {
+      await deleteFromCloudinary(publicId, resourceType);
     }
   }
 }
 
 // ── Varredura de pastas ───────────────────────────────────────────────────────
 
-function findPublishableFolders(targetDate = null) {
+/**
+ * Retorna pastas publicáveis.
+ * - targetDate: publica só essa data específica (YYYY-MM-DD)
+ * - todayOnly: publica só o que está agendado para HOJE (padrão das tasks)
+ * - sem flags: publica tudo vencido (uso manual apenas)
+ */
+function findPublishableFolders(targetDate = null, todayOnly = false) {
   const folders = [];
+  const today   = new Date().toISOString().split('T')[0];
 
   const monthDirs = fs.readdirSync(READY_DIR)
     .map(d => path.join(READY_DIR, d))
@@ -274,12 +340,11 @@ function findPublishableFolders(targetDate = null) {
       .filter(d => fs.statSync(d).isDirectory());
 
     for (const dateDir of dateDirs) {
-      // Filtra por data se especificada
-      if (targetDate && !dateDir.endsWith(targetDate)) continue;
+      const dirDate = path.basename(dateDir);
 
-      // Só publica se a data já chegou ou passou
-      const dirDate  = path.basename(dateDir);
-      const today    = new Date().toISOString().split('T')[0];
+      if (targetDate && !dateDir.endsWith(targetDate)) continue;
+      if (todayOnly  && dirDate !== today) continue;
+
       if (dirDate > today) {
         console.log(`  📅 ${path.relative(READY_DIR, dateDir)} — agendado para ${dirDate}, ainda não chegou`);
         continue;
@@ -305,6 +370,7 @@ async function main() {
   const folderFlag  = args.indexOf('--folder');
   const dateFlag    = args.indexOf('--date');
   const allFlag     = args.includes('--all');
+  const todayFlag   = args.includes('--today');
 
   let folders = [];
 
@@ -315,15 +381,41 @@ async function main() {
     folders = findPublishableFolders(args[dateFlag + 1]);
     console.log(`📋 ${folders.length} item(s) encontrado(s) para ${args[dateFlag + 1]}`);
 
+  } else if (todayFlag) {
+    // Publica SÓ o que está agendado para hoje — usado pelas scheduled tasks
+    const today = new Date().toISOString().split('T')[0];
+    const allToday = findPublishableFolders(null, true);
+    console.log(`📋 ${allToday.length} item(s) agendados para hoje (${today})`);
+
+    // Proteção anti-duplicata: agrupa por data-pai e limita a 1 item por data
+    // (caso o ciclo de geração tenha criado entradas extras para o mesmo dia)
+    const seenDates = new Set();
+    folders = [];
+    for (const folder of allToday) {
+      // Pasta-pai é o nível de data: ready-to-post/YYYY-MM/YYYY-MM-DD
+      const dateKey = path.basename(path.dirname(folder));
+      if (seenDates.has(dateKey)) {
+        console.warn(`⚠️  Múltiplos itens para ${dateKey} — pulando ${path.basename(folder)} (já tem 1 agendado hoje)`);
+        continue;
+      }
+      seenDates.add(dateKey);
+      folders.push(folder);
+    }
+
   } else if (allFlag) {
+    // Publica tudo vencido — uso manual apenas
     folders = findPublishableFolders();
-    console.log(`📋 ${folders.length} item(s) prontos para publicar`);
+    console.log(`📋 ${folders.length} item(s) vencidos para publicar`);
+    if (folders.length > 3) {
+      console.warn(`⚠️  Muitos itens de uma vez (${folders.length}). Use --date YYYY-MM-DD para publicar por dia.`);
+    }
 
   } else {
     console.log('Uso:');
-    console.log('  node scripts/publish.js --folder ready-to-post/2026-05/2026-05-06/reel-01-relogio');
-    console.log('  node scripts/publish.js --date 2026-05-06');
-    console.log('  node scripts/publish.js --all');
+    console.log('  node scripts/publish.js --today                    (só o de hoje — tasks automáticas)');
+    console.log('  node scripts/publish.js --date 2026-05-27          (data específica)');
+    console.log('  node scripts/publish.js --folder ready-to-post/... (pasta específica)');
+    console.log('  node scripts/publish.js --all                      (tudo vencido — uso manual)');
     process.exit(1);
   }
 

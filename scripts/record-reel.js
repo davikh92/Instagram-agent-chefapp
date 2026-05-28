@@ -163,6 +163,12 @@ async function processReel(reelConfig) {
   const outDir    = path.join(READY_DIR, month, date, id);   // ready-to-post/2026-05/2026-05-06/reel-01-relogio
   fs.mkdirSync(outDir, { recursive: true });
 
+  // Pula reels já publicados — evita duplicatas se o ciclo rodar novamente
+  if (fs.existsSync(path.join(outDir, 'published.json'))) {
+    console.log(`  ⏭  ${id} — já publicado, pulando regeneração`);
+    return;
+  }
+
   console.log(`\n🎬 Gerando ${id} (template: ${template}, ${duration}s)...`);
 
   // Renderiza HTML com variáveis
@@ -196,6 +202,17 @@ async function processReel(reelConfig) {
     // Compila MP4
     const outPath = path.join(outDir, 'reel.mp4');
     await compilarMP4(tmpDir, outPath, FPS);
+
+    // Salva cover.png — frame de capa para o feed grid do Instagram
+    // Usa o frame em 60% da duração (geralmente a cena mais impactante / CTA)
+    const coverFrameTime = duration * 0.6;
+    const coverFrameIdx  = Math.floor(coverFrameTime * FPS);
+    const coverSrcPath   = path.join(tmpDir, `frame-${String(coverFrameIdx).padStart(5, '0')}.png`);
+    const coverDstPath   = path.join(outDir, 'cover.png');
+    if (fs.existsSync(coverSrcPath)) {
+      fs.copyFileSync(coverSrcPath, coverDstPath);
+      console.log(`  🖼️  cover.png salvo (frame ${coverFrameIdx} @ ${coverFrameTime.toFixed(1)}s)`);
+    }
 
     // Salva caption
     const captionContent = `${caption}\n\n${hashtags}`;

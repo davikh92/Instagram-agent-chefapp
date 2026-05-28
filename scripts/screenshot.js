@@ -27,7 +27,7 @@ function loadBrand() {
 
 /**
  * Substitui todos os placeholders {{KEY}} no HTML pelo valor correspondente
- * vindo do objeto `vars`. Placeholders sem correspondência ficam em branco.
+ * vindo do objeto `vars`. Placeholders sem correspondência são removidos.
  */
 function renderTemplate(templatePath, vars) {
   let html = fs.readFileSync(templatePath, 'utf8');
@@ -36,7 +36,63 @@ function renderTemplate(templatePath, vars) {
     const rendered = String(value ?? '').replace(/\\n/g, '<br>');
     html = html.replaceAll(`{{${key}}}`, rendered);
   }
+  // Remove placeholders não preenchidos (mesmo comportamento do record-reel.js)
+  html = html.replace(/\{\{[^}]+\}\}/g, '');
   return html;
+}
+
+/**
+ * Gera a barra de progresso HTML para o dark-carousel.
+ * @param {number} slideIndex  - índice 0-based do slide atual
+ * @param {number} total       - total de slides
+ */
+function buildProgressHTML(slideIndex, total) {
+  return Array.from({ length: total }, (_, i) => {
+    const cls = i < slideIndex ? 'done' : i === slideIndex ? 'current' : '';
+    return `<div class="seg ${cls}"></div>`;
+  }).join('');
+}
+
+/**
+ * Injeta variáveis automáticas que todos os templates dark-carousel precisam
+ * mas que não precisam ser especificadas manualmente no queue.json.
+ */
+function injectAutoVars(slideVars, slideIndex, totalSlides) {
+  return {
+    // Defaults do dark-carousel
+    BG_COLOR:       '#1E1810',
+    BG_NUMBER_SIZE: '480',
+    BG_NUMBER:      String(slideIndex + 1),
+    SCENE_NUM:      String(slideIndex + 1),
+    LABEL:          'Luiza na Cozinha',
+    BODY_BOTTOM:    '200',
+    SUBHEADLINE:    '',
+    BODY:           '',
+    BTN_LABEL:      '',
+    SWIPE_LABEL:    '',
+    BADGE_TOP:      '',
+    BADGE_BIG:      '',
+    BADGE_BOTTOM:   '',
+    // Progress bar HTML
+    PROGRESS_HTML:  buildProgressHTML(slideIndex, totalSlides),
+    // big-number defaults
+    LIVE_LABEL:     'Luiza na Cozinha',
+    STAT_LABEL:     '',
+    SUFFIX:         '',
+    SOURCE:         '',
+    NUMBER_LABEL:   '',
+    // hero-terracota defaults
+    STAMP:          '',
+    STAMP_TOP:      '420',
+    // cream-editorial / lista-steps
+    FOOTER_RIGHT:   '',
+    ANNOTATION:     '',
+    NUMBER:         '',
+    CTA:            '',
+    STEP_NUM:       '',
+    // Sobrescreve com os vars reais do slide (tem prioridade)
+    ...slideVars,
+  };
 }
 
 /**
@@ -89,16 +145,26 @@ async function processPost(postConfig, browser) {
   const outDir = path.join(READY_DIR, month, postConfig.date, postConfig.id);
   fs.mkdirSync(outDir, { recursive: true });
 
+  // Pula posts já publicados — evita duplicatas se o ciclo rodar novamente
+  if (fs.existsSync(path.join(outDir, 'published.json'))) {
+    console.log(`  ⏭  ${postConfig.id} — já publicado, pulando regeneração`);
+    return;
+  }
+
   console.log(`\n📸 Gerando ${postConfig.id} (${postConfig.slides.length} slide(s))...`);
 
   // Gera cada slide
   for (let i = 0; i < postConfig.slides.length; i++) {
-    const slideVars = {
-      HEIGHT: dims.height,
-      HEADLINE_SIZE: postConfig.headline_size ?? 72,
-      TOTAL_SLIDES: postConfig.slides.length,
-      ...postConfig.slides[i],
-    };
+    const slideVars = injectAutoVars(
+      {
+        HEIGHT: dims.height,
+        HEADLINE_SIZE: postConfig.headline_size ?? 72,
+        TOTAL_SLIDES: postConfig.slides.length,
+        ...postConfig.slides[i],
+      },
+      i,
+      postConfig.slides.length
+    );
 
     const html = renderTemplate(templateFile, slideVars);
     const slideNum = String(i + 1).padStart(2, '0');

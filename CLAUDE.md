@@ -19,8 +19,10 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 | `agents/` | Definição de cada agente especializado |
 | `prompts/` | Biblioteca de prompts por tipo de post |
 | `templates/` | HTMLs base para cada template visual |
-| `data/` | Briefings e planos gerados (json + md) |
+| `data/` | Briefings, planos, filas de geração (json + md) |
+| `data/veo-queue.json` | **Fila de reels para Veo 3.1** — prompts + captions (leia `docs/veo-prompt-guide.md`) |
 | `ready-to-post/` | Output final organizado por data |
+| `docs/veo-prompt-guide.md` | **Guia completo: como escrever prompts para Veo 3.1 Lite** |
 | `claude code design/` | Referência visual — posts.html (12 posts editoriais) + reels.html (4 reels animados) |
 
 ---
@@ -145,11 +147,24 @@ Toda imagem fotográfica gerada para Reels ou posts segue estes princípios (ver
 
 ## Mix de Conteúdo Mensal
 
+> **Fase atual: Crescimento (conta nova)** — prioridade é descoberta orgânica via alcance.
+> Revisar após 60 dias ou quando base superar 1.000 seguidores.
+
 | Formato | % | Posts/mês | Papel |
 |---|---|---|---|
-| **Reels** | 70% | 11–12 | Motor de descoberta — alcance orgânico 5–10x maior |
-| **Carrossel** | 20% | 3–4 | Motor de salvamento — converte quem chegou pelo Reel |
-| **Estático** | 10% | 1–2 | Âncora do feed — identidade visual do perfil |
+| **Reel Veo Food** | 50% | 6–7 | Motor principal de descoberta — cinematográfico, para público frio |
+| **Reel HTML/CSS** | 15% | 2 | Editorial tipográfico — barato, hooks de texto e copywriting |
+| **Carrossel** | 25% | 3–4 | Motor de salvamento — converte quem chegou pelo Reel |
+| **Estático** | 10% | 1–2 | Âncora visual do feed — identidade do perfil |
+
+**Quando usar Reel Veo Food:**
+- Sempre que o conteúdo for emoção, comida, atmosfera, identificação (Pilares A, B, C)
+- Dias de alta audiência: segunda 18h e sexta 12h são os slots prioritários
+
+**Quando usar Reel HTML/CSS:**
+- Conteúdo 100% tipográfico sem imagem de comida (relógio 18h, contagem regressiva, ticker)
+- Quando o hook é puramente textual e visual limpo é mais forte que vídeo real
+- Máximo 2 por quinzena
 
 ---
 
@@ -220,11 +235,13 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 
 | Dia | Horário | Pilar | Formato preferencial |
 |---|---|---|---|
-| Segunda | 18h | A ou B | Reel ou Carrossel |
-| Quarta | 18h | A ou C | Reel ou Estático |
-| Quinta | 12h | C | Reel ou Carrossel |
-| Sexta | 12h | B ou D | Reel |
-| Domingo | 10h | D | Estático ou Carrossel |
+| Segunda | 18h | A ou B | **Reel Veo Food** — hook emocional no início da semana |
+| Quarta | 18h | A ou C | **Reel Veo Food** ou Carrossel (alternando quinzenalmente) |
+| Quinta | 12h | C | HTML Reel ou Carrossel — conteúdo mais editorial/informativo |
+| Sexta | 12h | B ou D | **Reel Veo Food** — fim de semana = planejamento de refeições |
+| Domingo | 10h | D | Post estático (quinzenal) ou Carrossel |
+
+> Slots marcados como **Reel Veo Food** = alta prioridade na fila `data/veo-queue.json`
 
 ---
 
@@ -233,14 +250,13 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 | Ferramenta | Tipo | Função |
 |---|---|---|
 | `scripts/screenshot.js` | Local | Converte HTML em PNGs via Puppeteer |
+| `scripts/generate-veo.js` | Local | **Gera reels via Veo 3.1 API (text-to-video)** |
 | `templates/` | Local | HTMLs base para cada template visual |
 | `brand.json` | Local | Fonte única de verdade de marca |
 | `claude code design/posts.html` | Referência | 12 posts editoriais para inspiração de layout |
 | `claude code design/reels.html` | Referência | 4 reels animados com sistema Stage/Sprite |
+| **Veo 3.1 Lite** | **Externo** | **Text-to-video cinematográfico com áudio nativo · $0.05/vídeo** |
 | Midjourney v7 | Externo | Geração de imagens de comida cinematográficas |
 | Flux Pro | Externo | Alternativa ao Midjourney — pay-per-use |
-| Kling 2.0 | Externo | Animação de imagens — vapor, zoom, movimento |
-| Seedance 2.0 | Externo | Animação sutil — Ken Burns, paralax |
-| CapCut | Externo | Montagem de Reels, música, kinetic typography |
-| Higgsfield Vibe Motion | Externo | Kinetic typography animado |
+| Kling 3.0 | Externo | Animação de imagens — vapor, zoom, movimento |
 | Meta Business Suite | Externo | Agendamento e publicação no Instagram |

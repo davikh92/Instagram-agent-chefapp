@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1080">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Instrument+Serif:ital@0;1&family=Caveat:wght@400;700&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,139 +17,100 @@
     position: relative;
   }
 
-  .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 64px 72px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  /* Topbar */
+  .topbar {
+    position: absolute; top: 56px; left: 72px; right: 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #9B7B5E;
+    z-index: 10;
   }
 
-  .label-top {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: #9B7B5E;
-    text-transform: uppercase;
+  /* Gold kicker */
+  .kicker {
+    position: absolute; top: 140px; left: 72px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    letter-spacing: 0.25em; text-transform: uppercase; color: #C8572A;
+    z-index: 6;
+  }
+  .kicker::before {
+    content: ""; display: inline-block;
+    width: 32px; height: 1px;
+    background: #C8572A; vertical-align: middle; margin-right: 14px;
   }
 
-  .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 32px 0;
-  }
-
-  /* Capa do carrossel */
-  .cover-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: {{HEADLINE_SIZE}}px;
-    line-height: 1.0;
-    color: #FFFDF9;
-    background: #C8572A;
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 4px;
-    margin-bottom: 24px;
-  }
-
-  .cover-sub {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 24px;
-    color: #3D2B1F;
-  }
-
-  /* Slides de steps */
-  .step-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    margin-bottom: 40px;
-  }
-
+  /* Step circle — big terracota */
   .step-circle {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
+    position: absolute; top: 200px; left: 72px;
+    width: 120px; height: 120px; border-radius: 50%;
     background: #C8572A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 6;
+  }
+  .step-circle .num {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 52px; color: #FFFDF9; line-height: 1;
   }
 
-  .step-number {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: #FFFDF9;
+  /* Main headline */
+  .headline {
+    position: absolute; top: 360px; left: 72px; right: 72px;
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: {{HEADLINE_SIZE}}px; line-height: 0.97;
+    color: #3D2B1F; letter-spacing: -0.02em;
+    z-index: 6; max-width: 880px;
+  }
+  .headline em { font-style: italic; color: #C8572A; font-weight: 400; }
+
+  /* Subtext */
+  .subtext {
+    position: absolute; bottom: 220px; left: 72px; right: 72px;
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 26px; line-height: 1.5;
+    color: #3D2B1F; opacity: 0.72; max-width: 800px;
+    z-index: 6;
   }
 
-  .step-content {}
-
-  .step-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.1;
-    color: #3D2B1F;
-    margin-bottom: 10px;
+  /* Decorative background number */
+  .bg-num {
+    position: absolute; right: 40px; bottom: 80px;
+    font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+    font-size: 420px; line-height: 0.8;
+    color: rgba(200,87,42,0.07); letter-spacing: -0.06em;
+    user-select: none; z-index: 1;
   }
 
-  .step-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
-    line-height: 1.55;
-    color: #3D2B1F;
-    opacity: 0.75;
-    max-width: 700px;
-  }
-
-  .step-time {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: #C8572A;
-    margin-top: 8px;
-  }
-
+  /* Footer */
   .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-url {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: #9B7B5E;
-  }
-
-  .footer-nav {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: #9B7B5E;
+    position: absolute; bottom: 56px; left: 72px; right: 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #9B7B5E;
+    border-top: 1px solid rgba(61,43,31,0.12); padding-top: 16px;
+    z-index: 10;
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="label-top">Luiza na Cozinha</div>
+  <div class="topbar">
+    <span>Luiza na Cozinha</span>
+    <span>{{SLIDE_NUM}} / {{TOTAL_SLIDES}}</span>
+  </div>
 
-    <div class="content">
-      {{CONTENT_BLOCK}}
-    </div>
+  <div class="kicker">{{KICKER}}</div>
 
-    <div class="footer">
-      <span class="footer-url">luizanacozinha.app</span>
-      <span class="footer-nav">{{FOOTER_RIGHT}}</span>
-    </div>
+  <div class="step-circle">
+    <span class="num">{{STEP_NUM}}</span>
+  </div>
+
+  <div class="headline">{{HEADLINE}}</div>
+  <div class="subtext">{{SUBTEXT}}</div>
+
+  <div class="bg-num">{{STEP_NUM}}</div>
+
+  <div class="footer">
+    <span>luizanacozinha.app</span>
+    <span>{{FOOTER_RIGHT}}</span>
   </div>
 </body>
 </html>

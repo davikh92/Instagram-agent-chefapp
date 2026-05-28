@@ -31,6 +31,22 @@ Por quinzena (12–16 posts), distribuir assim:
 
 Ajustar conforme o `focus` do briefing.
 
+## Regras de Formato por Slot (FASE DE CRESCIMENTO)
+
+Por quinzena, seguir esta grade de formatos:
+- **3–4 Reels Veo Food** — slots: segunda 18h e sexta 12h são prioritários
+- **1 Reel HTML/CSS** — apenas se o conceito for 100% tipográfico (relógio, contagem, ticker)
+- **2 Carrosséis** — quarta ou quinta, quando o conteúdo precisa de múltiplos slides para convencer
+- **0–1 Post estático** — domingo, se o grid precisar de âncora visual leve
+
+Ao gerar o plano:
+- Marque os posts Veo com `"type": "veo"` — o Agente 2 vai adicionar à fila `data/veo-queue.json`
+- Marque os posts HTML Reel com `"type": "html-reel"` — gera template CSS animado
+- Marque carrosséis e estáticos com `"type": "carousel"` ou `"type": "static"`
+
+**Regra de ouro:** Se o hook é visual (comida, emoção, ambiente de cozinha) → Veo.
+Se o hook é puramente textual (pergunta, lista, frase de impacto tipográfica) → HTML.
+
 ## Regras de Sequência no Grid
 - NUNCA dois fundos iguais seguidos no feed
 - Alternar temperatura: quente (terracota) → escuro (charcoal) → claro (creme/sand)
