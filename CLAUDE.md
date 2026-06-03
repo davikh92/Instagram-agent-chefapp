@@ -231,17 +231,21 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 
 ---
 
-## Horários de Publicação
+## Horários de Publicação — 7 dias da semana
 
-| Dia | Horário | Pilar | Formato preferencial |
-|---|---|---|---|
-| Segunda | 18h | A ou B | **Reel Veo Food** — hook emocional no início da semana |
-| Quarta | 18h | A ou C | **Reel Veo Food** ou Carrossel (alternando quinzenalmente) |
-| Quinta | 12h | C | HTML Reel ou Carrossel — conteúdo mais editorial/informativo |
-| Sexta | 12h | B ou D | **Reel Veo Food** — fim de semana = planejamento de refeições |
-| Domingo | 10h | D | Post estático (quinzenal) ou Carrossel |
+| Dia | Horário | Pilar | Formato | Geração |
+|---|---|---|---|---|
+| Segunda | 18h | A ou B | **Reel Veo Food** | Automático (veo-queue) |
+| Terça | 12h | A ou C | **Reel Veo Food** ou Carrossel | Automático ou /design |
+| Quarta | 18h | A ou C | **Reel Veo Food** | Automático (veo-queue) |
+| Quinta | 12h | C | HTML Reel ou **Reel Veo Food** | Automático |
+| Sexta | 12h | B ou D | **Reel Veo Food** | Automático (veo-queue) |
+| Sábado | 10h | A | **Reel Veo Food** | Automático (veo-queue) |
+| Domingo | 10h | D | Carrossel ou Post estático | Manual via /design |
 
-> Slots marcados como **Reel Veo Food** = alta prioridade na fila `data/veo-queue.json`
+> **Veo Food** = 5 slots por semana (Seg/Ter/Qua/Sex/Sáb) → gera sequencialmente, 1 por vez
+> **Domingo** = único slot 100% manual — precisa de /quinzena + /design
+> Máximo 10 reels novos por lote de geração (dias 1 e 15 do mês)
 
 ---
 

@@ -33,27 +33,30 @@ Ajustar conforme o `focus` do briefing.
 
 ## Regras de Formato por Slot (FASE DE CRESCIMENTO)
 
-### Grade semanal obrigatória — TODA semana deve ter os 4 slots cobertos:
+### Grade semanal obrigatória — TODOS os 7 dias cobertos:
 
-| Dia | Horário | Formato | Prioridade |
+| Dia | Horário | Formato | Como gera |
 |---|---|---|---|
-| Segunda | 18h | **Veo Food Reel** | Alta — motor de descoberta |
-| Quarta | 18h | **Veo Food Reel** | Alta — meio de semana |
-| Quinta | 12h | **Veo Food Reel** ou Carrossel | Média |
-| Sexta | 12h | **Veo Food Reel** | Alta — fim de semana |
-| Domingo | 10h | Post estático ou Carrossel | Baixa — quinzenal |
+| Segunda | 18h | **Veo Food Reel** | veo-queue.json |
+| Terça | 12h | **Veo Food Reel** ou Carrossel | veo-queue ou /design |
+| Quarta | 18h | **Veo Food Reel** | veo-queue.json |
+| Quinta | 12h | **Veo Food Reel** ou HTML Reel | veo-queue ou record-reel |
+| Sexta | 12h | **Veo Food Reel** | veo-queue.json |
+| Sábado | 10h | **Veo Food Reel** | veo-queue.json |
+| Domingo | 10h | Carrossel ou Post estático | /design (manual) |
 
-**NUNCA deixar uma semana com menos de 4 posts.** Antes de fechar o plano, verificar que cada semana da quinzena tem Segunda + Quarta + Quinta + Sexta cobertos.
+**NUNCA fechar um plano quinzenal com dias em branco.** Verificar que as 2 semanas da quinzena têm todos os 7 dias cobertos antes de finalizar.
 
-Por quinzena (2 semanas), o resultado deve ser:
-- **8 Reels Veo Food** mínimo (4 slots × 2 semanas)
-- **0–2 Reels HTML/CSS** — apenas se o conceito for 100% tipográfico
-- **2–3 Carrosséis** — podem substituir o slot de quinta quando o conteúdo exigir múltiplos slides
-- **0–1 Post estático** — domingo, a cada 2 semanas
+Por quinzena (14 dias), o resultado deve ser:
+- **10 Reels Veo Food** (Seg + Ter + Qua + Sex + Sáb × 2 semanas)
+- **2–4 Reels HTML/CSS ou Veo** para quintas (conforme conceito)
+- **2 Carrosséis ou Posts estáticos** para domingos (via /design)
+- Total: ~14 posts por quinzena
 
 ### Geração sequencial — sem chamadas simultâneas ao Veo:
-O script `generate-veo.js` processa um reel por vez (loop sequencial).
-Nunca agendar mais de 10 reels novos por lote de geração — preencher a fila gradualmente.
+O script `generate-veo.js` processa UM reel por vez (loop sequencial, nunca paralelo).
+Máximo de 10 reels novos por lote de geração (dias 1 e 15 do mês).
+Se a quinzena tiver mais de 10 Veo novos, dividir em 2 lotes: primeiro lote no dia 1, segundo no dia 8.
 
 Ao gerar o plano:
 - Marque posts Veo com `"type": "veo"` → entram em `data/veo-queue.json`
