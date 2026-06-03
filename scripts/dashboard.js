@@ -9,11 +9,12 @@
 
 const fs   = require('fs');
 const path = require('path');
+const http = require('http');
 const { execSync } = require('child_process');
 
 const ROOT      = path.resolve(__dirname, '..');
 const READY_DIR = path.join(ROOT, 'ready-to-post');
-const OUT_FILE  = path.join(ROOT, 'dashboard.html');
+const PORT      = 3333;
 
 // ── Coleta todos os itens de ready-to-post ───────────────────────────────────
 
@@ -246,6 +247,7 @@ document.getElementById('overlay').addEventListener('click',e=>{
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dashboard — Luiza na Cozinha</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <style>${css}</style>
 </head>
 <body>
@@ -275,7 +277,7 @@ document.getElementById('overlay').addEventListener('click',e=>{
 ${cards}
 </div>
 
-<div class="footer">Gerado em ${new Date().toLocaleString('pt-BR')} · ${total} itens</div>
+<div class="footer">Atualizado em ${new Date().toLocaleString('pt-BR')} · ${total} itens · <a href="/" style="color:#555;text-decoration:none" onclick="location.reload();return false">↻ Recarregar</a></div>
 
 <div class="overlay" id="overlay">
   <div class="modal">
@@ -290,18 +292,80 @@ ${cards}
 </html>`;
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
+// ── Mime types ───────────────────────────────────────────────────────────────
 
-const items = collectItems();
-const html  = generateHTML(items);
-fs.writeFileSync(OUT_FILE, html, 'utf8');
+const MIME = {
+  '.png' : 'image/png',
+  '.jpg' : 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.mp4' : 'video/mp4',
+  '.webp': 'image/webp',
+  '.html': 'text/html; charset=utf-8',
+};
 
-console.log(`✅ Dashboard gerado: dashboard.html`);
-console.log(`   ${items.length} itens  |  Publicados: ${items.filter(i=>i.status==='publicado').length}  |  Futuros: ${items.filter(i=>i.status==='futuro').length}`);
+// ── Servidor ─────────────────────────────────────────────────────────────────
 
-try {
-  execSync(process.platform === 'win32' ? `start "" "${OUT_FILE}"` : `open "${OUT_FILE}"`);
-  console.log(`🌐 Abrindo no browser...`);
-} catch {
-  console.log(`👉 Abra: ${OUT_FILE}`);
-}
+const server = http.createServer((req, res) => {
+  const urlPath = decodeURIComponent(req.url.split('?')[0]);
+
+  // Dashboard — re-escaneia a cada request
+  if (urlPath === '/' || urlPath === '') {
+    const items = collectItems();
+    const html  = generateHTML(items);
+    res.writeHead(200, {
+      'Content-Type' : 'text/html; charset=utf-8',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+    });
+    res.end(html);
+    const pub = items.filter(i => i.status === 'publicado').length;
+    const fut = items.filter(i => i.status === 'futuro').length;
+    console.log(`  ↻  Dashboard servido — ${items.length} itens | ${pub} publicados | ${fut} futuros`);
+    return;
+  }
+
+  // Arquivos estáticos (imagens, vídeos)
+  const filePath = path.normalize(path.join(ROOT, urlPath));
+  if (!filePath.startsWith(ROOT)) { res.writeHead(403); res.end(); return; }
+  if (!fs.existsSync(filePath))   { res.writeHead(404); res.end(); return; }
+
+  const ext         = path.extname(filePath).toLowerCase();
+  const contentType = MIME[ext] || 'application/octet-stream';
+  const stat        = fs.statSync(filePath);
+
+  // Range requests para vídeo (necessário para <video> no browser)
+  const range = req.headers.range;
+  if (range && ext === '.mp4') {
+    const parts  = range.replace(/bytes=/, '').split('-');
+    const start  = parseInt(parts[0], 10);
+    const end    = parts[1] ? parseInt(parts[1], 10) : stat.size - 1;
+    const chunk  = end - start + 1;
+    res.writeHead(206, {
+      'Content-Range' : `bytes ${start}-${end}/${stat.size}`,
+      'Accept-Ranges' : 'bytes',
+      'Content-Length': chunk,
+      'Content-Type'  : contentType,
+    });
+    fs.createReadStream(filePath, { start, end }).pipe(res);
+  } else {
+    res.writeHead(200, { 'Content-Length': stat.size, 'Content-Type': contentType });
+    fs.createReadStream(filePath).pipe(res);
+  }
+});
+
+server.listen(PORT, '127.0.0.1', () => {
+  const url = `http://localhost:${PORT}`;
+  console.log(`\n🍳 Dashboard rodando em ${url}`);
+  console.log(`   F5 no browser para atualizar dados`);
+  console.log(`   Ctrl+C para parar\n`);
+  try {
+    execSync(process.platform === 'win32' ? `start ${url}` : `open ${url}`);
+  } catch {}
+});
+
+server.on('error', err => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n⚠️  Porta ${PORT} já em uso — abra http://localhost:${PORT} no browser\n`);
+  } else {
+    console.error('Erro no servidor:', err.message);
+  }
+});
