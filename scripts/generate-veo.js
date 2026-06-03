@@ -368,16 +368,33 @@ async function main() {
     process.exit(0);
   }
 
-  // Processa cada reel em sequência
+  // Processa cada reel em sequência com pausa entre gerações
+  // Evita rate limit da API (quota por minuto/hora do Google AI Studio)
+  const DELAY_BETWEEN_MS = 90_000; // 90s entre cada geração
+
   let successCount = 0;
-  for (const reel of reels) {
+  for (let i = 0; i < reels.length; i++) {
+    const reel = reels[i];
     try {
       await processReel(reel);
       successCount++;
+
+      // Aguarda antes do próximo — só se houver próximo e ele ainda precisar gerar
+      if (i < reels.length - 1) {
+        const next    = reels[i + 1];
+        const nextDir = path.join(READY_DIR, next.date.slice(0, 7), next.date, next.id);
+        const nextDone = fs.existsSync(path.join(nextDir, 'reel.mp4'))
+                      || fs.existsSync(path.join(nextDir, 'published.json'));
+        if (!nextDone) {
+          const secs = DELAY_BETWEEN_MS / 1000;
+          process.stdout.write(`\n  ⏸  Aguardando ${secs}s (rate limit)...`);
+          await new Promise(r => setTimeout(r, DELAY_BETWEEN_MS));
+          process.stdout.write(`\r  ✓  Seguindo.                          \n`);
+        }
+      }
     } catch (err) {
       console.error(`\n❌ Falhou: ${reel.id}`);
       console.error(`   Corrija o prompt em data/veo-queue.json e rode novamente.`);
-      // Continua para próximos reels em vez de abortar
     }
   }
 
