@@ -40,10 +40,11 @@ function collectItems() {
         if (hasReel) tipo = 'reel';
         else if (slides.length > 1) tipo = 'carrossel';
 
-        let status = 'agendado';
-        if (published)        status = 'publicado';
-        else if (date > today) status = 'futuro';
+        let status;
+        if (published)         status = 'publicado';
         else if (date === today) status = 'hoje';
+        else if (date > today) status = 'agendado';
+        else                   status = 'atrasado';   // passou a data, não publicado
 
         const captionFile = path.join(dir, 'caption.txt');
         const caption = fs.existsSync(captionFile)
@@ -77,10 +78,10 @@ function generateHTML(items) {
   const total     = items.length;
   const publicados= items.filter(i => i.status === 'publicado').length;
   const pendentes = items.filter(i => ['agendado','hoje'].includes(i.status)).length;
-  const futuros   = items.filter(i => i.status === 'futuro').length;
+  const atrasados = items.filter(i => i.status === 'atrasado').length;
 
-  const COLOR = { publicado:'#22c55e', hoje:'#f59e0b', agendado:'#3b82f6', futuro:'#8b5cf6' };
-  const LABEL = { publicado:'✓ Publicado', hoje:'⚡ Hoje', agendado:'⏳ Agendado', futuro:'📅 Futuro' };
+  const COLOR = { publicado:'#22c55e', hoje:'#f59e0b', agendado:'#3b82f6', atrasado:'#ef4444' };
+  const LABEL = { publicado:'✓ Publicado', hoje:'⚡ Hoje', agendado:'📅 Agendado', atrasado:'⚠️ Atrasado' };
   const ICON  = { reel:'🎬', carrossel:'🖼️', post:'📄' };
 
   const esc = s => String(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -257,7 +258,7 @@ document.getElementById('overlay').addEventListener('click',e=>{
   <div class="stats">
     <div class="stat"><i style="background:#22c55e"></i>Publicados <strong>${publicados}</strong></div>
     <div class="stat"><i style="background:#3b82f6"></i>Agendados <strong>${pendentes}</strong></div>
-    <div class="stat"><i style="background:#8b5cf6"></i>Futuros <strong>${futuros}</strong></div>
+    ${atrasados > 0 ? `<div class="stat"><i style="background:#ef4444"></i>Atrasados <strong>${atrasados}</strong></div>` : ''}
     <div class="stat">Total <strong>${total}</strong></div>
   </div>
 </div>
@@ -265,9 +266,9 @@ document.getElementById('overlay').addEventListener('click',e=>{
 <div class="bar">
   <button class="btn on"  onclick="filter('all',this)">Todos (${total})</button>
   <button class="btn" onclick="filter('publicado',this)">✓ Publicados (${publicados})</button>
-  <button class="btn" onclick="filter('agendado',this)">⏳ Agendados (${pendentes})</button>
+  <button class="btn" onclick="filter('agendado',this)">📅 Agendados (${pendentes})</button>
   <button class="btn" onclick="filter('hoje',this)">⚡ Hoje</button>
-  <button class="btn" onclick="filter('futuro',this)">📅 Futuros (${futuros})</button>
+  ${atrasados > 0 ? `<button class="btn" style="border-color:#ef444466" onclick="filter('atrasado',this)">⚠️ Atrasados (${atrasados})</button>` : ''}
   <button class="btn" onclick="filterTipo('reel',this)">🎬 Reels</button>
   <button class="btn" onclick="filterTipo('carrossel',this)">🖼️ Carrosseis</button>
   <button class="btn" onclick="filterTipo('post',this)">📄 Posts</button>

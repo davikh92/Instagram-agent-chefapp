@@ -33,15 +33,31 @@ Ajustar conforme o `focus` do briefing.
 
 ## Regras de Formato por Slot (FASE DE CRESCIMENTO)
 
-Por quinzena, seguir esta grade de formatos:
-- **3–4 Reels Veo Food** — slots: segunda 18h e sexta 12h são prioritários
-- **1 Reel HTML/CSS** — apenas se o conceito for 100% tipográfico (relógio, contagem, ticker)
-- **2 Carrosséis** — quarta ou quinta, quando o conteúdo precisa de múltiplos slides para convencer
-- **0–1 Post estático** — domingo, se o grid precisar de âncora visual leve
+### Grade semanal obrigatória — TODA semana deve ter os 4 slots cobertos:
+
+| Dia | Horário | Formato | Prioridade |
+|---|---|---|---|
+| Segunda | 18h | **Veo Food Reel** | Alta — motor de descoberta |
+| Quarta | 18h | **Veo Food Reel** | Alta — meio de semana |
+| Quinta | 12h | **Veo Food Reel** ou Carrossel | Média |
+| Sexta | 12h | **Veo Food Reel** | Alta — fim de semana |
+| Domingo | 10h | Post estático ou Carrossel | Baixa — quinzenal |
+
+**NUNCA deixar uma semana com menos de 4 posts.** Antes de fechar o plano, verificar que cada semana da quinzena tem Segunda + Quarta + Quinta + Sexta cobertos.
+
+Por quinzena (2 semanas), o resultado deve ser:
+- **8 Reels Veo Food** mínimo (4 slots × 2 semanas)
+- **0–2 Reels HTML/CSS** — apenas se o conceito for 100% tipográfico
+- **2–3 Carrosséis** — podem substituir o slot de quinta quando o conteúdo exigir múltiplos slides
+- **0–1 Post estático** — domingo, a cada 2 semanas
+
+### Geração sequencial — sem chamadas simultâneas ao Veo:
+O script `generate-veo.js` processa um reel por vez (loop sequencial).
+Nunca agendar mais de 10 reels novos por lote de geração — preencher a fila gradualmente.
 
 Ao gerar o plano:
-- Marque os posts Veo com `"type": "veo"` — o Agente 2 vai adicionar à fila `data/veo-queue.json`
-- Marque os posts HTML Reel com `"type": "html-reel"` — gera template CSS animado
+- Marque posts Veo com `"type": "veo"` → entram em `data/veo-queue.json`
+- Marque HTML Reel com `"type": "html-reel"` → gera template CSS animado
 - Marque carrosséis e estáticos com `"type": "carousel"` ou `"type": "static"`
 
 **Regra de ouro:** Se o hook é visual (comida, emoção, ambiente de cozinha) → Veo.
