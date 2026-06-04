@@ -74,6 +74,49 @@ Se o hook é puramente textual (pergunta, lista, frase de impacto tipográfica) 
 
 ---
 
+## Arquitetura de Caption — REGRA CENTRAL (fase de crescimento)
+
+> **Princípio inegociável da marca:** identificação emocional SEMPRE antes de mostrar o app.
+> Na fase de crescimento, o Instagram premia **comentário, salvamento e compartilhamento** —
+> NÃO clique em "link na bio". A maioria das captions deve puxar engajamento, não conversão.
+
+### Toda caption tem 3-4 camadas, NESTA ordem:
+
+1. **HOOK (linha 1)** — emoção, humor ou identificação. Os 0,3s que decidem tudo.
+   NUNCA começa falando do app. Começa pela cena que a pessoa reconhece como "isso sou eu".
+2. **CORPO** — desenvolve o sentimento, a cena cotidiana, a mini-confissão da chef.
+3. **PONTE (opcional)** — só às vezes conecta ao app, e de leve. Não é obrigatória.
+4. **CTA** — rotacionado por intenção (ver tabela abaixo). NUNCA o mesmo toda vez.
+
+### Rotação de CTA — distribuição por quinzena (~14 posts):
+
+| Intenção | CTA modelo | Quantos por quinzena |
+|---|---|---|
+| **Salvar** | "Salva pra quando bater o branco das 18h 🔖" | 3-4 |
+| **Comentar** | "Comenta: qual é o seu perrengue de quarta? 👇" | 3-4 |
+| **Marcar amiga** | "Marca aquela amiga que vive isso 👇" | 2-3 |
+| **Seguir** | "Segue pra mais ideia de janta 🍳" | 1-2 |
+| **App (link na bio)** | "Link na bio pra testar grátis →" | **MÁXIMO 4-5** |
+
+**Regra de ouro:** o CTA do app aparece em no máximo 1/3 das captions. Os outros 2/3
+puxam salvamento, comentário ou marcação. Se toda caption termina em "link na bio",
+o conteúdo está errado para esta fase — está otimizando conversão numa fase de descoberta.
+
+### Balanço de Pilares por quinzena (14 posts):
+
+| Pilar | Posts | Pitch do app? |
+|---|---|---|
+| **A** — Humor/Personagem | 4 | NÃO — só identificação e riso |
+| **B** — Caos do cotidiano | 4 | NÃO (ou ponte muito leve) |
+| **C** — Magia do app | 4 | SIM — aqui sim mostra o app, com emoção |
+| **D** — Comunidade | 2 | NÃO — pergunta aberta, puxa comentário |
+
+Um reel de comida bonito (Veo) é naturalmente Pilar A ou C. A diferença está na CAPTION:
+- Pilar A → caption de identificação + CTA de salvar/marcar (não vende)
+- Pilar C → caption que conecta ao app + CTA de link na bio (vende, mas 1 a cada 3)
+
+---
+
 ## Tom de Voz Obrigatório
 
 | Pilar | Tom | Proibido |

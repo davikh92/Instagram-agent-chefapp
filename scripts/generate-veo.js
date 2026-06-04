@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const log = require('./lib/logger');
 
 require('dotenv').config();
 
@@ -315,6 +316,7 @@ async function processReel(reelConfig) {
 
     console.log(`  ✅ ${id} gerado com sucesso!`);
     console.log(`     📁 ${outDir}`);
+    log.ok('veo', `Reel gerado: ${id}`, { id, date });
 
   } catch (err) {
     console.error(`\n  ✗ Erro ao gerar ${id}: ${err.message}`);
@@ -394,7 +396,16 @@ async function main() {
       }
     } catch (err) {
       console.error(`\n❌ Falhou: ${reel.id}`);
+      const isQuota = /429|quota|RESOURCE_EXHAUSTED/i.test(err.message);
+      if (isQuota) {
+        console.error(`   ⛔ Quota da API esgotada — interrompendo lote. Os restantes geram no próximo ciclo.`);
+        log.error('veo', `Quota esgotada ao gerar ${reel.id} — lote interrompido`, {
+          id: reel.id, code: 429, restantes: reels.length - i - 1,
+        });
+        break; // Não adianta insistir — para o lote e deixa o resto para depois
+      }
       console.error(`   Corrija o prompt em data/veo-queue.json e rode novamente.`);
+      log.error('veo', `Falha ao gerar ${reel.id}: ${err.message}`, { id: reel.id, erro: err.message });
     }
   }
 

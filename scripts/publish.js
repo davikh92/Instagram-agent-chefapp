@@ -25,6 +25,7 @@
 require('dotenv').config();
 const fs   = require('fs');
 const path = require('path');
+const log  = require('./lib/logger');
 
 // Carrega Cloudinary dinamicamente (instalado separado)
 let cloudinary;
@@ -311,6 +312,12 @@ async function publishFolder(folderPath) {
       caption_preview: caption.slice(0, 100),
     }, null, 2));
 
+    log.ok('publish', `Publicado: ${path.basename(folderPath)}`, {
+      id: path.basename(folderPath),
+      tipo: hasReel ? 'reel' : isCarousel ? 'carousel' : 'image',
+      mediaId,
+    });
+
   } finally {
     for (const { publicId, resourceType } of uploadedIds) {
       await deleteFromCloudinary(publicId, resourceType);
@@ -419,13 +426,26 @@ async function main() {
     process.exit(1);
   }
 
+  let erros = 0;
   for (const folder of folders) {
     await publishFolder(folder).catch(err => {
+      erros++;
       console.error(`  ✗ Erro em ${path.relative(READY_DIR, folder)}: ${err.message}`);
+      log.error('publish', `Falha ao publicar: ${err.message}`, {
+        id: path.basename(folder),
+        erro: err.message,
+      });
     });
   }
 
+  if (erros > 0) {
+    log.error('publish', `${erros} item(ns) falharam na publicação de hoje`, { total: erros });
+  }
   console.log('\n✅ Publicação concluída!');
 }
 
-main();
+main().catch(err => {
+  log.error('publish', `Erro fatal: ${err.message}`, { erro: err.message });
+  console.error('\n❌ Erro fatal:', err.message);
+  process.exit(1);
+});

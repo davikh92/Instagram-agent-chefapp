@@ -14,6 +14,7 @@
 
 const fs   = require('fs');
 const path = require('path');
+const log  = require('./lib/logger');
 
 require('dotenv').config();
 
@@ -130,9 +131,14 @@ async function processItem(config) {
 
     console.log(`  ✅ ${id} gerado com sucesso!`);
     console.log(`     📁 ${outDir}`);
+    log.ok('imagem', `Imagem gerada: ${id}`, { id, date });
 
   } catch (err) {
     console.error(`\n  ✗ Erro ao gerar ${id}: ${err.message}`);
+    const isQuota = /429|quota|RESOURCE_EXHAUSTED/i.test(err.message);
+    log.error('imagem', `Falha ao gerar ${id}: ${err.message}`, {
+      id, erro: err.message, ...(isQuota ? { code: 429 } : {}),
+    });
     throw err;
   }
 }

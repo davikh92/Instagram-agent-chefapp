@@ -12,5 +12,8 @@ data/queue.json
 # Gerados localmente — não precisam de versionamento
 dashboard.html
 
+# Logs de execução (gerados em runtime)
+logs/
+
 # Configurações locais do Claude Code
 .claude/

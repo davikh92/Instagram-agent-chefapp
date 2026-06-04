@@ -121,10 +121,11 @@
   },
 
   "content_mix": {
-    "_comment": "Mix mensal — 16 posts. Reels são o motor de crescimento. Carrossel é motor de salvamento.",
-    "reels":     { "percentage": 70, "monthly_count": "11-12", "role": "Descoberta e alcance — novos seguidores" },
-    "carrossel": { "percentage": 20, "monthly_count": "3-4",   "role": "Salvamento e engajamento — converte quem chegou pelo Reel" },
-    "estatico":  { "percentage": 10, "monthly_count": "1-2",   "role": "Âncora do feed — identidade visual do perfil" }
+    "_comment": "FASE DE CRESCIMENTO (conta nova) — revisar após 60 dias ou 1.000 seguidores. Veo Food é o motor principal de descoberta.",
+    "reel_veo_food": { "percentage": 50, "monthly_count": "6-7", "role": "Motor principal de descoberta — cinematográfico, público frio" },
+    "reel_html":     { "percentage": 15, "monthly_count": "2",   "role": "Editorial tipográfico — barato, hooks de texto. Máx 2/quinzena" },
+    "carrossel":     { "percentage": 25, "monthly_count": "3-4", "role": "Motor de salvamento — converte quem chegou pelo Reel" },
+    "estatico":      { "percentage": 10, "monthly_count": "1-2", "role": "Âncora visual do feed — gerado via Imagen 4 (Google)" }
   },
 
   "reel_formats": {
@@ -214,20 +215,28 @@
   ],
 
   "posting_schedule": {
-    "monday":    { "time": "18:00", "pillar": "A ou B", "format": "Reel ou Carrossel" },
-    "wednesday": { "time": "18:00", "pillar": "A ou C", "format": "Reel ou Estático" },
-    "thursday":  { "time": "12:00", "pillar": "C",      "format": "Reel ou Carrossel" },
-    "friday":    { "time": "12:00", "pillar": "B ou D", "format": "Reel" },
-    "sunday":    { "time": "10:00", "pillar": "D",      "format": "Estático ou Carrossel" }
+    "_comment": "7 dias da semana cobertos. Veo Food em 5 slots (seg/ter/qua/sex/sáb). Domingo = manual via /design.",
+    "monday":    { "time": "18:00", "pillar": "A ou B", "format": "Reel Veo Food",            "cta_intent": "salvar" },
+    "tuesday":   { "time": "12:00", "pillar": "A ou C", "format": "Reel Veo Food ou Carrossel","cta_intent": "comentar" },
+    "wednesday": { "time": "18:00", "pillar": "A ou C", "format": "Reel Veo Food",            "cta_intent": "marcar" },
+    "thursday":  { "time": "12:00", "pillar": "C",      "format": "Reel Veo Food ou HTML",    "cta_intent": "app" },
+    "friday":    { "time": "12:00", "pillar": "B ou D", "format": "Reel Veo Food",            "cta_intent": "salvar" },
+    "saturday":  { "time": "10:00", "pillar": "A",      "format": "Reel Veo Food",            "cta_intent": "seguir" },
+    "sunday":    { "time": "10:00", "pillar": "D",      "format": "Carrossel ou Estático",    "cta_intent": "comentar" }
   },
 
   "ctas": {
-    "humor":       "Salva esse post e marca quem também passa por isso 👇",
+    "_comment": "Rotacionar por intenção. Fase de crescimento: CTA de app aparece em NO MÁXIMO 1/3 das captions. O resto puxa salvar/comentar/marcar/seguir.",
+    "_rotation_rule": "Por quinzena (~14 posts): salvar 3-4 · comentar 3-4 · marcar 2-3 · seguir 1-2 · app máx 4-5",
+    "salvar":      "Salva pra quando bater o branco das 18h 🔖",
+    "comentar":    "Comenta aqui: qual é o seu? 👇",
+    "marcar":      "Marca aquela amiga que vive isso 👇",
+    "seguir":      "Segue pra mais ideia de janta 🍳",
     "app":         "Link na bio pra testar grátis →",
-    "engagement":  "Comenta aqui a sua! 👇",
     "story":       "Arrasta pra cima e começa agora →",
-    "reel_food":   "Segue pra mais receitas assim 🍳",
-    "reel_impact": "Salva esse vídeo — vai precisar na sexta 🔖"
+    "_variacoes_salvar":   ["Salva esse vídeo — vai precisar na sexta 🔖", "Salva antes que esqueça 🔖"],
+    "_variacoes_comentar": ["Comenta: cozinha ou delivery hoje? 👇", "Me conta nos comentários 👇"],
+    "_variacoes_marcar":   ["Salva e marca quem também passa por isso 👇", "Marca quem precisa ver isso 👇"]
   },
 
   "hooks": {

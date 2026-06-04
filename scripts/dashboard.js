@@ -14,7 +14,31 @@ const { execSync } = require('child_process');
 
 const ROOT      = path.resolve(__dirname, '..');
 const READY_DIR = path.join(ROOT, 'ready-to-post');
+const LOG_FILE  = path.join(ROOT, 'logs', 'eventos.jsonl');
 const PORT      = 3333;
+
+// ── Lê eventos de log (erros/avisos recentes) ────────────────────────────────
+
+function collectEvents() {
+  if (!fs.existsSync(LOG_FILE)) return [];
+  const lines = fs.readFileSync(LOG_FILE, 'utf8').split('\n').filter(Boolean);
+  const events = [];
+  for (const line of lines) {
+    try { events.push(JSON.parse(line)); } catch {}
+  }
+  return events;
+}
+
+// Eventos relevantes das últimas N horas (erros e avisos)
+function recentProblems(events, hours = 72) {
+  // ts está em "YYYY-MM-DD HH:mm:ss" (horário de Brasília)
+  const limit = new Date(Date.now() - hours * 3600 * 1000);
+  return events.filter(e => {
+    if (e.level !== 'error' && e.level !== 'warn') return false;
+    const t = new Date(e.ts.replace(' ', 'T') + '-03:00');
+    return !isNaN(t) && t >= limit;
+  }).reverse(); // mais recente primeiro
+}
 
 // ── Coleta todos os itens de ready-to-post ───────────────────────────────────
 
@@ -73,7 +97,7 @@ function collectItems() {
 
 // ── Gera HTML ────────────────────────────────────────────────────────────────
 
-function generateHTML(items) {
+function generateHTML(items, problems = []) {
   const today     = new Date().toISOString().split('T')[0];
   const total     = items.length;
   const publicados= items.filter(i => i.status === 'publicado').length;
@@ -133,6 +157,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stat{display:flex;align-items:center;gap:5px;font-size:11px;color:#888}
 .stat i{width:6px;height:6px;border-radius:50%;display:inline-block}
 .stat strong{color:#fff}
+
+/* alerta de problemas */
+.alert{background:#2a1212;border-bottom:1px solid #5a2020}
+.alert-head{padding:10px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#fca5a5;font-size:12px;font-weight:600}
+.alert-head:hover{background:#321515}
+.alert-toggle{color:#fca5a5}
+.alert-list{display:none;max-height:240px;overflow-y:auto;padding:0 20px 8px}
+.alert-list.show{display:block}
+.alert-row{display:flex;gap:10px;padding:5px 0;font-size:11px;border-top:1px solid #3a1818;align-items:baseline}
+.alert-row.error .alert-msg{color:#fca5a5}
+.alert-row.warn  .alert-msg{color:#fcd34d}
+.alert-ts{color:#777;font-family:monospace;white-space:nowrap}
+.alert-script{color:#888;text-transform:uppercase;font-size:9px;letter-spacing:.08em;min-width:54px}
+.alert-msg{color:#ccc}
 
 /* filtros */
 .bar{padding:8px 20px;display:flex;gap:5px;border-bottom:1px solid #222;background:#131313;flex-wrap:wrap}
@@ -263,6 +301,20 @@ document.getElementById('overlay').addEventListener('click',e=>{
   </div>
 </div>
 
+${problems.length ? `<div class="alert">
+  <div class="alert-head" onclick="document.getElementById('alert-list').classList.toggle('show')">
+    <span>⚠️ ${problems.length} problema(s) nas últimas 72h — clique para ver</span>
+    <span class="alert-toggle">▾</span>
+  </div>
+  <div class="alert-list" id="alert-list">
+    ${problems.slice(0, 20).map(p => `<div class="alert-row ${p.level}">
+      <span class="alert-ts">${esc(p.ts)}</span>
+      <span class="alert-script">${esc(p.script || '')}</span>
+      <span class="alert-msg">${esc(p.message || '')}</span>
+    </div>`).join('')}
+  </div>
+</div>` : ''}
+
 <div class="bar">
   <button class="btn on"  onclick="filter('all',this)">Todos (${total})</button>
   <button class="btn" onclick="filter('publicado',this)">✓ Publicados (${publicados})</button>
@@ -311,8 +363,9 @@ const server = http.createServer((req, res) => {
 
   // Dashboard — re-escaneia a cada request
   if (urlPath === '/' || urlPath === '') {
-    const items = collectItems();
-    const html  = generateHTML(items);
+    const items    = collectItems();
+    const problems = recentProblems(collectEvents(), 72);
+    const html     = generateHTML(items, problems);
     res.writeHead(200, {
       'Content-Type' : 'text/html; charset=utf-8',
       'Cache-Control': 'no-cache, no-store, must-revalidate',
