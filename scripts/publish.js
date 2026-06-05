@@ -378,6 +378,7 @@ async function main() {
   const dateFlag    = args.indexOf('--date');
   const allFlag     = args.includes('--all');
   const todayFlag   = args.includes('--today');
+  const catchupFlag = args.includes('--catchup');
 
   let folders = [];
 
@@ -409,6 +410,45 @@ async function main() {
       folders.push(folder);
     }
 
+  } else if (catchupFlag) {
+    // Publica o de hoje + atrasados não publicados — usado pelas scheduled tasks
+    // Garante resiliência quando o PC fica desligado no horário agendado:
+    //   • published.json previne republicar o que já foi
+    //   • MAX_CATCHUP_PER_RUN evita spam no feed se o PC ficou off por vários dias
+    const MAX_CATCHUP_PER_RUN = 2;
+
+    const allPending = findPublishableFolders(); // tudo com data <= hoje sem published.json
+
+    // 1 item por data, ordem cronológica (mais antigo primeiro → publica na sequência correta)
+    const seenDates = new Set();
+    const sorted = allPending
+      .map(f => ({ path: f, dateKey: path.basename(path.dirname(f)) }))
+      .sort((a, b) => a.dateKey.localeCompare(b.dateKey));
+
+    const candidates = [];
+    for (const { path: f, dateKey } of sorted) {
+      if (!seenDates.has(dateKey)) {
+        seenDates.add(dateKey);
+        candidates.push(f);
+      }
+    }
+
+    folders = candidates.slice(0, MAX_CATCHUP_PER_RUN);
+
+    const adiados = candidates.length - folders.length;
+    const today = new Date().toISOString().split('T')[0];
+    console.log(`📋 ${candidates.length} item(s) pendente(s) → publicando ${folders.length} agora` +
+      (adiados > 0 ? ` (${adiados} adiado(s) para próxima rodada)` : ''));
+
+    if (adiados > 0) {
+      log.warn('publish', `${adiados} item(s) atrasado(s) serão publicados nas próximas rodadas`, {
+        total_pendentes: candidates.length, publicando: folders.length,
+      });
+      console.warn(`⚠️  Muitos itens pendentes (${candidates.length}). Próximas tasks vão publicar o restante.`);
+    } else if (candidates.length === 0) {
+      console.log(`  ✓ Nada para publicar hoje (${today})`);
+    }
+
   } else if (allFlag) {
     // Publica tudo vencido — uso manual apenas
     folders = findPublishableFolders();
@@ -419,7 +459,8 @@ async function main() {
 
   } else {
     console.log('Uso:');
-    console.log('  node scripts/publish.js --today                    (só o de hoje — tasks automáticas)');
+    console.log('  node scripts/publish.js --catchup                  (hoje + atrasados — tasks automáticas)');
+    console.log('  node scripts/publish.js --today                    (só o de hoje — legado)');
     console.log('  node scripts/publish.js --date 2026-05-27          (data específica)');
     console.log('  node scripts/publish.js --folder ready-to-post/... (pasta específica)');
     console.log('  node scripts/publish.js --all                      (tudo vencido — uso manual)');
