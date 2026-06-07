@@ -211,6 +211,22 @@ async function publishFolder(folderPath) {
     return;
   }
 
+  // Lock file — previne corrida entre duas tasks rodando ao mesmo tempo
+  // flag 'wx' = O_CREAT | O_EXCL → lança EEXIST se já existe (operação atômica no SO)
+  const lockFile = path.join(folderPath, '.publishing');
+  try {
+    fs.writeFileSync(lockFile, String(process.pid), { flag: 'wx' });
+  } catch (e) {
+    if (e.code === 'EEXIST') {
+      console.log(`  ⏭  ${name} — publicação já em andamento em outro processo, pulando`);
+      log.warn('publish', `Lock detectado — ${path.basename(folderPath)} já está sendo publicado`, {
+        id: path.basename(folderPath),
+      });
+      return;
+    }
+    throw e; // outro erro inesperado — propaga
+  }
+
   // Detecta tipo: reel-final.mp4 (CapCut) > reel.mp4 > slides PNG
   const reelFinal  = path.join(folderPath, 'reel-final.mp4');
   const reelOrig   = path.join(folderPath, 'reel.mp4');
@@ -319,6 +335,9 @@ async function publishFolder(folderPath) {
     });
 
   } finally {
+    // Remove lock — sempre, mesmo em caso de erro
+    try { fs.unlinkSync(lockFile); } catch { /* se já foi removido, ok */ }
+
     for (const { publicId, resourceType } of uploadedIds) {
       await deleteFromCloudinary(publicId, resourceType);
     }
@@ -373,6 +392,27 @@ function findPublishableFolders(targetDate = null, todayOnly = false) {
 
 async function main() {
   checkEnv();
+
+  // Remove locks órfãos de runs que crasharam antes de limpar
+  // (crash entre writeFileSync do lock e unlinkSync no finally)
+  try {
+    const { globSync } = require('fs');
+    // Node 18+ tem globSync nativo, senão usa readdirSync recursivo
+  } catch { /* ignora — limpeza é best-effort */ }
+
+  // Limpeza simples: encontra .publishing em toda a árvore ready-to-post
+  function cleanStaleLocks(dir) {
+    if (!fs.existsSync(dir)) return;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) cleanStaleLocks(full);
+      else if (entry.name === '.publishing') {
+        try { fs.unlinkSync(full); console.log(`  🔓 Lock órfão removido: ${path.relative(READY_DIR, full)}`); }
+        catch { /* ignorar */ }
+      }
+    }
+  }
+  cleanStaleLocks(READY_DIR);
 
   const args        = process.argv.slice(2);
   const folderFlag  = args.indexOf('--folder');
