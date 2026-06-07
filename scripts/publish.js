@@ -359,7 +359,8 @@ function findPublishableFolders(targetDate = null, todayOnly = false) {
 
       const contentDirs = fs.readdirSync(dateDir)
         .map(d => path.join(dateDir, d))
-        .filter(d => fs.statSync(d).isDirectory());
+        .filter(d => fs.statSync(d).isDirectory())
+        .filter(d => !fs.existsSync(path.join(d, 'published.json'))); // pula já publicados
 
       folders.push(...contentDirs);
     }
