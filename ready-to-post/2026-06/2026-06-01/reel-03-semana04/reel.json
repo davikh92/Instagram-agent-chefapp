@@ -1,0 +1,25 @@
+{
+  "id": "reel-03-semana04",
+  "date": "2026-06-01",
+  "template": "reel-03-ticker",
+  "pilar": "C",
+  "gancho": "Conquistas do mês 1 como ticker de notícia — momentum social",
+  "vars": {
+    "KICKER": "mês 1 no ar:",
+    "ITEM_1": "cardápios gerados",
+    "ITEM_2": "listas criadas",
+    "ITEM_3": "refeições planejadas",
+    "ITEM_4": "ingredientes aproveitados",
+    "ITEM_5": "deliveries evitados",
+    "ITEM_6": "domingos sem ansiedade",
+    "ITEM_7": "geladeiras mais organizadas",
+    "ITEM_8": "e só começou.",
+    "SCROLL_OFFSET": "450",
+    "SOLUCAO_KICKER": "Entra nessa",
+    "HEADLINE": "Luiza na<br><em>Cozinha</em>",
+    "SUBTEXT": "O app que está mudando a relação das pessoas com a cozinha.",
+    "CTA": "Link na bio"
+  },
+  "caption": "Primeiro mês da Luiza na Cozinha no ar. Os números chegaram. 📊\n\nCada linha dessa lista é uma semana resolvida, uma decisão a menos, uma geladeira mais aproveitada.\n\nQuer entrar nessa? Link na bio 👆",
+  "hashtags": "#luizanacozinha #lancamento #mes1 #planejamentoalimentar #beta #resultados"
+}

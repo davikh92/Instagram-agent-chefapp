@@ -1,0 +1,53 @@
+name: 🔁 Retry Geração Veo
+
+on:
+  schedule:
+    - cron: '0 12 2 * *'   # dia  2 às 09:00 BRT (12:00 UTC) — retry do dia 1
+    - cron: '0 12 16 * *'  # dia 16 às 09:00 BRT (12:00 UTC) — retry do dia 15
+  workflow_dispatch:
+
+concurrency:
+  group: generate-veo
+  cancel-in-progress: false
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}"                  >> .env
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"    >> .env
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
+
+      - name: Retry geração Veo (reels ainda pendentes)
+        # generate-veo.js --all pula itens já gerados (reel.mp4 ou cloudinaryUrl)
+        run: node scripts/generate-veo.js --all
+
+      - name: Commit dos metadados gerados
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git pull --rebase origin main
+          git add ready-to-post/
+          git diff --staged --quiet \
+            || git commit -m "chore: retry reels Veo [skip ci]"
+          git push

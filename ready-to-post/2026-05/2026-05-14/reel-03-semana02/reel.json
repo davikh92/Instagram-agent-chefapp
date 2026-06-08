@@ -1,0 +1,25 @@
+{
+  "id": "reel-03-semana02",
+  "date": "2026-05-14",
+  "template": "reel-03-ticker",
+  "pilar": "B",
+  "gancho": "Monólogo interno às 18h — dúvida → abre app → resolve",
+  "vars": {
+    "KICKER": "18h, sua cabeça:",
+    "ITEM_1": "pedir delivery?",
+    "ITEM_2": "mas tô tentando economizar",
+    "ITEM_3": "aquele frango vai vencer",
+    "ITEM_4": "não sei o que fazer",
+    "ITEM_5": "abre o app",
+    "ITEM_6": "cardápio pronto",
+    "ITEM_7": "ingredientes: tenho tudo",
+    "ITEM_8": "ufa.",
+    "SCROLL_OFFSET": "480",
+    "SOLUCAO_KICKER": "É assim que funciona",
+    "HEADLINE": "Luiza na<br><em>Cozinha</em>",
+    "SUBTEXT": "Abre o app. Informa o que tem. Recebe o cardápio. Simples assim.",
+    "CTA": "Experimentar grátis"
+  },
+  "caption": "O barulho dentro da cabeça às 18h é real. 😅\n\nA Luiza na Cozinha silencia tudo isso — você abre o app, informa o que tem na geladeira, e recebe o cardápio da semana na hora. Sem drama.\n\nLink na bio 👆",
+  "hashtags": "#luizanacozinha #cozinhar #jantarrapido #receitasfaceis #planejamentoalimentar #delivery"
+}

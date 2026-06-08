@@ -260,26 +260,58 @@ async function publishFolder(folderPath) {
   const uploadedIds = []; // { publicId, resourceType }
   let mediaId;
 
+  // ── Lê metadados de Cloudinary do reel.json / post.json ──────────────────────
+  // Quando gerado no modo cloud (GitHub Actions), o vídeo/imagem já está no
+  // Cloudinary com URL permanente — não precisa re-upload.
+  let reelCloudinaryUrl     = null;
+  let reelCloudinaryCoverUrl = null;
+  let imageCloudinaryUrl    = null;
+
+  const reelJsonPath = path.join(folderPath, 'reel.json');
+  if (fs.existsSync(reelJsonPath)) {
+    const meta = JSON.parse(fs.readFileSync(reelJsonPath, 'utf8'));
+    reelCloudinaryUrl      = meta.cloudinaryUrl      || null;
+    reelCloudinaryCoverUrl = meta.cloudinaryCoverUrl || null;
+  }
+
+  const postJsonPath = path.join(folderPath, 'post.json');
+  if (fs.existsSync(postJsonPath)) {
+    const meta = JSON.parse(fs.readFileSync(postJsonPath, 'utf8'));
+    imageCloudinaryUrl = meta.cloudinaryUrl || null;
+  }
+
   try {
     if (hasReel) {
       // ── REEL ────────────────────────────────────────────────────────────────
-      const mediaFile = fs.existsSync(reelFinal) ? reelFinal : reelOrig;
-      if (fs.existsSync(reelFinal)) console.log(`  🎵 Usando reel-final.mp4 (CapCut)`);
-
-      const { url, publicId } = await uploadToCloudinary(mediaFile);
-      uploadedIds.push({ publicId, resourceType: 'video' });
-
-      // Capa personalizada: sobe cover.png se existir na pasta
-      let coverUrl = null;
-      const coverFile = path.join(folderPath, 'cover.png');
-      if (fs.existsSync(coverFile)) {
-        console.log(`  🖼️  Subindo cover.png para Cloudinary...`);
-        const { url: cUrl, publicId: cId } = await uploadToCloudinary(coverFile);
-        uploadedIds.push({ publicId: cId, resourceType: 'image' });
-        coverUrl = cUrl;
+      let reelUrl;
+      if (reelCloudinaryUrl) {
+        // Modo cloud: usa URL do Cloudinary já armazenada — zero re-upload
+        console.log(`  ☁️  Usando vídeo permanente do Cloudinary`);
+        reelUrl = reelCloudinaryUrl;
+      } else {
+        // Modo local: sobe o arquivo para Cloudinary como antes
+        const mediaFile = fs.existsSync(reelFinal) ? reelFinal : reelOrig;
+        if (fs.existsSync(reelFinal)) console.log(`  🎵 Usando reel-final.mp4 (CapCut)`);
+        const { url, publicId } = await uploadToCloudinary(mediaFile);
+        uploadedIds.push({ publicId, resourceType: 'video' }); // deletar depois
+        reelUrl = url;
       }
 
-      const containerId = await createMediaContainer({ mediaType: 'REELS', mediaUrl: url, caption, coverUrl });
+      // Capa: usa do Cloudinary se disponível, senão sobe cover.png local
+      let coverUrl = reelCloudinaryCoverUrl || null;
+      if (!coverUrl) {
+        const coverFile = path.join(folderPath, 'cover.png');
+        if (fs.existsSync(coverFile)) {
+          console.log(`  🖼️  Subindo cover.png para Cloudinary...`);
+          const { url: cUrl, publicId: cId } = await uploadToCloudinary(coverFile);
+          uploadedIds.push({ publicId: cId, resourceType: 'image' }); // deletar depois
+          coverUrl = cUrl;
+        }
+      } else {
+        console.log(`  🖼️  Usando cover permanente do Cloudinary`);
+      }
+
+      const containerId = await createMediaContainer({ mediaType: 'REELS', mediaUrl: reelUrl, caption, coverUrl });
       console.log(`  ✓ Container reel: ${containerId}`);
       await waitForContainer(containerId);
       mediaId = await publishContainer(containerId);
@@ -310,10 +342,17 @@ async function publishFolder(folderPath) {
 
     } else {
       // ── IMAGEM ÚNICA ────────────────────────────────────────────────────────
-      const { url, publicId } = await uploadToCloudinary(slides[0]);
-      uploadedIds.push({ publicId, resourceType: 'image' });
+      let imgUrl;
+      if (imageCloudinaryUrl) {
+        console.log(`  ☁️  Usando imagem permanente do Cloudinary`);
+        imgUrl = imageCloudinaryUrl;
+      } else {
+        const { url, publicId } = await uploadToCloudinary(slides[0]);
+        uploadedIds.push({ publicId, resourceType: 'image' });
+        imgUrl = url;
+      }
 
-      const containerId = await createMediaContainer({ mediaType: 'IMAGE', mediaUrl: url, caption });
+      const containerId = await createMediaContainer({ mediaType: 'IMAGE', mediaUrl: imgUrl, caption });
       console.log(`  ✓ Container imagem: ${containerId}`);
       mediaId = await publishContainer(containerId);
     }

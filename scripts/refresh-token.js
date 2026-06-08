@@ -112,7 +112,15 @@ async function refreshToken() {
   const expiresDate = new Date(Date.now() + expiresIn * 1000)
     .toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
-  saveTokenToEnv(newToken);
+  if (process.env.GITHUB_ACTIONS) {
+    // Modo GitHub Actions: salva em arquivo temporário para o workflow
+    // capturar e atualizar o GitHub Secret via `gh secret set`
+    fs.writeFileSync('/tmp/new_instagram_token.txt', newToken, 'utf8');
+    console.log('✓ Novo token salvo em /tmp/new_instagram_token.txt para atualização do Secret');
+  } else {
+    // Modo local: atualiza .env diretamente
+    saveTokenToEnv(newToken);
+  }
 
   const okMsg = `Token renovado — expira em ${expiresDays} dias (${expiresDate})`;
   log.ok('refresh-token', okMsg, { expires_days: expiresDays, expires_date: expiresDate });

@@ -1,0 +1,61 @@
+{
+  "id": "post-maio-27-carousel",
+  "date": "2026-05-27",
+  "template": "dark-carousel",
+  "dimension": "square",
+  "pilar": "A",
+  "gancho": "Cardápio real dia a dia — a IA como prova concreta de variedade",
+  "caption": "7 jantares em 7 dias. Ingredientes de mercado normal. Sem pesquisar receita nenhuma. 🍳\n\nÉ isso que a Luiza na Cozinha entrega — toda semana, em 2 minutos. Desliza pra ver o cardápio 👉\n\nTesta grátis. Link na bio 👆",
+  "hashtags": "#luizanacozinha #cardapiodasemana #jantares #receitasrapidas #planejamentoalimentar #comerbem",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "KICKER": "sua semana resolvida",
+      "HEADLINE": "7 jantares\nem 7 dias.\n<em>Você\nconsegue?</em>",
+      "SUBTEXT": "deslize pra ver o cardápio 👉",
+      "EMOJI": "🍽️"
+    },
+    {
+      "SLIDE_NUM": "02",
+      "KICKER": "segunda",
+      "HEADLINE": "Frango\nao alho com\n<em>arroz</em>\nde ervas",
+      "SUBTEXT": "ingredientes: frango, alho, arroz, salsinha.",
+      "EMOJI": "🍗"
+    },
+    {
+      "SLIDE_NUM": "03",
+      "KICKER": "terça",
+      "HEADLINE": "Macarrão\nao molho\n<em>cremoso</em>\nde tomate",
+      "SUBTEXT": "ingredientes: macarrão, tomate, creme de leite.",
+      "EMOJI": "🍝"
+    },
+    {
+      "SLIDE_NUM": "04",
+      "KICKER": "quarta",
+      "HEADLINE": "Omelete\nrecheada\ncom <em>abobrinha</em>\ne queijo",
+      "SUBTEXT": "ingredientes: ovos, abobrinha, queijo.",
+      "EMOJI": "🍳"
+    },
+    {
+      "SLIDE_NUM": "05",
+      "KICKER": "quinta",
+      "HEADLINE": "Peixe\nassado\ncom <em>legumes</em>\nno forno",
+      "SUBTEXT": "ingredientes: filé de peixe, abobrinha, cenoura.",
+      "EMOJI": "🐟"
+    },
+    {
+      "SLIDE_NUM": "06",
+      "KICKER": "sexta",
+      "HEADLINE": "Risoto\nde frango\n<em>simplificado</em>",
+      "SUBTEXT": "ingredientes: arroz, frango, caldo, parmesão.",
+      "EMOJI": "🍚"
+    },
+    {
+      "SLIDE_NUM": "07",
+      "KICKER": "isso veio do app",
+      "HEADLINE": "Luiza na\n<em>Cozinha.</em>\nEm 2\nminutos.",
+      "SUBTEXT": "link na bio pra testar grátis 👆",
+      "EMOJI": "✨"
+    }
+  ]
+}

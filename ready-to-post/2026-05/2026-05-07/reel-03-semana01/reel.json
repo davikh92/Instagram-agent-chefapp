@@ -1,0 +1,25 @@
+{
+  "id": "reel-03-semana01",
+  "date": "2026-05-07",
+  "template": "reel-03-ticker",
+  "pilar": "A",
+  "gancho": "Lista absurda da geladeira como ticker financeiro",
+  "vars": {
+    "KICKER": "hoje, 18h",
+    "ITEM_1": "frango misterioso",
+    "ITEM_2": "abobrinha murcha",
+    "ITEM_3": "macarrão sem molho",
+    "ITEM_4": "ovo de ontem",
+    "ITEM_5": "queijo duvidoso",
+    "ITEM_6": "arroz de segunda",
+    "ITEM_7": "tomate meio mole",
+    "ITEM_8": "cebola partida",
+    "SCROLL_OFFSET": "520",
+    "SOLUCAO_KICKER": "Chega de improvisar",
+    "HEADLINE": "Luiza na<br><em>Cozinha</em>",
+    "SUBTEXT": "O app que transforma o que tem na geladeira em receitas de verdade.",
+    "CTA": "Experimentar grátis"
+  },
+  "caption": "A geladeira da segunda-feira... conhece? 😅\n\nChega de inventar combinações duvidosas. A Luiza na Cozinha te diz exatamente o que fazer com o que você tem. Link na bio 👆",
+  "hashtags": "#luizanacozinha #geladeira #improvisonacozinha #receitasrapidas #cozinhar"
+}

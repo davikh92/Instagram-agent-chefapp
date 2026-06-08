@@ -1,0 +1,22 @@
+{
+  "id": "post-maio-31-hero",
+  "date": "2026-05-31",
+  "template": "hero-terracota",
+  "dimension": "square",
+  "pilar": "D",
+  "gancho": "Pergunta de comunidade — gera comentários, alimenta o algoritmo",
+  "caption": "Novo mês começa. Nova semana, nova chance de cozinhar algo diferente. 🍳\n\nConta pra gente: você já tem um plano pro mês de junho ou vai descobrindo no dia a dia?\n\n(Spoiler: a Luiza na Cozinha faz o plano por você — link na bio 👆)",
+  "hashtags": "#luizanacozinha #junho #semananova #planejamentoalimentar #cozinhar #organizacao",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "HEADLINE_SIZE": "144",
+      "KICKER": "novo mês",
+      "HEADLINE": "O que você\nvai <em>cozinhar</em>\nessa\nsemana?",
+      "SUBTEXT": "conta nos comentários 👇",
+      "STAMP": "junho · 2026",
+      "STAMP_TOP": "380",
+      "CTA": "comentar 👇"
+    }
+  ]
+}

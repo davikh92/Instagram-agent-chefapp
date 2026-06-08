@@ -1,0 +1,60 @@
+{
+  "id": "post-junho-02-features",
+  "date": "2026-06-02",
+  "template": "cream-editorial",
+  "dimension": "square",
+  "pilar": "B",
+  "gancho": "Features como benefícios reais — cada função vira uma frase de alívio",
+  "caption": "Tudo que o app faz enquanto você simplesmente vive. ✨\n\nNão é mágica — é planejamento feito por quem entende de cozinha. A Luiza na Cozinha.\n\nLink na bio pra testar grátis 👆",
+  "hashtags": "#luizanacozinha #funcionalidades #app #planejamentoalimentar #cozinhar #receitaspersonalizadas",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "KICKER": "o app que pensa",
+      "HEADLINE": "Tudo que a\n<em>Luiza na\nCozinha</em>\nfaz por você",
+      "SUBTEXT": "deslize pra conhecer 👉",
+      "ANNOTATION": "spoiler: muito",
+      "NUMBER": "∞"
+    },
+    {
+      "SLIDE_NUM": "02",
+      "KICKER": "cardápio semanal",
+      "HEADLINE": "Café,\nalmoço,\n<em>jantar</em>\ne lanches.",
+      "SUBTEXT": "a semana inteira planejada. você não precisa pensar.",
+      "ANNOTATION": "gerado em 2 min",
+      "NUMBER": "7"
+    },
+    {
+      "SLIDE_NUM": "03",
+      "KICKER": "lista de compras",
+      "HEADLINE": "Por categoria,\ncom\n<em>checkbox.</em>\nSem esquecer.",
+      "SUBTEXT": "vai ao mercado com a lista pronta. zero improviso.",
+      "ANNOTATION": "automática!",
+      "NUMBER": "✓"
+    },
+    {
+      "SLIDE_NUM": "04",
+      "KICKER": "troca de refeição",
+      "HEADLINE": "Não quer\naquele jantar?\n<em>Troca.</em>\nA lista atualiza.",
+      "SUBTEXT": "flexibilidade sem perder o planejamento.",
+      "ANNOTATION": "mágica? não, IA.",
+      "NUMBER": "↩"
+    },
+    {
+      "SLIDE_NUM": "05",
+      "KICKER": "assistente da chef",
+      "HEADLINE": "Pergunta\nqualquer\n<em>coisa.</em>\nEla responde.",
+      "SUBTEXT": "como ter a Luiza ao seu lado. na cozinha.",
+      "ANNOTATION": "disponível sempre",
+      "NUMBER": "👩‍🍳"
+    },
+    {
+      "SLIDE_NUM": "06",
+      "KICKER": "começa grátis",
+      "HEADLINE": "Luiza na\n<em>Cozinha.</em>\n7 dias\nsem custo.",
+      "SUBTEXT": "link na bio. testa agora 👆",
+      "ANNOTATION": "sem compromisso",
+      "NUMBER": "0"
+    }
+  ]
+}

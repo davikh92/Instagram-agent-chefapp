@@ -1,0 +1,22 @@
+{
+  "id": "post-maio-10-hero",
+  "date": "2026-05-10",
+  "template": "hero-terracota",
+  "dimension": "square",
+  "pilar": "D",
+  "gancho": "Abertura de semana + Dia das Mães — cuidar de si também",
+  "caption": "Domingo é dia de resetar. ✨\n\nPlaneja a semana agora e para de improvisar de segunda a sexta. A Luiza na Cozinha faz isso em minutos.\n\nLink na bio pra começar 👆",
+  "hashtags": "#luizanacozinha #domingo #semananova #planejamentoalimentar #cozinhar #organizacao #receitasdasemana",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "HEADLINE_SIZE": "144",
+      "KICKER": "domingo à noite",
+      "HEADLINE": "Semana\nnova.\n<em>Decisões\nprontas.</em>",
+      "SUBTEXT": "Planeje em minutos. Cozinhe sem estresse.",
+      "STAMP": "domingo · 10h",
+      "STAMP_TOP": "380",
+      "CTA": "testar grátis →"
+    }
+  ]
+}

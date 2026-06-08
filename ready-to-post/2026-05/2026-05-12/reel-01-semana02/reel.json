@@ -1,0 +1,18 @@
+{
+  "id": "reel-01-semana02",
+  "date": "2026-05-12",
+  "template": "reel-01-relogio",
+  "pilar": "C",
+  "gancho": "Inversão do 18h: mesmo horário crítico, mas com sensação de controle",
+  "vars": {
+    "HORA_MIN": "02",
+    "CENA1_SUB": "e você já sabe exatamente o que vai jantar.",
+    "CENA2_PERGUNTA": "resolvido?",
+    "CENA3_KICKER": "Semana planejada desde domingo",
+    "HEADLINE": "<em>Essa</em> é a<br>sensação",
+    "SUBTEXT": "Quem usa a Luiza na Cozinha não improvisa mais.",
+    "CTA": "Quero isso também"
+  },
+  "caption": "São 18h02 e você já sabe o que vai jantar. A lista de compras já foi. O cardápio da semana, feito.\n\nEssa é a sensação de quem usa a Luiza na Cozinha — planejar uma vez e não pensar mais nisso. ✨\n\nLink na bio 👆",
+  "hashtags": "#luizanacozinha #planejamentoalimentar #organizacao #cozinhar #semanaresolvida #produtividade"
+}

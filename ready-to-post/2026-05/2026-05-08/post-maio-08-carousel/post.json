@@ -1,0 +1,61 @@
+{
+  "id": "post-maio-08-carousel",
+  "date": "2026-05-08",
+  "template": "dark-carousel",
+  "dimension": "square",
+  "pilar": "A",
+  "gancho": "Diagnóstico bem-humorado — 5 sinais que a cozinha venceu",
+  "caption": "Você reconhece algum desses sinais? 👀\n\nSe sim, a Luiza na Cozinha foi feita pra você. O app que planeja sua semana de comida com IA — em minutos.\n\nExperimente grátis, link na bio 👆",
+  "hashtags": "#luizanacozinha #cozinhar #planejamentoalimentar #receitasrapidas #comerbem #delivery #semana",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "KICKER": "você precisa de ajuda se...",
+      "HEADLINE": "5 sinais que\n<em>a cozinha\nvenceu</em>",
+      "SUBTEXT": "deslize pra se identificar 👉",
+      "EMOJI": "😅"
+    },
+    {
+      "SLIDE_NUM": "02",
+      "KICKER": "sinal 01",
+      "HEADLINE": "Você abre a\n<em>geladeira</em>\n3× e fecha\nsem comer",
+      "SUBTEXT": "toda. semana.",
+      "EMOJI": "🧊"
+    },
+    {
+      "SLIDE_NUM": "03",
+      "KICKER": "sinal 02",
+      "HEADLINE": "A lista de\n<em>compras</em>\nsome antes\nda quinta",
+      "SUBTEXT": "o que você comprou?",
+      "EMOJI": "🛒"
+    },
+    {
+      "SLIDE_NUM": "04",
+      "KICKER": "sinal 03",
+      "HEADLINE": "Você repete\no mesmo\n<em>prato</em>\n4 vezes",
+      "SUBTEXT": "arroz, frango, repete.",
+      "EMOJI": "🍗"
+    },
+    {
+      "SLIDE_NUM": "05",
+      "KICKER": "sinal 04",
+      "HEADLINE": "Delivery virou\n<em>hábito</em>\nnão escolha",
+      "SUBTEXT": "o app tá aberto antes da geladeira.",
+      "EMOJI": "📱"
+    },
+    {
+      "SLIDE_NUM": "06",
+      "KICKER": "sinal 05",
+      "HEADLINE": "Domingo\nte dá\n<em>ansiedade</em>\nde segunda",
+      "SUBTEXT": "o que vou comer essa semana?",
+      "EMOJI": "😰"
+    },
+    {
+      "SLIDE_NUM": "07",
+      "KICKER": "a solução",
+      "HEADLINE": "Luiza na\n<em>Cozinha</em>\nresolve\ntudo isso",
+      "SUBTEXT": "planeje sua semana em minutos. link na bio 👆",
+      "EMOJI": "✨"
+    }
+  ]
+}

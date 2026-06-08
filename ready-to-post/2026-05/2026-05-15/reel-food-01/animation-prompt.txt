@@ -1,0 +1,11 @@
+FERRAMENTA: Kling 2.0
+DURAÇÃO: 10 segundos
+MODO: Standard motion
+
+PROMPT:
+The hand gently scatters fresh herbs over the raw chicken breast. The herbs fall in natural slow motion. A subtle warm golden light catches the herb particles mid-air. Very slight camera drift inward (subtle zoom). Steam-like aromatic particles appear briefly. The motion is calm, deliberate, beautiful. No camera shake. Warm kitchen atmosphere preserved throughout.
+
+CONFIGURAÇÕES KLING:
+- Motion Amount: Médio (não exagerar)
+- CFG: 0.5 (preserve image fidelity)
+- Negative: fast motion, camera shake, distortion, blur, artificial looking

@@ -1,0 +1,23 @@
+{
+  "id": "post-maio-24-bignumber",
+  "date": "2026-05-24",
+  "template": "big-number",
+  "dimension": "square",
+  "pilar": "C",
+  "gancho": "Número de impacto — '7' em terracota gigante como prova visual",
+  "caption": "7 jantares. 7 receitas diferentes. 1 planejamento feito em 2 minutos. ✨\n\nIsso é o que a Luiza na Cozinha entrega toda semana — sem você ter que pesquisar nada.\n\nTesta grátis. Link na bio 👆",
+  "hashtags": "#luizanacozinha #7dias #planejamentoalimentar #receitasdasemana #cozinhar #semanaplanejada",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "LIVE_LABEL": "resultado real",
+      "STAT_LABEL": "cardápios por semana",
+      "NUMBER": "7",
+      "SUFFIX": "",
+      "ANNOTATION": "sem pesquisar nada!",
+      "HEADLINE": "jantares\n<em>diferentes.</em>\nSem pesquisar\nnada.",
+      "SOURCE": "gerado pela IA da Luiza na Cozinha",
+      "CTA": "link na bio 👆"
+    }
+  ]
+}

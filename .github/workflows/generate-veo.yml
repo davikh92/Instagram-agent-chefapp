@@ -1,0 +1,53 @@
+name: 🎬 Gerar Reels Veo
+
+on:
+  schedule:
+    - cron: '0 12 1 * *'   # dia  1 às 09:00 BRT (12:00 UTC)
+    - cron: '0 12 15 * *'  # dia 15 às 09:00 BRT (12:00 UTC)
+  workflow_dispatch:
+
+# Impede dois lotes rodando ao mesmo tempo (proteção de quota)
+concurrency:
+  group: generate-veo
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180   # Veo leva ~3min/reel × 10 reels + delays = ~45-60min
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}"                  >> .env
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"    >> .env
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
+
+      - name: Gerar reels Veo
+        run: node scripts/generate-veo.js --all
+
+      - name: Commit dos metadados gerados
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git pull --rebase origin main
+          git add ready-to-post/
+          git diff --staged --quiet \
+            || git commit -m "chore: reels Veo gerados automaticamente [skip ci]"
+          git push

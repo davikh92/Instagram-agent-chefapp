@@ -1,0 +1,52 @@
+{
+  "id": "post-maio-13-editorial",
+  "date": "2026-05-13",
+  "template": "cream-editorial",
+  "dimension": "square",
+  "pilar": "B",
+  "gancho": "Processo tão simples que parece impossível — a dissonância é o gancho",
+  "caption": "5 minutos agora = semana inteira resolvida. 🍳\n\nAssim funciona o planejamento alimentar com a Luiza na Cozinha — IA que entende o que você tem, o que você gosta e o quanto você tem de tempo.\n\nExperimente grátis, link na bio 👆",
+  "hashtags": "#luizanacozinha #planejamentoalimentar #cozinhar #receitasrapidas #organizacao #semanasaudavel",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "KICKER": "o segredo",
+      "HEADLINE": "Como\n<em>planejar\na semana</em>\nem 5 min",
+      "SUBTEXT": "o método que muda sua relação com a cozinha",
+      "ANNOTATION": "sério, 5 minutos!",
+      "NUMBER": "5"
+    },
+    {
+      "SLIDE_NUM": "02",
+      "KICKER": "passo 01",
+      "HEADLINE": "Abre o app\ne informa\no que tem\n<em>na geladeira</em>",
+      "SUBTEXT": "não precisa de nada especial.",
+      "ANNOTATION": "qualquer coisa serve",
+      "NUMBER": "1"
+    },
+    {
+      "SLIDE_NUM": "03",
+      "KICKER": "passo 02",
+      "HEADLINE": "A IA monta\nseu <em>cardápio</em>\nda semana\nautomático",
+      "SUBTEXT": "café, almoço, jantar — tudo planejado.",
+      "ANNOTATION": "ela pensa por você",
+      "NUMBER": "2"
+    },
+    {
+      "SLIDE_NUM": "04",
+      "KICKER": "passo 03",
+      "HEADLINE": "Lista de\n<em>compras</em>\ngerada\nautomático",
+      "SUBTEXT": "só levar pro mercado.",
+      "ANNOTATION": "sem esquecer nada",
+      "NUMBER": "3"
+    },
+    {
+      "SLIDE_NUM": "05",
+      "KICKER": "resultado",
+      "HEADLINE": "Semana\n<em>inteira</em>\nresolvida\nem 5 min",
+      "SUBTEXT": "Luiza na Cozinha — link na bio 👆",
+      "ANNOTATION": "vai lá testar!",
+      "NUMBER": "✓"
+    }
+  ]
+}

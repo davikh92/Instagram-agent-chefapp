@@ -1,0 +1,11 @@
+FERRAMENTA: Kling 2.0
+DURAÇÃO: 12 segundos
+MODO: Standard motion
+
+PROMPT:
+Steam rises naturally and continuously from the hot soup bowl. The candle in the background flickers gently and organically. The hands make a very subtle settling movement — like someone comfortable holding the warm bowl. The golden broth surface shimmers very slightly from warmth. No camera movement. The vapor is the main motion element — it should look completely natural, not looping. Warm, intimate atmosphere maintained throughout.
+
+CONFIGURAÇÕES KLING:
+- Motion Amount: Baixo (steam e vela apenas — não mexer o bowl)
+- CFG: 0.7 (alta fidelidade à imagem original)
+- Negative: camera movement, hands disappearing, bowl tilting, fast motion, unnatural steam loops

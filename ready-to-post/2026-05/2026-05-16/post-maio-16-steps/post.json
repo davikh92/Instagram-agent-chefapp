@@ -1,0 +1,47 @@
+{
+  "id": "post-maio-16-steps",
+  "date": "2026-05-16",
+  "template": "lista-steps",
+  "dimension": "square",
+  "pilar": "B",
+  "gancho": "Desmistificar o onboarding — a barreira 'não sei como funciona' cai slide a slide",
+  "caption": "Primeira vez abrindo a Luiza na Cozinha? É isso que acontece. 📱\n\nEm menos de 2 minutos você vai do zero ao cardápio completo da semana — com lista de compras pronta pra ir ao mercado.\n\nLink na bio pra testar grátis 👆",
+  "hashtags": "#luizanacozinha #app #planejamentoalimentar #comofunciona #cozinhar #primeiravez",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "KICKER": "primeira vez no app",
+      "HEADLINE": "O que acontece\nquando você\n<em>abre pela\n1ª vez</em>",
+      "SUBTEXT": "spoiler: em 2 minutos sua semana tá resolvida.",
+      "STEP_NUM": ""
+    },
+    {
+      "SLIDE_NUM": "02",
+      "KICKER": "passo 01",
+      "HEADLINE": "Você conta\nquem é\ne o que\n<em>prefere comer</em>",
+      "SUBTEXT": "restrições, tempo disponível, número de pessoas.",
+      "STEP_NUM": "01"
+    },
+    {
+      "SLIDE_NUM": "03",
+      "KICKER": "passo 02",
+      "HEADLINE": "Informa\no que tem\n<em>na geladeira</em>\nagora",
+      "SUBTEXT": "não precisa ter nada especial. o que tiver serve.",
+      "STEP_NUM": "02"
+    },
+    {
+      "SLIDE_NUM": "04",
+      "KICKER": "passo 03",
+      "HEADLINE": "Cardápio\n<em>completo</em>\nda semana\ngerado",
+      "SUBTEXT": "café, almoço, jantar, lanches. tudo planejado.",
+      "STEP_NUM": "03"
+    },
+    {
+      "SLIDE_NUM": "05",
+      "KICKER": "pronto",
+      "HEADLINE": "Lista de\n<em>compras</em>\nautomática.\nSemana feita.",
+      "SUBTEXT": "Luiza na Cozinha — testa grátis. Link na bio 👆",
+      "STEP_NUM": "✓"
+    }
+  ]
+}

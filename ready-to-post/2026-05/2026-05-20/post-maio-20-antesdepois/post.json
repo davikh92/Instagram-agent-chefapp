@@ -1,0 +1,54 @@
+{
+  "id": "post-maio-20-antesdepois",
+  "date": "2026-05-20",
+  "template": "dark-carousel",
+  "dimension": "square",
+  "pilar": "C",
+  "gancho": "Antes × depois emocional, não técnico — situações cotidianas que mudaram",
+  "caption": "A diferença entre uma semana travada e uma semana resolvida é um plano. ✨\n\nA Luiza na Cozinha monta esse plano por você — em 2 minutos, todo domingo.\n\nLink na bio pra testar grátis 👆",
+  "hashtags": "#luizanacozinha #antesdepois #planejamentoalimentar #transformacao #cozinhar #organizacao",
+  "slides": [
+    {
+      "SLIDE_NUM": "01",
+      "KICKER": "a mesma semana",
+      "HEADLINE": "Sem e com\n<em>planejamento.</em>",
+      "SUBTEXT": "deslize pra ver a diferença 👉",
+      "EMOJI": "📊"
+    },
+    {
+      "SLIDE_NUM": "02",
+      "KICKER": "segunda-feira",
+      "HEADLINE": "Antes: sem\nideia do que\n<em>jantar</em>\nhoje",
+      "SUBTEXT": "depois: cardápio pronto desde domingo.",
+      "EMOJI": "📅"
+    },
+    {
+      "SLIDE_NUM": "03",
+      "KICKER": "no mercado",
+      "HEADLINE": "Antes: compras\nno <em>achômetro</em>\n→ compras\nerradas",
+      "SUBTEXT": "depois: lista automática → zero esquecimento.",
+      "EMOJI": "🛒"
+    },
+    {
+      "SLIDE_NUM": "04",
+      "KICKER": "sexta-feira",
+      "HEADLINE": "Antes: joga\nfora o que\n<em>não usou</em>\nessa semana",
+      "SUBTEXT": "depois: usa tudo que comprou.",
+      "EMOJI": "🗑️"
+    },
+    {
+      "SLIDE_NUM": "05",
+      "KICKER": "às 19h",
+      "HEADLINE": "Antes: <em>delivery</em>\npor falta\nde ideia,\nnão de tempo",
+      "SUBTEXT": "depois: cozinha porque sabe o que tem.",
+      "EMOJI": "🍳"
+    },
+    {
+      "SLIDE_NUM": "06",
+      "KICKER": "começa essa semana",
+      "HEADLINE": "Luiza na\n<em>Cozinha</em>\ntransforma\nsua semana",
+      "SUBTEXT": "link na bio pra começar grátis 👆",
+      "EMOJI": "✨"
+    }
+  ]
+}

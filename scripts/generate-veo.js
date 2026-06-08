@@ -280,11 +280,21 @@ async function processReel(reelConfig) {
     return;
   }
 
-  // Verifica se MP4 já existe (gerado mas não publicado)
+  // Verifica se MP4 já existe localmente (gerado mas não publicado)
   const mp4Path = path.join(outDir, 'reel.mp4');
   if (fs.existsSync(mp4Path)) {
     console.log(`  ⏭  ${id} — MP4 já existe, pulando geração`);
     return;
+  }
+
+  // Verifica se já foi gerado e está no Cloudinary (modo GitHub Actions)
+  const reelJsonPath = path.join(outDir, 'reel.json');
+  if (fs.existsSync(reelJsonPath)) {
+    const existing = JSON.parse(fs.readFileSync(reelJsonPath, 'utf8'));
+    if (existing.cloudinaryUrl) {
+      console.log(`  ⏭  ${id} — já no Cloudinary, pulando geração`);
+      return;
+    }
   }
 
   console.log(`\n🎬 Gerando ${id}...`);
@@ -301,15 +311,39 @@ async function processReel(reelConfig) {
     const coverPath = path.join(outDir, 'cover.png');
     extractCoverFrame(mp4Path, coverPath, 1.5);
 
+    // ── Upload permanente para Cloudinary ─────────────────────────────────────
+    // Necessário para GitHub Actions (sem disco persistente entre jobs).
+    // Localmente: evita re-upload no publish.js — usa a URL direto.
+    let cloudinaryMeta = {};
+    try {
+      const storage = require('./lib/cloudinary-storage');
+      const result = await storage.uploadReel(
+        id,
+        mp4Path,
+        fs.existsSync(coverPath) ? coverPath : null
+      );
+      if (result) {
+        cloudinaryMeta = result;
+        console.log(`  ✓ Cloudinary: vídeo e cover salvos`);
+      }
+    } catch (cloudErr) {
+      console.warn(`  ⚠️  Cloudinary upload falhou: ${cloudErr.message} (arquivo local mantido)`);
+    }
+
     // Salva caption.txt
     const captionContent = `${caption}\n\n${hashtags}`;
     fs.writeFileSync(path.join(outDir, 'caption.txt'), captionContent, 'utf8');
     console.log(`  ✓ caption.txt salvo`);
 
-    // Salva metadata
+    // Salva metadata (inclui URLs do Cloudinary se disponíveis)
     fs.writeFileSync(
       path.join(outDir, 'reel.json'),
-      JSON.stringify({ ...reelConfig, generatedAt: new Date().toISOString(), model: VEO_MODEL }, null, 2),
+      JSON.stringify({
+        ...reelConfig,
+        generatedAt: new Date().toISOString(),
+        model: VEO_MODEL,
+        ...cloudinaryMeta,   // cloudinaryUrl, cloudinaryPublicId, cloudinaryCoverUrl
+      }, null, 2),
       'utf8'
     );
     console.log(`  ✓ reel.json salvo`);

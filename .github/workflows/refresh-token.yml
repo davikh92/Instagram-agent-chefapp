@@ -1,0 +1,54 @@
+name: 🔑 Renovar Token Instagram
+
+on:
+  schedule:
+    - cron: '0 11 1 * *'   # dia  1 às 08:00 BRT (11:00 UTC)
+    - cron: '0 11 15 * *'  # dia 15 às 08:00 BRT (11:00 UTC)
+  workflow_dispatch:        # permite rodar manualmente pelo GitHub
+
+concurrency:
+  group: refresh-token
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "INSTAGRAM_ACCESS_TOKEN=${{ secrets.INSTAGRAM_ACCESS_TOKEN }}" >> .env
+          echo "INSTAGRAM_USER_ID=${{ secrets.INSTAGRAM_USER_ID }}" >> .env
+
+      - name: Renovar token
+        run: node scripts/refresh-token.js
+
+      - name: Atualizar Secret do GitHub
+        # Requer GH_PAT com permissão de secrets:write no repo
+        if: ${{ secrets.GH_PAT != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -f /tmp/new_instagram_token.txt ]; then
+            NEW_TOKEN=$(cat /tmp/new_instagram_token.txt)
+            echo "$NEW_TOKEN" | gh secret set INSTAGRAM_ACCESS_TOKEN \
+              --repo ${{ github.repository }}
+            rm /tmp/new_instagram_token.txt
+            echo "✅ Secret INSTAGRAM_ACCESS_TOKEN atualizado no GitHub."
+          else
+            echo "⚠️  Arquivo de token não encontrado — verifique o log acima."
+          fi

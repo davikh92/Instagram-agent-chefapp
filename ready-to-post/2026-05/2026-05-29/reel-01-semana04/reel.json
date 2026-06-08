@@ -1,0 +1,18 @@
+{
+  "id": "reel-01-semana04",
+  "date": "2026-05-29",
+  "template": "reel-01-relogio",
+  "pilar": "B",
+  "gancho": "A promessa de tempo '2 minutos' como personagem principal",
+  "vars": {
+    "HORA_MIN": "00",
+    "CENA1_SUB": "Em 2 minutos, você pode ter a semana resolvida.",
+    "CENA2_PERGUNTA": "começar?",
+    "CENA3_KICKER": "Cardápio → Lista → Receitas. Pronto.",
+    "HEADLINE": "<em>2 minutos.</em><br>Semana feita.",
+    "SUBTEXT": "É isso que a Luiza na Cozinha entrega. Todo domingo.",
+    "CTA": "Testar agora"
+  },
+  "caption": "São 18h. Em 2 minutos você pode ter a semana inteira resolvida. ⏱️\n\nInforma o que tem → cardápio gerado → lista de compras pronta. É isso.\n\nTesta grátis. Link na bio 👆",
+  "hashtags": "#luizanacozinha #2minutos #planejamentoalimentar #produtividade #cozinhar #semanaplanejada"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "reel-01-semana03",
+  "date": "2026-05-21",
+  "template": "reel-01-relogio",
+  "pilar": "A",
+  "gancho": "Novo horário crítico: 11h30 de sábado — família chegando, nada decidido",
+  "vars": {
+    "HORA_MIN": "30",
+    "CENA1_SUB": "sábado. família chegando. geladeira aberta.",
+    "CENA2_PERGUNTA": "o que vai ser?",
+    "CENA3_KICKER": "Planejou desde domingo?",
+    "HEADLINE": "Semana <em>planejada.</em><br>Sábado resolvido.",
+    "SUBTEXT": "Quem usa a Luiza na Cozinha não improvisa nem no fim de semana.",
+    "CTA": "Testar grátis"
+  },
+  "caption": "São 11h30 de sábado. Família vai chegar pra almoço. Geladeira aberta, nada decidido. 😅\n\nÉ aqui que a Luiza na Cozinha te salva — cardápio pronto, lista feita, semana resolvida desde domingo.\n\nLink na bio 👆",
+  "hashtags": "#luizanacozinha #sabado #almoco #familianacozinha #planejamentoalimentar #receitasrapidas"
+}

@@ -1,0 +1,11 @@
+FERRAMENTA: Kling 2.0
+DURAÇÃO: 10 segundos
+MODO: Standard motion
+
+PROMPT:
+The olive oil continues to pour in extreme slow motion, the golden thread catching the warm light and creating micro-droplet splashes on the vegetables below. The candle in the background flickers very subtly. The steam from the warm vegetables rises gently. Absolutely no camera movement — static frame, only the liquid and steam are in motion. The golden oil is the only dynamic element.
+
+CONFIGURAÇÕES KLING:
+- Motion Amount: Baixo-médio (foco na queda do azeite, não em movimento geral)
+- CFG: 0.6
+- Negative: camera movement, zoom, human hands appearing, overexposure, fast motion

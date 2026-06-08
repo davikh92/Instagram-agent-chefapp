@@ -1,0 +1,60 @@
+name: 📱 Publicar no Instagram
+
+on:
+  schedule:
+    # Horários em UTC (BRT = UTC-3)
+    - cron: '0 13 * * 6'   # Sáb 10h BRT
+    - cron: '0 13 * * 0'   # Dom 10h BRT
+    - cron: '0 15 * * 2'   # Ter 12h BRT
+    - cron: '0 15 * * 4'   # Qui 12h BRT
+    - cron: '0 15 * * 5'   # Sex 12h BRT
+    - cron: '0 21 * * 1'   # Seg 18h BRT
+    - cron: '0 21 * * 3'   # Qua 18h BRT
+  workflow_dispatch:        # permite publicação manual emergencial
+
+# Garante que nunca dois jobs publicam ao mesmo tempo
+concurrency:
+  group: publish-instagram
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "INSTAGRAM_ACCESS_TOKEN=${{ secrets.INSTAGRAM_ACCESS_TOKEN }}" >> .env
+          echo "INSTAGRAM_USER_ID=${{ secrets.INSTAGRAM_USER_ID }}"           >> .env
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"   >> .env
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"         >> .env
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"   >> .env
+
+      - name: Publicar post do dia (--catchup publica até 2 posts pendentes)
+        run: node scripts/publish.js --catchup
+
+      - name: Commit do published.json
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git pull --rebase origin main
+          git add ready-to-post/
+          git diff --staged --quiet \
+            || git commit -m "chore: published.json atualizado [skip ci]"
+          git push

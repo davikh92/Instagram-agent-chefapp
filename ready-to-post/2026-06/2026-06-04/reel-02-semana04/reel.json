@@ -1,0 +1,20 @@
+{
+  "id": "reel-02-semana04",
+  "date": "2026-06-04",
+  "template": "reel-02-contagem",
+  "pilar": "B",
+  "gancho": "Feature discovery via dúvidas reais — humaniza o assistente IA",
+  "vars": {
+    "KICKER": "perguntas da semana:",
+    "LABEL_5": "posso substituir manteiga por óleo?",
+    "LABEL_4": "o frango tá cozinhado?",
+    "LABEL_3": "quanto tempo dura o arroz na geladeira?",
+    "LABEL_2": "tem receita com o que eu tenho?",
+    "LABEL_1": "ela responde qualquer coisa.",
+    "FINAL_KICKER": "Assistente da Chef Luiza — no app",
+    "HEADLINE": "Uma <em>chef</em><br>ao seu lado.",
+    "SUBTEXT": "Disponível toda vez que você precisar."
+  },
+  "caption": "A assistente da Luiza na Cozinha já respondeu milhares de perguntas assim. 👩‍🍳\n\nEla está disponível no app toda vez que você precisar — como ter uma chef do seu lado.\n\nTesta grátis. Link na bio 👆",
+  "hashtags": "#luizanacozinha #assistente #duvidas #cozinhar #receitasfaceis #planejamentoalimentar"
+}

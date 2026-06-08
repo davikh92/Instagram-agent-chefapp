@@ -1,8 +1,12 @@
 node_modules/
-ready-to-post/
 templates/generated/*.html
 *.log
 .env
+
+# Binários de vídeo — armazenados no Cloudinary, não no repositório
+# (reels.mp4 podem ter 10-100 MB cada)
+ready-to-post/**/*.mp4
+ready-to-post/**/*.webm
 
 # Arquivos de trabalho da quinzena (regeneráveis)
 data/briefing-*.json
@@ -12,7 +16,7 @@ data/queue.json
 # Gerados localmente — não precisam de versionamento
 dashboard.html
 
-# Logs de execução (gerados em runtime)
+# Logs de execução (gerados em runtime — não commitados para evitar conflitos)
 logs/
 
 # Configurações locais do Claude Code

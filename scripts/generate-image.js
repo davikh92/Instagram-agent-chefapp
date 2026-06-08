@@ -90,10 +90,20 @@ async function processItem(config) {
     return;
   }
 
-  // Se já tem slide-01.png, pula
+  // Se já tem slide-01.png localmente, pula
   if (fs.existsSync(path.join(outDir, 'slide-01.png'))) {
     console.log(`  ⏭  ${id} — imagem já existe, pulando`);
     return;
+  }
+
+  // Verifica se já está no Cloudinary (modo GitHub Actions)
+  const postJsonPath = path.join(outDir, 'post.json');
+  if (fs.existsSync(postJsonPath)) {
+    const existing = JSON.parse(fs.readFileSync(postJsonPath, 'utf8'));
+    if (existing.cloudinaryUrl) {
+      console.log(`  ⏭  ${id} — já no Cloudinary, pulando geração`);
+      return;
+    }
   }
 
   console.log(`\n🖼️  Gerando ${id} (${date})...`);
@@ -109,23 +119,49 @@ async function processItem(config) {
     console.log(`  ✓ slide-01.png salvo (${sizeKB} KB)`);
 
     // Slides extras (carrossel multi-imagem)
+    const extraSlidePaths = [];
     for (let i = 0; i < slides.length; i++) {
       const slidePrompt = slides[i];
       console.log(`  ☁️  Slide ${i + 2}/${slides.length + 1}...`);
       const buf  = await generateImage(slidePrompt, aspectRatio);
       const sp   = path.join(outDir, `slide-0${i + 2}.png`);
       fs.writeFileSync(sp, buf);
+      extraSlidePaths.push(sp);
       console.log(`  ✓ slide-0${i + 2}.png salvo (${(buf.length / 1024).toFixed(0)} KB)`);
+    }
+
+    // ── Upload permanente para Cloudinary ─────────────────────────────────────
+    let cloudinaryMeta = {};
+    try {
+      const storage = require('./lib/cloudinary-storage');
+      if (slides.length === 0) {
+        // Post único
+        const result = await storage.uploadImage(id, imgPath);
+        if (result) cloudinaryMeta = result;
+      } else {
+        // Carrossel: sobe todos os slides
+        const allPaths = [imgPath, ...extraSlidePaths];
+        const results  = await storage.uploadSlides(id, allPaths);
+        if (results) cloudinaryMeta = { cloudinarySlides: results, cloudinaryUrl: results[0].cloudinaryUrl };
+      }
+      if (cloudinaryMeta.cloudinaryUrl) console.log(`  ✓ Cloudinary: imagem(ns) salva(s)`);
+    } catch (cloudErr) {
+      console.warn(`  ⚠️  Cloudinary upload falhou: ${cloudErr.message} (arquivo local mantido)`);
     }
 
     // caption.txt
     const captionContent = `${caption}\n\n${hashtags}`;
     fs.writeFileSync(path.join(outDir, 'caption.txt'), captionContent, 'utf8');
 
-    // post.json (metadados)
+    // post.json (metadados + URLs Cloudinary se disponíveis)
     fs.writeFileSync(
       path.join(outDir, 'post.json'),
-      JSON.stringify({ ...config, generatedAt: new Date().toISOString(), model: MODEL }, null, 2),
+      JSON.stringify({
+        ...config,
+        generatedAt: new Date().toISOString(),
+        model: MODEL,
+        ...cloudinaryMeta,
+      }, null, 2),
       'utf8'
     );
 

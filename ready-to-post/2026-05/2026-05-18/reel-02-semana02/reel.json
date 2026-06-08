@@ -1,0 +1,20 @@
+{
+  "id": "reel-02-semana02",
+  "date": "2026-05-18",
+  "template": "reel-02-contagem",
+  "pilar": "A",
+  "gancho": "Comportamentos reais da semana — o espectador acumula 'sim' até o CTA",
+  "vars": {
+    "KICKER": "essa semana você...",
+    "LABEL_5": "improvisou algo estranho",
+    "LABEL_4": "pediu delivery sem querer",
+    "LABEL_3": "jogou comida fora",
+    "LABEL_2": "comprou sem lista",
+    "LABEL_1": "hora de resolver isso",
+    "FINAL_KICKER": "A Luiza na Cozinha muda isso",
+    "HEADLINE": "Zero <em>julgamento.</em><br>Só solução.",
+    "SUBTEXT": "Planejamento em 2 minutos. Toda semana."
+  },
+  "caption": "Essa semana você fez quantos desses? 😅\n\nZero julgamento — isso é só o que acontece quando a semana não tem planejamento. A gente resolve isso em 2 minutos.\n\nTesta grátis. Link na bio 👆",
+  "hashtags": "#luizanacozinha #comerbem #cozinhar #planejamentoalimentar #organizacao #rotina"
+}
