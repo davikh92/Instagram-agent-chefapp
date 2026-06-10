@@ -8,6 +8,9 @@ templates/generated/*.html
 ready-to-post/**/*.mp4
 ready-to-post/**/*.webm
 
+# Lock files de publicação — nunca commitados
+ready-to-post/**/.publishing
+
 # Arquivos de trabalho da quinzena (regeneráveis)
 data/briefing-*.json
 data/plano-*.json

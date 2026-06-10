@@ -432,6 +432,19 @@ function findPublishableFolders(targetDate = null, todayOnly = false) {
 async function main() {
   checkEnv();
 
+  // Sincroniza com o remoto antes de checar published.json
+  // Evita que tarefas locais publiquem conteúdo já publicado pelo GitHub Actions
+  if (!process.env.GITHUB_ACTIONS) {
+    try {
+      const { execSync } = require('child_process');
+      console.log('🔄 Sincronizando git com remoto...');
+      execSync('git pull --rebase origin main', { cwd: path.resolve(__dirname, '..'), stdio: 'pipe' });
+      console.log('  ✓ Git atualizado');
+    } catch (e) {
+      console.warn('  ⚠️  git pull falhou (offline ou conflito) — continuando com estado local');
+    }
+  }
+
   // Remove locks órfãos de runs que crasharam antes de limpar
   // (crash entre writeFileSync do lock e unlinkSync no finally)
   try {
