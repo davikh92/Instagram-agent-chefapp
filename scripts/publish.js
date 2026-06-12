@@ -227,10 +227,33 @@ async function publishFolder(folderPath) {
     throw e; // outro erro inesperado — propaga
   }
 
-  // Detecta tipo: reel-final.mp4 (CapCut) > reel.mp4 > slides PNG
+  // Lê metadados de Cloudinary antes da detecção de tipo
+  // (cloudinaryUrl no reel.json conta como "tem reel" mesmo sem mp4 local)
+  let reelCloudinaryUrl     = null;
+  let reelCloudinaryCoverUrl = null;
+  let imageCloudinaryUrl    = null;
+
+  const reelJsonPath = path.join(folderPath, 'reel.json');
+  if (fs.existsSync(reelJsonPath)) {
+    try {
+      const meta = JSON.parse(fs.readFileSync(reelJsonPath, 'utf8').replace(/^﻿/, ''));
+      reelCloudinaryUrl      = meta.cloudinaryUrl      || null;
+      reelCloudinaryCoverUrl = meta.cloudinaryCoverUrl || null;
+    } catch { /* json inválido — ignora */ }
+  }
+
+  const postJsonPath = path.join(folderPath, 'post.json');
+  if (fs.existsSync(postJsonPath)) {
+    try {
+      const meta = JSON.parse(fs.readFileSync(postJsonPath, 'utf8').replace(/^﻿/, ''));
+      imageCloudinaryUrl = meta.cloudinaryUrl || null;
+    } catch { /* json inválido — ignora */ }
+  }
+
+  // Detecta tipo: reel-final.mp4 (CapCut) > reel.mp4 > cloudinaryUrl no reel.json > slides PNG
   const reelFinal  = path.join(folderPath, 'reel-final.mp4');
   const reelOrig   = path.join(folderPath, 'reel.mp4');
-  const hasReel    = fs.existsSync(reelFinal) || fs.existsSync(reelOrig);
+  const hasReel    = fs.existsSync(reelFinal) || fs.existsSync(reelOrig) || !!reelCloudinaryUrl;
 
   // Coleta todos os slides em ordem
   const slides = fs.readdirSync(folderPath)
@@ -242,7 +265,7 @@ async function publishFolder(folderPath) {
   const isImage    = !hasReel && slides.length === 1;
 
   if (!hasReel && slides.length === 0) {
-    console.log(`  ✗ ${name} — sem reel.mp4 nem slides PNG, pulando`);
+    console.log(`  ✗ ${name} — sem reel.mp4, cloudinaryUrl nem slides PNG, pulando`);
     return;
   }
 
@@ -260,25 +283,8 @@ async function publishFolder(folderPath) {
   const uploadedIds = []; // { publicId, resourceType }
   let mediaId;
 
-  // ── Lê metadados de Cloudinary do reel.json / post.json ──────────────────────
-  // Quando gerado no modo cloud (GitHub Actions), o vídeo/imagem já está no
-  // Cloudinary com URL permanente — não precisa re-upload.
-  let reelCloudinaryUrl     = null;
-  let reelCloudinaryCoverUrl = null;
-  let imageCloudinaryUrl    = null;
-
-  const reelJsonPath = path.join(folderPath, 'reel.json');
-  if (fs.existsSync(reelJsonPath)) {
-    const meta = JSON.parse(fs.readFileSync(reelJsonPath, 'utf8'));
-    reelCloudinaryUrl      = meta.cloudinaryUrl      || null;
-    reelCloudinaryCoverUrl = meta.cloudinaryCoverUrl || null;
-  }
-
-  const postJsonPath = path.join(folderPath, 'post.json');
-  if (fs.existsSync(postJsonPath)) {
-    const meta = JSON.parse(fs.readFileSync(postJsonPath, 'utf8'));
-    imageCloudinaryUrl = meta.cloudinaryUrl || null;
-  }
+  // reelCloudinaryUrl, reelCloudinaryCoverUrl e imageCloudinaryUrl
+  // já foram lidos acima (antes da detecção de tipo)
 
   try {
     if (hasReel) {
