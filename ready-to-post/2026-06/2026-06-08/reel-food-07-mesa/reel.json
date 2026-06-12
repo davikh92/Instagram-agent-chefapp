@@ -5,5 +5,8 @@
   "caption": "Segunda-feira pode ser assim. Jantar pronto, família na mesa. 🕯️\n\nA Luiza na Cozinha planeja a semana inteira em 2 minutos. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #segundafeira #jantarfamiliar #planejamentoalimentar #comidasaudavel #cardapiosemanal #organizacaofamiliar",
   "generatedAt": "2026-05-29T00:06:26.282Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269932/luiza-generated/veo/reel-food-07-mesa.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-07-mesa",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269935/luiza-generated/covers/reel-food-07-mesa-cover.png"
 }

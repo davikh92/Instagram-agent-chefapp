@@ -5,5 +5,8 @@
   "caption": "Quarta de feira. Onde a semana começa de verdade. 🥕\n\nA Luiza na Cozinha já sabe o que você precisa comprar — você só pega. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #quarta #feiralivre #comprassaudaveis #planejamentoalimentar #comidasaudavel #verduras",
   "generatedAt": "2026-06-03T15:24:13.697Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269952/luiza-generated/veo/reel-food-16-feira.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-16-feira",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269953/luiza-generated/covers/reel-food-16-feira-cover.png"
 }

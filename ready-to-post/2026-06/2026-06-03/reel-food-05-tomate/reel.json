@@ -1,9 +1,12 @@
-﻿{
-    "id":  "reel-food-05-tomate",
-    "date":  "2026-06-03",
-    "prompt":  "Extreme close-up of cherry tomatoes being halved on a worn wooden cutting board, knife motion captured mid-cut, juice releasing in a dramatic splash. Side lighting from a warm kitchen window, golden hour 3800K. Background blurred dark kitchen with hanging herbs out of focus. Hands are visible entering the frame from top, no face shown. One bright red tomato hero element against muted wooden surface. Film grain texture, cinematic food photography style. 9:16 vertical, 8 seconds, slow motion capture at decisive moment.",
-    "caption":  "Segunda-feira sem drama. CardÃ¡pio montado, lista de compras pronta. ðŸ…\n\nQuando vocÃª sabe o que vai cozinhar, a semana toda fica mais leve. Testa grÃ¡tis, link na bio ðŸ‘†",
-    "hashtags":  "#luizanacozinha #segundafeira #planejamentoalimentar #cardapiosemanal #comidasaudavel #preparacaoantecipada #receitasfaceis",
-    "generatedAt":  "2026-05-29T00:04:56.930Z",
-    "model":  "veo-3.1-lite-generate-preview"
+{
+  "id": "reel-food-05-tomate",
+  "date": "2026-06-03",
+  "prompt": "Extreme close-up of cherry tomatoes being halved on a worn wooden cutting board, knife motion captured mid-cut, juice releasing in a dramatic splash. Side lighting from a warm kitchen window, golden hour 3800K. Background blurred dark kitchen with hanging herbs out of focus. Hands are visible entering the frame from top, no face shown. One bright red tomato hero element against muted wooden surface. Film grain texture, cinematic food photography style. 9:16 vertical, 8 seconds, slow motion capture at decisive moment.",
+  "caption": "Segunda-feira sem drama. CardÃ¡pio montado, lista de compras pronta. ðŸ…\n\nQuando vocÃª sabe o que vai cozinhar, a semana toda fica mais leve. Testa grÃ¡tis, link na bio ðŸ‘†",
+  "hashtags": "#luizanacozinha #segundafeira #planejamentoalimentar #cardapiosemanal #comidasaudavel #preparacaoantecipada #receitasfaceis",
+  "generatedAt": "2026-05-29T00:04:56.930Z",
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269917/luiza-generated/veo/reel-food-05-tomate.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-05-tomate",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269918/luiza-generated/covers/reel-food-05-tomate-cover.png"
 }

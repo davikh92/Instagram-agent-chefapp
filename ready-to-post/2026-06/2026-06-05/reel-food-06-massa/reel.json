@@ -5,5 +5,8 @@
   "caption": "Sexta com gosto de sábado. 🍝\n\nNão precisa de receita de cabeça — só precisa de um cardápio pronto. A Luiza na Cozinha faz isso por você. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #sexta #massa #pastafrescal #cozinhandoemcasa #planejamentoalimentar #receitaitaliana",
   "generatedAt": "2026-05-29T00:05:42.016Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269920/luiza-generated/veo/reel-food-06-massa.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-06-massa",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269929/luiza-generated/covers/reel-food-06-massa-cover.png"
 }

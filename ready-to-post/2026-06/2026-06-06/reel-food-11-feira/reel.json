@@ -5,5 +5,8 @@
   "caption": "Sábado é dia de feira. E de cardápio pronto pra semana. 🥬\n\nA Luiza na Cozinha organiza tudo — você só cozinha. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #sabado #feira #mealprep #planejamentoalimentar #comidasaudavel #feiralivre",
   "generatedAt": "2026-06-03T14:54:30.927Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269930/luiza-generated/veo/reel-food-11-feira.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-11-feira",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269931/luiza-generated/covers/reel-food-11-feira-cover.png"
 }

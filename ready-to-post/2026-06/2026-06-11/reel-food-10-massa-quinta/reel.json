@@ -5,5 +5,8 @@
   "caption": "Amanhã é sexta. Merece uma massa. 🍝\n\nA Luiza na Cozinha planeja tudo por você — cardápio, receitas e lista de compras. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #quinta #massa #jantar #planejamentoalimentar #receitaitaliana #comidasaudavel",
   "generatedAt": "2026-06-03T14:47:17.072Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269940/luiza-generated/veo/reel-food-10-massa-quinta.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-10-massa-quinta",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269941/luiza-generated/covers/reel-food-10-massa-quinta-cover.png"
 }

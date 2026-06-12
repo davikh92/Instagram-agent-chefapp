@@ -5,5 +5,8 @@
   "caption": "Sexta o cardápio da semana fecha. E fecha bem. 🥤\n\nTodas as receitas, todas as compras, nenhum improviso. A Luiza na Cozinha faz por você. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #sexta #suco #smoothie #detox #comidasaudavel #planejamentoalimentar #fimdesemana",
   "generatedAt": "2026-06-03T15:25:51.312Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269956/luiza-generated/veo/reel-food-18-suco.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-18-suco",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269958/luiza-generated/covers/reel-food-18-suco-cover.png"
 }

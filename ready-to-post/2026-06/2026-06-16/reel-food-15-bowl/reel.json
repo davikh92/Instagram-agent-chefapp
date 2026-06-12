@@ -5,5 +5,8 @@
   "caption": "Almoço que parece difícil mas não é. 🥗\n\nReceita gerada pelo app, lista já feita, ingredientes em casa. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #terca #almoco #bowl #graos #comidasaudavel #receitafacil #planejamentoalimentar",
   "generatedAt": "2026-06-03T15:23:21.194Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269949/luiza-generated/veo/reel-food-15-bowl.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-15-bowl",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269951/luiza-generated/covers/reel-food-15-bowl-cover.png"
 }

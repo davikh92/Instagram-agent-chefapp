@@ -5,5 +5,8 @@
   "caption": "Segunda começa diferente quando você já sabe o que tem na geladeira. 🍞\n\nCardápio da semana em 2 minutos. A Luiza na Cozinha faz por você. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #segunda #cafedamanha #paocaseiro #planejamentoalimentar #comidasaudavel #receitafacil",
   "generatedAt": "2026-06-03T15:22:36.257Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269947/luiza-generated/veo/reel-food-14-pao.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-14-pao",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269948/luiza-generated/covers/reel-food-14-pao-cover.png"
 }

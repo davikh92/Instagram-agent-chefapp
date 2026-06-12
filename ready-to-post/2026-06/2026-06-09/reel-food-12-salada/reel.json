@@ -5,5 +5,8 @@
   "caption": "Almoço de terça sem estresse. 🥗\n\nQuando o cardápio já está planejado, você só executa. A Luiza na Cozinha faz o plano por você. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #terca #almoco #salada #receitafacil #planejamentoalimentar #comidasaudavel",
   "generatedAt": "2026-06-03T14:55:32.490Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269936/luiza-generated/veo/reel-food-12-salada.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-12-salada",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269937/luiza-generated/covers/reel-food-12-salada-cover.png"
 }

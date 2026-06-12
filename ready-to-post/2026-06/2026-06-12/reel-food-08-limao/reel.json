@@ -5,5 +5,8 @@
   "caption": "O que jantar hoje? A resposta já está no app. 🍋\n\nA Luiza na Cozinha monta o cardápio e a lista de compras por você — toda semana. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #sexta #frango #receitafacil #planejamentoalimentar #comidasaudavel #jantarrapido",
   "generatedAt": "2026-05-29T00:07:10.691Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269942/luiza-generated/veo/reel-food-08-limao.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-08-limao",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269944/luiza-generated/covers/reel-food-08-limao-cover.png"
 }

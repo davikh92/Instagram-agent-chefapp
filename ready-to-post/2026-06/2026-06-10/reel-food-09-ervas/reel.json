@@ -5,5 +5,8 @@
   "caption": "Você não odeia cozinhar. Você odeia não saber o que cozinhar. 🌿\n\nCom a Luiza na Cozinha, o cardápio da semana fica pronto em 2 minutos. Testa grátis, link na bio 👆",
   "hashtags": "#luizanacozinha #quarta #ervas #cozinhandoemcasa #planejamentoalimentar #cardapiosemanal #comidasaudavel",
   "generatedAt": "2026-06-03T14:46:32.632Z",
-  "model": "veo-3.1-lite-generate-preview"
+  "model": "veo-3.1-lite-generate-preview",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1781269938/luiza-generated/veo/reel-food-09-ervas.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-09-ervas",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1781269939/luiza-generated/covers/reel-food-09-ervas-cover.png"
 }
