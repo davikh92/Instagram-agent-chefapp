@@ -75,14 +75,13 @@ async function refreshToken() {
   if (!userId) {
     console.warn('⚠️  INSTAGRAM_USER_ID não encontrado — pulando verificação de validade.');
   } else {
-    // ── 1. Verifica se o token ainda é válido (mesmo endpoint que publish.js) ─
+    // ── 1. Verifica se o token ainda é válido via endpoint de publishing limit ─
+    //    (requer instagram_content_publish — mesmo escopo do publish.js)
     let tokenInfo;
     try {
-      const checkUrl = `https://graph.instagram.com/v21.0/${userId}?fields=id,username`;
-      console.log(`  GET ${checkUrl} (Authorization: Bearer)`);
-      const checkRes = await fetch(checkUrl, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
+      const checkUrl = `https://graph.instagram.com/v21.0/${userId}/content_publishing_limit?fields=quota_usage&access_token=${token}`;
+      console.log(`  GET /{userId}/content_publishing_limit`);
+      const checkRes = await fetch(checkUrl);
       tokenInfo = await checkRes.json();
       console.log(`  Resposta: ${JSON.stringify(tokenInfo)}`);
     } catch (err) {
@@ -104,7 +103,8 @@ async function refreshToken() {
       process.exit(1);
     }
 
-    console.log(`✓ Token válido para @${tokenInfo.username || tokenInfo.id}`);
+    const quota = tokenInfo.data?.[0]?.quota_usage ?? '?';
+    console.log(`✓ Token válido — quota de publicação usada hoje: ${quota}/50`);
   }
 
   // ── 2. Tenta renovar via Instagram Basic Display API ─────────────────────
