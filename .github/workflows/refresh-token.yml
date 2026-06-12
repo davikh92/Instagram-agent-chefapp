@@ -39,14 +39,17 @@ jobs:
 
       - name: Atualizar Secret do GitHub
         # Requer GH_PAT com permissão de secrets:write no repo
-        if: ${{ secrets.GH_PAT != '' }}
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "⚠️  GH_PAT não configurado — pulando atualização do secret."
+            exit 0
+          fi
           if [ -f /tmp/new_instagram_token.txt ]; then
             NEW_TOKEN=$(cat /tmp/new_instagram_token.txt)
             echo "$NEW_TOKEN" | gh secret set INSTAGRAM_ACCESS_TOKEN \
-              --repo ${{ github.repository }}
+              --repo "$GITHUB_REPOSITORY"
             rm /tmp/new_instagram_token.txt
             echo "✅ Secret INSTAGRAM_ACCESS_TOKEN atualizado no GitHub."
           else
