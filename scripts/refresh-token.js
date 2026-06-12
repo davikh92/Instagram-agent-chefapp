@@ -66,49 +66,12 @@ async function refreshToken() {
     process.exit(1);
   }
 
-  console.log('🔄 Verificando e renovando Instagram Access Token...');
-
-  const userId = process.env.INSTAGRAM_USER_ID;
-  console.log(`  userId: ${userId ? userId.slice(0,6) + '...' : '(não encontrado)'}`);
+  console.log('🔄 Tentando renovar Instagram Access Token...');
   console.log(`  token : ${token ? token.slice(0,8) + '...[' + token.length + ' chars]' : '(vazio)'}`);
 
-  if (!userId) {
-    console.warn('⚠️  INSTAGRAM_USER_ID não encontrado — pulando verificação de validade.');
-  } else {
-    // ── 1. Verifica se o token ainda é válido via endpoint de publishing limit ─
-    //    (requer instagram_content_publish — mesmo escopo do publish.js)
-    let tokenInfo;
-    try {
-      const checkUrl = `https://graph.instagram.com/v21.0/${userId}/content_publishing_limit?fields=quota_usage&access_token=${token}`;
-      console.log(`  GET /{userId}/content_publishing_limit`);
-      const checkRes = await fetch(checkUrl);
-      tokenInfo = await checkRes.json();
-      console.log(`  Resposta: ${JSON.stringify(tokenInfo)}`);
-    } catch (err) {
-      console.warn(`⚠️  Sem conexão para verificar token: ${err.message}`);
-      process.exit(0); // não fatal — pode ser instabilidade de rede
-    }
-
-    if (tokenInfo.error) {
-      const { code, message: apiMsg } = tokenInfo.error;
-      const expired = code === 190 || /expired|invalid/i.test(apiMsg);
-      const logMsg = expired
-        ? 'Token EXPIRADO — renovação automática não é possível. Gere um novo manualmente.'
-        : `Erro ao verificar token [${code}]: ${apiMsg}`;
-      log.error('refresh-token', logMsg, { code });
-      console.error(`❌ ${logMsg}`);
-      if (expired) {
-        console.error('   ➡️  Siga: docs/setup-instagram-api.md → Seção 5 para gerar novo token');
-      }
-      process.exit(1);
-    }
-
-    const quota = tokenInfo.data?.[0]?.quota_usage ?? '?';
-    console.log(`✓ Token válido — quota de publicação usada hoje: ${quota}/50`);
-  }
-
-  // ── 2. Tenta renovar via Instagram Basic Display API ─────────────────────
-  //    (funciona para tokens gerados via Instagram Login / Basic Display API)
+  // ── Tenta renovar via endpoint ig_refresh_token ───────────────────────────
+  // Nota: tokens do tipo Instagram Login (IGAA) suportam este endpoint.
+  // Tokens do tipo Graph API via Facebook Login podem precisar de renovação manual.
   const url = `https://graph.instagram.com/refresh_access_token` +
               `?grant_type=ig_refresh_token&access_token=${token}`;
 
@@ -117,29 +80,25 @@ async function refreshToken() {
     const res = await fetch(url);
     data = await res.json();
   } catch (fetchErr) {
-    console.warn(`⚠️  Não foi possível contactar endpoint de renovação: ${fetchErr.message}`);
-    console.log('ℹ️  Token ainda válido mas não renovado — tente novamente mais tarde.');
+    console.warn(`⚠️  Sem conexão para renovar token: ${fetchErr.message}`);
+    console.log('ℹ️  Publicações continuam funcionando — tente novamente mais tarde.');
     process.exit(0);
   }
 
-  // ── Erro da API de renovação ───────────────────────────────────────────
+  // ── Erro da API de renovação ─────────────────────────────────────────────
   if (data.error) {
     const { code, message: apiMsg } = data.error;
 
-    // Código 190 neste endpoint = token é do tipo Graph API (conta business/creator)
-    // e não pode ser renovado por este endpoint — isso é normal, não é erro fatal.
-    if (code === 190 || /ig_refresh_token/.test(apiMsg)) {
-      const warnMsg = 'Token do tipo Graph API (conta business) — renovação automática por este endpoint não é suportada. Token continua válido.';
-      log.warn('refresh-token', warnMsg, { code });
-      console.warn(`⚠️  ${warnMsg}`);
-      console.log('ℹ️  Para renovar manualmente: gere um novo token em docs/setup-instagram-api.md antes de expirar.');
-      process.exit(0); // não fatal — o token ainda funciona
-    }
+    // Código 190 = token expirado ou tipo incompatível com este endpoint.
+    // Não é fatal — publicações podem ainda funcionar com o token atual.
+    const warnMsg = code === 190
+      ? `Token não renovável automaticamente [${code}: ${apiMsg}] — gere um novo antes de expirar (60 dias).`
+      : `Erro ao renovar token [${code}]: ${apiMsg}`;
 
-    const logMsg = `Erro ao renovar token [${code}]: ${apiMsg}`;
-    log.error('refresh-token', logMsg, { code });
-    console.error(`❌ ${logMsg}`);
-    process.exit(1);
+    log.warn('refresh-token', warnMsg, { code });
+    console.warn(`⚠️  ${warnMsg}`);
+    console.log('ℹ️  Para renovar: docs/setup-instagram-api.md → Seção 5');
+    process.exit(0); // não é fatal — publicações continuam funcionando
   }
 
   // ── Sucesso ────────────────────────────────────────────────────────────────
