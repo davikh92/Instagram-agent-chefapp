@@ -78,9 +78,11 @@ async function refreshToken() {
     // ── 1. Verifica se o token ainda é válido (mesmo endpoint que publish.js) ─
     let tokenInfo;
     try {
-      const checkUrl = `https://graph.instagram.com/v21.0/${userId}?fields=id,username&access_token=${token}`;
-      console.log(`  GET ${checkUrl.replace(token, token.slice(0,8)+'...')}`);
-      const checkRes = await fetch(checkUrl);
+      const checkUrl = `https://graph.instagram.com/v21.0/${userId}?fields=id,username`;
+      console.log(`  GET ${checkUrl} (Authorization: Bearer)`);
+      const checkRes = await fetch(checkUrl, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
       tokenInfo = await checkRes.json();
       console.log(`  Resposta: ${JSON.stringify(tokenInfo)}`);
     } catch (err) {
