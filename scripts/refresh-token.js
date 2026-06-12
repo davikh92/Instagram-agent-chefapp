@@ -69,16 +69,20 @@ async function refreshToken() {
   console.log('🔄 Verificando e renovando Instagram Access Token...');
 
   const userId = process.env.INSTAGRAM_USER_ID;
+  console.log(`  userId: ${userId ? userId.slice(0,6) + '...' : '(não encontrado)'}`);
+  console.log(`  token : ${token ? token.slice(0,8) + '...[' + token.length + ' chars]' : '(vazio)'}`);
+
   if (!userId) {
     console.warn('⚠️  INSTAGRAM_USER_ID não encontrado — pulando verificação de validade.');
   } else {
     // ── 1. Verifica se o token ainda é válido (mesmo endpoint que publish.js) ─
     let tokenInfo;
     try {
-      const checkRes = await fetch(
-        `https://graph.instagram.com/v21.0/${userId}?fields=id,username&access_token=${token}`
-      );
+      const checkUrl = `https://graph.instagram.com/v21.0/${userId}?fields=id,username&access_token=${token}`;
+      console.log(`  GET ${checkUrl.replace(token, token.slice(0,8)+'...')}`);
+      const checkRes = await fetch(checkUrl);
       tokenInfo = await checkRes.json();
+      console.log(`  Resposta: ${JSON.stringify(tokenInfo)}`);
     } catch (err) {
       console.warn(`⚠️  Sem conexão para verificar token: ${err.message}`);
       process.exit(0); // não fatal — pode ser instabilidade de rede
