@@ -17,7 +17,6 @@ data/plano-*.json
 data/queue.json
 
 # Gerados localmente — não precisam de versionamento
-dashboard.html
 
 # Logs de execução (gerados em runtime — não commitados para evitar conflitos)
 logs/
