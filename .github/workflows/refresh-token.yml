@@ -38,7 +38,9 @@ jobs:
         run: node scripts/refresh-token.js
 
       - name: Atualizar Secret do GitHub
-        # Requer GH_PAT com permissão de secrets:write no repo
+        # Requer GH_PAT com permissão de secrets:write no repo.
+        # Não é fatal: publicações continuam com o token atual mesmo se este step falhar.
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |

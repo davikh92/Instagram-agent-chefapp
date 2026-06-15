@@ -46,7 +46,9 @@ jobs:
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          git stash -u
           git pull --rebase origin main
+          git stash pop
           git add ready-to-post/
           git diff --staged --quiet \
             || git commit -m "chore: reels Veo gerados automaticamente [skip ci]"
