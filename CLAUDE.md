@@ -110,6 +110,8 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 ## Regras Absolutas de Conteúdo
 
 - Identificação emocional **SEMPRE** antes de mostrar o app
+- Todo reel Veo segue os **3 arquétipos** (ESPELHO / IMERSÃO / VIRADA) com rotação semanal 2/3/1 — ver seção "Cérebro Editorial" em `docs/veo-prompt-guide.md`
+- Áudio Veo: voz PT-BR máx 10–12 palavras, uma frase só, entrando no segundo 1 — ou apenas som ambiente (IMERSÃO)
 - Tom conversacional, brasileiro, sem formalidade — nunca jargão de coach
 - Humor leve e auto-irônico nos Pilares A e B
 - Nunca posts puramente educativos sem elemento de identificação

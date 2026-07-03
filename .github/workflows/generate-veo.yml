@@ -40,7 +40,7 @@ jobs:
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
 
       - name: Gerar reels Veo (5 por lote para respeitar cota diária)
-        run: node scripts/generate-veo.js --all --limit 3  # TEMP: 3 para testes de áudio
+        run: node scripts/generate-veo.js --all --limit 5
 
       - name: Atualizar dashboard
         run: node scripts/build-dashboard.js

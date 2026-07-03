@@ -24,6 +24,51 @@
 
 ---
 
+## 🧠 Cérebro Editorial — Arquétipos, Áudio e Narrativa de 8s
+
+> **Adicionado Jul 2026** — após testes confirmarem que Veo gera voz em PT-BR com qualidade.
+> Todo reel Veo pertence a UM arquétipo. O arquétipo define a cena, o áudio e o papel no funil.
+
+### Os 3 arquétipos
+
+| Arquétipo | Pilar | Cena | Áudio | Papel |
+|---|---|---|---|---|
+| **ESPELHO** | A/B | O problema em si — geladeira aberta, hesitação, 18h, cansaço | Voz PT-BR nomeia a dor. **Sem CTA falado** | Parar o scroll, comentar/marcar |
+| **IMERSÃO** | A/C | Comida cinematográfica pura | **Só som ambiente** — borbulha, chiado, faca. Sem voz | Alcance frio, salvamento, estética |
+| **VIRADA** | C | Mãos confiantes, cozinha resolvida, execução tranquila | Voz PT-BR com a frase de virada. Micro-CTA falado permitido (nem sempre) | Conversão |
+
+### Rotação semanal (6 slots Veo/semana)
+
+**2× ESPELHO · 3× IMERSÃO · 1× VIRADA**
+O feed alterna dor → desejo → solução. O app aparece explicitamente 1x/semana no vídeo; o resto converte pela caption.
+
+### Regras de áudio para 8 segundos
+
+- **Máximo 10–12 palavras faladas** — a voz ocupa ~4s, sobra respiro no início e no fim
+- Voz entra no segundo 1, nunca no 0 (o hook visual vem primeiro)
+- **Uma frase só.** Sem segunda ideia. Se não cabe em uma frase, o reel é IMERSÃO
+- Voz feminina brasileira, tom de amiga — nunca locutora de comercial
+- Som ambiente SEMPRE presente, mesmo sob a voz
+- Formato no prompt: `Audio: a warm Brazilian woman's voice says in Brazilian Portuguese: '[frase]'. Soft kitchen ambience underneath.`
+- IMERSÃO: `Audio: rich ambient kitchen sounds only — [sons específicos da cena], no music, no voice.`
+
+### Estrutura dos 8 segundos
+
+```
+0–1s  → hook visual (movimento JÁ acontecendo, nunca cena parada)
+1–5s  → desenvolvimento + voz (se houver)
+5–8s  → assentamento — a cena "termina", frame final segurável
+```
+
+### App simulado (VIRADA)
+
+Não temos capturas fiéis da interface. Quando a cena pedir o app:
+- Celular na bancada mostrando **um app genérico de cardápio semanal** (lista limpa de refeições, visual clean)
+- Nunca prometer que é a interface real — é representação
+- Exemplo: `a smartphone propped on the counter displaying a clean weekly meal-planning app with a simple list of dishes`
+
+---
+
 ## 📐 Estrutura de Prompt
 
 ### Template padrão (copiar e colar)
