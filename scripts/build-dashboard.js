@@ -36,6 +36,7 @@ function collectPosts() {
         if (!fs.statSync(postPath).isDirectory()) continue;
 
         const reelJson      = path.join(postPath, 'reel.json');
+        const storyJson     = path.join(postPath, 'story.json');
         const publishedJson = path.join(postPath, 'published.json');
         const captionTxt    = path.join(postPath, 'caption.txt');
         const coverPng      = path.join(postPath, 'cover.png');
@@ -43,21 +44,24 @@ function collectPosts() {
         const skipMarker    = path.join(postPath, '.skip');
 
         let reel      = fs.existsSync(reelJson)      ? readJson(reelJson)      : {};
+        let story     = fs.existsSync(storyJson)     ? readJson(storyJson)     : {};
         let published = fs.existsSync(publishedJson) ? readJson(publishedJson) : null;
-        let caption   = fs.existsSync(captionTxt)     ? fs.readFileSync(captionTxt, 'utf8').trim()         : (reel.caption || '');
+        let caption   = fs.existsSync(captionTxt)     ? fs.readFileSync(captionTxt, 'utf8').trim()
+                          : (reel.caption || story.headline || '');
         let skip      = fs.existsSync(skipMarker);
 
         // Detecta tipo pelo conteúdo da pasta
         const files = fs.readdirSync(postPath);
         const hasSlides = files.some(f => f.startsWith('slide-'));
-        const type = hasSlides ? 'carousel' : (fs.existsSync(reelJson) ? 'reel' : 'post');
+        const isStory = fs.existsSync(storyJson) || postDir.startsWith('story-');
+        const type = isStory ? 'story' : hasSlides ? 'carousel' : (fs.existsSync(reelJson) ? 'reel' : 'post');
 
         // Imagem de capa — ordem de prioridade
-        let coverUrl = reel.cloudinaryCoverUrl || reel.coverUrl || null;
+        let coverUrl = reel.cloudinaryCoverUrl || reel.coverUrl || story.cloudinaryUrl || null;
         const hasCoverLocal = fs.existsSync(coverPng) || fs.existsSync(slidePng);
 
-        // Data efetiva — prefere reel.json, fallback para nome da pasta
-        const date = reel.date || dateDir;
+        // Data efetiva — prefere reel.json/story.json, fallback para nome da pasta
+        const date = reel.date || story.date || dateDir;
 
         const today = new Date().toISOString().slice(0, 10);
         let status;
@@ -128,7 +132,7 @@ function buildHtml(posts) {
   }
 
   function typeIcon(t) {
-    return t === 'reel' ? '🎬' : t === 'carousel' ? '🖼️' : '📄';
+    return t === 'reel' ? '🎬' : t === 'story' ? '📱' : t === 'carousel' ? '🖼️' : '📄';
   }
 
   function coverImg(p) {

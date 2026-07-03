@@ -21,6 +21,7 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 | `templates/` | HTMLs base para cada template visual |
 | `data/` | Briefings, planos, filas de geração (json + md) |
 | `data/veo-queue.json` | **Fila de reels para Veo 3.1** — prompts + captions (leia `docs/veo-prompt-guide.md`) |
+| `data/story-queue.json` | **Fila de Stories** — Imagen 4 (fundo) + overlay HTML (texto), pilares Vitrine/Check-in/Gancho |
 | `ready-to-post/` | Output final organizado por data |
 | `docs/veo-prompt-guide.md` | **Guia completo: como escrever prompts para Veo 3.1 Lite** |
 | `claude code design/` | Referência visual — posts.html (12 posts editoriais) + reels.html (4 reels animados) |
@@ -257,6 +258,8 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 |---|---|---|
 | `scripts/screenshot.js` | Local | Converte HTML em PNGs via Puppeteer |
 | `scripts/generate-veo.js` | Local | **Gera reels via Veo 3.1 API (text-to-video)** |
+| `scripts/generate-story.js` | Local | **Gera Stories: Imagen 4 (fundo) + overlay HTML (texto) via Puppeteer** |
+| `templates/story-overlay.html` | Local | Template único de Story — fundo fotográfico + kicker/headline/CTA |
 | `templates/` | Local | HTMLs base para cada template visual |
 | `brand.json` | Local | Fonte única de verdade de marca |
 | `claude code design/posts.html` | Referência | 12 posts editoriais para inspiração de layout |

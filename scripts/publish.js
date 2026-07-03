@@ -124,6 +124,15 @@ async function createMediaContainer(opts) {
       body.append('cover_url', coverUrl);
       console.log(`  🖼️  Capa personalizada: ${coverUrl.split('/').pop()}`);
     }
+  } else if (mediaType === 'STORIES') {
+    // Stories aceitam imagem ou vídeo — a API ignora caption nesse tipo
+    body.delete('caption');
+    body.append('media_type', 'STORIES');
+    if (/\.mp4($|\?)/i.test(mediaUrl)) {
+      body.append('video_url', mediaUrl);
+    } else {
+      body.append('image_url', mediaUrl);
+    }
   } else {
     body.append('image_url', mediaUrl);
     if (isCarouselChild) body.append('is_carousel_item', 'true');
@@ -389,6 +398,168 @@ async function publishFolder(folderPath) {
   }
 }
 
+// ── Stories ────────────────────────────────────────────────────────────────────
+
+/**
+ * Publica uma pasta de story gerada (story.json + slide-01.png).
+ * Sempre media_type=STORIES, sempre imagem única, sem caption na API.
+ */
+async function publishStoryFolder(folderPath) {
+  const name = path.relative(READY_DIR, folderPath);
+
+  const publishedFlag = path.join(folderPath, 'published.json');
+  if (fs.existsSync(publishedFlag)) {
+    console.log(`  ⏭  ${name} — já publicado, pulando`);
+    return;
+  }
+
+  const storyJsonPath = path.join(folderPath, 'story.json');
+  if (!fs.existsSync(storyJsonPath)) {
+    console.log(`  ✗ ${name} — sem story.json, pulando`);
+    return;
+  }
+  const meta = JSON.parse(fs.readFileSync(storyJsonPath, 'utf8').replace(/^﻿/, ''));
+
+  let imgUrl = meta.cloudinaryUrl || null;
+  const uploadedIds = [];
+
+  console.log(`\n📤 Publicando story ${name} (${meta.pillar})...`);
+
+  try {
+    if (!imgUrl) {
+      const slidePath = path.join(folderPath, 'slide-01.png');
+      if (!fs.existsSync(slidePath)) {
+        console.log(`  ✗ ${name} — sem cloudinaryUrl nem slide-01.png, pulando`);
+        return;
+      }
+      const { url, publicId } = await uploadToCloudinary(slidePath);
+      uploadedIds.push({ publicId, resourceType: 'image' });
+      imgUrl = url;
+    } else {
+      console.log(`  ☁️  Usando imagem permanente do Cloudinary`);
+    }
+
+    const containerId = await createMediaContainer({ mediaType: 'STORIES', mediaUrl: imgUrl });
+    console.log(`  ✓ Container story: ${containerId}`);
+    const mediaId = await publishContainer(containerId);
+    console.log(`  ✅ Story publicada! Instagram media ID: ${mediaId}`);
+
+    fs.writeFileSync(publishedFlag, JSON.stringify({
+      instagram_media_id: mediaId,
+      published_at: new Date().toISOString(),
+      type: 'story',
+      pillar: meta.pillar,
+    }, null, 2));
+
+    log.ok('publish', `Story publicada: ${path.basename(folderPath)}`, { id: path.basename(folderPath), pillar: meta.pillar, mediaId });
+
+  } finally {
+    for (const { publicId, resourceType } of uploadedIds) {
+      await deleteFromCloudinary(publicId, resourceType);
+    }
+  }
+}
+
+/**
+ * Reposta como Story a mídia do feed já publicada hoje (mesma pasta-data).
+ * Usa a cloudinaryUrl já armazenada — sem custo extra de geração.
+ * Marca com .story-repost-done para não repostar 2x no mesmo dia.
+ */
+async function repostFeedAsStory(dateDir) {
+  const repostMarker = path.join(dateDir, '.story-repost-done');
+  if (fs.existsSync(repostMarker)) {
+    console.log(`  ⏭  Repost do feed já feito hoje`);
+    return;
+  }
+
+  // Encontra o item do feed já publicado hoje (reel ou post, não story-*)
+  const contentDirs = fs.readdirSync(dateDir)
+    .map(d => path.join(dateDir, d))
+    .filter(d => fs.statSync(d).isDirectory())
+    .filter(d => !path.basename(d).startsWith('story-'))
+    .filter(d => fs.existsSync(path.join(d, 'published.json')));
+
+  if (contentDirs.length === 0) {
+    console.log(`  ⏭  Nenhum post de feed publicado hoje ainda — repost adiado`);
+    return;
+  }
+
+  const sourceDir = contentDirs[0];
+  const reelJsonPath = path.join(sourceDir, 'reel.json');
+  const postJsonPath = path.join(sourceDir, 'post.json');
+
+  let mediaUrl = null;
+  if (fs.existsSync(reelJsonPath)) {
+    const meta = JSON.parse(fs.readFileSync(reelJsonPath, 'utf8').replace(/^﻿/, ''));
+    mediaUrl = meta.cloudinaryUrl || null;
+  } else if (fs.existsSync(postJsonPath)) {
+    const meta = JSON.parse(fs.readFileSync(postJsonPath, 'utf8').replace(/^﻿/, ''));
+    mediaUrl = meta.cloudinaryUrl || null;
+  }
+
+  if (!mediaUrl) {
+    console.log(`  ⏭  ${path.basename(sourceDir)} — sem cloudinaryUrl, não dá pra repostar como story`);
+    return;
+  }
+
+  console.log(`\n📤 Repostando feed como story: ${path.basename(sourceDir)}...`);
+  const containerId = await createMediaContainer({ mediaType: 'STORIES', mediaUrl });
+  console.log(`  ✓ Container story (repost): ${containerId}`);
+  const mediaId = await publishContainer(containerId);
+  console.log(`  ✅ Repost publicado! Instagram media ID: ${mediaId}`);
+
+  fs.writeFileSync(repostMarker, JSON.stringify({
+    instagram_media_id: mediaId,
+    published_at: new Date().toISOString(),
+    source: path.basename(sourceDir),
+  }, null, 2));
+
+  log.ok('publish', `Repost de feed como story: ${path.basename(sourceDir)}`, { source: path.basename(sourceDir), mediaId });
+}
+
+/**
+ * Publica stories do slot de hoje: repost do feed + uma story gerada (story-*)
+ * agendada para hoje, se ainda não publicada.
+ *
+ * O repost é tentado em TODO slot (não só de manhã) porque o feed publica em
+ * horários variáveis (10h/12h/18h BRT conforme o dia) — o marker
+ * .story-repost-done garante que só acontece uma vez por dia, mesmo tentando
+ * em múltiplos slots.
+ */
+async function publishStoriesToday(slot) {
+  const today = new Date().toISOString().split('T')[0];
+  const month = today.slice(0, 7);
+  const dateDir = path.join(READY_DIR, month, today);
+
+  if (!fs.existsSync(dateDir)) {
+    console.log(`  ⏭  Nenhuma pasta para hoje (${today})`);
+    return;
+  }
+
+  await repostFeedAsStory(dateDir).catch(err => {
+    console.error(`  ✗ Erro no repost: ${err.message}`);
+    log.error('publish', `Falha no repost de story: ${err.message}`, { erro: err.message });
+  });
+
+  // Stories geradas (story-*) agendadas para hoje, ainda não publicadas
+  const storyDirs = fs.readdirSync(dateDir)
+    .map(d => path.join(dateDir, d))
+    .filter(d => fs.statSync(d).isDirectory())
+    .filter(d => path.basename(d).startsWith('story-'))
+    .filter(d => !fs.existsSync(path.join(d, 'published.json')));
+
+  if (storyDirs.length === 0) {
+    console.log(`  ⏭  Nenhuma story gerada pendente para hoje`);
+    return;
+  }
+
+  // Publica só 1 por slot — mantém distribuição ao longo do dia
+  await publishStoryFolder(storyDirs[0]).catch(err => {
+    console.error(`  ✗ Erro ao publicar story: ${err.message}`);
+    log.error('publish', `Falha ao publicar story: ${err.message}`, { erro: err.message });
+  });
+}
+
 // ── Varredura de pastas ───────────────────────────────────────────────────────
 
 /**
@@ -472,12 +643,22 @@ async function main() {
   }
   cleanStaleLocks(READY_DIR);
 
-  const args        = process.argv.slice(2);
-  const folderFlag  = args.indexOf('--folder');
-  const dateFlag    = args.indexOf('--date');
-  const allFlag     = args.includes('--all');
-  const todayFlag   = args.includes('--today');
-  const catchupFlag = args.includes('--catchup');
+  const args         = process.argv.slice(2);
+  const folderFlag   = args.indexOf('--folder');
+  const dateFlag     = args.indexOf('--date');
+  const allFlag      = args.includes('--all');
+  const todayFlag    = args.includes('--today');
+  const catchupFlag  = args.includes('--catchup');
+  const storiesFlag  = args.includes('--stories-today');
+  const slotIdx      = args.indexOf('--slot');
+  const slot         = slotIdx !== -1 ? args[slotIdx + 1] : 'manha';
+
+  if (storiesFlag) {
+    console.log(`📱 Publicando stories — slot: ${slot}`);
+    await publishStoriesToday(slot);
+    console.log('\n✅ Stories concluídas!');
+    return;
+  }
 
   let folders = [];
 
@@ -563,6 +744,7 @@ async function main() {
     console.log('  node scripts/publish.js --date 2026-05-27          (data específica)');
     console.log('  node scripts/publish.js --folder ready-to-post/... (pasta específica)');
     console.log('  node scripts/publish.js --all                      (tudo vencido — uso manual)');
+    console.log('  node scripts/publish.js --stories-today --slot manha|tarde|noite (stories do dia)');
     process.exit(1);
   }
 

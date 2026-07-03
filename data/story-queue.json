@@ -1,0 +1,122 @@
+[
+  {
+    "id": "story-vitrine-jul06",
+    "date": "2026-07-06",
+    "slot": "tarde",
+    "pillar": "vitrine",
+    "imagePrompt": "Vertical photo of a cozy home kitchen counter with a smartphone propped against a small plant, screen showing a simple weekly meal list. Beside it, fresh ingredients for a high-protein meal — chicken breast, broccoli, sweet potato — arranged loosely. Warm natural light from a window, 4000K. Real lived-in kitchen, no studio look. 9:16 vertical.",
+    "kicker": "Vitrine do app",
+    "headline": "Cardápio pra <em>ganho muscular</em>",
+    "subtext": "O app monta pra você. É só escolher o objetivo.",
+    "ctaLabel": "Testa grátis",
+    "headlineSize": 88
+  },
+  {
+    "id": "story-checkin-jul07",
+    "date": "2026-07-07",
+    "slot": "manha",
+    "pillar": "checkin",
+    "imagePrompt": "Vertical photo of an empty reusable grocery bag resting on a kitchen counter next to a handwritten shopping list on a notepad. Soft morning light through a window, 4200K. Simple domestic kitchen, calm and honest. 9:16 vertical.",
+    "kicker": "Check-in de sexta",
+    "headline": "Já fez as <em>compras</em> do mês?",
+    "subtext": "Se não fez, ainda dá tempo de planejar antes de ir.",
+    "ctaLabel": "Gerar lista agora",
+    "headlineSize": 92
+  },
+  {
+    "id": "story-gancho-jul09",
+    "date": "2026-07-09",
+    "slot": "tarde",
+    "pillar": "gancho",
+    "imagePrompt": "Vertical photo of a warm kitchen table with a notebook open beside a cup of tea, soft handwriting visible suggesting notes about meals and nutrition. Cozy afternoon light, 3800K, plants softly out of focus. 9:16 vertical.",
+    "kicker": "Você sabia",
+    "headline": "Uma <em>nutri</em> na sua mão",
+    "subtext": "O app organiza o que você precisa comer — sem mistério.",
+    "ctaLabel": "Conhecer o app",
+    "headlineSize": 88
+  },
+  {
+    "id": "story-checkin-jul11",
+    "date": "2026-07-11",
+    "slot": "manha",
+    "pillar": "checkin",
+    "imagePrompt": "Vertical photo of a nearly empty refrigerator shelf, a few scattered vegetables and an egg carton, morning light spilling in. Real domestic kitchen, honest and slightly messy. 9:16 vertical.",
+    "kicker": "Desafio do dia",
+    "headline": "Usa o que <em>sobrou</em> hoje",
+    "subtext": "Sem ir ao mercado. Só com o que já tem em casa.",
+    "ctaLabel": "Ver sugestões",
+    "headlineSize": 92
+  },
+  {
+    "id": "story-vitrine-jul13",
+    "date": "2026-07-13",
+    "slot": "tarde",
+    "pillar": "vitrine",
+    "imagePrompt": "Vertical photo of a smartphone propped on a rustic wooden table showing a simple weekly meal list, surrounded by budget-friendly winter vegetables — potatoes, carrots, onions. Warm soft light, 3800K, real kitchen setting. 9:16 vertical.",
+    "kicker": "Vitrine do app",
+    "headline": "Cardápio pra <em>economizar</em>",
+    "subtext": "Menos desperdício, mais planejamento.",
+    "ctaLabel": "Testa grátis",
+    "headlineSize": 88
+  },
+  {
+    "id": "story-gancho-jul16",
+    "date": "2026-07-16",
+    "slot": "tarde",
+    "pillar": "gancho",
+    "imagePrompt": "Vertical photo of hands writing in a small notebook at a kitchen table, warm afternoon light, a cup of coffee beside. Cozy, focused, real domestic scene. 9:16 vertical.",
+    "kicker": "Você sabia",
+    "headline": "Planejar leva <em>2 minutos</em>",
+    "subtext": "A parte difícil o app já fez por você.",
+    "ctaLabel": "Ver como funciona",
+    "headlineSize": 88
+  },
+  {
+    "id": "story-checkin-jul18",
+    "date": "2026-07-18",
+    "slot": "manha",
+    "pillar": "checkin",
+    "imagePrompt": "Vertical photo of a simple kitchen counter with a cutting board and a single tomato, knife resting beside it, soft Saturday morning light, 3600K, calm unhurried mood. 9:16 vertical.",
+    "kicker": "Desafio do dia",
+    "headline": "Hoje é dia de <em>simplificar</em>",
+    "subtext": "Um prato, poucos ingredientes, zero drama.",
+    "ctaLabel": "Ver receita fácil",
+    "headlineSize": 88
+  },
+  {
+    "id": "story-vitrine-jul21",
+    "date": "2026-07-21",
+    "slot": "tarde",
+    "pillar": "vitrine",
+    "imagePrompt": "Vertical photo of a smartphone on a kitchen counter displaying a simple weekly meal list, next to a bowl of colorful vegetables suggesting a vegetarian plan — beans, peppers, greens. Warm natural light, 4000K. 9:16 vertical.",
+    "kicker": "Vitrine do app",
+    "headline": "Cardápio <em>vegetariano</em> também",
+    "subtext": "O app se adapta ao seu jeito de comer.",
+    "ctaLabel": "Testa grátis",
+    "headlineSize": 84
+  },
+  {
+    "id": "story-gancho-jul24",
+    "date": "2026-07-24",
+    "slot": "tarde",
+    "pillar": "gancho",
+    "imagePrompt": "Vertical photo of a cozy kitchen at dusk, a small chalkboard with a simple weekly plan sketched by hand, warm lamp light, 3200K, calm and inviting. 9:16 vertical.",
+    "kicker": "Você sabia",
+    "headline": "Menos decisão, <em>mais jantar</em>",
+    "subtext": "O cérebro cansa de decidir. O app decide por você.",
+    "ctaLabel": "Conhecer o app",
+    "headlineSize": 84
+  },
+  {
+    "id": "story-checkin-jul28",
+    "date": "2026-07-28",
+    "slot": "manha",
+    "pillar": "checkin",
+    "imagePrompt": "Vertical photo of a kitchen counter first thing Monday morning, coffee brewing, a simple planner notebook open beside it, crisp morning light, 4200K, purposeful mood. 9:16 vertical.",
+    "kicker": "Check-in de segunda",
+    "headline": "Semana <em>planejada</em> ou no improviso?",
+    "subtext": "As duas funcionam. Só uma cansa menos.",
+    "ctaLabel": "Planejar agora",
+    "headlineSize": 84
+  }
+]

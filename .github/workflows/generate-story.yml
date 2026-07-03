@@ -1,0 +1,56 @@
+name: 📱 Gerar Stories
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # todo dia às 08:00 BRT (11:00 UTC) — gera stories pendentes
+  workflow_dispatch:
+
+concurrency:
+  group: generate-story
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}"                  >> .env
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"    >> .env
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
+
+      - name: Gerar stories pendentes (3 por lote)
+        run: node scripts/generate-story.js --all --limit 3
+
+      - name: Atualizar dashboard
+        run: node scripts/build-dashboard.js
+
+      - name: Commit dos metadados gerados
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git stash -u
+          git pull --rebase origin main
+          git stash pop
+          git add ready-to-post/ dashboard.html
+          git diff --staged --quiet \
+            || git commit -m "chore: stories geradas + dashboard atualizado [skip ci]"
+          git push

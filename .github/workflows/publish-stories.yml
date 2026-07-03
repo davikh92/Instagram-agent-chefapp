@@ -1,0 +1,75 @@
+name: 📱 Publicar Stories
+
+on:
+  schedule:
+    - cron: '30 12 * * *'   # 09:30 BRT — slot manhã (repost do feed se já publicado + 1 story)
+    - cron: '30 16 * * *'   # 13:30 BRT — slot tarde (repost se ainda pendente + 1 story)
+    - cron: '30 22 * * *'   # 19:30 BRT — slot noite (repost dos dias 18h BRT + 1 story)
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Slot manual (manha, tarde, noite)'
+        required: false
+        default: 'manha'
+
+concurrency:
+  group: publish-stories
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "INSTAGRAM_ACCESS_TOKEN=${{ secrets.INSTAGRAM_ACCESS_TOKEN }}" >> .env
+          echo "INSTAGRAM_USER_ID=${{ secrets.INSTAGRAM_USER_ID }}"           >> .env
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"   >> .env
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"         >> .env
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"   >> .env
+
+      - name: Determinar slot pelo horário UTC do cron
+        id: slot
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "12" ]; then SLOT=manha
+          elif [ "$HOUR" = "16" ]; then SLOT=tarde
+          elif [ "$HOUR" = "22" ]; then SLOT=noite
+          else SLOT="${{ github.event.inputs.slot || 'manha' }}"
+          fi
+          echo "value=$SLOT" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar stories do slot
+        run: node scripts/publish.js --stories-today --slot ${{ steps.slot.outputs.value }}
+
+      - name: Atualizar dashboard
+        run: node scripts/build-dashboard.js
+
+      - name: Commit do published.json
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git stash -u
+          git pull --rebase origin main
+          git stash pop
+          git add ready-to-post/ dashboard.html
+          git diff --staged --quiet \
+            || git commit -m "chore: stories publicadas + dashboard atualizado [skip ci]"
+          git push
