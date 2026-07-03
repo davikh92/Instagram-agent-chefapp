@@ -1,0 +1,16 @@
+{
+  "id": "story-checkin-jul07",
+  "date": "2026-07-07",
+  "slot": "manha",
+  "pillar": "checkin",
+  "imagePrompt": "An empty canvas grocery tote bag resting on a clean kitchen counter beside a closed kraft notebook and a wooden pen. Soft morning light through a window, gentle shadows, calm domestic kitchen with a potted plant nearby. Professional lifestyle photography, absolutely no text, no letters, no writing anywhere in the image.",
+  "kicker": "Check-in de sexta",
+  "headline": "Já fez as <em>compras</em> do mês?",
+  "subtext": "Se não fez, ainda dá tempo de planejar antes de ir.",
+  "ctaLabel": "Gerar lista agora",
+  "headlineSize": 92,
+  "generatedAt": "2026-07-03T18:36:30.833Z",
+  "model": "imagen-4.0-generate-001",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1783103790/luiza-generated/images/story-checkin-jul07.png",
+  "cloudinaryPublicId": "luiza-generated/images/story-checkin-jul07"
+}
