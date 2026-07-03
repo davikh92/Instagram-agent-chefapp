@@ -367,6 +367,8 @@ async function main() {
   const args = process.argv.slice(2);
   const allFlag = args.includes('--all');
   const folderIdx = args.indexOf('--folder');
+  const limitIdx = args.indexOf('--limit');
+  const limit = limitIdx !== -1 ? parseInt(args[limitIdx + 1], 10) : Infinity;
 
   let reels = [];
 
@@ -376,8 +378,20 @@ async function main() {
       console.error('❌ data/veo-queue.json não encontrado');
       process.exit(1);
     }
-    reels = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
-    console.log(`\n📋 ${reels.length} reel(s) na fila`);
+    const allReels = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
+    // filtra reels já concluídos antes de aplicar --limit
+    reels = allReels.filter(r => {
+      const dir = path.join(READY_DIR, r.date.slice(0, 7), r.date, r.id);
+      if (fs.existsSync(path.join(dir, 'published.json'))) return false;
+      if (fs.existsSync(path.join(dir, 'reel.mp4'))) return false;
+      const rj = path.join(dir, 'reel.json');
+      if (fs.existsSync(rj)) {
+        try { if (JSON.parse(fs.readFileSync(rj, 'utf8')).cloudinaryUrl) return false; } catch {}
+      }
+      return true;
+    });
+    if (isFinite(limit)) reels = reels.slice(0, limit);
+    console.log(`\n📋 ${allReels.length} reel(s) na fila — processando ${reels.length}${isFinite(limit) ? ` (--limit ${limit})` : ''}`);
     reels.forEach(r => console.log(`   • ${r.id} (${r.date})`));
 
   } else if (folderIdx !== -1 && args[folderIdx + 1]) {

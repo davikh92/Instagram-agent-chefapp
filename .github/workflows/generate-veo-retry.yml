@@ -2,8 +2,8 @@ name: 🔁 Retry Geração Veo
 
 on:
   schedule:
-    - cron: '0 12 2 * *'   # dia  2 às 09:00 BRT (12:00 UTC) — retry do dia 1
-    - cron: '0 12 16 * *'  # dia 16 às 09:00 BRT (12:00 UTC) — retry do dia 15
+    # Dias pares do mês às 09:00 BRT (12:00 UTC) — retry do lote do dia anterior
+    - cron: '0 12 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30 * *'
   workflow_dispatch:
 
 concurrency:
@@ -13,7 +13,7 @@ concurrency:
 jobs:
   retry:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 40
     permissions:
       contents: write
 
@@ -40,7 +40,7 @@ jobs:
 
       - name: Retry geração Veo (reels ainda pendentes)
         # generate-veo.js --all pula itens já gerados (reel.mp4 ou cloudinaryUrl)
-        run: node scripts/generate-veo.js --all
+        run: node scripts/generate-veo.js --all --limit 3
 
       - name: Atualizar dashboard
         run: node scripts/build-dashboard.js
