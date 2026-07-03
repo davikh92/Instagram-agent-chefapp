@@ -21,7 +21,7 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 | `templates/` | HTMLs base para cada template visual |
 | `data/` | Briefings, planos, filas de geração (json + md) |
 | `data/veo-queue.json` | **Fila de reels para Veo 3.1** — prompts + captions (leia `docs/veo-prompt-guide.md`) |
-| `data/story-queue.json` | **Fila de Stories** — Imagen 4 (fundo) + overlay HTML (texto), pilares Vitrine/Check-in/Gancho |
+| `data/story-queue.json` | **Fila de Stories** — Imagen 4 (fundo) + overlay HTML (texto), pilares Vitrine/Check-in/Gancho. **Prompts Imagen: cena pura, SEM palavras que induzem texto** (list, notes, handwriting, screen showing, "vertical photo of", "9:16") **e SEMPRE terminar com "absolutely no text, no letters, no writing anywhere in the image"** — Imagen renderiza texto torto se induzido. Telefone aparece SEMPRE virado pra baixo (face down) |
 | `ready-to-post/` | Output final organizado por data |
 | `docs/veo-prompt-guide.md` | **Guia completo: como escrever prompts para Veo 3.1 Lite** |
 | `claude code design/` | Referência visual — posts.html (12 posts editoriais) + reels.html (4 reels animados) |
