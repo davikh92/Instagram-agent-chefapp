@@ -1,0 +1,16 @@
+{
+  "id": "story-checkin-jul07",
+  "date": "2026-07-07",
+  "slot": "manha",
+  "pillar": "checkin",
+  "imagePrompt": "Vertical photo of an empty reusable grocery bag resting on a kitchen counter next to a handwritten shopping list on a notepad. Soft morning light through a window, 4200K. Simple domestic kitchen, calm and honest. 9:16 vertical.",
+  "kicker": "Check-in de sexta",
+  "headline": "Já fez as <em>compras</em> do mês?",
+  "subtext": "Se não fez, ainda dá tempo de planejar antes de ir.",
+  "ctaLabel": "Gerar lista agora",
+  "headlineSize": 92,
+  "generatedAt": "2026-07-03T18:32:57.159Z",
+  "model": "imagen-4.0-generate-001",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1783103576/luiza-generated/images/story-checkin-jul07.png",
+  "cloudinaryPublicId": "luiza-generated/images/story-checkin-jul07"
+}
