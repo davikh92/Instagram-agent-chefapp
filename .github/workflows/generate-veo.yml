@@ -14,7 +14,7 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 40    # Veo leva ~5min/reel × 3 reels + 2 delays de 90s = ~20min
+    timeout-minutes: 50    # Veo leva ~5min/reel × 5 reels + 4 delays de 90s = ~36min
     permissions:
       contents: write
 
@@ -39,8 +39,8 @@ jobs:
           echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
 
-      - name: Gerar reels Veo (3 por lote para respeitar cota diária)
-        run: node scripts/generate-veo.js --all --limit 3
+      - name: Gerar reels Veo (5 por lote para respeitar cota diária)
+        run: node scripts/generate-veo.js --all --limit 5
 
       - name: Atualizar dashboard
         run: node scripts/build-dashboard.js
