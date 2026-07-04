@@ -1,0 +1,16 @@
+{
+  "id": "story-checkin-jul11",
+  "date": "2026-07-11",
+  "slot": "manha",
+  "pillar": "checkin",
+  "imagePrompt": "A nearly empty refrigerator shelf seen up close — a few loose vegetables, a carton of eggs, one glass container with leftovers. Cool interior fridge light mixing with warm kitchen light from the side, honest and slightly imperfect domestic scene. Professional lifestyle photography, absolutely no text, no letters, no writing anywhere in the image.",
+  "kicker": "Desafio do dia",
+  "headline": "Usa o que <em>sobrou</em> hoje",
+  "subtext": "Sem ir ao mercado. Só com o que já tem em casa.",
+  "ctaLabel": "Ver sugestões",
+  "headlineSize": 92,
+  "generatedAt": "2026-07-04T12:01:38.881Z",
+  "model": "imagen-4.0-generate-001",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1783166498/luiza-generated/images/story-checkin-jul11.png",
+  "cloudinaryPublicId": "luiza-generated/images/story-checkin-jul11"
+}
