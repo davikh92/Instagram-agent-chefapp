@@ -1,0 +1,16 @@
+{
+  "id": "story-checkin-jul18",
+  "date": "2026-07-18",
+  "slot": "manha",
+  "pillar": "checkin",
+  "imagePrompt": "A simple kitchen counter with a wooden cutting board holding a single ripe tomato, a chef's knife resting beside it. Soft Saturday morning light from a window, calm unhurried mood, minimal and honest scene. Professional lifestyle photography, absolutely no text, no letters, no writing anywhere in the image.",
+  "kicker": "Desafio do dia",
+  "headline": "Hoje é dia de <em>simplificar</em>",
+  "subtext": "Um prato, poucos ingredientes, zero drama.",
+  "ctaLabel": "Ver receita fácil",
+  "headlineSize": 88,
+  "generatedAt": "2026-07-05T12:09:12.553Z",
+  "model": "imagen-4.0-generate-001",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1783253351/luiza-generated/images/story-checkin-jul18.png",
+  "cloudinaryPublicId": "luiza-generated/images/story-checkin-jul18"
+}

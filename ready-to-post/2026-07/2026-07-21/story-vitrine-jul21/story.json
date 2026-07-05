@@ -1,0 +1,16 @@
+{
+  "id": "story-vitrine-jul21",
+  "date": "2026-07-21",
+  "slot": "tarde",
+  "pillar": "vitrine",
+  "imagePrompt": "A colorful vegetarian spread on a warm wooden counter — a bowl of cooked black beans, red and yellow bell peppers, fresh leafy greens, half an avocado. A smartphone lies face down near the edge. Warm natural light, real domestic kitchen. Professional lifestyle photography, absolutely no text, no letters, no writing anywhere in the image.",
+  "kicker": "Vitrine do app",
+  "headline": "Cardápio <em>vegetariano</em> também",
+  "subtext": "O app se adapta ao seu jeito de comer.",
+  "ctaLabel": "Testa grátis",
+  "headlineSize": 84,
+  "generatedAt": "2026-07-05T12:09:26.618Z",
+  "model": "imagen-4.0-generate-001",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1783253365/luiza-generated/images/story-vitrine-jul21.png",
+  "cloudinaryPublicId": "luiza-generated/images/story-vitrine-jul21"
+}
