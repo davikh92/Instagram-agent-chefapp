@@ -1,0 +1,16 @@
+{
+  "id": "story-checkin-jul28",
+  "date": "2026-07-28",
+  "slot": "manha",
+  "pillar": "checkin",
+  "imagePrompt": "A kitchen counter early on a Monday morning — a moka pot on the stove with steam rising, an empty ceramic mug waiting beside it, a closed notebook nearby. Crisp morning light, purposeful and fresh mood. Professional lifestyle photography, absolutely no text, no letters, no writing anywhere in the image.",
+  "kicker": "Check-in de segunda",
+  "headline": "Semana <em>planejada</em> ou no improviso?",
+  "subtext": "As duas funcionam. Só uma cansa menos.",
+  "ctaLabel": "Planejar agora",
+  "headlineSize": 84,
+  "generatedAt": "2026-07-06T14:22:15.408Z",
+  "model": "imagen-4.0-generate-001",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1783347734/luiza-generated/images/story-checkin-jul28.png",
+  "cloudinaryPublicId": "luiza-generated/images/story-checkin-jul28"
+}
