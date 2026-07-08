@@ -518,8 +518,42 @@ async function repostFeedAsStory(dateDir) {
 }
 
 /**
+ * Encontra pastas story-* pendentes (sem published.json) com data <= hoje,
+ * em qualquer mês, ordenadas da mais antiga pra mais nova.
+ * Isso dá catchup pra stories que perderam o slot do próprio dia — sem isso
+ * elas ficam órfãs para sempre e o --catchup do FEED acaba as publicando
+ * como post normal (bug corrigido em jul/2026).
+ */
+function findPendingStoryFolders() {
+  const today = new Date().toISOString().split('T')[0];
+  const pending = [];
+
+  const monthDirs = fs.readdirSync(READY_DIR)
+    .map(d => path.join(READY_DIR, d))
+    .filter(d => fs.statSync(d).isDirectory());
+
+  for (const monthDir of monthDirs) {
+    const dateDirs = fs.readdirSync(monthDir)
+      .map(d => path.join(monthDir, d))
+      .filter(d => fs.statSync(d).isDirectory())
+      .filter(d => path.basename(d) <= today);
+
+    for (const dateDir of dateDirs) {
+      const storyDirs = fs.readdirSync(dateDir)
+        .map(d => path.join(dateDir, d))
+        .filter(d => fs.statSync(d).isDirectory())
+        .filter(d => path.basename(d).startsWith('story-'))
+        .filter(d => !fs.existsSync(path.join(d, 'published.json')));
+      pending.push(...storyDirs);
+    }
+  }
+
+  return pending.sort(); // ordem cronológica (YYYY-MM-DD no path)
+}
+
+/**
  * Publica stories do slot de hoje: repost do feed + uma story gerada (story-*)
- * agendada para hoje, se ainda não publicada.
+ * pendente mais antiga (hoje ou atrasada), se ainda não publicada.
  *
  * O repost é tentado em TODO slot (não só de manhã) porque o feed publica em
  * horários variáveis (10h/12h/18h BRT conforme o dia) — o marker
@@ -531,26 +565,25 @@ async function publishStoriesToday(slot) {
   const month = today.slice(0, 7);
   const dateDir = path.join(READY_DIR, month, today);
 
-  if (!fs.existsSync(dateDir)) {
-    console.log(`  ⏭  Nenhuma pasta para hoje (${today})`);
+  if (fs.existsSync(dateDir)) {
+    await repostFeedAsStory(dateDir).catch(err => {
+      console.error(`  ✗ Erro no repost: ${err.message}`);
+      log.error('publish', `Falha no repost de story: ${err.message}`, { erro: err.message });
+    });
+  } else {
+    console.log(`  ⏭  Nenhuma pasta para hoje (${today}) — pulando repost`);
+  }
+
+  // Stories geradas (story-*) pendentes — hoje ou atrasadas (catchup)
+  const storyDirs = findPendingStoryFolders();
+
+  if (storyDirs.length === 0) {
+    console.log(`  ⏭  Nenhuma story gerada pendente`);
     return;
   }
 
-  await repostFeedAsStory(dateDir).catch(err => {
-    console.error(`  ✗ Erro no repost: ${err.message}`);
-    log.error('publish', `Falha no repost de story: ${err.message}`, { erro: err.message });
-  });
-
-  // Stories geradas (story-*) agendadas para hoje, ainda não publicadas
-  const storyDirs = fs.readdirSync(dateDir)
-    .map(d => path.join(dateDir, d))
-    .filter(d => fs.statSync(d).isDirectory())
-    .filter(d => path.basename(d).startsWith('story-'))
-    .filter(d => !fs.existsSync(path.join(d, 'published.json')));
-
-  if (storyDirs.length === 0) {
-    console.log(`  ⏭  Nenhuma story gerada pendente para hoje`);
-    return;
+  if (storyDirs.length > 1) {
+    console.log(`  ⚠️  ${storyDirs.length} stories pendentes — publicando a mais antiga, resto fica pra próximos slots`);
   }
 
   // Publica só 1 por slot — mantém distribuição ao longo do dia
@@ -595,6 +628,7 @@ function findPublishableFolders(targetDate = null, todayOnly = false) {
       const contentDirs = fs.readdirSync(dateDir)
         .map(d => path.join(dateDir, d))
         .filter(d => fs.statSync(d).isDirectory())
+        .filter(d => !path.basename(d).startsWith('story-')) // stories são publicadas só por publishStoriesToday
         .filter(d => !fs.existsSync(path.join(d, 'published.json'))); // pula já publicados
 
       folders.push(...contentDirs);
