@@ -441,6 +441,9 @@ async function publishStoryFolder(folderPath) {
 
     const containerId = await createMediaContainer({ mediaType: 'STORIES', mediaUrl: imgUrl });
     console.log(`  ✓ Container story: ${containerId}`);
+    // Meta precisa buscar a imagem no Cloudinary antes do container ficar pronto —
+    // publicar sem esperar dá "Media ID is not available" (causa da falha em 07/07).
+    await waitForContainer(containerId);
     const mediaId = await publishContainer(containerId);
     console.log(`  ✅ Story publicada! Instagram media ID: ${mediaId}`);
 
@@ -505,6 +508,7 @@ async function repostFeedAsStory(dateDir) {
   console.log(`\n📤 Repostando feed como story: ${path.basename(sourceDir)}...`);
   const containerId = await createMediaContainer({ mediaType: 'STORIES', mediaUrl });
   console.log(`  ✓ Container story (repost): ${containerId}`);
+  await waitForContainer(containerId);
   const mediaId = await publishContainer(containerId);
   console.log(`  ✅ Repost publicado! Instagram media ID: ${mediaId}`);
 
