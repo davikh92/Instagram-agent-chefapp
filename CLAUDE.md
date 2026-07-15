@@ -111,8 +111,10 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 ## Regras Absolutas de Conteúdo
 
 - Identificação emocional **SEMPRE** antes de mostrar o app
-- Todo reel Veo segue os **3 arquétipos** (ESPELHO / IMERSÃO / VIRADA) com rotação semanal 2/3/1 — ver seção "Cérebro Editorial" em `docs/veo-prompt-guide.md`
-- Áudio Veo: voz PT-BR máx 10–12 palavras, uma frase só, entrando no segundo 1 — ou apenas som ambiente (IMERSÃO)
+- Todo reel segue os **3 arquétipos** (ESPELHO / IMERSÃO / VIRADA) com rotação semanal 1/1/1 — ver seção "Cérebro Editorial" em `docs/veo-prompt-guide.md`
+- **Reels são gerados pelo Gemini Omni Flash** (`generate-omni.js`) — 10s, 9:16, ~$1/vídeo. O Veo 3.1 Lite (`generate-veo.js`) fica como fallback.
+- **Nenhum prompt pede fala.** Só som ambiente (`No speech, no voice, no narration, no dialogue, no music`). A voz PT-BR entra depois via ElevenLabs — o áudio do Omni só é avaliado em inglês e PT sai robótico.
+- Cadência: **3 reels/semana** (Seg 18h, Qua 18h, Sex 12h ≈ 13/mês). Dias sem reel ficam só com stories.
 - Tom conversacional, brasileiro, sem formalidade — nunca jargão de coach
 - Humor leve e auto-irônico nos Pilares A e B
 - Nunca posts puramente educativos sem elemento de identificação
@@ -234,21 +236,25 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 
 ---
 
-## Horários de Publicação — 7 dias da semana
+## Horários de Publicação — 3 reels/semana + stories diárias
 
-| Dia | Horário | Pilar | Formato | Geração |
+> **Vigente desde agosto/2026.** Julho publicou 7 dias/semana com Veo; agosto em diante
+> são 3 reels/semana com Omni Flash. Motivo: ~$1/vídeo — a troca qualidade × quantidade
+> só fecha em ~13 reels/mês. Os outros dias ficam por conta das stories.
+
+| Dia | Horário | Arquétipo | Formato | Geração |
 |---|---|---|---|---|
-| Segunda | 18h | A ou B | **Reel Veo Food** | Automático (veo-queue) |
-| Terça | 12h | A ou C | **Reel Veo Food** ou Carrossel | Automático ou /design |
-| Quarta | 18h | A ou C | **Reel Veo Food** | Automático (veo-queue) |
-| Quinta | 12h | C | HTML Reel ou **Reel Veo Food** | Automático |
-| Sexta | 12h | B ou D | **Reel Veo Food** | Automático (veo-queue) |
-| Sábado | 10h | A | **Reel Veo Food** | Automático (veo-queue) |
-| Domingo | 10h | D | Carrossel ou Post estático | Manual via /design |
+| **Segunda** | 18h | ESPELHO | **Reel Omni** | Automático (veo-queue) |
+| **Quarta** | 18h | IMERSÃO | **Reel Omni** | Automático (veo-queue) |
+| **Sexta** | 12h | VIRADA | **Reel Omni** | Automático (veo-queue) |
+| Ter/Qui/Sáb/Dom | — | — | Só stories | Automático (story-queue) |
 
-> **Veo Food** = 5 slots por semana (Seg/Ter/Qua/Sex/Sáb) → gera sequencialmente, 1 por vez
-> **Domingo** = único slot 100% manual — precisa de /quinzena + /design
-> Máximo 10 reels novos por lote de geração (dias 1 e 15 do mês)
+> Os crons do `publish-daily.yml` seguem rodando 7 dias/semana **de propósito**: nos dias
+> sem reel eles viram no-op (nada pendente na fila), e servem de rede de catchup se uma
+> publicação falhar. Não cortar.
+
+**Stories** — 3 slots/dia, todos os dias: 09h30 · 13h30 · 19h30 BRT
+(1 repost do feed do dia + 1 story gerada por slot)
 
 ---
 
@@ -257,7 +263,8 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 | Ferramenta | Tipo | Função |
 |---|---|---|
 | `scripts/screenshot.js` | Local | Converte HTML em PNGs via Puppeteer |
-| `scripts/generate-veo.js` | Local | **Gera reels via Veo 3.1 API (text-to-video)** |
+| `scripts/generate-omni.js` | Local | **Gera reels via Gemini Omni Flash (10s, 9:16, som ambiente)** — padrão desde jul/2026 |
+| `scripts/generate-veo.js` | Local | Gera reels via Veo 3.1 Lite — **fallback**, não usado nos workflows |
 | `scripts/generate-story.js` | Local | **Gera Stories: Imagen 4 (fundo) + overlay HTML (texto) via Puppeteer** |
 | `templates/story-overlay.html` | Local | Template único de Story — fundo fotográfico + kicker/headline/CTA |
 | `templates/` | Local | HTMLs base para cada template visual |

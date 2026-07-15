@@ -39,8 +39,8 @@ jobs:
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
 
       - name: Retry geração Veo (reels ainda pendentes)
-        # generate-veo.js --all pula itens já gerados (reel.mp4 ou cloudinaryUrl)
-        run: node scripts/generate-veo.js --all --limit 5
+        # generate-omni.js --all pula itens já gerados (reel.mp4 ou cloudinaryUrl)
+        run: node scripts/generate-omni.js --all --limit 5
 
       - name: Atualizar dashboard
         run: node scripts/build-dashboard.js

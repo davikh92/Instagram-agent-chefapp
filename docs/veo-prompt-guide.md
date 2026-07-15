@@ -31,41 +31,50 @@
 
 ### Os 3 arquétipos
 
-| Arquétipo | Pilar | Cena | Áudio | Papel |
-|---|---|---|---|---|
-| **ESPELHO** | A/B | O problema em si — geladeira aberta, hesitação, 18h, cansaço | Voz PT-BR nomeia a dor. **Sem CTA falado** | Parar o scroll, comentar/marcar |
-| **IMERSÃO** | A/C | Comida cinematográfica pura | **Só som ambiente** — borbulha, chiado, faca. Sem voz | Alcance frio, salvamento, estética |
-| **VIRADA** | C | Mãos confiantes, cozinha resolvida, execução tranquila | Voz PT-BR com a frase de virada. Micro-CTA falado permitido (nem sempre) | Conversão |
+| Arquétipo | Pilar | Cena | Papel |
+|---|---|---|---|
+| **ESPELHO** | A/B | O problema em si — geladeira aberta, hesitação, 18h, cansaço | Parar o scroll, comentar/marcar |
+| **IMERSÃO** | A/C | Comida cinematográfica pura | Alcance frio, salvamento, estética |
+| **VIRADA** | C | Mãos confiantes, cozinha resolvida, execução tranquila | Conversão |
 
-### Rotação semanal (6 slots Veo/semana)
+### Rotação semanal (3 slots/semana — Seg 18h, Qua 18h, Sex 12h)
 
-**2× ESPELHO · 3× IMERSÃO · 1× VIRADA**
-O feed alterna dor → desejo → solução. O app aparece explicitamente 1x/semana no vídeo; o resto converte pela caption.
+**1× ESPELHO · 1× IMERSÃO · 1× VIRADA**
+Cada semana fecha o funil dor → desejo → solução. O app aparece 1x/semana (4x/mês),
+dentro do teto de 1/3 definido em `brand.json → ctas`.
 
-### Regras de áudio para 8 segundos
+> Cadência definida em jul/2026: 3 reels/semana (~13/mês). Motivo: Omni Flash custa
+> ~$1/vídeo, e a troca qualidade × quantidade só fecha em ~$13/mês. Os dias sem reel
+> ficam por conta das stories (Imagen, centavos).
 
-- **Máximo 10–12 palavras faladas** — a voz ocupa ~4s, sobra respiro no início e no fim
-- Voz entra no segundo 1, nunca no 0 (o hook visual vem primeiro)
-- **Uma frase só.** Sem segunda ideia. Se não cabe em uma frase, o reel é IMERSÃO
-- Voz feminina brasileira, tom de amiga — nunca locutora de comercial
-- Som ambiente SEMPRE presente, mesmo sob a voz
-- Formato no prompt: `Audio: a warm Brazilian woman's voice says in Brazilian Portuguese: '[frase]'. Soft kitchen ambience underneath.`
-- IMERSÃO: `Audio: rich ambient kitchen sounds only — [sons específicos da cena], no music, no voice.`
+### Áudio: SEM FALAS — a voz vem depois
 
-### Estrutura dos 8 segundos
+**Nenhum prompt pede fala.** O áudio do Omni Flash só é avaliado em inglês
+(a doc é explícita: *"other languages have not been evaluated"*), e PT-BR sai robótico.
+Testado em jul/2026: o modelo entrega voz em português, mas com prosódia artificial.
+
+- Todo prompt termina com: `Audio: only natural ambience — [sons específicos da cena]. No speech, no voice, no narration, no dialogue, no music.`
+- Som ambiente do Omni é excelente — borbulha, faca na tábua, porta de geladeira, chama
+- **A voz PT-BR entra depois via ElevenLabs**, colada com ffmpeg (já instalado no projeto).
+  Vantagem: se a voz sair errada, regera só o áudio por centavos em vez do vídeo inteiro.
+  _Status: planejado, ainda não implementado._
+
+### Estrutura dos 10 segundos
 
 ```
-0–1s  → hook visual (movimento JÁ acontecendo, nunca cena parada)
-1–5s  → desenvolvimento + voz (se houver)
-5–8s  → assentamento — a cena "termina", frame final segurável
+0–1s   → hook visual (movimento JÁ acontecendo, nunca cena parada)
+1–7s   → desenvolvimento
+7–10s  → assentamento — a cena "termina", frame final segurável
 ```
 
-### App simulado (VIRADA)
+### App em cena (VIRADA)
 
-Não temos capturas fiéis da interface. Quando a cena pedir o app:
-- Celular na bancada mostrando **um app genérico de cardápio semanal** (lista limpa de refeições, visual clean)
-- Nunca prometer que é a interface real — é representação
-- Exemplo: `a smartphone propped on the counter displaying a clean weekly meal-planning app with a simple list of dishes`
+Não temos capturas fiéis da interface, e o modelo não renderiza tela legível —
+o borrão lê como reflexo de luz, o que funciona. Duas formas aprovadas:
+- Celular **virado pra baixo** na bancada (o app é subentendido) — preferido
+- Celular com **tela genérica de lista** ao fundo, desfocada — nunca prometer que é a interface real
+
+Overlay HTML por cima do vídeo foi considerado e **descartado** (jul/2026) — não fica bom.
 
 ---
 
