@@ -11,6 +11,9 @@ ready-to-post/**/*.webm
 # Lock files de publicação — nunca commitados
 ready-to-post/**/.publishing
 
+# Saída de testes de modelo — descartável, fica no Cloudinary
+tests/
+
 # Arquivos de trabalho da quinzena (regeneráveis)
 data/briefing-*.json
 data/plano-*.json

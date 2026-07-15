@@ -1,0 +1,23 @@
+[
+  {
+    "id": "omni-test-01-espelho",
+    "date": "2026-07-09",
+    "archetype": "espelho",
+    "_nota": "Testa: o arquétipo do PROBLEMA sem voz. A dor tem que ler só na imagem.",
+    "prompt": "A 10-second continuous shot. A hand opens a refrigerator door, revealing nearly empty shelves — a few loose vegetables, a carton of eggs, one container of leftover rice. The hand rests on the door and lingers, hesitating. Then it reaches in and takes the eggs. Warm evening kitchen light, soft shadows, a real lived-in Brazilian home kitchen, slightly imperfect. Slow contemplative motion. Audio: only natural ambience — the low hum of the fridge, the soft clink of the door. No speech, no voice, no narration, no dialogue, no music."
+  },
+  {
+    "id": "omni-test-02-imersao",
+    "date": "2026-07-09",
+    "archetype": "imersao",
+    "_nota": "Testa: food cinematic + som ambiente rico. É o que o Veo já fazia bem — comparação direta.",
+    "prompt": "A 10-second continuous close-up. Black beans simmer in a worn aluminum pot, thick dark broth bubbling gently, whole garlic cloves and bay leaves visible. A wooden ladle stirs slowly through them. A hand reaches down and adjusts the gas flame below, a low blue fire. Warm evening light from the side, a well-used Brazilian home kitchen, honest and unstyled. Slow meditative motion, the broth settling at the end. Audio: only natural ambience — the gentle bubbling of the beans, the soft hiss of the flame, the ladle against the pot. No speech, no voice, no narration, no dialogue, no music."
+  },
+  {
+    "id": "omni-test-03-virada",
+    "date": "2026-07-09",
+    "archetype": "virada",
+    "_nota": "Testa: app simulado (tela genérica de cardápio, não a interface real) + transição planejar→cozinhar.",
+    "prompt": "A 10-second continuous shot. A smartphone is propped on a wooden kitchen counter, its screen showing a clean, simple weekly meal planner — a minimal list of dishes, generic modern app design. A hand sets the phone down, then picks up a knife and begins slicing fresh vegetables on a worn wooden board beside it: carrots, greens, half a lemon. The movements are practiced and confident. Warm afternoon light from a window, real home kitchen. Smooth purposeful motion from planning to cooking. Audio: only natural ambience — the crisp sound of the knife on the board, quiet kitchen room tone. No speech, no voice, no narration, no dialogue, no music."
+  }
+]
