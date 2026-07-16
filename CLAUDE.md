@@ -114,6 +114,7 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 - Todo reel segue os **3 arquétipos** (ESPELHO / IMERSÃO / VIRADA) com rotação semanal 1/1/1 — ver seção "Cérebro Editorial" em `docs/veo-prompt-guide.md`
 - **Reels são gerados pelo Gemini Omni Flash** (`generate-omni.js`) — 10s, 9:16, ~$1/vídeo. O Veo 3.1 Lite (`generate-veo.js`) fica como fallback.
 - **Nenhum prompt pede fala.** Só som ambiente (`No speech, no voice, no narration, no dialogue, no music`). A voz PT-BR entra depois via ElevenLabs — o áudio do Omni só é avaliado em inglês e PT sai robótico.
+- **Voz oficial (definida jul/2026): Livia — Warm, Expressive and Calm** · ElevenLabs voice_id `UZ8QqWVrz7tMdxiglcLh` · modelo `eleven_multilingual_v2` · chave em `ELEVENLABS_API_KEY` (.env + GitHub secret). Textos de voz em estilo de FALA real (curtos, coloquiais), nunca texto de legenda lido.
 - Cadência: **3 reels/semana** (Seg 18h, Qua 18h, Sex 12h ≈ 13/mês). Dias sem reel ficam só com stories.
 - Tom conversacional, brasileiro, sem formalidade — nunca jargão de coach
 - Humor leve e auto-irônico nos Pilares A e B
