@@ -37,10 +37,16 @@ jobs:
           echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"    >> .env
           echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
+          echo "ELEVENLABS_API_KEY=${{ secrets.ELEVENLABS_API_KEY }}"          >> .env
 
       - name: Retry geração Veo (reels ainda pendentes)
         # generate-omni.js --all pula itens já gerados (reel.mp4 ou cloudinaryUrl)
         run: node scripts/generate-omni.js --all --limit 5
+
+      # Rede de segurança: pega tanto os reels gerados agora quanto os que ficaram
+      # sem voz no dia anterior (add-voice.js pula quem já tem voiceAddedAt)
+      - name: Adicionar voz PT-BR (ElevenLabs)
+        run: node scripts/add-voice.js --all
 
       - name: Atualizar dashboard
         run: node scripts/build-dashboard.js

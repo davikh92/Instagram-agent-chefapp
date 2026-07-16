@@ -55,9 +55,22 @@ Testado em jul/2026: o modelo entrega voz em português, mas com prosódia artif
 
 - Todo prompt termina com: `Audio: only natural ambience — [sons específicos da cena]. No speech, no voice, no narration, no dialogue, no music.`
 - Som ambiente do Omni é excelente — borbulha, faca na tábua, porta de geladeira, chama
-- **A voz PT-BR entra depois via ElevenLabs**, colada com ffmpeg (já instalado no projeto).
-  Vantagem: se a voz sair errada, regera só o áudio por centavos em vez do vídeo inteiro.
-  _Status: planejado, ainda não implementado._
+- **A voz PT-BR entra depois via ElevenLabs** — `scripts/add-voice.js`, rodando logo após
+  a geração no mesmo job. Voz oficial: **Livia** (`UZ8QqWVrz7tMdxiglcLh`), `eleven_multilingual_v2`.
+  Vantagem de ser passo separado: se a voz sair errada, regera só o áudio por centavos.
+
+### Escrevendo o `voiceText`
+
+Campo opcional na fila. **Só ESPELHO e VIRADA têm** — IMERSÃO é ambiente puro por definição.
+
+- **Máximo 10–12 palavras**, uma frase só. Se não cabe numa frase, o reel é IMERSÃO.
+- **Estilo de FALA, não de legenda.** A legenda é escrita pra ser lida; a fala tem que soar
+  como alguém falando. `"Segunda de agosto, dezoito horas. A geladeira aberta."` soa lido —
+  `"Chega em casa cansada e ainda tem que decidir o jantar."` soa gente.
+- ESPELHO nomeia a dor, **sem CTA falado**. VIRADA traz a solução; micro-CTA falado é
+  permitido, mas nem sempre.
+- O script entra com a voz no segundo 1 (o hook visual vem primeiro) e abaixa o ambiente
+  pra 30% só na janela da fala — o som ambiente do Omni é bom demais pra ficar abafado 10s.
 
 ### Estrutura dos 10 segundos
 

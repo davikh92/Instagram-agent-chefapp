@@ -38,9 +38,16 @@ jobs:
           echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"    >> .env
           echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
+          echo "ELEVENLABS_API_KEY=${{ secrets.ELEVENLABS_API_KEY }}"          >> .env
 
       - name: Gerar reels (Omni Flash — 5 por lote)
         run: node scripts/generate-omni.js --all --limit 5
+
+      # Voz PT-BR (Livia) nos reels com voiceText — IMERSÃO fica só com ambiente.
+      # Separado da geração: se falhar aqui, o MP4 de ~$1 já está salvo e o retry
+      # do dia seguinte refaz só o TTS, que custa centavos.
+      - name: Adicionar voz PT-BR (ElevenLabs)
+        run: node scripts/add-voice.js --all
 
       - name: Atualizar dashboard
         run: node scripts/build-dashboard.js

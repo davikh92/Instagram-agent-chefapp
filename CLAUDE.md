@@ -265,6 +265,7 @@ Texto palavra por palavra no ritmo da música. Fundo em movimento sutil.
 |---|---|---|
 | `scripts/screenshot.js` | Local | Converte HTML em PNGs via Puppeteer |
 | `scripts/generate-omni.js` | Local | **Gera reels via Gemini Omni Flash (10s, 9:16, som ambiente)** — padrão desde jul/2026 |
+| `scripts/add-voice.js` | Local | **Cola voz PT-BR (Livia/ElevenLabs) nos reels com `voiceText`** — roda após generate-omni, antes do commit |
 | `scripts/generate-veo.js` | Local | Gera reels via Veo 3.1 Lite — **fallback**, não usado nos workflows |
 | `scripts/generate-story.js` | Local | **Gera Stories: Imagen 4 (fundo) + overlay HTML (texto) via Puppeteer** |
 | `templates/story-overlay.html` | Local | Template único de Story — fundo fotográfico + kicker/headline/CTA |

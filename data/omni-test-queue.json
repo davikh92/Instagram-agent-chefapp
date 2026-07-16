@@ -3,6 +3,7 @@
     "id": "omni-test-01-espelho",
     "date": "2026-07-09",
     "archetype": "espelho",
+    "voiceText": "Chega em casa cansada e ainda tem que decidir o jantar.",
     "_nota": "Testa: o arquétipo do PROBLEMA sem voz. A dor tem que ler só na imagem.",
     "prompt": "A 10-second continuous shot. A hand opens a refrigerator door, revealing nearly empty shelves — a few loose vegetables, a carton of eggs, one container of leftover rice. The hand rests on the door and lingers, hesitating. Then it reaches in and takes the eggs. Warm evening kitchen light, soft shadows, a real lived-in Brazilian home kitchen, slightly imperfect. Slow contemplative motion. Audio: only natural ambience — the low hum of the fridge, the soft clink of the door. No speech, no voice, no narration, no dialogue, no music."
   },
