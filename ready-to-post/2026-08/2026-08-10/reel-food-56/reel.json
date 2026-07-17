@@ -8,7 +8,12 @@
   "generatedAt": "2026-07-16T13:19:00.799Z",
   "model": "gemini-omni-flash-preview",
   "durationSec": 10,
-  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1784207938/luiza-generated/veo/reel-food-56.mp4",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1784293940/luiza-generated/veo/reel-food-56.mp4",
   "cloudinaryPublicId": "luiza-generated/veo/reel-food-56",
-  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1784207939/luiza-generated/covers/reel-food-56-cover.png"
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1784207939/luiza-generated/covers/reel-food-56-cover.png",
+  "voiceText": "Macarrão de novo? Terceira vez essa semana.",
+  "voiceId": "UZ8QqWVrz7tMdxiglcLh",
+  "voiceModel": "eleven_multilingual_v2",
+  "voiceDurationSec": 2.74,
+  "voiceAddedAt": "2026-07-17T13:12:22.485Z"
 }

@@ -8,7 +8,12 @@
   "generatedAt": "2026-07-16T13:17:07.174Z",
   "model": "gemini-omni-flash-preview",
   "durationSec": 10,
-  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1784207823/luiza-generated/veo/reel-food-53.mp4",
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1784293931/luiza-generated/veo/reel-food-53.mp4",
   "cloudinaryPublicId": "luiza-generated/veo/reel-food-53",
-  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1784207826/luiza-generated/covers/reel-food-53-cover.png"
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1784207826/luiza-generated/covers/reel-food-53-cover.png",
+  "voiceText": "Chega em casa cansada e ainda tem que decidir o jantar.",
+  "voiceId": "UZ8QqWVrz7tMdxiglcLh",
+  "voiceModel": "eleven_multilingual_v2",
+  "voiceDurationSec": 3.53,
+  "voiceAddedAt": "2026-07-17T13:12:13.239Z"
 }

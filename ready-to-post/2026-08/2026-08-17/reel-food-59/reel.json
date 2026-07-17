@@ -1,0 +1,19 @@
+{
+  "id": "reel-food-59",
+  "date": "2026-08-17",
+  "archetype": "espelho",
+  "voiceText": "Seis minutos rolando o iFood e nada parece bom.",
+  "prompt": "A 10-second continuous shot. A hand scrolls slowly on a smartphone screen showing a generic food delivery interface — anonymous dish thumbnails passing by. The hand stops, hesitates, then sets the phone face down on the counter. In the soft background, an untouched kitchen with vegetables sitting on the board. Warm evening light, real home kitchen. Slow reluctant motion, resolving into a small decision. Audio: only natural ambience — a fingertip on glass, the phone tapping down on the counter, quiet room tone. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Você abriu o iFood.\n\nRolou por seis minutos. Não pediu nada. Fechou.\n\nA fome continua. A indecisão também.\n\nComenta: quantas vezes essa semana? (sem julgamento, é pesquisa) 👇",
+  "hashtags": "#luizanacozinha #delivery #indecisao #cozinhareal #cotidiano #segunda #jantar #identificacao",
+  "generatedAt": "2026-07-17T13:10:13.755Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1784293948/luiza-generated/veo/reel-food-59.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-59",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1784293813/luiza-generated/covers/reel-food-59-cover.png",
+  "voiceId": "UZ8QqWVrz7tMdxiglcLh",
+  "voiceModel": "eleven_multilingual_v2",
+  "voiceDurationSec": 3.29,
+  "voiceAddedAt": "2026-07-17T13:12:30.129Z"
+}

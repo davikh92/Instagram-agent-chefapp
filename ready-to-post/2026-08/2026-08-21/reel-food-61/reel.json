@@ -1,0 +1,19 @@
+{
+  "id": "reel-food-61",
+  "date": "2026-08-21",
+  "archetype": "virada",
+  "voiceText": "Voltou do mercado com exatamente o que precisava.",
+  "prompt": "A 10-second continuous shot. A canvas grocery bag on a kitchen counter being unpacked — hands lift out carrots, a bunch of greens, onions, a lemon, placing each one down in an orderly row. A smartphone lies face down beside the bag. Everything has a place. Warm natural light from a window, calm and organized real home kitchen. Steady satisfying motion, the last item set down at the end. Audio: only natural ambience — the rustle of the bag, produce touching the wooden counter, quiet kitchen room tone. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Você voltou do mercado com exatamente o que precisava.\n\nNada de sobra. Nada faltando. Nada apodrecendo na gaveta até domingo.\n\nIsso não é sorte — é a lista que o app montou antes de você sair de casa.\n\nTesta grátis, link na bio 👆",
+  "hashtags": "#luizanacozinha #listadecompras #mercado #planejamento #app #economia #semdesperdicio #sexta",
+  "generatedAt": "2026-07-17T13:11:30.667Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1784293952/luiza-generated/veo/reel-food-61.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/reel-food-61",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1784293890/luiza-generated/covers/reel-food-61-cover.png",
+  "voiceId": "UZ8QqWVrz7tMdxiglcLh",
+  "voiceModel": "eleven_multilingual_v2",
+  "voiceDurationSec": 3.37,
+  "voiceAddedAt": "2026-07-17T13:12:34.451Z"
+}
