@@ -1,14 +1,15 @@
 {
   "_comment": "CONTRATO DE PRODUTO — o que o app É e FAZ. Fonte de verdade pro conteúdo do Instagram. O brand.json descreve a MARCA (paleta, tom); este descreve o PRODUTO (features, público, novidades). Marca é estável; produto muda a cada release. Ao escrever qualquer post/reel/story, leia este arquivo primeiro.",
-  "_transporte": "Preenchido À MÃO por enquanto. Quando o app expuser um endpoint (ex: luizanacozinha.lovable.app/context.json), este arquivo passa a ser gerado por um fetch — o formato não muda, só a origem. Atualize a cada mudança grande do app.",
+  "_transporte": "Preenchido À MÃO por enquanto. Quando o app expuser um endpoint com este contexto, o arquivo passa a ser gerado por um fetch — o formato não muda, só a origem. Atualize a cada mudança grande do app.",
   "_atualizado": "2026-07-16",
+  "_aviso": "AGUARDANDO material completo do lado do app (via docs/briefing-app-integracao.md). Vários campos abaixo são palpites antigos e serão SUBSTITUÍDOS pelo retorno do app. Não tratar como verdade até o retorno chegar.",
 
   "app": {
     "nome": "Luiza na Cozinha",
-    "url": "luizanacozinha.lovable.app",
+    "url": "DESCONHECIDA — a URL antiga (luizanacozinha.lovable.app) NÃO é mais válida; o projeto não usa mais Lovable. Aguardar URL real do app.",
     "proposta": "Planejamento alimentar semanal com IA — monta o cardápio da semana e a lista de compras por você",
     "modelo_negocio": "Assinatura (app pago). O conteúdo do Instagram atrai; o app converte por assinatura — não por venda de receita avulsa.",
-    "_status": "confirmado"
+    "_status": "a_confirmar — URL e stack mudaram; aguardando retorno do app"
   },
 
   "protagonismo": {
