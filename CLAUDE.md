@@ -15,7 +15,8 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 
 | Arquivo | Função |
 |---|---|
-| `brand.json` | Fonte única de verdade — paleta, fontes, templates, CTAs, direção de arte. **Nunca hardcode valores nos templates.** |
+| `brand.json` | Fonte única de verdade da **marca** — paleta, fontes, templates, CTAs, direção de arte. **Nunca hardcode valores nos templates.** |
+| `data/product-context.json` | Fonte de verdade do **produto** — o que o app faz, público, objetivos, novidades (multi-chef dia 20). **Leia antes de escrever qualquer post.** Manual hoje; vira endpoint no futuro. |
 | `agents/` | Definição de cada agente especializado |
 | `prompts/` | Biblioteca de prompts por tipo de post |
 | `templates/` | HTMLs base para cada template visual |

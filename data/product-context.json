@@ -1,0 +1,54 @@
+{
+  "_comment": "CONTRATO DE PRODUTO — o que o app É e FAZ. Fonte de verdade pro conteúdo do Instagram. O brand.json descreve a MARCA (paleta, tom); este descreve o PRODUTO (features, público, novidades). Marca é estável; produto muda a cada release. Ao escrever qualquer post/reel/story, leia este arquivo primeiro.",
+  "_transporte": "Preenchido À MÃO por enquanto. Quando o app expuser um endpoint (ex: luizanacozinha.lovable.app/context.json), este arquivo passa a ser gerado por um fetch — o formato não muda, só a origem. Atualize a cada mudança grande do app.",
+  "_atualizado": "2026-07-16",
+
+  "app": {
+    "nome": "Luiza na Cozinha",
+    "url": "luizanacozinha.lovable.app",
+    "proposta": "Planejamento alimentar semanal com IA — monta o cardápio da semana e a lista de compras por você",
+    "modelo_negocio": "Assinatura (app pago). O conteúdo do Instagram atrai; o app converte por assinatura — não por venda de receita avulsa.",
+    "_status": "confirmado"
+  },
+
+  "protagonismo": {
+    "modelo_atual": "Marca centrada na chef Luiza Hoffmann (@luizanacozinha) — voz única, personagem única",
+    "mudanca_prevista": {
+      "data": "2026-07-20",
+      "o_que_muda": "Atualização grande: a plataforma deixa de ser só a Luiza e passa a ter VÁRIOS chefs",
+      "impacto_no_conteudo": "Muda o posicionamento da marca, não só a legenda. Decisão em aberto: 'Luiza na Cozinha' continua sendo a marca guarda-chuva, ou a Luiza vira a chef principal de uma plataforma maior? Isso decide tom, voz e de quem é o rosto do conteúdo. NÃO IMPLEMENTAR mudança de conteúdo até o Davi trazer a integração de comunicação do lado do app.",
+      "_status": "a_confirmar — aguardando integração do lado do app"
+    },
+    "_status": "confirmado (atual) / a_confirmar (pós dia 20)"
+  },
+
+  "objetivos_suportados": {
+    "_comment": "Objetivos que o app permite escolher pro cardápio. Usados nas stories de Vitrine ('cardápio pra X'). CONFIRMAR a lista real com o app.",
+    "lista": ["ganho muscular", "economizar", "vegetariano"],
+    "_status": "a_confirmar — inferido das stories, não da interface real do app"
+  },
+
+  "features": {
+    "_comment": "O que o app entrega. 'linkavel_no_conteudo' = dá pra apontar direto no post hoje. Hoje o formato interno do app não é uma receita bonita passo-a-passo, então NÃO linkamos receita específica — criamos com liberdade (ver docs/veo-prompt-guide.md § RECEITA).",
+    "lista": [
+      { "nome": "Cardápio semanal", "descricao": "Monta o cardápio da semana inteira em ~2 minutos", "linkavel_no_conteudo": true },
+      { "nome": "Lista de compras", "descricao": "Gera a lista de compras a partir do cardápio", "linkavel_no_conteudo": true },
+      { "nome": "Receitas na plataforma", "descricao": "Existem no app, mas em formato de aplicativo — não é receita bonita passo-a-passo. Não linkável hoje; talvez no futuro.", "linkavel_no_conteudo": false }
+    ],
+    "_status": "confirmado"
+  },
+
+  "regras_de_uso_no_conteudo": {
+    "app_max_1_por_semana_no_reel": "O app só aparece explicitamente no reel de VIRADA (sexta). Ver brand.json → ctas (teto de 1/3).",
+    "quarta_nao_vende": "RECEITA (quarta) não tem CTA de app — só salvar. Utilidade primeiro.",
+    "identificacao_antes_do_app": "Regra absoluta: emoção/identificação sempre antes de mostrar o app.",
+    "receita_criada_com_liberdade": "Como as receitas do app não são linkáveis hoje, a Luiza cria receitas próprias. Devem ser boas de verdade — receita ruim queima a credibilidade da chef."
+  },
+
+  "pendencias_para_o_app_confirmar": [
+    "Lista real dos objetivos de cardápio suportados (hoje inferimos ganho muscular / economizar / vegetariano)",
+    "Como fica o posicionamento da marca com o multi-chef (dia 20)",
+    "Se/quando as receitas do app viram formato linkável no conteúdo",
+    "Endpoint público de contexto pra automatizar este arquivo no futuro"
+  ]
+}
