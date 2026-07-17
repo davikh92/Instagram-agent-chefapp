@@ -31,17 +31,43 @@
 
 ### Os 3 arquétipos
 
-| Arquétipo | Pilar | Cena | Papel |
-|---|---|---|---|
-| **ESPELHO** | A/B | O problema em si — geladeira aberta, hesitação, 18h, cansaço | Parar o scroll, comentar/marcar |
-| **IMERSÃO** | A/C | Comida cinematográfica pura | Alcance frio, salvamento, estética |
-| **VIRADA** | C | Mãos confiantes, cozinha resolvida, execução tranquila | Conversão |
+| Arquétipo | Pilar | Cena | Legenda | Papel |
+|---|---|---|---|---|
+| **ESPELHO** | A/B | O problema em si — geladeira aberta, hesitação, 18h, cansaço | Curta, provoca resposta | Parar o scroll, comentar/marcar |
+| **RECEITA** | A/C | Comida cinematográfica pura | **Receita completa** — ingredientes + passo a passo + dica de chef | **Salvamento** ← motor de alcance |
+| **VIRADA** | C | Mãos confiantes, cozinha resolvida, execução tranquila | CTA do app | Conversão |
 
 ### Rotação semanal (3 slots/semana — Seg 18h, Qua 18h, Sex 12h)
 
-**1× ESPELHO · 1× IMERSÃO · 1× VIRADA**
-Cada semana fecha o funil dor → desejo → solução. O app aparece 1x/semana (4x/mês),
+**1× ESPELHO · 1× RECEITA · 1× VIRADA**
+Cada semana fecha o funil dor → utilidade → solução. O app aparece 1x/semana (4x/mês),
 dentro do teto de 1/3 definido em `brand.json → ctas`.
+
+### RECEITA — por que existe (definido jul/2026)
+
+Antes esse slot se chamava IMERSÃO e era só estética. Era o arquétipo mais fraco: ESPELHO
+tem trabalho (identificação), VIRADA tem trabalho (conversão), IMERSÃO tinha "beleza" —
+e beleza não é trabalho, é acabamento. As legendas chegavam a se gabar disso
+(*"Não tem receita. Não tem técnica. Não tem nada pra ensinar aqui."*) e ainda pediam
+"salva esse post". Salvar o quê?
+
+**Utilidade gera salvamento, e salvamento é o que o algoritmo mais premia.** A receita
+também é prova de competência: pedir pra confiar num app de planejamento sem nunca ter
+mostrado que sabe cozinhar é pedir fé. Com receita boa toda quarta, "ela monta sua semana"
+vira promessa crível.
+
+**O vídeo não ensina — ele dá vontade. Quem ensina é a legenda.** Por isso o pipeline não
+muda: o mesmo clipe de 10s de comida bonita, com o mesmo som ambiente, sem voz.
+
+Regras da legenda de RECEITA:
+- Hook na primeira linha (só ~125 caracteres aparecem antes do "mais")
+- `📝 INGREDIENTES` com medidas reais · `👩‍🍳 MODO DE FAZER` numerado
+- **`💡` com a dica que faz a diferença** — a técnica que separa receita de lista de compras.
+  É isso que faz salvar. Sem dica real, é só mais uma receita da internet.
+- CTA de salvar, nunca de app. Quarta não é dia de vender.
+- Receita ruim publicada queima a credibilidade da chef — se não é boa de verdade, não vai.
+- A cena precisa comportar receita. Café com pão na manteiga não é receita: se o prompt não
+  tem o que ensinar, troque o prato antes de gerar o vídeo.
 
 > Cadência definida em jul/2026: 3 reels/semana (~13/mês). Motivo: Omni Flash custa
 > ~$1/vídeo, e a troca qualidade × quantidade só fecha em ~$13/mês. Os dias sem reel
