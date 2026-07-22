@@ -39,6 +39,13 @@ try {
 const ROOT      = path.resolve(__dirname, '..');
 const READY_DIR = path.join(ROOT, 'ready-to-post');
 
+// Marcador de falha, lido pelo workflow DEPOIS do commit.
+// Não dá pra sair com exit 1 direto daqui: isso abortaria o step de commit do
+// published.json, e itens já publicados seriam republicados no dia seguinte
+// (o bug de post duplicado de jun/2026). Ver .github/workflows/publish-daily.yml.
+const FAIL_MARKER = path.join(ROOT, '.publish-failed');
+let publishErrors = 0;
+
 // ── Config ───────────────────────────────────────────────────────────────────
 
 const {
@@ -571,6 +578,7 @@ async function publishStoriesToday(slot) {
 
   if (fs.existsSync(dateDir)) {
     await repostFeedAsStory(dateDir).catch(err => {
+      publishErrors++;
       console.error(`  ✗ Erro no repost: ${err.message}`);
       log.error('publish', `Falha no repost de story: ${err.message}`, { erro: err.message });
     });
@@ -592,9 +600,30 @@ async function publishStoriesToday(slot) {
 
   // Publica só 1 por slot — mantém distribuição ao longo do dia
   await publishStoryFolder(storyDirs[0]).catch(err => {
+    publishErrors++;
     console.error(`  ✗ Erro ao publicar story: ${err.message}`);
     log.error('publish', `Falha ao publicar story: ${err.message}`, { erro: err.message });
   });
+}
+
+// ── Sinalização de falha ──────────────────────────────────────────────────────
+
+/**
+ * Grava (ou remove) o marcador de falha lido pelo workflow.
+ *
+ * Sem isso o job fica VERDE mesmo publicando zero posts — foi o que escondeu
+ * o token invalidado do Instagram por 4 dias em jul/2026: os erros eram
+ * capturados item a item, o processo saía com código 0, e nenhum email de
+ * falha era disparado.
+ */
+function reportFailures() {
+  if (publishErrors > 0) {
+    log.error('publish', `${publishErrors} item(ns) falharam na publicação`, { total: publishErrors });
+    fs.writeFileSync(FAIL_MARKER, String(publishErrors), 'utf8');
+    console.error(`\n❌ ${publishErrors} falha(s) — o workflow vai acusar erro (marcador .publish-failed)`);
+  } else if (fs.existsSync(FAIL_MARKER)) {
+    fs.unlinkSync(FAIL_MARKER); // run anterior falhou, este correu limpo
+  }
 }
 
 // ── Varredura de pastas ───────────────────────────────────────────────────────
@@ -694,6 +723,7 @@ async function main() {
   if (storiesFlag) {
     console.log(`📱 Publicando stories — slot: ${slot}`);
     await publishStoriesToday(slot);
+    reportFailures();
     console.log('\n✅ Stories concluídas!');
     return;
   }
@@ -786,10 +816,9 @@ async function main() {
     process.exit(1);
   }
 
-  let erros = 0;
   for (const folder of folders) {
     await publishFolder(folder).catch(err => {
-      erros++;
+      publishErrors++;
       console.error(`  ✗ Erro em ${path.relative(READY_DIR, folder)}: ${err.message}`);
       log.error('publish', `Falha ao publicar: ${err.message}`, {
         id: path.basename(folder),
@@ -798,9 +827,7 @@ async function main() {
     });
   }
 
-  if (erros > 0) {
-    log.error('publish', `${erros} item(ns) falharam na publicação de hoje`, { total: erros });
-  }
+  reportFailures();
   console.log('\n✅ Publicação concluída!');
 }
 

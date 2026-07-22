@@ -73,3 +73,13 @@ jobs:
           git diff --staged --quiet \
             || git commit -m "chore: stories publicadas + dashboard atualizado [skip ci]"
           git push
+
+      # Depois do commit de propósito — ver comentário em publish-daily.yml
+      - name: Acusar falha de publicação
+        if: always()
+        run: |
+          if [ -f .publish-failed ]; then
+            echo "::error::$(cat .publish-failed) publicação(ões) de story falharam — ver log do step de publicação"
+            exit 1
+          fi
+          echo "Nenhuma falha de publicação."

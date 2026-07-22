@@ -11,6 +11,9 @@ ready-to-post/**/*.webm
 # Lock files de publicação — nunca commitados
 ready-to-post/**/.publishing
 
+# Marcador de falha de publicação — efêmero, lido pelo workflow no mesmo run
+.publish-failed
+
 # Saída de testes de modelo — descartável, fica no Cloudinary
 tests/
 

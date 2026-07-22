@@ -63,3 +63,16 @@ jobs:
           git diff --staged --quiet \
             || git commit -m "chore: published.json + dashboard atualizado [skip ci]"
           git push
+
+      # Roda DEPOIS do commit de propósito: falhar antes deixaria o
+      # published.json sem salvar, e os posts já publicados sairiam de novo
+      # amanhã. Sem este step o job fica VERDE publicando zero posts — foi o
+      # que escondeu o token invalidado do Instagram por 4 dias em jul/2026.
+      - name: Acusar falha de publicação
+        if: always()
+        run: |
+          if [ -f .publish-failed ]; then
+            echo "::error::$(cat .publish-failed) publicação(ões) falharam — ver log do step de publicação"
+            exit 1
+          fi
+          echo "Nenhuma falha de publicação."
