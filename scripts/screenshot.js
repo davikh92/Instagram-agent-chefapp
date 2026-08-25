@@ -26,6 +26,19 @@ function loadBrand() {
 }
 
 /**
+ * Nome do produto — vem do app, nunca do brand.json.
+ * Ver brand.json → _fronteira: o produto é do app, a produção é nossa.
+ */
+function nomeDaMarca() {
+  try {
+    const ctx = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'product-context.json'), 'utf8'));
+    if (ctx?.fixo?.app?.nome) return ctx.fixo.app.nome;
+  } catch { /* cache ausente ou corrompido — cai no fallback */ }
+  console.warn('⚠️  product-context.json indisponível; usando nome de fallback. Rode: node scripts/sync-contexto.js');
+  return 'Tem na Semana';
+}
+
+/**
  * Substitui todos os placeholders {{KEY}} no HTML pelo valor correspondente
  * vindo do objeto `vars`. Placeholders sem correspondência são removidos.
  */
@@ -64,7 +77,7 @@ function injectAutoVars(slideVars, slideIndex, totalSlides) {
     BG_NUMBER_SIZE: '480',
     BG_NUMBER:      String(slideIndex + 1),
     SCENE_NUM:      String(slideIndex + 1),
-    LABEL:          'Luiza na Cozinha',
+    LABEL:          nomeDaMarca(),
     BODY_BOTTOM:    '200',
     SUBHEADLINE:    '',
     BODY:           '',
@@ -76,7 +89,7 @@ function injectAutoVars(slideVars, slideIndex, totalSlides) {
     // Progress bar HTML
     PROGRESS_HTML:  buildProgressHTML(slideIndex, totalSlides),
     // big-number defaults
-    LIVE_LABEL:     'Luiza na Cozinha',
+    LIVE_LABEL:     nomeDaMarca(),
     STAT_LABEL:     '',
     SUFFIX:         '',
     SOURCE:         '',

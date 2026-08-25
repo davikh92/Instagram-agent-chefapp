@@ -1,13 +1,24 @@
 {
-  "_comment": "Fonte única de verdade — todos os agentes leem este arquivo. Edite aqui, nunca nos templates.",
-  "_updated": "Maio 2026 — inclui direção de arte cinematográfica, mix de Reels e sistema tipográfico ampliado.",
+  "_comment": "Fonte de verdade da EXECUÇÃO — cor, fonte, template, ritmo, gancho, hashtag, horário. Todos os agentes leem este arquivo. Edite aqui, nunca nos templates.",
+  "_updated": "Agosto 2026 — nome, URL, tagline e chef saíram daqui; agora vêm do app (ver _fronteira).",
+
+  "_fronteira": {
+    "regra": "O produto é do app, a produção é nossa. O que o app É (nome, endereço, preço, o que faz, o que pode ser prometido) sai de data/product-context.json. Como aquilo vira post é o que está neste arquivo.",
+    "nunca_duplicar_aqui": [
+      "nome do produto  → fixo.app.nome ('Tem na Semana')",
+      "url              → fixo.app.url_canonica (o domínio VAI mudar)",
+      "tagline          → fixo.app.proposta_uma_frase",
+      "quem é a chef    → fixo.posicionamento.papel_da_chef",
+      "o que pode/não pode ser dito → fixo.comunicacao",
+      "preços e plano gratuito      → fixo.negocio"
+    ],
+    "em_caso_de_conflito": "O contexto manda na AFIRMAÇÃO (o que se diz sobre o produto). Este arquivo manda na EXECUÇÃO (como se diz). Post que promete o que o produto não faz é o post que está errado.",
+    "por_que": "Campo que existe nos dois lugares diverge — e a gente só descobre num post já publicado."
+  },
 
   "brand": {
-    "name": "Luiza na Cozinha",
+    "_leia_isto": "Só o que é da conta de Instagram mora aqui. Nome, URL, tagline e chef foram removidos em ago/2026 — leia de data/product-context.json.",
     "handle": "@luizanacozinha",
-    "url": "luizanacozinha.lovable.app",
-    "tagline": "Planeje sua semana, cozinhe com amor.",
-    "chef": "Luiza Hoffmann",
     "instagram": "@luizanacozinha"
   },
 
@@ -261,6 +272,7 @@
   },
 
   "tone_of_voice": {
+    "_fronteira_fina": "COMO falar (energia, ritmo, tipo de gancho) é nosso e está aqui. O QUE se pode afirmar sobre o produto vem de fixo.comunicacao.pode_dizer / nao_pode_dizer. Se conflitar: o contexto manda na afirmação, este arquivo manda na execução.",
     "is":     ["Conversa como amiga que cozinha bem", "Humor leve e auto-irônico", "Brasileira, do dia a dia", "Opinião própria — não é neutra", "Direta e sem frescura"],
     "is_not": ["Tom de especialista distante", "Jargão de coach ou nutricionista", "Formalidade ou linguagem técnica", "Perfeição — a imperfeição humaniza", "Tom fitness extremo"]
   },
@@ -284,7 +296,7 @@
       "Identidade visual correta — paleta, fontes, template certo para o tipo de post",
       "Contraste legível em tela pequena de celular",
       "Primeiro slide do carrossel funciona como post independente",
-      "Marca 'Luiza na Cozinha' ou URL presente em todo post",
+      "Marca 'Tem na Semana' ou a URL lida de fixo.app.url_canonica presente em todo post — nunca digitada à mão",
       "Margem lateral mínima de 72px respeitada"
     ],
     "content": [

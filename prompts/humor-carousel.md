@@ -9,7 +9,7 @@
 ## Estrutura de Slides
 
 ### Slide 1 — Capa
-- `SLIDE_LABEL`: "LUIZA NA COZINHA"
+- `SLIDE_LABEL`: "TEM NA SEMANA"
 - `HEADLINE_SIZE`: 80
 - `HEADLINE`: Título do carrossel (ex: "5 pensamentos de quem não sabe o que cozinhar")
 - `SUBHEADLINE`: Frase de gancho em itálico terracota

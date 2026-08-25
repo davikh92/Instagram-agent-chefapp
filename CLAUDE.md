@@ -1,13 +1,52 @@
-# Luiza na Cozinha — Agentes de Conteúdo Instagram
+# Tem na Semana — Agentes de Conteúdo Instagram
 
 ## O Projeto
-Equipe automatizada de produção de conteúdo para o Instagram da Luiza na Cozinha —
-app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
+Equipe automatizada de produção de conteúdo para o Instagram do **Tem na Semana** —
+monta a semana de comida da casa em minutos, e a lista de compras sai junto.
+
+> ⚠️ **O nome do produto é "Tem na Semana", não "Luiza na Cozinha".**
+> `luizanacozinha.com` é só o domínio de hoje, e vai mudar. **Nunca escreva URL à mão:**
+> leia sempre de `data/product-context.json → fixo.app.url_canonica` e monte o caminho
+> a partir de `fixo.links_uteis`. Link congelado vira link quebrado no dia da migração.
 
 **Meta:** 12–16 posts/mês produzidos em ~45 min de trabalho humano.
-**Chef protagonista:** Luiza Hoffmann (@luizanacozinha).
 **Canal de validação:** Instagram — crescimento orgânico via Reels + Carrosséis.
 **Princípio central:** Identificação emocional SEMPRE antes de mostrar o app.
+
+### A fronteira: quem manda em quê
+
+> **O produto é do app; a produção é nossa.**
+> O que o app **É** — nome, endereço, preço, o que faz, o que pode ser prometido —
+> sai de `data/product-context.json`. Como aquilo vira post — cor, fonte, template,
+> ritmo, gancho, hashtag, horário — está no `brand.json` e é decisão nossa.
+>
+> **Em caso de conflito:** o contexto manda na **afirmação**, a gente manda na
+> **execução**. Post que promete o que o produto não faz é o post que está errado.
+>
+> **Nunca duplique** nome, URL, tagline, quem é a chef, o que pode/não pode ser dito,
+> preços — campo que existe nos dois lugares diverge, e a gente só descobre num post
+> já publicado. A versão viva desta regra chega em `fixo._contrato` a cada sync.
+
+### Quem é o protagonista (regra que redefine tudo)
+
+**A protagonista é a facilidade — a semana resolvida, a mesa de quem usa.**
+A chef Luiza Hoffmann **assina** o cardápio: é a garantia de que aquilo foi pensado por
+quem cozinha de verdade. Ela **não** é o rosto da comunicação, não é o assunto do post,
+não é personagem.
+
+> **Regra curta: chef assina cardápio; a história é da mesa de quem usa.**
+
+Por quê: marca-pessoa é refém. Se o produto for "o app da Luiza", ele morre no dia em que
+a Luiza sair. "Tem na Semana" é a casa; as chefs assinam o que está dentro. Hoje é uma —
+por desenho, serão várias. **Escreva desde já de um jeito que sobreviva à entrada de
+outras chefs:** fale da comida e da semana resolvida, não da biografia de quem cozinha.
+
+Isso **não** é esconder a chef — a assinatura dela é o que separa o produto de "IA
+inventando prato". Ela é a **garantia**, não o **assunto**.
+
+**Duas vozes** (ver `fixo.posicionamento.duas_vozes`): a *plataforma* organiza — impessoal
+e calorosa, "a gente", "pode deixar". A *chef* cozinha — primeira pessoa, quente, "vem que
+é fácil". Marca na moldura, chef no conteúdo.
 
 ---
 
@@ -15,8 +54,9 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 
 | Arquivo | Função |
 |---|---|
-| `brand.json` | Fonte única de verdade da **marca** — paleta, fontes, templates, CTAs, direção de arte. **Nunca hardcode valores nos templates.** |
-| `data/product-context.json` | Fonte de verdade do **produto** — o que o app faz, público, objetivos, novidades (multi-chef dia 20). **Leia antes de escrever qualquer post.** Manual hoje; vira endpoint no futuro. |
+| `brand.json` | Fonte de verdade da **execução** — paleta, fontes, templates, CTAs, direção de arte, hashtags, cadência. **Nunca hardcode valores nos templates.** Não contém mais nome, URL, tagline nem chef: esses vêm do contexto (ver `brand.json → _fronteira`). |
+| `data/product-context.json` | Fonte de verdade do **produto** — nome, URL canônica, posicionamento, pode/não pode dizer, os 7 cardápios da casa com benefícios prontos, receitas, novidades liberadas. **Leia antes de escrever qualquer post.** **CACHE — nunca edite à mão:** é gerado por `scripts/sync-contexto.js` a partir do RPC do app. Bloco `fixo` = escrito pelo time do app; bloco `atual` = sai do banco sozinho. |
+| `docs/DIRECAO_PARA_A_AUTOMACAO.md` | O contrato vindo do time do app: o que o conteúdo comunicava errado, o endpoint, e como pedir mudança do lado deles. |
 | `agents/` | Definição de cada agente especializado |
 | `prompts/` | Biblioteca de prompts por tipo de post |
 | `templates/` | HTMLs base para cada template visual |
@@ -99,7 +139,7 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 - **NUNCA** usar fontes fora do sistema: Bebas Neue, Playfair Display, Instrument Serif, Caveat, DM Sans, DM Mono
 - **NUNCA** usar cores fora da paleta definida em `brand.json`
 - **NUNCA** fundo branco puro `#FFFFFF` — sempre `#FFFDF9` ou `#F7F2EA`
-- **SEMPRE** incluir `Luiza na Cozinha` ou `luizanacozinha.app` em todo post
+- **SEMPRE** assinar todo post com `Tem na Semana` (a marca) ou a URL lida de `fixo.app.url_canonica` — **nunca digitada à mão**
 - **SEMPRE** contraste alto entre fundo e texto — testar legibilidade em tela pequena
 - Margem lateral mínima: **72px** em todos os posts
 - Slide 1 de qualquer carrossel deve funcionar como **post independente**
@@ -122,6 +162,49 @@ app de planejamento alimentar semanal com IA (luizanacozinha.lovable.app).
 - Humor leve e auto-irônico nos Pilares A e B
 - Nunca posts puramente educativos sem elemento de identificação
 - O **primeiro 0,3 segundo** decide tudo — hook obrigatório em todo formato
+
+### Vocabulário — checklist, não sugestão
+
+Antes de publicar qualquer legenda, confira contra `fixo.comunicacao` no
+`product-context.json`. Resumo do que está lá hoje:
+
+**Pode dizer:** comida de verdade de todo dia · sem complicação, resolvido · testado,
+assinado, vai dar certo · sua semana resolvida · a lista sai junto · o jantar de terça,
+resolvido.
+
+**NUNCA dizer:** gourmet, sofisticado, alta cozinha, elevado · segredos de chef, técnica
+profissional · "as melhores chefs" (tom de ranking) · **qualquer promessa de emagrecer,
+curar, tratar ou resultado de saúde** · dieta, prescrição, plano nutricional.
+
+> ⚠️ **Os nomes dos cardápios não são promessas.** "Emagrecimento Consciente", "Detox
+> Pós-Festa", "Pele & Intestino" são **nomes de cardápio**. Pode dizer o nome e para quem
+> é; **não** pode prometer resultado nem falar como tratamento.
+>
+> Cuidado redobrado com o campo `beneficios[]` de cada cardápio ("Menos inchaço", "Pele
+> radiante", "Sono melhor"): eles descrevem a **intenção do cardápio**, e viram promessa
+> de saúde se você escrever "vai deixar sua pele radiante". Formule sempre como *para
+> quem é*, nunca como *o que vai acontecer com você*.
+
+### Os 7 cardápios reais (nunca invente objetivo)
+
+Detox Pós-Festa *(gratuito)* · Emagrecimento Consciente · Massa & Força ·
+Pele & Intestino · Vegetariano Prático · Foco & Energia · Low Carb Mediterrâneo.
+
+Cada um já vem com `subtitulo`, `publico_alvo` e 5 `beneficios` escritos e revisados
+pelo time do app — **material de post pronto, não precisa inventar.** Lista sempre
+atualizada em `atual.cardapios_da_casa`.
+
+### UTM obrigatório em todo link publicado
+
+Sem UTM o app registra a pessoa como "(direto)" e nenhum dos dois lados descobre o que
+funcionou. A origem é gravada no **primeiro** toque e vale para sempre naquele aparelho.
+
+```
+{url_canonica}/cardapios-da-casa?utm_source=instagram&utm_campaign=<id-do-post>
+```
+
+O objetivo de conversão **não é criar conta** — é trazer gente que **monta a semana**.
+O app mede `entrou → montou_semana → abriu_lista → assinou`.
 
 ---
 

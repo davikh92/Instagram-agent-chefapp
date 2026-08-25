@@ -39,6 +39,13 @@ jobs:
           echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"          >> .env
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"    >> .env
           echo "ELEVENLABS_API_KEY=${{ secrets.ELEVENLABS_API_KEY }}"          >> .env
+          echo "SUPABASE_PUBLISHABLE_KEY=${{ secrets.SUPABASE_PUBLISHABLE_KEY }}" >> .env
+
+      # Puxa a verdade do produto ANTES de gerar qualquer coisa: nome, URL canônica,
+      # cardápios reais, vocabulário proibido. Se a rede falhar, segue com o cache e
+      # avisa — conteúdo não pode parar por isso. Ver docs/DIRECAO_PARA_A_AUTOMACAO.md.
+      - name: Sincronizar contexto do app
+        run: node scripts/sync-contexto.js
 
       - name: Gerar reels (Omni Flash — 5 por lote)
         run: node scripts/generate-omni.js --all --limit 5
@@ -59,7 +66,7 @@ jobs:
           git stash -u
           git pull --rebase origin main
           git stash pop
-          git add ready-to-post/ dashboard.html
+          git add ready-to-post/ dashboard.html data/product-context.json
           git diff --staged --quiet \
             || git commit -m "chore: reels Veo gerados + dashboard atualizado [skip ci]"
           git push

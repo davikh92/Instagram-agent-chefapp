@@ -1,55 +1,287 @@
 {
-  "_comment": "CONTRATO DE PRODUTO — o que o app É e FAZ. Fonte de verdade pro conteúdo do Instagram. O brand.json descreve a MARCA (paleta, tom); este descreve o PRODUTO (features, público, novidades). Marca é estável; produto muda a cada release. Ao escrever qualquer post/reel/story, leia este arquivo primeiro.",
-  "_transporte": "Preenchido À MÃO por enquanto. Quando o app expuser um endpoint com este contexto, o arquivo passa a ser gerado por um fetch — o formato não muda, só a origem. Atualize a cada mudança grande do app.",
-  "_atualizado": "2026-07-16",
-  "_aviso": "AGUARDANDO material completo do lado do app (via docs/briefing-app-integracao.md). Vários campos abaixo são palpites antigos e serão SUBSTITUÍDOS pelo retorno do app. Não tratar como verdade até o retorno chegar.",
-
-  "app": {
-    "nome": "Luiza na Cozinha",
-    "url": "DESCONHECIDA — a URL antiga (luizanacozinha.lovable.app) NÃO é mais válida; o projeto não usa mais Lovable. Aguardar URL real do app.",
-    "proposta": "Planejamento alimentar semanal com IA — monta o cardápio da semana e a lista de compras por você",
-    "modelo_negocio": "Assinatura (app pago). O conteúdo do Instagram atrai; o app converte por assinatura — não por venda de receita avulsa.",
-    "_status": "a_confirmar — URL e stack mudaram; aguardando retorno do app"
-  },
-
-  "protagonismo": {
-    "modelo_atual": "Marca centrada na chef Luiza Hoffmann (@luizanacozinha) — voz única, personagem única",
-    "mudanca_prevista": {
-      "data": "2026-07-20",
-      "o_que_muda": "Atualização grande: a plataforma deixa de ser só a Luiza e passa a ter VÁRIOS chefs",
-      "impacto_no_conteudo": "Muda o posicionamento da marca, não só a legenda. Decisão em aberto: 'Luiza na Cozinha' continua sendo a marca guarda-chuva, ou a Luiza vira a chef principal de uma plataforma maior? Isso decide tom, voz e de quem é o rosto do conteúdo. NÃO IMPLEMENTAR mudança de conteúdo até o Davi trazer a integração de comunicação do lado do app.",
-      "_status": "a_confirmar — aguardando integração do lado do app"
+  "fixo": {
+    "app": {
+      "nome": "Tem na Semana",
+      "onde_acessa": "Site que funciona como aplicativo (PWA): abre no navegador e pode ser instalado na tela de início. Ainda não está nas lojas — Android está no plano, depois da troca de domínio.",
+      "url_canonica": "https://luizanacozinha.com",
+      "aviso_sobre_a_url": "O domínio vai mudar. Nunca escreva a URL à mão no conteúdo: leia sempre deste campo.",
+      "proposta_uma_frase": "Monta a semana de comida da sua casa em minutos, e a lista de compras sai junto.",
+      "nome_antigo_nao_usar": "Luiza na Cozinha — é o domínio atual, NÃO o nome do produto"
     },
-    "_status": "confirmado (atual) / a_confirmar (pós dia 20)"
-  },
-
-  "objetivos_suportados": {
-    "_comment": "Objetivos que o app permite escolher pro cardápio. Usados nas stories de Vitrine ('cardápio pra X'). CONFIRMAR a lista real com o app.",
-    "lista": ["ganho muscular", "economizar", "vegetariano"],
-    "_status": "a_confirmar — inferido das stories, não da interface real do app"
-  },
-
-  "features": {
-    "_comment": "O que o app entrega. 'linkavel_no_conteudo' = dá pra apontar direto no post hoje. Hoje o formato interno do app não é uma receita bonita passo-a-passo, então NÃO linkamos receita específica — criamos com liberdade (ver docs/veo-prompt-guide.md § RECEITA).",
-    "lista": [
-      { "nome": "Cardápio semanal", "descricao": "Monta o cardápio da semana inteira em ~2 minutos", "linkavel_no_conteudo": true },
-      { "nome": "Lista de compras", "descricao": "Gera a lista de compras a partir do cardápio", "linkavel_no_conteudo": true },
-      { "nome": "Receitas na plataforma", "descricao": "Existem no app, mas em formato de aplicativo — não é receita bonita passo-a-passo. Não linkável hoje; talvez no futuro.", "linkavel_no_conteudo": false }
+    "negocio": {
+      "modelo": "Freemium com assinatura.",
+      "planos": [
+        {
+          "nome": "Completo",
+          "preco": "R$ 19,90 por mês"
+        },
+        {
+          "nome": "Completo anual",
+          "preco": "R$ 159,90 por ano"
+        }
+      ],
+      "gratuito": "Um cardápio por mês. A leva nova entra no dia 1º.",
+      "cta_oficial": "Sem CTA obrigatório. O conteúdo tem liberdade, respeitando o vocabulário acima.",
+      "objetivo_de_conversao_do_instagram": "Trazer gente que MONTA a semana, não gente que só cria conta. Conta criada e nunca usada não vira assinatura — o app mede exatamente isso (entrou, montou_semana, abriu_lista, assinou)."
+    },
+    "publico": {
+      "usuario_real": "Quem cozinha para a própria casa no dia a dia e chega no fim da tarde sem saber o que fazer pra janta. Não é quem quer aprender alta gastronomia.",
+      "problema_que_resolve": "A decisão diária (\"o que eu faço hoje?\") e a compra desorganizada — o cardápio da semana sai pronto e a lista vai organizada por corredor de mercado.",
+      "problema_que_NAO_resolve": "Não é dieta nem acompanhamento nutricional, não prescreve nada, não entrega comida, não ensina técnica de cozinha."
+    },
+    "features": [
+      {
+        "nome": "Cardápio da semana",
+        "o_que_faz": "Seis perguntas rápidas e a semana inteira sai montada",
+        "mostravel_no_conteudo": true
+      },
+      {
+        "nome": "Lista de compras",
+        "o_que_faz": "Sai junto com o cardápio, com as quantidades da sua casa e organizada por corredor de mercado; dá pra riscar o que já pegou",
+        "mostravel_no_conteudo": true
+      },
+      {
+        "nome": "Cardápios da casa",
+        "o_que_faz": "Semanas prontas assinadas pela chef, por objetivo — ver bloco atual.cardapios_da_casa",
+        "mostravel_no_conteudo": true
+      },
+      {
+        "nome": "Receitas",
+        "o_que_faz": "Estante de receitas com página própria por receita",
+        "mostravel_no_conteudo": true
+      },
+      {
+        "nome": "Trocar um prato",
+        "o_que_faz": "Não gostou de um dia? Troca só aquele prato e a lista se refaz",
+        "mostravel_no_conteudo": true
+      },
+      {
+        "nome": "Instalar na tela de início",
+        "o_que_faz": "Vira ícone no celular sem passar por loja",
+        "mostravel_no_conteudo": true
+      }
     ],
-    "_status": "confirmado"
+    "_contrato": {
+      "chave": "Use a chave publicável do Supabase. NÃO peça nem use a service_role: ela abre o banco inteiro (dado pessoal de usuário, assinatura) e não tem nada a ver com conteúdo.",
+      "regra": "O produto é nosso, a produção é de vocês. O que o app É (nome, endereço, preço, o que faz e o que não faz, o que pode ser prometido) sai daqui. Como aquilo vira post (cor, fonte, template, ritmo, gancho, hashtag, horário) é de vocês.",
+      "escrita": "Ninguém escreve aqui além do app. Esta é uma porta de leitura, e é só o que vocês precisam.",
+      "_o_que_e": "As regras de fronteira entre o aplicativo e quem produz conteúdo. Versão curta; a longa vive no repositório do app (CONTRATO_DE_CONTEUDO.md).",
+      "nao_dupliquem": [
+        "nome do produto",
+        "url",
+        "tagline",
+        "quem é a chef",
+        "o que pode e não pode ser dito sobre o produto",
+        "preços e o que o plano gratuito inclui"
+      ],
+      "para_anunciar_algo": "Peçam ao app. Entra em novidades com pode_anunciar true e aparece na chamada seguinte. O que está embargado nunca sai daqui.",
+      "em_caso_de_conflito": "O contexto manda na AFIRMAÇÃO (o que se diz sobre o produto). Vocês mandam na EXECUÇÃO (como se diz). Post que promete o que o produto não faz é o post que está errado.",
+      "o_que_pedimos_de_volta": "utm em todo link publicado (?utm_source=instagram&utm_campaign=...). Sem isso a medição registra a pessoa como \"(direto)\" e nenhum dos dois lados descobre o que funcionou.",
+      "ninguem_edita_o_que_nao_e_seu": "Cada informação tem UM dono e UM lugar. Nenhum campo deve existir nos dois lados: se apareceu duplicado, um dos dois está errado."
+    },
+    "comunicacao": {
+      "pode_dizer": [
+        "comida de verdade, de todo dia",
+        "sem complicação, resolvido",
+        "testado, assinado, vai dar certo",
+        "sua semana resolvida",
+        "a lista sai junto",
+        "o jantar de terça, resolvido"
+      ],
+      "nao_pode_dizer": [
+        "gourmet, sofisticado, alta cozinha, elevado",
+        "segredos de chef, técnica profissional",
+        "as melhores chefs (tom de ranking)",
+        "qualquer promessa de emagrecer, curar, tratar ou resultado de saúde",
+        "dieta, prescrição, plano nutricional"
+      ],
+      "percepcao_desejada": "Prática, quente, brasileira, confiante sem arrogância. A amiga que cozinha bem e organiza tudo — não a nutricionista que cobra, não o robô que sugere.",
+      "cuidado_com_os_nomes_de_cardapio": "Cardápios se chamam \"Emagrecimento Consciente\", \"Detox Pós-Festa\", \"Pele & Intestino\". São NOMES DE CARDÁPIO, não promessas clínicas. O conteúdo pode dizer o nome e o público-alvo; não pode prometer resultado nem falar como se fosse tratamento.",
+      "o_que_o_conteudo_comunica_errado_hoje": [
+        "Chama o produto de \"Luiza na Cozinha\" — o nome é Tem na Semana",
+        "Usa a URL luizanacozinha.lovable.app, que não existe mais",
+        "Trata a chef como protagonista e o Instagram como voz dela",
+        "Diz que as receitas não são linkáveis — são páginas públicas hoje",
+        "Inventa objetivos de cardápio (ganho muscular, economizar) em vez dos sete reais"
+      ]
+    },
+    "links_uteis": {
+      "_regra": "Monte sempre a partir de app.url_canonica. Estes são os caminhos estáveis.",
+      "inicio": "/",
+      "instalar": "/instalar",
+      "receitas": "/receitas",
+      "montar_a_semana": "/montar",
+      "cardapios_da_casa": "/cardapios-da-casa"
+    },
+    "posicionamento": {
+      "nunca": "Tratar o produto como \"o app da Luiza\". A marca não pode ficar refém de uma pessoa: se a chef sair, o Tem na Semana continua.",
+      "duas_vozes": {
+        "chef": "A amiga que COZINHA bem. Primeira pessoa, quente — \"vem que é fácil\". Aparece assinando receita e dando dica, não contando a vida dela.",
+        "_regra": "marca na moldura, chef no conteúdo",
+        "plataforma": "A amiga que ORGANIZA. Impessoal e calorosa, \"a gente\", calma e prática — \"pode deixar\". Fala da promessa, do produto, do que acontece."
+      },
+      "multi_chef": {
+        "hoje": "Uma chef assinando: Luiza Hoffmann. A arquitetura de várias chefs já existe no banco.",
+        "intencao": "A plataforma é multi-chef por desenho. Outras chefs entram e assinam cardápios; \"Tem na Semana\" é a casa, as chefs assinam o que está dentro.",
+        "consequencia_para_o_conteudo": "Escrever desde já de um jeito que sobreviva à entrada de outras chefs. Falar da comida e da semana resolvida, não da biografia de quem cozinha."
+      },
+      "regra_curta": "Chef assina cardápio; a história é da mesa de quem usa.",
+      "protagonista": "A facilidade. A semana resolvida. A mesa de quem usa — nunca a cozinha da chef.",
+      "papel_da_chef": "A chef ASSINA o cardápio. Ela é a garantia de que aquilo foi pensado por quem cozinha de verdade e vai dar certo — não é o rosto da comunicação, não é o assunto do post, não é personagem."
+    }
   },
-
-  "regras_de_uso_no_conteudo": {
-    "app_max_1_por_semana_no_reel": "O app só aparece explicitamente no reel de VIRADA (sexta). Ver brand.json → ctas (teto de 1/3).",
-    "quarta_nao_vende": "RECEITA (quarta) não tem CTA de app — só salvar. Utilidade primeiro.",
-    "identificacao_antes_do_app": "Regra absoluta: emoção/identificação sempre antes de mostrar o app.",
-    "receita_criada_com_liberdade": "Como as receitas do app não são linkáveis hoje, a Luiza cria receitas próprias. Devem ser boas de verdade — receita ruim queima a credibilidade da chef."
+  "atual": {
+    "receitas": {
+      "total": 486,
+      "url_da_estante": "https://luizanacozinha.com/receitas",
+      "sao_paginas_publicas": true
+    },
+    "novidades": [],
+    "cardapios_da_casa": [
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/detox-pos-festa",
+        "slug": "detox-pos-festa",
+        "titulo": "Detox Pós-Festa",
+        "gratuito": true,
+        "subtitulo": "Reset completo para o seu corpo",
+        "beneficios": [
+          "Digestão melhorada",
+          "Mais energia",
+          "Pele radiante",
+          "Menos inchaço",
+          "Sono melhor"
+        ],
+        "publico_alvo": "Pessoas que exageraram nas festas ou querem iniciar uma alimentação mais saudável"
+      },
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/emagrecimento-consciente",
+        "slug": "emagrecimento-consciente",
+        "titulo": "Emagrecimento Consciente",
+        "gratuito": false,
+        "subtitulo": "Foco em saúde e resultados sustentáveis",
+        "beneficios": [
+          "Redução de medidas",
+          "Mais saciedade",
+          "Hábitos saudáveis",
+          "Controle de compulsão",
+          "Rotina que se mantém"
+        ],
+        "publico_alvo": "Quem busca perder peso de forma saudável sem dietas restritivas ou passar fome"
+      },
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/massa-e-forca",
+        "slug": "massa-e-forca",
+        "titulo": "Massa & Força",
+        "gratuito": false,
+        "subtitulo": "Alimentação para quem treina pesado",
+        "beneficios": [
+          "Ganho de massa",
+          "Mais energia para treinos",
+          "Recuperação muscular",
+          "Força aumentada",
+          "Resistência"
+        ],
+        "publico_alvo": "Praticantes de musculação, atletas e quem busca hipertrofia muscular"
+      },
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/pele-e-intestino",
+        "slug": "pele-e-intestino",
+        "titulo": "Pele & Intestino",
+        "gratuito": false,
+        "subtitulo": "Beleza que vem de dentro",
+        "beneficios": [
+          "Pele mais bonita",
+          "Intestino regulado",
+          "Menos inchaço",
+          "Cabelo saudável",
+          "Unhas fortes"
+        ],
+        "publico_alvo": "Pessoas com problemas de pele, intestino irregular ou que buscam beleza natural"
+      },
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/vegetariano-pratico",
+        "slug": "vegetariano-pratico",
+        "titulo": "Vegetariano Prático",
+        "gratuito": false,
+        "subtitulo": "Sem carne, com muito sabor",
+        "beneficios": [
+          "Preparo rápido",
+          "Rico em nutrientes",
+          "Econômico",
+          "Sustentável",
+          "Digestão leve"
+        ],
+        "publico_alvo": "Vegetarianos, veganos em transição ou quem quer reduzir o consumo de carne"
+      },
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/foco-e-energia",
+        "slug": "foco-e-energia",
+        "titulo": "Foco & Energia",
+        "gratuito": false,
+        "subtitulo": "Alimentação para alta performance mental",
+        "beneficios": [
+          "Mais foco",
+          "Energia estável",
+          "Melhor humor",
+          "Memória afiada",
+          "Produtividade"
+        ],
+        "publico_alvo": "Profissionais, estudantes, empreendedores e quem precisa de alta performance mental"
+      },
+      {
+        "url": "https://luizanacozinha.com/cardapio-da-casa/low-carb-mediterraneo",
+        "slug": "low-carb-mediterraneo",
+        "titulo": "Low Carb Mediterrâneo",
+        "gratuito": false,
+        "subtitulo": "O melhor dos dois mundos",
+        "beneficios": [
+          "Emagrecimento",
+          "Saúde cardíaca",
+          "Longevidade",
+          "Sabor intenso",
+          "Saciedade"
+        ],
+        "publico_alvo": "Quem busca emagrecer com saúde e comer com muito sabor"
+      }
+    ],
+    "entrou_nos_ultimos_45_dias": {
+      "cardapios": [
+        {
+          "slug": "detox-pos-festa",
+          "titulo": "Detox Pós-Festa"
+        },
+        {
+          "slug": "pele-e-intestino",
+          "titulo": "Pele & Intestino"
+        },
+        {
+          "slug": "vegetariano-pratico",
+          "titulo": "Vegetariano Prático"
+        },
+        {
+          "slug": "emagrecimento-consciente",
+          "titulo": "Emagrecimento Consciente"
+        },
+        {
+          "slug": "massa-e-forca",
+          "titulo": "Massa & Força"
+        },
+        {
+          "slug": "low-carb-mediterraneo",
+          "titulo": "Low Carb Mediterrâneo"
+        },
+        {
+          "slug": "foco-e-energia",
+          "titulo": "Foco & Energia"
+        }
+      ],
+      "receitas_novas": 419
+    }
   },
-
-  "pendencias_para_o_app_confirmar": [
-    "Lista real dos objetivos de cardápio suportados (hoje inferimos ganho muscular / economizar / vegetariano)",
-    "Como fica o posicionamento da marca com o multi-chef (dia 20)",
-    "Se/quando as receitas do app viram formato linkável no conteúdo",
-    "Endpoint público de contexto pra automatizar este arquivo no futuro"
-  ]
+  "_gerado_em": "2026-08-25T19:06:19.780938+00:00",
+  "_atualizado_em": "2026-08-25T19:01:21.636732+00:00",
+  "_leia_primeiro": "Fonte única de verdade sobre o produto Tem na Semana, para quem cria conteúdo. O bloco `fixo` é escrito à mão e muda raramente. O bloco `atual` é gerado do banco a cada chamada e nunca envelhece. Nunca escreva a URL à mão: use fixo.app.url_canonica.",
+  "_aviso_de_cache": "CACHE — não edite à mão. Gerado por scripts/sync-contexto.js a partir do RPC do app. Para corrigir algo do bloco `fixo`, peça ao time do app; o bloco `atual` sai do banco sozinho.",
+  "_sincronizado_em": "2026-08-25T19:08:48.465Z",
+  "_fonte": "https://aywpqorkwewxdqectncu.supabase.co/rest/v1/rpc/contexto_do_conteudo"
 }
