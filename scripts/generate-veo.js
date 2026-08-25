@@ -21,7 +21,7 @@ const log = require('./lib/logger');
 
 require('dotenv').config();
 
-// ffmpeg-static já está instalado (usado pelo record-reel.js)
+// ffmpeg-static já está instalado (usado também pelo add-voice.js)
 let ffmpegPath;
 try {
   ffmpegPath = require('ffmpeg-static');
