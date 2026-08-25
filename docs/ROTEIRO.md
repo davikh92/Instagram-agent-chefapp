@@ -32,11 +32,27 @@ Tem na Semana. Aqui não muda nada — a URL vem do contexto. Manual: link na bi
 |---|---|---|
 | Posicionamento | Chef **assina**, não protagoniza. A história é da mesa de quem usa. | ago/2026 |
 | Fonte de verdade | Produto = RPC do app (cache em `product-context.json`). Execução = `brand.json`. Nunca duplicar. | ago/2026 |
-| Vídeo — costura | **NÃO** emendar 2 clipes de 8s: sem transições de verdade fica artificial. Preferir take único no máximo que o modelo der (~12s). | ago/2026 |
-| Vídeo — modelo | Trocar por modelo melhor, compensando custo com frequência menor. Higgsfield é candidato a teste (custo similar — avaliar). Decidir **com métricas na mão**. | pendente |
-| Áudio | Com o modelo novo, avaliar primeiro o **áudio nativo** do vídeo (fala direto do modelo). Só depois decidir: voz nativa × voz colada (Livia) × sem voz. Não decidir agora. | pendente |
-| Cadência | 3 reels/semana mantidos até o novo plano dizer o contrário. | ago/2026 |
-| Quarta é RECEITA | Legenda com receita completa — utilidade gera salvamento. | jul/2026 |
+| Cadência | 3 reels/semana — controle de custo, sem forçar. Mantida até o novo plano dizer o contrário. | ago/2026 |
+| Quarta é RECEITA | **Uma das apostas mais importantes.** Legenda com receita completa, passo a passo — utilidade gera salvamento. | jul/2026 |
+
+## Hipóteses de vídeo — testar, não decidir agora (pós-plano)
+
+> Nada aqui é regra. A observação do Davi: emendar 2 clipes sem transições de verdade
+> tende a ficar artificial — mas **pode ser que funcione**. Vídeo médio no Instagram é
+> ~30s; o desafio é chegar perto disso **sem estourar custo**.
+
+- **Duração:** testar take único esticado ao máximo (12s… 15s seria ótimo) × emenda de
+  2 clipes × outros formatos. Comparar naturalidade e custo por segundo.
+- **Modelo:** o upgrade é o **Google Omni (tier superior), na MESMA API que já usamos**
+  — não é Higgsfield. E também não é permanente: gerar com o modelo melhor, comparar
+  resultado × custo com o modelo baratinho. Se o resultado for o mesmo, volta pro barato.
+- **Outros modelos:** o Davi tem assinaturas de outros geradores de vídeo — dá pra usar
+  na comparação, mais pra frente.
+- **Áudio:** com o modelo novo, avaliar primeiro o **áudio nativo** (fala direto do
+  vídeo). Só depois decidir: voz nativa × voz colada (Livia) × sem voz.
+- **Ideia guardada do Davi (entra no plano):** formato *foto + passo a passo* — como o
+  exemplo do salmão: uma imagem gerada de como o prato deve ficar + passos escritos.
+  Ele vai detalhar durante a construção do plano.
 
 ## Ideias aprovadas para o futuro (não implementar agora)
 
