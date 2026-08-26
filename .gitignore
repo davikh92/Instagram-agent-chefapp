@@ -8,6 +8,10 @@ templates/generated/*.html
 ready-to-post/**/*.mp4
 ready-to-post/**/*.webm
 
+# Cópias locais para mostrar/apresentar — baixadas do Cloudinary quando precisar.
+# O índice LEGENDAS.md é versionado; os MP4s não.
+videos-para-mostrar/*.mp4
+
 # Lock files de publicação — nunca commitados
 ready-to-post/**/.publishing
 
