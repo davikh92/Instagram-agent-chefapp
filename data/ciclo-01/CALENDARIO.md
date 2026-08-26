@@ -138,14 +138,14 @@ link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagr
 
 ## 📍 Produção — estado em 26/08 (fim do dia 1)
 
-**20/65 gerados (~$20):**
-- ✅ Novela: **11/13** (nv-01…11) — faltam nv-12, nv-13
-- ✅ Cardápios: **9/13** (cd-01…09) — faltam cd-10…13
+**22/65 gerados (~$22):**
+- ✅ Novela: **13/13 COMPLETA** (nv-12/13 saíram no retry noturno após o spend-rate esfriar)
+- ✅ Cardápios: **9/13** (cd-01…09) — faltam cd-10…13 (cota diária; retomar 27/08)
 - ⬜ Receitas rl (13) · rd (13) · Participação pt (13): filas ainda não criadas — os
   textos estão prontos nos MDs, falta transcrever pra `fila/*.json` e gerar
 - ✅ Capas: todas no money shot, momento variado por vídeo (`coverAt`)
 - **Setembro precisa de 22 vídeos; 14 já existem.** Prazo confortável: 1ª publicação é
-  cd-01 em 01/09 (pronto).
+  cd-01 em 01/09 (pronto). Novela inteira (T1+T2+T3) já no ar até 29/11.
 
 **Limites da API descobertos na prática (importante pros lotes):**
 1. *Spend-rate*: ~$10 gastos em sequência → 429 temporário (esfria em ~1h)
@@ -153,7 +153,7 @@ link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagr
 → Regra prática: lotes de ~5, respiro entre eles, ~15–20 vídeos/dia no máximo.
 
 **Amanhã (27/08):** transcrever filas rl/rd/pt → gerar restantes de setembro primeiro
-(rl-01…05, rd-01…04, pt-01…04 + nv-12/13, cd-10…13) → depois out/nov.
+(rl-01…05, rd-01…04, pt-01…04, cd-10…13) → depois out/nov.
 **Publicação NÃO precisa de agendamento manual:** pasta gerada + cron na grade nova =
 publicado sozinho no dia/hora. O "agendar tudo" já está feito por desenho.
 

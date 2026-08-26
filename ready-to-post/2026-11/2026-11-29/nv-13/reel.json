@@ -1,0 +1,25 @@
+{
+  "id": "nv-13",
+  "date": "2026-11-29",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Holiday ingredients tumbling onto the counter in slow motion — cinnamon sticks, cloves, chestnuts, dried fruit — bouncing and rolling in warm light. The camera follows butter melting in a wide pan, cassava flour cascading in, bacon bits folded through as everything toasts golden. Money shot: a wooden spoon lifting the golden farofa high, toasted grains falling back in slow motion like confetti, backlit. Final beat: a taste from the spoon, an approving pause, then a pen writing in an open notebook beside the stove — planning has begun. Warm festive light, deep shadows, film grain. Dominant sound: the ingredients tumbling, then the toasting crackle. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Quem chega em dezembro tranquila é quem começou a pensar nele em novembro.\n\nA ceia perfeita não nasce na véspera — nasce num domingo como hoje. Dezembro vem aí, e a gente vai chegar JUNTO.\n\nManda pra quem já tá sonhando com a ceia 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#natal",
+    "#ceiadenatal",
+    "#dezembro",
+    "#farofa",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#vidapratica",
+    "#fimdeano"
+  ],
+  "generatedAt": "2026-08-26T20:37:09.439Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787776476/luiza-generated/veo/nv-13.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-13",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787776478/luiza-generated/covers/nv-13-cover.png"
+}

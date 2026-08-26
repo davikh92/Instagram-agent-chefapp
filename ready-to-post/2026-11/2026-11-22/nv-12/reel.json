@@ -1,0 +1,25 @@
+{
+  "id": "nv-12",
+  "date": "2026-11-22",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Festive light glowing soft in the background bokeh; in focus, the counter becomes a joyful production line — a big pot of sauce ladled into containers, a lasagna assembled in fast layers, dishes covered and stacked. Money shot: the freezer door opening and receiving a row of prepared trays one by one, cold light revealing the ready stockpile. Final beat: apron pulled off and tossed on the hook, car keys grabbed from the counter, out the door — free. Warm light against the cool freezer glow, film grain. Dominant sound: the ladle pours, then the freezer seal. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Uma hora hoje compra o feriado inteiro de tranquilidade.\n\nCasa cheia amanhã e a única coisa na sua lista é... aproveitar.\n\nManda pro grupo do feriadão 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#feriado",
+    "#casacheia",
+    "#receberemcasa",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#vidapratica",
+    "#semanaorganizada",
+    "#lasanha"
+  ],
+  "generatedAt": "2026-08-26T20:35:59.605Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787776407/luiza-generated/veo/nv-12.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-12",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787776409/luiza-generated/covers/nv-12-cover.png"
+}
