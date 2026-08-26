@@ -3,12 +3,16 @@
 > Episódios `nv-01` a `nv-04` · Domingos 18h · set/2026 · Omni Flash + `ref-novela.png`
 > Bíblia: [BIBLIA-NOVELA.md](BIBLIA-NOVELA.md) · Calendário: [CALENDARIO.md](CALENDARIO.md)
 >
-> **Status: ✍️ escrito — aguardando revisão do Davi antes de entrar na fila.**
+> **Status: ✍️ escrito (prompts revisados) — aguardando revisão do Davi.**
 
-**Regras aplicadas em todos:** prompt só descreve ação/câmera/luz/som (pessoa e cozinha
-vêm da referência) · som nativo é personagem, sem fala do modelo · falas e punchline
-entram por overlay ffmpeg · assinatura "Tem na Semana." no último segundo · sem voz
-neste mês (o A/B de voz é a hipótese H5, mês 2).
+**Regras aplicadas em todos:**
+- Prompt só descreve ação/câmera/luz/som — pessoa e cozinha vêm da referência
+- **Take único contínuo**, sem "cut to": os beats mudam por AÇÃO, não por corte (o modelo emenda corte mal)
+- **Abre em ação, nunca em relógio** — contexto de horário vai no overlay de texto, que é grátis; o vídeo gasta o primeiro segundo com apetite
+- **Money shot declarado** em cada um — o instante em que o espectador quer comer aquilo
+- **Backlight no vapor** (vapor sem contraluz some na imagem) + som dominante por beat
+- Sem fala do modelo; falas e punchline por overlay ffmpeg; assinatura no último segundo
+- Sem voz neste mês (o A/B de voz é a hipótese H5, mês 2)
 
 ---
 
@@ -16,18 +20,19 @@ neste mês (o A/B de voz é a hipótese H5, mês 2).
 
 **funcao:** descoberta
 **gatilho_envio:** "manda pra quem chega em casa e a casa toda já tá com fome"
-**situação:** O relógio do fogão marca 19h05. Todo mundo com fome. Ela abre a geladeira.
+**situação:** 19h05, todo mundo com fome, três coisas na geladeira.
 
 **Beats**
 | Tempo | O que acontece |
 |---|---|
-| 0–1,5s | Close no relógio do fogão virando 19h05 — *bip* alto. Porta da geladeira abre com tranco, luz fria bate no rosto dela. |
-| 1,5–4s | O que tem: meio pacote de macarrão, três dentes de alho, dois ovos. Ela pega os três de uma vez, uma coisa em cada mão, e fecha a porta com o quadril. |
-| 4–8s | Alho laminado caindo no azeite quente — *chiado alto*. Macarrão entrando na panela. Ovo quebrado direto por cima da massa fumegante, gema escorrendo, ela mexendo rápido. |
-| 8–10s | Prato na mesa, vapor subindo, garfo entrando. Ela olha pra câmera e dá de ombros. |
+| 0–1,5s | Porta da geladeira aberta com tranco, luz fria estourando. A mão varre a prateleira e pega alho e ovos num movimento só. |
+| 1,5–4s | Alho laminado varrido pra dentro do azeite fervendo — *chiado agressivo*, óleo pulando, bordas dourando. |
+| 4–7s | Vapor explodindo: macarrão erguido escorrendo da água e jogado na frigideira. |
+| 7–9s | **Money shot:** ovo quebrado direto sobre a massa quente, gema rompendo em câmera lenta e escorrendo entre os fios, garfo batendo até virar molho brilhante, vapor dourado em contraluz. |
+| 9–10s | Prato na mesa, garfo enrolando uma garfada, brilho pegando a luz. |
 
 **prompt (EN)**
-> Extreme close-up of a stove clock flipping to 19:05, then a fridge door yanked open, cold light hitting her face. Quick cut to her hands grabbing half a pack of dry spaghetti, three garlic cloves and two eggs in one sweep, hip-closing the fridge. Sliced garlic dropping into shimmering hot olive oil, loud sizzle, golden edges curling. Spaghetti plunged into boiling water, steam bursting upward. A raw egg cracked directly over the steaming pasta, yolk breaking and running through the strands as a fork whips it fast into a glossy sauce. Final beat: the finished plate set on the table, steam rising, a fork twirling a bite. Handheld energy, dramatic warm side light, deep shadows, film grain, decisive-moment motion. No speech, no voice, no narration, no dialogue, no music.
+> Single continuous handheld shot, no cuts. Opens mid-action: a fridge door yanked open hard, cold interior light flaring, a hand sweeping across the shelf and grabbing garlic cloves and two eggs in one motion. The camera follows that hand down to a wooden board where garlic is sliced fast and swept into a pan of shimmering hot olive oil — loud aggressive sizzle, oil jumping, golden edges curling. Steam bursts upward as cooked spaghetti is lifted dripping from boiling water and dropped into the pan. Money shot: a raw egg cracked directly over the steaming pasta, the yolk breaking in slow motion and running through the strands while a fork whips it into a glossy silky sauce, backlit steam glowing gold around it. Final beat: the plate set down on the table, a fork twirling one bite, gloss catching the light. Warm 3200K key light at 45 degrees, strong backlight on the steam, deep shadows, macro texture on garlic and yolk, film grain. Dominant sound: the garlic hitting oil, then the whip of the fork. No speech, no voice, no narration, no dialogue, no music.
 
 **overlay (ffmpeg)**
 - 0,3s → 1,4s: `19h05` (canto superior, mono, grande)
@@ -56,18 +61,19 @@ neste mês (o A/B de voz é a hipótese H5, mês 2).
 
 **funcao:** descoberta
 **gatilho_envio:** "manda pra amiga que jura que não tem nada em casa"
-**situação:** Geladeira quase vazia — ovo, tomate, pão amanhecido. Vira prato de gente grande.
+**situação:** Ovo, tomate e pão amanhecido viram prato de gente grande.
 
 **Beats**
 | Tempo | O que acontece |
 |---|---|
-| 0–1,5s | A porta da geladeira abre devagar. Prateleira quase vazia: dois ovos, um tomate, meio pão. Silêncio — só o zumbido da geladeira. |
-| 1,5–4s | Ela pega o tomate e o joga pro alto; a faca já espera na tábua. O tomate cai em fatias perfeitas. *(pattern interrupt)* |
-| 4–8s | Tomate na frigideira com azeite e uma pitada de sal — *chiado*. Pão dourando na grelha ao lado. Ovos batidos entrando numa panela em fogo baixo, mexendo devagar até virar creme. |
-| 8–10s | Torrada montada: creme de ovo, tomate confitado por cima, azeite em fio. Corte ao meio — o creme escorre. |
+| 0–1,5s | **Pattern interrupt:** tomate jogado pro alto girando em câmera lenta, cai sobre a faca parada na tábua e se abre em fatias limpas. |
+| 1,5–4s | Fatias caindo no azeite quente — *chiado*, pele bolhando e caramelizando. Ao lado, pão grosso escurecendo na grelha. |
+| 4–7s | Ovos batidos entrando na panela em fogo baixo, espátula dobrando devagar até virar creme, vapor em contraluz. |
+| 7–9s | **Money shot:** torrada montada — creme sobre o pão tostado, tomate bolhado por cima, fio de azeite; faca corta ao meio e o creme escorre pela face do corte em macro. |
+| 9–10s | Metade erguida, azeite pingando. |
 
 **prompt (EN)**
-> A fridge door opening slowly on a nearly empty shelf holding two eggs, one tomato and half a loaf of bread, only the low hum of the appliance. Then a tomato tossed high into the air in slow motion and falling onto a waiting knife on a wooden board, splitting into perfect slices as it lands. Tomato slices hitting hot olive oil with a loud sizzle, edges blistering and caramelizing. Thick bread slices toasting on a griddle beside it, grill marks forming. Beaten eggs poured into a low-heat pan, a spatula folding them slowly into a glossy soft curd. Final beat: the toast assembled — creamy eggs, blistered tomato on top, olive oil drizzled in a thin golden thread, then sliced in half as the cream runs down. Dramatic warm side lighting, deep shadows, macro detail, film grain. No speech, no voice, no narration, no dialogue, no music.
+> Single continuous shot, no cuts. Opens in mid-air: a ripe tomato tossed high, spinning in slow motion against warm window light, falling onto a waiting knife blade resting on a wooden board and splitting into clean slices as it lands. The camera glides down as those slices hit hot olive oil — loud sizzle, skins blistering and caramelizing, edges wrinkling. Beside them thick slices of bread darken on a griddle, grill marks forming. Beaten eggs are poured into a low-heat pan and a spatula folds them slowly into a glossy soft curd, steam ghosting upward and backlit gold. Money shot: the toast assembled — creamy egg piled on the charred bread, blistered tomato crowning it, olive oil drizzled in a thin golden thread, then a knife cutting it in half as the cream slumps and runs down the cut face in extreme macro. Final beat: one half lifted, oil dripping. Warm 3200K side light, strong backlight on the steam, deep shadows, macro on curd and tomato skin, film grain. Dominant sound: the tomato hitting oil, then the soft drag of the spatula. No speech, no voice, no narration, no dialogue, no music.
 
 **overlay (ffmpeg)**
 - 0,4s → 1,5s: `"não tem nada em casa"`
@@ -94,18 +100,19 @@ neste mês (o A/B de voz é a hipótese H5, mês 2).
 
 **funcao:** descoberta
 **gatilho_envio:** "manda pra quem tem criança que só come macarrão"
-**situação:** A criança rejeita tudo. O truque: o legume some dentro de uma coisa que ela ama.
+**situação:** A cenoura rejeitada volta escondida dentro do que a criança ama.
 
 **Beats**
 | Tempo | O que acontece |
 |---|---|
-| 0–1,5s | Close num pratinho infantil sendo empurrado pra longe na mesa, cenoura intacta. *Som seco do prato deslizando.* |
-| 1,5–4s | Ela pega a cenoura rejeitada e a rala grosso — a cenoura desaparece numa nuvem de laranja dentro de uma tigela de arroz. |
-| 4–8s | Arroz, cenoura ralada, ovo e queijo sendo misturados com a mão. Bolinhos moldados rápido, um a um, e caindo no óleo quente — *chiado forte*, borbulhando dourado. |
-| 8–10s | Bolinhos dourados numa travessa. Uma mãozinha entra no quadro e pega dois. |
+| 0–1,5s | Cenoura ralada com força no ralador grosso — explosão de fios laranja caindo como neve sobre uma tigela de arroz branco, em contraluz. |
+| 1,5–4s | Mãos afundando na tigela: arroz, cenoura, ovo e queijo sendo apertados entre os dedos, em macro. |
+| 4–7s | Bolinhos moldados rápido, um a um, caindo no óleo quente — *chiado violento*, bolhas explodindo, superfície dourando. |
+| 7–9s | **Money shot:** bolinho erguido e partido ao meio em macro, vapor escapando do miolo, pontinhos laranja de cenoura visíveis no arroz. |
+| 9–10s | Travessa cheia; uma mãozinha entra no quadro e leva dois. |
 
 **prompt (EN)**
-> Close-up of a small child's plate being pushed away across a table, an untouched carrot on it, dry scraping sound. Then a hand grating that same carrot fast on a coarse grater, orange shreds falling like snow into a bowl of cooked rice. Hands mixing rice, grated carrot, a cracked egg and grated cheese together, squeezing the mixture between fingers. Small patties shaped quickly one by one and dropped into hot oil, loud sizzle, bubbles erupting, surfaces turning deep golden. Final beat: golden fritters piled on a plate, and a small child's hand entering the frame to grab two of them. Warm dramatic side lighting, shallow depth of field, macro texture, film grain. No speech, no voice, no narration, no dialogue, no music.
+> Single continuous shot, no cuts. Opens mid-action: a carrot grated fast and hard against a coarse grater, bright orange shreds flying and falling like snow into a bowl of cooked white rice, backlit so the shreds glow in the air. The camera pushes in as hands plunge into the bowl, mixing rice, grated carrot, a cracked egg and grated cheese, squeezing the mixture through the fingers in macro. The hands shape small patties quickly, one after another, and drop them into hot oil — violent sizzle, bubbles erupting around each one, surfaces turning deep golden and crisp. Money shot: one fritter lifted from the oil and broken open in extreme macro, steam escaping from the soft interior, flecks of orange carrot visible inside the white rice. Final beat: a plate piled with golden fritters and a small child's hand darting into frame to grab two. Warm 3200K side light, backlight on the frying steam, shallow depth of field, crisp macro texture, film grain. Dominant sound: the rasp of the grater, then the eruption of the frying oil. No speech, no voice, no narration, no dialogue, no music.
 
 **overlay (ffmpeg)**
 - 0,3s → 1,5s: `"não gosto"`
@@ -137,18 +144,19 @@ neste mês (o A/B de voz é a hipótese H5, mês 2).
 
 **funcao:** descoberta
 **gatilho_envio:** "manda pro grupo antes de avisar que vocês vão passar lá"
-**situação:** Visita avisou que chega às 20h. São 19h40. Do pânico à mesa posta.
+**situação:** Visita chega às 20h. São 19h40. Do pânico à mesa posta.
 
 **Beats**
 | Tempo | O que acontece |
 |---|---|
-| 0–1,5s | Relógio marcando 19h40. Ela olha o relógio, olha a cozinha vazia. *Batida seca.* |
-| 1,5–4s | Sequência veloz: forno acendendo, batatas sendo partidas ao meio direto sobre a assadeira, azeite despejado por cima em fio grosso, alecrim caindo. |
-| 4–8s | Assadeira entrando no forno. Corte: tábua sendo montada em velocidade — queijo partido com a mão, azeitonas caindo, pão rasgado, tomatinhos rolando pra encaixar nos vãos. |
-| 8–10s | A batata sai do forno, dourada e estalando. Vai pra mesa ao lado da tábua. Campainha toca — ela sorri e tira o avental. |
+| 0–1,5s | Forno acendendo com sopro de chama azul; batatas partidas ao meio caindo de corte pra cima na assadeira quente. |
+| 1,5–4s | Azeite despejado em fio grosso, sal grosso jogado do alto, alecrim caindo. Assadeira entrando no forno, calor tremendo o ar. |
+| 4–7s | A câmera desliza pro lado: tábua sendo montada em velocidade — queijo partido na mão, azeitonas rolando, pão rasgado, tomatinhos encaixando nos vãos. |
+| 7–9s | **Money shot:** assadeira saindo do forno, batatas douradas com casca estalada, vapor em contraluz; uma batata é pressionada com a colher e racha com estalo audível. |
+| 9–10s | Assadeira na mesa ao lado da tábua; avental sendo desamarrado. |
 
 **prompt (EN)**
-> A wall clock reading 19:40, then a fast pan across an empty kitchen counter. Rapid sequence: an oven igniting with a blue flame whoosh, potatoes being halved fast directly onto a baking tray, olive oil poured over them in a thick golden stream, rosemary sprigs falling. The tray sliding into the oven. Cut to a wooden board being built at speed — cheese broken by hand, olives dropping and rolling, bread torn into rough pieces, cherry tomatoes rolling into the gaps. Final beat: the tray pulled from the oven, potatoes deep golden and audibly crackling, carried to the table beside the board; a doorbell rings and an apron is untied. Warm dramatic lighting, urgent handheld camera, steam and crackle, film grain. No speech, no voice, no narration, no dialogue, no music.
+> Single continuous shot, no cuts. Opens mid-action: an oven igniting with a blue flame whoosh, then hands halving potatoes fast and letting them fall cut-side up onto a hot baking tray. Olive oil is poured over them in a thick golden stream, coarse salt scattered from height, rosemary sprigs dropping in. The camera follows the tray sliding into the oven, heat shimmer rising off it, then glides sideways to a wooden board being built at speed — cheese broken by hand, olives dropping and rolling into place, bread torn into rough pieces, cherry tomatoes rolling into the gaps. Money shot: the tray pulled from the oven, potatoes deep golden with blistered crackling edges, backlit steam pouring off them, one potato pressed with the back of a spoon and audibly shattering open. Final beat: the tray set on the table beside the board, an apron untied. Warm 3200K key light, strong backlight on the oven steam, macro on the crackling crust, urgent handheld energy, film grain. Dominant sound: the oil hitting the hot tray, then the crack of the crust. No speech, no voice, no narration, no dialogue, no music.
 
 **overlay (ffmpeg)**
 - 0,3s → 1,4s: `19h40`
@@ -177,6 +185,11 @@ neste mês (o A/B de voz é a hipótese H5, mês 2).
 ## Notas de produção
 
 - **Custo:** 4 × $1 = **$4,00**
+- **O que mudou na revisão de prompts:** (1) tirados todos os "cut to" — os quatro viraram
+  take único contínuo, como a bíblia manda; (2) `nv-01` e `nv-04` não abrem mais em
+  relógio — o horário foi pro overlay e o vídeo abre em ação; (3) money shot declarado
+  em cada um; (4) contraluz no vapor especificada (vapor sem contraluz some na imagem);
+  (5) som dominante por beat, em vez de lista solta de ruídos.
 - **Overlay:** os 4 dependem do script de texto (pendência aberta). Dá pra gerar os
   vídeos antes e aplicar o texto depois — não precisa regerar.
 - **Hashtags:** `brand.json → hashtags` ainda tem `#luizanacozinha` e `#chefluiza` da
