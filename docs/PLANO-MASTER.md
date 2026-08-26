@@ -46,6 +46,9 @@ vídeo segura (retenção) → pessoa manda pra alguém (envio) → recebe algo 
    material de primeira classe: escritos com técnica de direção, versionados, medidos.
 6. **Pensar como editor de vídeo, não como social media.** Beats, som, ritmo, texto em
    tela com timing. O que o modelo não faz bem (texto legível), o ffmpeg faz depois.
+   Texto em movimento é ferramenta de primeira classe; vídeo pode ser híbrido (tabelas,
+   painéis, grafismos descritos no prompt). **Assinatura de marca é visual/motion,
+   nunca falada** — em 10s, narrar a assinatura mata o áudio útil.
 7. **Testar sem se prender.** Dias, horários, formatos — experimentos com prazo e
    critério, nunca fé. Trial Reels (manual, no app) testa conceito pulando a base morta.
 8. **Regras do produto são invioláveis:** o que pode/não pode dizer vem do Contexto
@@ -71,4 +74,4 @@ conhecido no dia zero e a execução vira só acompanhamento.
 
 | Ciclo | Período | Tema | Status |
 |---|---|---|---|
-| [SUBPLANO-01](SUBPLANO-01.md) | set–nov/2026 | Retenção não-linear + give-to-get + série de cardápios | rascunho |
+| [SUBPLANO-01](SUBPLANO-01.md) | set–nov/2026 | "A Cozinha que Resolve" — 3 motores: Participação · Novela das 18h · Utilidade | **aprovado 26/ago** |
