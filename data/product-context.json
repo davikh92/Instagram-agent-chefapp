@@ -278,10 +278,10 @@
       "receitas_novas": 419
     }
   },
-  "_gerado_em": "2026-08-26T11:19:49.819476+00:00",
+  "_gerado_em": "2026-08-26T12:26:45.659076+00:00",
   "_atualizado_em": "2026-08-25T19:01:21.636732+00:00",
   "_leia_primeiro": "Fonte única de verdade sobre o produto Tem na Semana, para quem cria conteúdo. O bloco `fixo` é escrito à mão e muda raramente. O bloco `atual` é gerado do banco a cada chamada e nunca envelhece. Nunca escreva a URL à mão: use fixo.app.url_canonica.",
   "_aviso_de_cache": "CACHE — não edite à mão. Gerado por scripts/sync-contexto.js a partir do RPC do app. Para corrigir algo do bloco `fixo`, peça ao time do app; o bloco `atual` sai do banco sozinho.",
-  "_sincronizado_em": "2026-08-26T11:19:50.212Z",
+  "_sincronizado_em": "2026-08-26T12:26:45.996Z",
   "_fonte": "https://aywpqorkwewxdqectncu.supabase.co/rest/v1/rpc/contexto_do_conteudo"
 }
