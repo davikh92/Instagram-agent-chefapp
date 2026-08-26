@@ -61,16 +61,33 @@ async function sleep(ms) {
 
 /**
  * Chama a Interactions API do Omni Flash.
+ * refPath (opcional): PNG/JPG de referência — consistência de personagem/cenário
+ * vem DELA, nunca de descrição no prompt (ver data/ciclo-01/BIBLIA-NOVELA.md §1).
+ * A API exige a imagem ANTES do texto no array.
  * Retorna { type: 'base64'|'uri', value }.
  */
-async function generateOmniVideo(prompt) {
-  console.log(`  ☁️  Chamando Gemini Omni Flash...`);
+async function generateOmniVideo(prompt, refPath) {
+  console.log(`  ☁️  Chamando Gemini Omni Flash${refPath ? ' (com imagem de referência)' : ''}...`);
 
   const url = `${BASE_URL}/interactions?key=${GOOGLE_API_KEY}`;
 
+  let input = prompt;
+  if (refPath) {
+    const absolute = path.isAbsolute(refPath) ? refPath : path.join(ROOT, refPath);
+    if (!fs.existsSync(absolute)) {
+      throw new Error(`Imagem de referência não encontrada: ${refPath}`);
+    }
+    const mime = absolute.toLowerCase().endsWith('.jpg') || absolute.toLowerCase().endsWith('.jpeg')
+      ? 'image/jpeg' : 'image/png';
+    input = [
+      { type: 'image', data: fs.readFileSync(absolute).toString('base64'), mime_type: mime },
+      { type: 'text', text: prompt },
+    ];
+  }
+
   const payload = {
     model: OMNI_MODEL,
-    input: prompt,
+    input,
     response_format: {
       type: 'video',
       aspect_ratio: '9:16',
@@ -245,8 +262,10 @@ async function processReel(reelConfig, outRoot) {
   console.log(`\n🎬 Gerando ${id} (${reelConfig.archetype || 'sem arquétipo'})...`);
   console.log(`   Prompt: "${prompt.substring(0, 80)}..."`);
 
+  if (reelConfig.ref) console.log(`   Ref: ${reelConfig.ref}`);
+
   const started = Date.now();
-  const videoResult = await generateOmniVideo(prompt);
+  const videoResult = await generateOmniVideo(prompt, reelConfig.ref);
   await saveVideo(videoResult, mp4Path);
   console.log(`  ⏱️  ${Math.round((Date.now() - started) / 1000)}s`);
 

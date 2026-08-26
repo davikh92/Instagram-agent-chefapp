@@ -27,7 +27,9 @@ const ROOT      = path.resolve(__dirname, '..');
 const READY_DIR = path.join(ROOT, 'ready-to-post');
 const TEMPLATE  = path.join(ROOT, 'templates', 'story-overlay.html');
 const BASE_URL  = 'https://generativelanguage.googleapis.com/v1beta';
-const MODEL     = 'imagen-4.0-generate-001';
+// Migrado em ago/2026: os modelos Imagen saíram da API (404) — a família atual é
+// gemini-*-image via generateContent. Flash = papel de fundo barato das stories.
+const MODEL     = 'gemini-3.1-flash-image';
 
 const { GOOGLE_API_KEY } = process.env;
 
@@ -41,14 +43,14 @@ function checkEnv() {
 // ── Imagen 4 — gera fundo fotográfico 9:16 ────────────────────────────────────
 
 async function generateBackground(prompt) {
-  const url = `${BASE_URL}/models/${MODEL}:predict?key=${GOOGLE_API_KEY}`;
+  const url = `${BASE_URL}/models/${MODEL}:generateContent?key=${GOOGLE_API_KEY}`;
   const payload = {
-    instances: [{ prompt }],
-    parameters: {
-      aspectRatio: '9:16',
-      sampleCount: 1,
-      safetyFilterLevel: 'block_some',
-      personGeneration: 'dont_allow',
+    // Sem pessoas nos fundos de story (regra antiga do personGeneration) — mantida
+    // via prompt, já que o generateContent não tem o parâmetro.
+    contents: [{ parts: [{ text: `${prompt} No people, no faces, no hands.` }] }],
+    generationConfig: {
+      responseModalities: ['IMAGE'],
+      imageConfig: { aspectRatio: '9:16' },
     },
   };
 
@@ -62,7 +64,7 @@ async function generateBackground(prompt) {
   if (!response.ok) {
     let err;
     try { err = JSON.parse(rawBody); } catch { err = rawBody; }
-    throw new Error(`Imagen API error (${response.status}): ${JSON.stringify(err?.error?.message || err).substring(0, 300)}`);
+    throw new Error(`Image API error (${response.status}): ${JSON.stringify(err?.error?.message || err).substring(0, 300)}`);
   }
 
   let data;
@@ -70,7 +72,7 @@ async function generateBackground(prompt) {
     throw new Error(`Resposta inválida: ${rawBody.substring(0, 200)}`);
   }
 
-  const b64 = data?.predictions?.[0]?.bytesBase64Encoded;
+  const b64 = data?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
   if (!b64) throw new Error(`Sem imagem na resposta: ${JSON.stringify(data).substring(0, 300)}`);
 
   return b64; // já em base64 — usado direto no template
