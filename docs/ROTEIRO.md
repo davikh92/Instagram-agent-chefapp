@@ -106,9 +106,22 @@ Painel profissional e API **batem** (90d: ~54,4k views, 373 curtidas, 160 shares
 
 ---
 
+## 📍 ATUALIZAÇÃO 26/08 — Ciclo 01 em PRODUÇÃO
+
+O plano virou realidade em um dia: plataforma "A Cozinha que Resolve" aprovada,
+65 posts escritos, estrutura antiga aposentada (crons na grade nova, arquétipos fora,
+brand.json sem a era carrossel), **20 vídeos já gerados** (~$20). Estado detalhado e
+próximos lotes: `data/ciclo-01/CALENDARIO.md § Produção`.
+
+**Pendências pra estreia (01/09):** gerar os 45 restantes (27–28/08) · script de
+overlay ffmpeg (falas/passos/assinatura — ANTES de 01/09) · stories de eco ·
+revisão final do Davi nos vídeos. Publicação agenda sozinha (pasta + cron).
+
+---
+
 ## Próximos passos, em ordem
 
-### 1. Novo plano de comunicação ⬅️ PRÓXIMO
+### 1. Novo plano de comunicação ⬅️ EM EXECUÇÃO (virou o Ciclo 01)
 Com a análise na mão + as direções acima + o material novo de perfil/identidade que o
 Davi vai trazer. Decide: temas, formatos, CTAs give-to-get, prompts-padrão por tipo,
 grade de experimentos de dia/horário, papel da voz.

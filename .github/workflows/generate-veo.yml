@@ -47,8 +47,16 @@ jobs:
       - name: Sincronizar contexto do app
         run: node scripts/sync-contexto.js
 
-      - name: Gerar reels (Omni Flash — 5 por lote)
-        run: node scripts/generate-omni.js --all --limit 5
+      # Ciclo 01: itera as filas por bloco e gera o que faltar (itens prontos são
+      # pulados) — rede de auto-cura pra falha de geração. A fila antiga
+      # (veo-queue.json) foi 100% gerada em agosto e saiu daqui.
+      - name: Gerar reels pendentes do ciclo (auto-cura)
+        run: |
+          for fila in data/ciclo-01/fila/*.json; do
+            [ -e "$fila" ] || continue
+            echo "── fila: $fila"
+            node scripts/generate-omni.js --queue "$fila" --limit 4
+          done
 
       # Voz PT-BR (Livia) nos reels com voiceText — IMERSÃO fica só com ambiente.
       # Separado da geração: se falhar aqui, o MP4 de ~$1 já está salvo e o retry

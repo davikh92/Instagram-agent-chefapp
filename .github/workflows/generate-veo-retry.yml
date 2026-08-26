@@ -46,7 +46,12 @@ jobs:
 
       - name: Retry geração Veo (reels ainda pendentes)
         # generate-omni.js --all pula itens já gerados (reel.mp4 ou cloudinaryUrl)
-        run: node scripts/generate-omni.js --all --limit 5
+        run: |
+          for fila in data/ciclo-01/fila/*.json; do
+            [ -e "$fila" ] || continue
+            echo "── fila: $fila"
+            node scripts/generate-omni.js --queue "$fila" --limit 4
+          done
 
       # Rede de segurança: pega tanto os reels gerados agora quanto os que ficaram
       # sem voz no dia anterior (add-voice.js pula quem já tem voiceAddedAt)
