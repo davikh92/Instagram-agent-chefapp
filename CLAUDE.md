@@ -113,17 +113,12 @@ assinado, vai dar certo · sua semana resolvida · a lista sai junto · o jantar
 resolvido.
 
 **NUNCA dizer:** gourmet, sofisticado, alta cozinha, elevado · segredos de chef, técnica
-profissional · "as melhores chefs" (tom de ranking) · **qualquer promessa de emagrecer,
-curar, tratar ou resultado de saúde** · dieta, prescrição, plano nutricional.
+profissional · "as melhores chefs" (tom de ranking).
 
-> ⚠️ **Os nomes dos cardápios não são promessas.** "Emagrecimento Consciente", "Detox
-> Pós-Festa", "Pele & Intestino" são **nomes de cardápio**. Pode dizer o nome e para quem
-> é; **não** pode prometer resultado nem falar como tratamento.
->
-> Cuidado redobrado com o campo `beneficios[]` de cada cardápio ("Menos inchaço", "Pele
-> radiante", "Sono melhor"): eles descrevem a **intenção do cardápio**, e viram promessa
-> de saúde se você escrever "vai deixar sua pele radiante". Formule sempre como *para
-> quem é*, nunca como *o que vai acontecer com você*.
+> **Decisão do Davi (2026-08-26):** a restrição de "promessa de saúde/emagrecimento"
+> foi **descartada** — cardápios podem ser comunicados com nome, público e benefício
+> livremente. Pendente: o time do app atualizar `fixo.comunicacao` no Contexto (a
+> fonte ainda traz a regra antiga; até lá, esta decisão local prevalece sobre ela).
 
 ### Os 7 cardápios reais (nunca invente objetivo)
 

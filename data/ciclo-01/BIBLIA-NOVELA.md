@@ -106,12 +106,12 @@ ano: comida + gente + data chegando.
 
 ---
 
-## 6. Regras de conteúdo (alinhadas ao Contexto — não inventadas)
+## 6. Regras de conteúdo
 
-- Cardápios podem ser citados **pelo nome e pra quem são** (inclusive os de
-  emagrecimento/objetivo — são produtos reais do app). O que não pode, por regra do
-  próprio app (`fixo.comunicacao`): **prometer resultado** ("vai emagrecer", "cura",
-  "trata"). Nome e público: sim. Promessa clínica: não.
+- Cardápios podem ser citados livremente — nome, público e benefício (inclusive os de
+  emagrecimento/objetivo: são produtos reais do app). *Restrição de "promessa de
+  saúde" descartada pelo Davi em 26/ago; pendente o app atualizar `fixo.comunicacao`
+  pra fonte parar de reintroduzir a regra a cada sync.*
 - A chef Luiza não atua (assina cardápio, não é personagem)
 - "Baixe o app" não se fala — a solução aparece pelo efeito; o CTA da legenda faz o resto
 - Prompt nunca descreve pessoa/ambiente (é papel da referência)
