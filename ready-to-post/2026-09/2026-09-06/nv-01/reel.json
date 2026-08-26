@@ -1,0 +1,29 @@
+{
+  "id": "nv-01",
+  "date": "2026-09-06",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous handheld shot, no cuts. Opens mid-action: a fridge door yanked open hard, cold interior light flaring, a hand sweeping across the shelf and grabbing garlic cloves and two eggs in one motion. The camera follows that hand down to a wooden board where garlic is sliced fast and swept into a pan of shimmering hot olive oil — loud aggressive sizzle, oil jumping, golden edges curling. Steam bursts upward as cooked spaghetti is lifted dripping from boiling water and dropped into the pan. Money shot: a raw egg cracked directly over the steaming pasta, the yolk breaking in slow motion and running through the strands while a fork whips it into a glossy silky sauce, backlit steam glowing gold around it. Final beat: the plate set down on the table, a fork twirling one bite, gloss catching the light. Warm 3200K key light at 45 degrees, strong backlight on the steam, deep shadows, macro texture on garlic and yolk, film grain. Dominant sound: the garlic hitting oil, then the whip of the fork. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "19h05. Todo mundo com fome. Três coisas na geladeira.\n\nMacarrão, alho e ovo — e sai um prato que ninguém adivinha que foi pressa.\n\nO alho vai no azeite ainda frio e sobe junto com o fogo: é assim que ele doura sem queimar. O ovo cru cai direto no macarrão quente e vira molho no braço, sem creme, sem nada. Um pouquinho da água do cozimento resolve o resto.\n\nMarca aqui quem chega em casa e a casa toda já tá com fome 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#jantarrapido",
+    "#macarrao",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#receitasfaceis",
+    "#jantardehoje",
+    "#comidacaseira",
+    "#praticidade",
+    "#cozinhabrasileira",
+    "#vidapratica",
+    "#jantarem15minutos",
+    "#alhoeoleo"
+  ],
+  "generatedAt": "2026-08-26T15:46:14.068Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787759022/luiza-generated/veo/nv-01-teste.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-01-teste",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787759023/luiza-generated/covers/nv-01-teste-cover.png"
+}

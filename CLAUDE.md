@@ -92,16 +92,15 @@ PUBLICAÇÃO (GitHub Actions, sozinho)
 
 ## Regras Absolutas de Conteúdo
 
-- Identificação emocional **SEMPRE** antes de mostrar o app
-- Todo reel segue os **3 arquétipos** (ESPELHO / RECEITA / VIRADA) com rotação semanal 1/1/1 — ver `docs/veo-prompt-guide.md`
-- **Quarta é RECEITA:** legenda com receita completa (ingredientes + passo a passo + dica de chef). Utilidade gera salvamento, e salvamento é alcance. O vídeo dá vontade; a legenda ensina.
-- **Reels são gerados pelo Gemini Omni Flash** (`generate-omni.js`) — 10s, 9:16, ~$1/vídeo. O Veo 3.1 Lite (`generate-veo.js`) fica como fallback.
-- **Nenhum prompt pede fala.** Só som ambiente (`No speech, no voice, no narration, no dialogue, no music`). A voz PT-BR entra depois via ElevenLabs — o áudio nativo em PT sai robótico. *(Decisão a revisar com o próximo modelo — ver ROTEIRO.)*
-- **Voz oficial: Livia — Warm, Expressive and Calm** · ElevenLabs voice_id `UZ8QqWVrz7tMdxiglcLh` · modelo `eleven_multilingual_v2` · chave em `ELEVENLABS_API_KEY`. Textos de voz em estilo de FALA real (curtos, coloquiais), nunca texto de legenda lido.
-- Cadência: **3 reels/semana** (Seg 18h, Qua 18h, Sex 12h ≈ 13/mês). Dias sem reel ficam só com stories.
+- Identificação emocional **SEMPRE** antes de mostrar o app — e **celular nunca é o foco da cena** (os 2 piores reels da história tinham tela em close)
+- **Desde set/2026 vale o CICLO 01 — "A Cozinha que Resolve"** (`docs/SUBPLANO-01.md` + `data/ciclo-01/`): 3 motores — Novela das 18h (Dom) · Utilidade (Cardápio DM Ter, Receita LEGENDA Qua, Receita DM Sex/Qui) · Participação A/B (Sáb). *Os 3 arquétipos antigos (ESPELHO/RECEITA/VIRADA) estão aposentados; a parte técnica do `docs/veo-prompt-guide.md` continua valendo.*
+- **Gramática de vídeo:** take único sem cortes · abre em ação (nunca em cena parada) · money shot declarado · vapor sempre em contraluz · som dominante por beat · assinatura "Tem na Semana." em motion/texto no último segundo (nunca narrada) · consistência de personagem via **imagem de referência** (`ref` na fila), jamais descrita no prompt
+- **Reels são gerados pelo Gemini Omni Flash** (`generate-omni.js`) — 10s, 9:16, ~$1/vídeo, som ambiente (`No speech...`). Veo 3.1 Lite/Fast ficam como alavanca de custo. Falas e punchlines entram por **overlay ffmpeg**, não por narração.
+- **Voz:** sem voz no ciclo até o A/B (hipótese H5, outubro). Voz oficial se voltar: Livia (ElevenLabs `UZ8QqWVrz7tMdxiglcLh`, `eleven_multilingual_v2`).
+- Cadência: **5 reels/semana** (Dom 18h · Ter 18h · Qua 18h · Sex 12h · Sáb 11h; em out, Sex→Qui 19h) + stories diárias
+- Todo post declara `funcao` (descoberta/salvamento/trafego) e `gatilho_envio` — post sem função não entra na fila; "curte se gostou" é proibido
 - Tom conversacional, brasileiro, sem formalidade — nunca jargão de coach
-- Nunca posts puramente educativos sem elemento de identificação
-- O **primeiro 0,3 segundo** decide tudo — hook obrigatório em todo formato
+- **Metas do ciclo:** retenção mediana 3,2s → 5s · envios/alcance · 30 comentários/mês · cliques UTM → `montou_semana`
 
 ### Vocabulário — checklist, não sugestão
 
@@ -184,22 +183,22 @@ Toda imagem/vídeo gerado segue estes princípios (ver `brand.json → art_direc
 
 ---
 
-## Horários de Publicação — 3 reels/semana + stories diárias
+## Horários de Publicação — Ciclo 01 (5 reels/semana + stories diárias)
 
-> **Vigente desde agosto/2026.** Julho publicou 7 dias/semana com Veo; agosto em diante
-> são 3 reels/semana com Omni Flash. Motivo: ~$1/vídeo — a troca qualidade × quantidade
-> só fecha em ~13 reels/mês. Os outros dias ficam por conta das stories.
+> **Vigente desde 01/09/2026.** Grade da plataforma "A Cozinha que Resolve" —
+> calendário completo com os 65 posts em `data/ciclo-01/CALENDARIO.md`.
 
-| Dia | Horário | Arquétipo | Formato | Geração |
-|---|---|---|---|---|
-| **Segunda** | 18h | ESPELHO | **Reel Omni** | Automático (veo-queue) |
-| **Quarta** | 18h | RECEITA | **Reel Omni** | Automático (veo-queue) |
-| **Sexta** | 12h | VIRADA | **Reel Omni** | Automático (veo-queue) |
-| Ter/Qui/Sáb/Dom | — | — | Só stories | Automático (story-queue) |
+| Dia | Horário | Motor | Bloco |
+|---|---|---|---|
+| **Domingo** | 18h | Novela das 18h | `nv-*` (com `ref-novela.png`) |
+| **Terça** | 18h | Cardápio da Semana DM | `cd-*` (trafego, comenta→DM) |
+| **Quarta** | 18h | Receita LEGENDA | `rl-*` (salvamento) |
+| **Sexta** (set/nov) · **Quinta 19h** (out) | 12h | Receita DM | `rd-*` (trafego, receitas reais do app) |
+| **Sábado** | 11h | Participação A/B | `pt-*` (comentários) |
+| Segunda | — | catchup | último post da grade antiga: 31/08 |
 
-> Os crons do `publish-daily.yml` seguem rodando 7 dias/semana **de propósito**: nos dias
-> sem reel eles viram no-op (nada pendente na fila), e servem de rede de catchup se uma
-> publicação falhar. Não cortar.
+> Os crons do `publish-daily.yml` seguem 7 dias/semana **de propósito**: dias sem post
+> viram no-op e servem de rede de catchup. Não cortar.
 
 **Stories** — 3 slots/dia, todos os dias: 09h30 · 13h30 · 19h30 BRT
 (1 repost do feed do dia + 1 story gerada por slot)

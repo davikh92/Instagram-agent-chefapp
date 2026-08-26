@@ -2,14 +2,14 @@ name: 📱 Publicar no Instagram
 
 on:
   schedule:
-    # Horários em UTC (BRT = UTC-3)
-    - cron: '0 13 * * 6'   # Sáb 10h BRT
-    - cron: '0 13 * * 0'   # Dom 10h BRT
-    - cron: '0 15 * * 2'   # Ter 12h BRT
-    - cron: '0 15 * * 4'   # Qui 12h BRT
-    - cron: '0 15 * * 5'   # Sex 12h BRT
-    - cron: '0 21 * * 1'   # Seg 18h BRT
-    - cron: '0 21 * * 3'   # Qua 18h BRT
+    # Horários em UTC (BRT = UTC-3) — grade do Ciclo 01 (set-nov/2026)
+    - cron: '0 21 * * 0'   # Dom 18h BRT — Novela das 18h
+    - cron: '0 21 * * 1'   # Seg 18h BRT — catchup (último post da grade antiga: 31/08)
+    - cron: '0 21 * * 2'   # Ter 18h BRT — Cardápio da Semana DM
+    - cron: '0 21 * * 3'   # Qua 18h BRT — Receita LEGENDA
+    - cron: '0 22 * * 4'   # Qui 19h BRT — Receita DM (grade experimental de outubro)
+    - cron: '0 15 * * 5'   # Sex 12h BRT — Receita DM (set/nov)
+    - cron: '0 14 * * 6'   # Sáb 11h BRT — Participação
   workflow_dispatch:        # permite publicação manual emergencial
 
 # Garante que nunca dois jobs publicam ao mesmo tempo

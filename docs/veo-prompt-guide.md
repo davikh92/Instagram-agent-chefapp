@@ -1,4 +1,10 @@
-# Veo 3.1 Lite — Guia de Prompts para Food Animated
+# Guia de Prompts para Food Animated
+
+> ⚠️ **AVISO (set/2026):** o cérebro editorial deste guia — os 3 arquétipos
+> ESPELHO/RECEITA/VIRADA e a rotação semanal — está **APOSENTADO**. Desde 01/09 vale o
+> **Ciclo 01 "A Cozinha que Resolve"**: 3 motores, gramática de take único e grade nova.
+> Fonte atual: `docs/PLANO-MASTER.md` → `docs/SUBPLANO-01.md` → `data/ciclo-01/`.
+> **A parte TÉCNICA deste guia (como escrever prompt de vídeo de comida) continua útil.**
 
 **Versão:** Maio 2026 · Automação Reels Instagram  
 **Propósito:** Gerar reels cinematográficos de comida via API text-to-video
