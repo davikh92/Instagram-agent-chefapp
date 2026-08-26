@@ -1,0 +1,25 @@
+{
+  "id": "nv-08",
+  "date": "2026-10-25",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. A cabinet door opens and a hand reaches confidently for the exact jar it needs — it is there, front and center. The camera follows a fast, joyful assembly: pasta into a dish, sauce ladled in spirals, cheese falling like snow. Money shot: the dish pulled from the oven bubbling at the edges, macro on the gratin crust crackling and pulling. Final beat: two forks diving in from opposite sides at once, a happy standoff. Warm light, deep shadows, film grain. Dominant sound: the jar landing on the counter, then the bubbling crust. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Sabe o ingrediente que SEMPRE falta na hora H?\n\nQuando a lista de compras nasce do cardápio, ele nunca mais fica pra trás. O prato favorito da casa, sem a volta ao mercado.\n\nManda pra quem sempre esquece uma coisa 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#listadecompras",
+    "#semanaorganizada",
+    "#planejamentoalimentar",
+    "#vidapratica",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#jantardehoje",
+    "#macarrao"
+  ],
+  "generatedAt": "2026-08-26T19:02:18.611Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770785/luiza-generated/veo/nv-08.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-08",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770788/luiza-generated/covers/nv-08-cover.png"
+}

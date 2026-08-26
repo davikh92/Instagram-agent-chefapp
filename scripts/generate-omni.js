@@ -270,7 +270,10 @@ async function processReel(reelConfig, outRoot) {
   console.log(`  ⏱️  ${Math.round((Date.now() - started) / 1000)}s`);
 
   const coverPath = path.join(outDir, 'cover.png');
-  extractCoverFrame(mp4Path, coverPath, 2);
+  // Capa no MONEY SHOT (~6,5s), não na abertura: com imagem de referência fixa
+  // (novela), o segundo 2 é igual em todo episódio e o feed viraria 13 thumbnails
+  // idênticas. coverAt por item permite afinar.
+  extractCoverFrame(mp4Path, coverPath, reelConfig.coverAt ?? 6.5);
 
   let cloudinaryMeta = {};
   try {

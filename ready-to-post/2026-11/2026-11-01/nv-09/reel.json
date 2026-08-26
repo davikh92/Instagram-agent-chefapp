@@ -1,0 +1,25 @@
+{
+  "id": "nv-09",
+  "date": "2026-11-01",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. A large roasting tray — chicken pieces over potatoes and onions — sliding into the oven, oil glistening. The camera follows a long table being dressed in wide motions: a tablecloth billowing open in the air, plates gliding into place, glasses set in rhythm. Money shot: the golden roasted tray landing at the center of the crowded table, backlit steam rising as several hands reach in to serve at once. Final beat: her seat at the table, seated and laughing, glass in hand — part of the lunch, not trapped in the kitchen. Warm Sunday light, film grain. Dominant sound: the billowing cloth, then the tray landing. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "O teste do bom almoço de domingo: quem cozinhou conseguiu SENTAR?\n\nPlanejado desde quinta, assado que se cuida sozinho, e ela na mesa — onde sempre deveria estar.\n\nManda pra quem recebe a família todo domingo 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#almocodefamilia",
+    "#domingoemfamilia",
+    "#receberemcasa",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#vidapratica",
+    "#frangoassado",
+    "#semanaorganizada"
+  ],
+  "generatedAt": "2026-08-26T19:03:09.666Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770837/luiza-generated/veo/nv-09.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-09",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770839/luiza-generated/covers/nv-09-cover.png"
+}

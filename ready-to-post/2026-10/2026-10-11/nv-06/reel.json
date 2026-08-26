@@ -1,0 +1,25 @@
+{
+  "id": "nv-06",
+  "date": "2026-10-11",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Three pots working at once on the stove — one boiling rice, one searing chicken, one roasting vegetables — triple steam columns backlit. The camera glides to a row of glass containers being filled in fast rhythmic layers, rice then vegetables then protein. Money shot: a green herb sauce zigzagged across the entire row in one continuous motion, macro on the glistening layers. Final beat: the tower of stacked containers sliding into the fridge, the door closing with a satisfying weight. Warm light, deep shadows, film grain. Dominant sound: the triple simmer, then the lids clicking. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Noventa minutos de domingo compram uma semana inteira de \"já tá pronto\".\n\nSegunda às 19h você só esquenta — e senta.\n\nManda pra quem quer virar a chave das marmitas 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#marmitas",
+    "#mealprep",
+    "#semanaorganizada",
+    "#planejamentoalimentar",
+    "#vidapratica",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#marmitasaudavel"
+  ],
+  "generatedAt": "2026-08-26T19:00:15.082Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770662/luiza-generated/veo/nv-06.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-06",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770663/luiza-generated/covers/nv-06-cover.png"
+}

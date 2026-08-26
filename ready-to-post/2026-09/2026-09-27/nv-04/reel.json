@@ -1,0 +1,27 @@
+{
+  "id": "nv-04",
+  "date": "2026-09-27",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Opens mid-action: an oven igniting with a blue flame whoosh, then hands halving potatoes fast and letting them fall cut-side up onto a hot baking tray. Olive oil is poured over them in a thick golden stream, coarse salt scattered from height, rosemary sprigs dropping in. The camera follows the tray sliding into the oven, heat shimmer rising off it, then glides sideways to a wooden board being built at speed — cheese broken by hand, olives dropping and rolling into place, bread torn into rough pieces, cherry tomatoes rolling into the gaps. Money shot: the tray pulled from the oven, potatoes deep golden with blistered crackling edges, backlit steam pouring off them, one potato pressed with the back of a spoon and audibly shattering open. Final beat: the tray set on the table beside the board, an apron untied. Warm 3200K key light, strong backlight on the oven steam, macro on the crackling crust, urgent handheld energy, film grain. Dominant sound: the oil hitting the hot tray, then the crack of the crust. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "\"Tô chegando aí em vinte minutos.\" Deu tempo.\n\nBatata partida ao meio, azeite generoso, sal grosso e alecrim — forno a 220° por 20 minutos, camada única. Enquanto assa, monta a tábua com o que tem: queijo, azeitona, pão rasgado, tomatinho.\n\n💡 Camada única é o segredo da batata. Amontoada, ela cozinha no vapor e sai murcha. Espalhada, ela estala.\n\nManda pro grupo antes de avisar que vocês vão passar lá 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#batataassada",
+    "#receberemcasa",
+    "#cozinhafacil",
+    "#receitasfaceis",
+    "#tabuadefrios",
+    "#jantarrapido",
+    "#comidacaseira",
+    "#comidadeverdade",
+    "#cozinhabrasileira",
+    "#petiscos"
+  ],
+  "generatedAt": "2026-08-26T18:58:36.895Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770565/luiza-generated/veo/nv-04.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-04",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770566/luiza-generated/covers/nv-04-cover.png"
+}

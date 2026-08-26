@@ -1,0 +1,27 @@
+{
+  "id": "nv-03",
+  "date": "2026-09-20",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Opens mid-action: a carrot grated fast and hard against a coarse grater, bright orange shreds flying and falling like snow into a bowl of cooked white rice, backlit so the shreds glow in the air. The camera pushes in as hands plunge into the bowl, mixing rice, grated carrot, a cracked egg and grated cheese, squeezing the mixture through the fingers in macro. The hands shape small patties quickly, one after another, and drop them into hot oil — violent sizzle, bubbles erupting around each one, surfaces turning deep golden and crisp. Money shot: one fritter lifted from the oil and broken open in extreme macro, steam escaping from the soft interior, flecks of orange carrot visible inside the white rice. Final beat: a plate piled with golden fritters and a small child's hand darting into frame to grab two. Warm 3200K side light, backlight on the frying steam, shallow depth of field, crisp macro texture, film grain. Dominant sound: the rasp of the grater, then the eruption of the frying oil. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "A cenoura que ela empurrou pra longe está dentro desses bolinhos. Ela comeu dois.\n\n🧾 Bolinho de arroz que salva a semana:\n2 xíc. de arroz cozido (aquele de ontem) · 1 cenoura ralada fina · 1 ovo · 3 colheres de queijo ralado · sal · farinha de rosca só se precisar dar liga\n\nMistura tudo com a mão até virar uma massa que fica em pé. Molda bolinhos do tamanho de uma colher. Frita em óleo quente até dourar dos dois lados.\n\n💡 A cenoura tem que ser ralada FINA. Se aparecer pedaço, o plano acaba.\n\nMarca aqui quem tem criança que só come macarrão 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#bolinhodearroz",
+    "#comidadecrianca",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#maternidadereal",
+    "#aproveitamento",
+    "#comidacaseira",
+    "#comidadeverdade",
+    "#cozinhabrasileira",
+    "#semdesperdicio"
+  ],
+  "generatedAt": "2026-08-26T18:57:30.693Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770499/luiza-generated/veo/nv-03.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-03",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770500/luiza-generated/covers/nv-03-cover.png"
+}

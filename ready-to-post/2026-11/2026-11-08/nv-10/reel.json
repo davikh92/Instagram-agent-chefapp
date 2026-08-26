@@ -1,0 +1,25 @@
+{
+  "id": "nv-10",
+  "date": "2026-11-08",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Two wine glasses set down on the counter, a match struck — the flame flaring loud in the quiet — lighting a candle. The camera slides to a steak searing in foaming butter with rosemary, spooned over in glistening bastes. Money shot: red wine hitting the hot pan and reducing into a glossy spiral, the steak sliced to reveal a blush pink center in macro, juices pooling. Final beat: two plates carried to a small candlelit table, the kitchen glowing warm behind. Deep shadows, intimate light, film grain. Dominant sound: the match strike, then the butter baste. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "O jantar especial que vocês vivem adiando não precisa de reserva — precisa de 40 minutos e um plano.\n\nPrato de bistrô, vela, e o sofá é logo ali.\n\nManda pra quem te deve um jantar desses 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#jantaradois",
+    "#jantarromantico",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#vidapratica",
+    "#receberemcasa",
+    "#jantarespecial",
+    "#file"
+  ],
+  "generatedAt": "2026-08-26T19:03:57.165Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770884/luiza-generated/veo/nv-10.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-10",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770886/luiza-generated/covers/nv-10-cover.png"
+}

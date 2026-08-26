@@ -1,0 +1,25 @@
+{
+  "id": "nv-07",
+  "date": "2026-10-18",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. In soft-focus background a stove clock glows; in sharp foreground, vegetables being sliced with unhurried, confident rhythm — no rush, no chaos. The pieces slide into a pan in calm sequence, garlic first, a controlled sizzle. Money shot: the sauté tossed once, golden steam rising backlit, a wooden spoon lifted for a taste, a satisfied nod. Final beat: the plate served, table set with time to spare, evening light warm through the window. Deep shadows, film grain. Dominant sound: the calm knife rhythm, then the single toss. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "A diferença entre a terça do desespero e essa aqui não é talento — é que o jantar de hoje foi decidido no domingo.\n\nDecidir é o que cansa; cozinhar é o de menos.\n\nManda pra quem trava toda terça às 18h 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#jantardehoje",
+    "#semanaorganizada",
+    "#planejamentoalimentar",
+    "#vidapratica",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#rotinaleve",
+    "#jantarrapido"
+  ],
+  "generatedAt": "2026-08-26T19:01:07.371Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770715/luiza-generated/veo/nv-07.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-07",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770716/luiza-generated/covers/nv-07-cover.png"
+}

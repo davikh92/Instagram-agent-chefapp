@@ -1,0 +1,27 @@
+{
+  "id": "nv-02",
+  "date": "2026-09-13",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Opens in mid-air: a ripe tomato tossed high, spinning in slow motion against warm window light, falling onto a waiting knife blade resting on a wooden board and splitting into clean slices as it lands. The camera glides down as those slices hit hot olive oil — loud sizzle, skins blistering and caramelizing, edges wrinkling. Beside them thick slices of bread darken on a griddle, grill marks forming. Beaten eggs are poured into a low-heat pan and a spatula folds them slowly into a glossy soft curd, steam ghosting upward and backlit gold. Money shot: the toast assembled — creamy egg piled on the charred bread, blistered tomato crowning it, olive oil drizzled in a thin golden thread, then a knife cutting it in half as the cream slumps and runs down the cut face in extreme macro. Final beat: one half lifted, oil dripping. Warm 3200K side light, strong backlight on the steam, deep shadows, macro on curd and tomato skin, film grain. Dominant sound: the tomato hitting oil, then the soft drag of the spatula. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "\"Não tem nada em casa\" é quase sempre mentira. Tinha ovo, tomate e pão.\n\nO tomate vai pra frigideira com azeite e sal e fica lá até murchar e caramelizar — é aí que ele vira outra coisa. O ovo é mexido em fogo BAIXO, mexendo devagar: fogo alto vira borracha, fogo baixo vira creme. O pão só precisa dourar.\n\nMarca a amiga que jura que não tem nada em casa 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#ovomexido",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#receitasfaceis",
+    "#jantarrapido",
+    "#aproveitamento",
+    "#comidacaseira",
+    "#cozinhabrasileira",
+    "#vidapratica",
+    "#semdesperdicio"
+  ],
+  "generatedAt": "2026-08-26T18:56:37.046Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770445/luiza-generated/veo/nv-02.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-02",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770446/luiza-generated/covers/nv-02-cover.png"
+}

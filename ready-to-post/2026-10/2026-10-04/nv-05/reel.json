@@ -1,0 +1,25 @@
+{
+  "id": "nv-05",
+  "date": "2026-10-04",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Grocery bags landing on the counter in rhythmic thuds, one after another. Hands unpack in a fast choreography — vegetables into drawers, fruit into a bowl in a cascade, jars sliding into cabinets — everything finding its place in one flowing motion. Money shot: the fridge door opening to reveal perfectly stocked, glowing shelves, camera pushing slowly into the organized abundance. Final beat: leaning against the counter with a cup of coffee, calm, the kitchen golden and done. Warm side light, deep shadows, film grain. Dominant sound: the bag thuds, then the fridge seal opening. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Uma ida ao mercado. Uma lista certa. Sete jantares resolvidos — sem voltar na terça porque esqueceu o alho.\n\nQuando a lista sai do cardápio da semana, ela vem completa e organizada por corredor.\n\nManda pra quem vai ao mercado 4 vezes por semana 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#semanaorganizada",
+    "#planejamentoalimentar",
+    "#listadecompras",
+    "#vidapratica",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#rotinaleve",
+    "#mercado"
+  ],
+  "generatedAt": "2026-08-26T18:59:29.136Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770616/luiza-generated/veo/nv-05.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-05",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770618/luiza-generated/covers/nv-05-cover.png"
+}
