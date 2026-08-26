@@ -127,11 +127,25 @@ link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagr
 | Participação (Sáb) | 13 | Veo Lite | $5.20 |
 | **Total** | **65** | | **$49.40** (trava: $120) |
 
-## Ordem de preenchimento (um bloco por vez)
+## Estado dos blocos
 
-1. ⬜ **Novela das 18h** — bíblia pronta; falta ref de imagem aprovada + eps de setembro
-2. ⬜ Cardápio da Semana DM — 13 destinos com link+UTM (os 7 cardápios em rotação)
-3. ⬜ Participação — mecânica + 2 primeiras "geladeiras" de partida a frio
-4. ⬜ Receita LEGENDA — 13 receitas com ocasião
-5. ⬜ Receita DM — 13 receitas com link+UTM
-6. ⬜ Stories de eco (ajuste da story-queue)
+1. ✍️ **Novela das 18h** — 13 eps escritos ([T1](EPISODIOS-SETEMBRO.md) · [T2/T3](EPISODIOS-OUT-NOV.md)) · ref aprovada · `nv-01` **gerado e aprovado** ✅
+2. ✍️ **Cardápio da Semana DM** — 13 escritos ([CARDAPIOS-DM.md](CARDAPIOS-DM.md))
+3. ✍️ **Receita LEGENDA** — 13 escritas ([RECEITAS.md](RECEITAS.md))
+4. ✍️ **Receita DM** — 13 receitas REAIS do app selecionadas com uuid+gancho ([RECEITAS.md](RECEITAS.md)); prompts na hora de enfileirar cada mês
+5. ✍️ **Participação** — mecânica + partida a frio + 5 reservas ([PARTICIPACAO.md](PARTICIPACAO.md)); `pt-03`+ são reativos por desenho
+6. ⬜ Stories de eco (ajuste da story-queue — depois da revisão dos blocos)
+
+## Decisões de produção (26/ago)
+
+- **Modelo: Omni Flash em TUDO neste ciclo** — decisão de qualidade do Davi ("testar
+  mais qualidade pra ver impacto real; depois ajusta"). Veo Lite/Fast ficam como
+  alavanca de custo pro checkpoint D+30. Custo do ciclo all-Omni 10s: **$65** (trava $120).
+- **Sem cota grátis em nenhum modelo** (verificado ago/2026) → geração pode ser
+  antecipada à vontade; espaçamento é **por minutos entre chamadas** (gerador já é
+  sequencial), não por dias. Rajada controlada com `--limit` por rodada.
+- **Colchão:** todo post gerado com 4+ dias de antecedência da publicação.
+- **Economia pontual aberta:** stories via batch API (metade do preço) · duração 8s
+  nos slots que não precisam de 10 (exige campo `duration` por item — tarefa pequena).
+- **Experimento a testar 1×:** motion text renderizado NA geração (uma palavra curta) —
+  overlay ffmpeg continua sendo o padrão.
