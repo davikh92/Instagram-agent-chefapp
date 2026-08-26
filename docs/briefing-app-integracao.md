@@ -194,3 +194,63 @@ Quando vocês adicionarem cardápios curados novos, lançarem versão, ou mudare
 ```
 
 Se a tabela ainda não existir quando vocês responderem, tudo bem: devolvam o JSON preenchido em texto mesmo, e a gente combina a criação depois.
+
+---
+
+# ADENDO (26/ago) — Identidade visual: pedido de referência
+
+> **Contexto do pedido:** o app ganhou identidade nova na transição pra Tem na Semana,
+> completamente diferente da antiga. O conteúdo do Instagram ainda roda com a estética
+> da era anterior (terracota, Playfair, "caderno de chef"). Pela regra do `_contrato`,
+> **como o post fica é decisão nossa** — isso não muda. Mas a gente decide melhor
+> **sabendo como o app se veste**: o mínimo é não parecer que post e app são de marcas
+> diferentes quando a pessoa clica.
+>
+> Portanto: nada aqui vira regra de design automática. É **referência**. Quanto mais
+> completo, melhor.
+
+**Pedido:** acrescentem um bloco `identidade_visual` ao `fixo` do Contexto
+(`contexto_do_conteudo`), respondendo o que der. Sugestão de formato no fim.
+
+### Perguntas
+
+**Tipografia**
+1. Quais fontes o app usa hoje (títulos, texto corrido, botões/UI)? Nomes exatos e pesos.
+2. São fontes livres (Google Fonts)? Se não, existe alternativa aprovada?
+3. Alguma regra de uso (título sempre em caixa alta? itálico? tracking?)
+
+**Cor**
+4. Paleta completa com hex: primárias, secundárias, fundos, texto.
+5. Qual é A cor da marca — a que não pode faltar?
+6. Cores que a identidade antiga usava e a nova **abandonou** (pra gente parar de usar).
+7. O app é claro, escuro, ou os dois?
+
+**Logo e marca**
+8. Logo novo: onde baixar (SVG/PNG em fundo transparente)?
+9. Variações (símbolo sozinho, horizontal, monocromático)? Regras de área de respiro?
+10. Existe wordmark/lettering do "Tem na Semana"? Como se escreve a marca (Tem na Semana, TEM NA SEMANA, tem na semana)?
+
+**Estilo visual geral**
+11. Cantos arredondados ou retos? Sombras? Bordas? Qual o "jeito" dos componentes?
+12. Fotografia/ilustração: o app usa fotos de comida? Em que estilo? Usa ilustração ou ícones — quais?
+13. Existe um mood (aconchegante, clean, vibrante...)? Em uma frase: como a identidade nova
+    é DIFERENTE da antiga?
+
+**Assets e referência viva**
+14. Tem brand book, Figma, ou página de styleguide? Link.
+15. Screenshots atuais das telas principais (home, cardápio, lista) — onde ficam de forma estável?
+16. Quando a identidade mudar de novo, esse bloco será atualizado por quem?
+
+### Formato sugerido pro bloco
+
+```json
+"identidade_visual": {
+  "tipografia": { "titulos": "", "texto": "", "ui": "", "regras": "" },
+  "cores": { "principal": "#", "paleta": {}, "fundos": {}, "abandonadas": [] },
+  "logo": { "url_download": "", "variacoes": "", "como_escrever_a_marca": "" },
+  "estilo": { "componentes": "", "fotografia": "", "mood_em_uma_frase": "" },
+  "referencias": { "styleguide_url": "", "screenshots_url": "" }
+}
+```
+
+Quando entrar no Contexto, o sync do Instagram puxa sozinho — não precisa avisar.
