@@ -1,0 +1,2180 @@
+{
+  "_coletado_em": "2026-08-26T01:01:03.527Z",
+  "_conta": {
+    "username": "luizanacozinha.app",
+    "followers_count": 4950,
+    "follows_count": 3184,
+    "media_count": 83,
+    "id": "35505608742419197"
+  },
+  "_conta_30d": {
+    "seguidores_por_dia": [
+      {
+        "dia": "2026-07-27",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-07-28",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-07-29",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-07-30",
+        "ganho": 2
+      },
+      {
+        "dia": "2026-07-31",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-01",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-02",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-03",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-04",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-05",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-06",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-07",
+        "ganho": 2
+      },
+      {
+        "dia": "2026-08-08",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-09",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-10",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-11",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-12",
+        "ganho": 2
+      },
+      {
+        "dia": "2026-08-13",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-14",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-15",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-16",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-17",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-18",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-19",
+        "ganho": 2
+      },
+      {
+        "dia": "2026-08-20",
+        "ganho": 4
+      },
+      {
+        "dia": "2026-08-21",
+        "ganho": 1
+      },
+      {
+        "dia": "2026-08-22",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-23",
+        "ganho": 0
+      },
+      {
+        "dia": "2026-08-24",
+        "ganho": 2
+      },
+      {
+        "dia": "2026-08-25",
+        "ganho": 0
+      }
+    ],
+    "saldo_seguidores": 57,
+    "visitas_perfil": 99,
+    "cliques_bio": 12
+  },
+  "_totais": {
+    "publicacoes": 99,
+    "com_metricas": 91,
+    "sem_insights": 0,
+    "falhas": 12
+  },
+  "itens": [
+    {
+      "pasta": "reel-01-relogio",
+      "data": "2026-05-06",
+      "tipo": "reel",
+      "media_id": "17984062748822670",
+      "publicado_em": "2026-05-07T22:10:43.615Z",
+      "caption": "São 18h47 e a geladeira te olha. Você olha pra geladeira. Ninguém pisca.\n\nA Luiza na Cozinha transforma o que você tem em receitas de verdade — em segundos. ✨\n\nLink na bio pra experimentar grátis 👆\n\n#luizanacozinha #cozinharemeio #jantarrapido #planejamentoalimentar #receitasfaceis",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYDb1_skUt2/",
+      "metricas": {
+        "reach": 32,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 49,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3998,
+        "total_watch_time_ms": 163952
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-01-semana01",
+      "data": "2026-05-06",
+      "tipo": "reel",
+      "media_id": "18128850859599636",
+      "erro": "Unsupported get request. Object with ID '18128850859599636' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "reel-03-semana01",
+      "data": "2026-05-07",
+      "tipo": "reel",
+      "media_id": "18190276861374579",
+      "publicado_em": "2026-05-07T22:55:30.003Z",
+      "caption": "A geladeira da segunda-feira... conhece? 😅\n\nChega de inventar combinações duvidosas. A Luiza na Cozinha te diz exatamente o que fazer com o que você tem. Link na bio 👆\n\n#luizanacozinha #geladeira #improvisonacozinha #receitasrapidas #cozinhar",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYDg_MhDF7Y/",
+      "metricas": {
+        "reach": 75,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 1,
+        "views": 103,
+        "total_interactions": 6,
+        "avg_watch_time_ms": 3992,
+        "total_watch_time_ms": 307442
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-03-ticker",
+      "data": "2026-05-07",
+      "tipo": "reel",
+      "media_id": "17962322691094785",
+      "erro": "Unsupported get request. Object with ID '17962322691094785' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "post-maio-08-carousel",
+      "data": "2026-05-08",
+      "tipo": "post",
+      "media_id": "17916803985361898",
+      "publicado_em": "2026-05-08T22:48:47.806Z",
+      "caption": "Você reconhece algum desses sinais? 👀\n\nSe sim, a Luiza na Cozinha foi feita pra você. O app que planeja sua semana de comida com IA — em minutos.\n\nExperimente grátis, link na bio 👆\n\n#luizanacozinha #cozinhar #planejamentoalimentar #receitasrapidas #comerbem #delivery #semana",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DYGFDRbgUSJ/",
+      "metricas": {
+        "reach": 37,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 48,
+        "total_interactions": 5
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-04-semana01",
+      "data": "2026-05-09",
+      "tipo": "reel",
+      "media_id": "18151178140477709",
+      "publicado_em": "2026-05-11T21:10:09.506Z",
+      "caption": "Antes: geladeira cheia, ideia vazia. Depois: planejamento feito, semana resolvida. ✨\n\nA Luiza na Cozinha faz o trabalho pesado por você. Link na bio 👆\n\n#luizanacozinha #planejamentoalimentar #antesdepois #cozinhar #organizacao",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYNoFnbgHEZ/",
+      "metricas": {
+        "reach": 16,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 25,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 4533,
+        "total_watch_time_ms": 81596
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-04-split",
+      "data": "2026-05-09",
+      "tipo": "reel",
+      "media_id": "18320803516282964",
+      "erro": "Unsupported get request. Object with ID '18320803516282964' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "post-maio-10-hero",
+      "data": "2026-05-10",
+      "tipo": "post",
+      "media_id": "18077129657338912",
+      "publicado_em": "2026-05-11T21:10:59.188Z",
+      "caption": "Domingo é dia de resetar. ✨\n\nPlaneja a semana agora e para de improvisar de segunda a sexta. A Luiza na Cozinha faz isso em minutos.\n\nLink na bio pra começar 👆\n\n#luizanacozinha #domingo #semananova #planejamentoalimentar #cozinhar #organizacao #receitasdasemana",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DYNoPc0iU6I/",
+      "metricas": {
+        "reach": 16,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 24,
+        "total_interactions": 1
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-02-contagem",
+      "data": "2026-05-11",
+      "tipo": "reel",
+      "media_id": "17874079743665191",
+      "erro": "Unsupported get request. Object with ID '17874079743665191' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "reel-02-semana01",
+      "data": "2026-05-11",
+      "tipo": "reel",
+      "media_id": "17925166431323577",
+      "publicado_em": "2026-05-11T21:12:21.869Z",
+      "caption": "5 motivos pra não cozinhar... e 1 pra começar hoje. 🍳\n\nO app da Luiza na Cozinha transforma o caos da semana em refeições reais. Experimente grátis — link na bio! 👆\n\n#luizanacozinha #cozinhar #planejamentoalimentar #receitasrapidas #comerbem",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYNoWZjiLDD/",
+      "metricas": {
+        "reach": 58,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 74,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 1799,
+        "total_watch_time_ms": 118761
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-01-semana02",
+      "data": "2026-05-12",
+      "tipo": "reel",
+      "media_id": "17909153709222431",
+      "publicado_em": "2026-05-18T21:09:56.660Z",
+      "caption": "São 18h02 e você já sabe o que vai jantar. A lista de compras já foi. O cardápio da semana, feito.\n\nEssa é a sensação de quem usa a Luiza na Cozinha — planejar uma vez e não pensar mais nisso. ✨\n\nLink na bio 👆\n\n#luizanacozinha #planejamentoalimentar #organizacao #cozinhar #semanaresolvida #produtividade",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYfpncVj15G/",
+      "metricas": {
+        "reach": 73,
+        "likes": 3,
+        "comments": 0,
+        "shares": 1,
+        "saved": 0,
+        "views": 81,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 1708,
+        "total_watch_time_ms": 126395
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-maio-13-editorial",
+      "data": "2026-05-13",
+      "tipo": "post",
+      "media_id": "18073054604429123",
+      "publicado_em": "2026-05-20T21:04:54.414Z",
+      "caption": "5 minutos agora = semana inteira resolvida. 🍳\n\nAssim funciona o planejamento alimentar com a Luiza na Cozinha — IA que entende o que você tem, o que você gosta e o quanto você tem de tempo.\n\nExperimente grátis, link na bio 👆\n\n#luizanacozinha #planejamentoalimentar #cozinhar #receitasrapidas #organizacao #semanasaudavel",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DYkyrlsFO_N/",
+      "metricas": {
+        "reach": 15,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 33,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-03-semana02",
+      "data": "2026-05-14",
+      "tipo": "reel",
+      "media_id": "17989670708991398",
+      "publicado_em": "2026-05-18T21:11:05.216Z",
+      "caption": "O barulho dentro da cabeça às 18h é real. 😅\n\nA Luiza na Cozinha silencia tudo isso — você abre o app, informa o que tem na geladeira, e recebe o cardápio da semana na hora. Sem drama.\n\nLink na bio 👆\n\n#luizanacozinha #cozinhar #jantarrapido #receitasfaceis #planejamentoalimentar #delivery",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYfpv7xgcWr/",
+      "metricas": {
+        "reach": 143,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 152,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 3329,
+        "total_watch_time_ms": 462859
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-maio-16-steps",
+      "data": "2026-05-16",
+      "tipo": "post",
+      "media_id": "17850530493693874",
+      "publicado_em": "2026-05-20T21:05:20.311Z",
+      "caption": "Primeira vez abrindo a Luiza na Cozinha? É isso que acontece. 📱\n\nEm menos de 2 minutos você vai do zero ao cardápio completo da semana — com lista de compras pronta pra ir ao mercado.\n\nLink na bio pra testar grátis 👆\n\n#luizanacozinha #app #planejamentoalimentar #comofunciona #cozinhar #primeiravez",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DYkyuy9FN8H/",
+      "metricas": {
+        "reach": 135,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 38,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-02-semana02",
+      "data": "2026-05-18",
+      "tipo": "reel",
+      "media_id": "17869819800528371",
+      "publicado_em": "2026-05-18T21:12:13.958Z",
+      "caption": "Essa semana você fez quantos desses? 😅\n\nZero julgamento — isso é só o que acontece quando a semana não tem planejamento. A gente resolve isso em 2 minutos.\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #comerbem #cozinhar #planejamentoalimentar #organizacao #rotina",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYfp4APkc2g/",
+      "metricas": {
+        "reach": 144,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 166,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 1614,
+        "total_watch_time_ms": 242206
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-maio-20-antesdepois",
+      "data": "2026-05-20",
+      "tipo": "post",
+      "media_id": "18126605992719421",
+      "publicado_em": "2026-05-22T15:50:22.983Z",
+      "caption": "A diferença entre uma semana travada e uma semana resolvida é um plano. ✨\n\nA Luiza na Cozinha monta esse plano por você — em 2 minutos, todo domingo.\n\nLink na bio pra testar grátis 👆\n\n#luizanacozinha #antesdepois #planejamentoalimentar #transformacao #cozinhar #organizacao",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DYpYRR7lFj7/",
+      "metricas": {
+        "reach": 13,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 33,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-01-semana03",
+      "data": "2026-05-21",
+      "tipo": "reel",
+      "media_id": "18143137783513349",
+      "publicado_em": "2026-05-22T15:51:04.545Z",
+      "caption": "São 11h30 de sábado. Família vai chegar pra almoço. Geladeira aberta, nada decidido. 😅\n\nÉ aqui que a Luiza na Cozinha te salva — cardápio pronto, lista feita, semana resolvida desde domingo.\n\nLink na bio 👆\n\n#luizanacozinha #sabado #almoco #familianacozinha #planejamentoalimentar #receitasrapidas",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DYpYS7xD54z/",
+      "metricas": {
+        "reach": 20,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 30,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3735,
+        "total_watch_time_ms": 85911
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-maio-24-bignumber",
+      "data": "2026-05-24",
+      "tipo": "post",
+      "media_id": "18117120907853001",
+      "publicado_em": "2026-05-27T14:37:13.355Z",
+      "caption": "7 jantares. 7 receitas diferentes. 1 planejamento feito em 2 minutos. ✨\n\nIsso é o que a Luiza na Cozinha entrega toda semana — sem você ter que pesquisar nada.\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #7dias #planejamentoalimentar #receitasdasemana #cozinhar #semanaplanejada",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DY2H3HpDmJs/",
+      "metricas": {
+        "reach": 19,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 26,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-02-semana03",
+      "data": "2026-05-25",
+      "tipo": "reel",
+      "media_id": "18143855530506144",
+      "publicado_em": "2026-05-27T14:38:01.342Z",
+      "caption": "Seu cérebro às 18h. 🧠😅\n\nEsses pensamentos aparecem porque você não tem um plano. E um plano a gente monta em 2 minutos.\n\nLink na bio 👆\n\n#luizanacozinha #alimentacao #cozinhar #decisoes #planejamentoalimentar #jantarrapido",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DY2H5jNCllw/",
+      "metricas": {
+        "reach": 90,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 104,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 1885,
+        "total_watch_time_ms": 175359
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-04-semana04",
+      "data": "2026-05-26",
+      "tipo": "reel",
+      "media_id": "18109917526920189",
+      "publicado_em": "2026-05-27T14:39:18.391Z",
+      "caption": "Enquanto você decide o que pedir no iFood, a Luiza na Cozinha já resolveu sua semana inteira. 😅\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #ifood #delivery #planejamentoalimentar #cozinharcaseiro #semanaplanejada",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DY2IDoeFcne/",
+      "metricas": {
+        "reach": 86,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 92,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 1454,
+        "total_watch_time_ms": 126562
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-maio-27-carousel",
+      "data": "2026-05-27",
+      "tipo": "post",
+      "media_id": "18193231627370031",
+      "publicado_em": "2026-05-27T14:41:21.292Z",
+      "caption": "7 jantares em 7 dias. Ingredientes de mercado normal. Sem pesquisar receita nenhuma. 🍳\n\nÉ isso que a Luiza na Cozinha entrega — toda semana, em 2 minutos. Desliza pra ver o cardápio 👉\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #cardapiodasemana #jantares #receitasrapidas #planejamentoalimentar #comerbem",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DY2IUdFDsti/",
+      "metricas": {
+        "reach": 16,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 26,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-03-teste",
+      "data": "2026-05-28",
+      "tipo": "reel",
+      "media_id": "18353636242209350",
+      "erro": "Unsupported get request. Object with ID '18353636242209350' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "reel-01-semana04",
+      "data": "2026-05-29",
+      "tipo": "reel",
+      "media_id": "18118236187689120",
+      "publicado_em": "2026-05-29T15:00:43.559Z",
+      "caption": "São 18h. Em 2 minutos você pode ter a semana inteira resolvida. ⏱️\n\nInforma o que tem → cardápio gerado → lista de compras pronta. É isso.\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #2minutos #planejamentoalimentar #produtividade #cozinhar #semanaplanejada",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DY7UFdUAoQV/",
+      "metricas": {
+        "reach": 121,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 143,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 1815,
+        "total_watch_time_ms": 228771
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-04-azeite",
+      "data": "2026-05-30",
+      "tipo": "reel",
+      "media_id": "18109290256730826",
+      "publicado_em": "2026-05-30T15:29:29.739Z",
+      "caption": "Legumes assados de domingo. Feitos em 30 min, duram a semana toda. 🫒\n\nA Luiza na Cozinha planeja o cardápio e a lista de compras pra você. Testa grátis, link na bio 👆\n\n#luizanacozinha #legumesassados #mealprep #planejamentoalimentar #receitafacil #comidadeverdade",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DY98Kuwk32D/",
+      "metricas": {
+        "reach": 1499,
+        "likes": 6,
+        "comments": 0,
+        "shares": 3,
+        "saved": 1,
+        "views": 1806,
+        "total_interactions": 10,
+        "avg_watch_time_ms": 3770,
+        "total_watch_time_ms": 5858715
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-03-semana04",
+      "data": "2026-06-01",
+      "tipo": "reel",
+      "media_id": "18172627414410637",
+      "publicado_em": "2026-06-01T21:00:30.621Z",
+      "caption": "Primeiro mês da Luiza na Cozinha no ar. Os números chegaram. 📊\n\nCada linha dessa lista é uma semana resolvida, uma decisão a menos, uma geladeira mais aproveitada.\n\nQuer entrar nessa? Link na bio 👆\n\n#luizanacozinha #lancamento #mes1 #planejamentoalimentar #beta #resultados",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZDrp2Qk28U/",
+      "metricas": {
+        "reach": 51,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 68,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 1681,
+        "total_watch_time_ms": 95870
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-junho-02-features",
+      "data": "2026-06-02",
+      "tipo": "post",
+      "media_id": "18075753344294409",
+      "publicado_em": "2026-06-08T22:25:09.217Z",
+      "caption": "Tudo que o app faz enquanto você simplesmente vive. ✨\n\nNão é mágica — é planejamento feito por quem entende de cozinha. A Luiza na Cozinha.\n\nLink na bio pra testar grátis 👆\n\n#luizanacozinha #funcionalidades #app #planejamentoalimentar #cozinhar #receitaspersonalizadas",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DZV3FLqmnn5/",
+      "metricas": {
+        "reach": 20,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 46,
+        "total_interactions": 3
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-05-tomate",
+      "data": "2026-06-03",
+      "tipo": "reel",
+      "media_id": "18115835776878495",
+      "publicado_em": "2026-06-12T13:18:39.310Z",
+      "caption": "Segunda-feira sem drama. Cardápio montado, lista de compras pronta. 🍅\n\nQuando você sabe o que vai cozinhar, a semana toda fica mais leve. Testa grátis, link na bio 👆\n\n#luizanacozinha #segundafeira #planejamentoalimentar #cardapiosemanal #comidasaudavel #preparacaoantecipada #receitasfaceis",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfLr9oAier/",
+      "metricas": {
+        "reach": 651,
+        "likes": 6,
+        "comments": 0,
+        "shares": 1,
+        "saved": 0,
+        "views": 823,
+        "total_interactions": 7,
+        "avg_watch_time_ms": 5216,
+        "total_watch_time_ms": 3297127
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-02-semana04",
+      "data": "2026-06-04",
+      "tipo": "reel",
+      "media_id": "18094529770980285",
+      "publicado_em": "2026-06-04T02:51:34.843Z",
+      "caption": "A assistente da Luiza na Cozinha já respondeu milhares de perguntas assim. 👩‍🍳\n\nEla está disponível no app toda vez que você precisar — como ter uma chef do seu lado.\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #assistente #duvidas #cozinhar #receitasfaceis #planejamentoalimentar",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZJdaIykkkb/",
+      "metricas": {
+        "reach": 78,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 93,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 1950,
+        "total_watch_time_ms": 161896
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-06-massa",
+      "data": "2026-06-05",
+      "tipo": "reel",
+      "media_id": "18078935996242377",
+      "publicado_em": "2026-06-12T13:19:16.794Z",
+      "caption": "Sexta-feira tem cara de massa. Sempre teve. 🍝\n\nAquela que você faz sem pensar muito — porque a semana já foi pensada antes.\n\nSalva pra sexta que vem 🔖\n\n#luizanacozinha #sexta #massa #pastafrescal #cozinhandoemcasa #planejamentoalimentar #receitaitaliana",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfLwUvj0Oq/",
+      "metricas": {
+        "reach": 172,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 207,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 3155,
+        "total_watch_time_ms": 520663
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-11-feira",
+      "data": "2026-06-06",
+      "tipo": "reel",
+      "media_id": "17900166189457191",
+      "publicado_em": "2026-06-12T13:26:29.211Z",
+      "caption": "Sábado de feira é o melhor tipo de sábado. 🥬\n\nSacola cheia, cabeça leve, semana já resolvida na cabeça.\n\nSegue pra mais ideia de comida de verdade 🍳\n\n#luizanacozinha #sabado #feira #mealprep #planejamentoalimentar #comidasaudavel #feiralivre",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfMmDbjjM3/",
+      "metricas": {
+        "reach": 153,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 175,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 2552,
+        "total_watch_time_ms": 385403
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-domingo-07jun",
+      "data": "2026-06-07",
+      "tipo": "post",
+      "media_id": "18105793765983900",
+      "publicado_em": "2026-06-07T20:24:58.814Z",
+      "caption": "Domingo é dia de decidir a semana inteira em 2 minutos. 🗓️\n\nCardápio montado, lista pronta, segunda-feira sem drama.\n\nComenta: você planeja a semana ou improvisa todo dia? 👇\n\n#luizanacozinha #domingo #planejamentoalimentar #cardapiosemanal #mealprep #comidasaudavel #organizacaofamiliar #listadecompras",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DZTEYS-FL4b/",
+      "metricas": {
+        "reach": 29,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 43,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-07-mesa",
+      "data": "2026-06-08",
+      "tipo": "reel",
+      "media_id": "17891677146519657",
+      "publicado_em": "2026-06-12T13:27:07.094Z",
+      "caption": "Segunda-feira podia ser sempre assim: jantar pronto, todo mundo na mesa. 🕯️\n\nSem aquele branco das 18h encarando a geladeira aberta.\n\nSalva pra quando bater o branco das 18h 🔖\n\n#luizanacozinha #segundafeira #jantarfamiliar #planejamentoalimentar #comidasaudavel #cardapiosemanal #organizacaofamiliar",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfMph7D_jJ/",
+      "metricas": {
+        "reach": 161,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 164,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 1586,
+        "total_watch_time_ms": 244387
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-12-salada",
+      "data": "2026-06-09",
+      "tipo": "reel",
+      "media_id": "18120531949739168",
+      "publicado_em": "2026-06-12T13:29:13.154Z",
+      "caption": "Almoço de terça sem ideia? Já fui rainha disso. 🥗\n\nHoje é só montar e comer — a decisão difícil já foi tomada antes.\n\nComenta aqui: salada salva ou enjoa rápido? 👇\n\n#luizanacozinha #terca #almoco #salada #receitafacil #planejamentoalimentar #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfM5Q_AnSc/",
+      "metricas": {
+        "reach": 191,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 224,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 3115,
+        "total_watch_time_ms": 585668
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-09-ervas",
+      "data": "2026-06-10",
+      "tipo": "reel",
+      "media_id": "18020165516846262",
+      "publicado_em": "2026-06-12T13:30:00.450Z",
+      "caption": "Você não odeia cozinhar. Você odeia não saber o que cozinhar. 🌿\n\nÉ outra história quando o que fazer já tá decidido — aí sobra só a parte boa.\n\nMarca aquela amiga que vive o perrengue das 18h 👇\n\n#luizanacozinha #quarta #ervas #cozinhandoemcasa #planejamentoalimentar #cardapiosemanal #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfM-_qAQJd/",
+      "metricas": {
+        "reach": 189,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 218,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 3629,
+        "total_watch_time_ms": 653374
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-10-massa-quinta",
+      "data": "2026-06-11",
+      "tipo": "reel",
+      "media_id": "18038956757802101",
+      "publicado_em": "2026-06-12T13:31:49.969Z",
+      "caption": "Amanhã é sexta. Hoje já merece uma massa também, né? 🍝\n\nSem receita decorada, sem stress — só seguir o cardápio que já tá pronto.\n\nLink na bio pra testar grátis →\n\n#luizanacozinha #quinta #massa #jantar #planejamentoalimentar #receitaitaliana #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfNLcTAh6n/",
+      "metricas": {
+        "reach": 218,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 211,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 2380,
+        "total_watch_time_ms": 459476
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-08-limao",
+      "data": "2026-06-12",
+      "tipo": "reel",
+      "media_id": "17890440318378451",
+      "publicado_em": "2026-06-12T13:32:28.698Z",
+      "caption": "O segredo da comida boa às vezes cabe num limão espremido na hora. 🍋\n\nDetalhe pequeno, diferença gigante. O resto é seguir o plano da semana.\n\nSalva esse pra sexta 🔖\n\n#luizanacozinha #sexta #frango #receitafacil #planejamentoalimentar #comidasaudavel #jantarrapido",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZfNQ0BFEYH/",
+      "metricas": {
+        "reach": 398,
+        "likes": 4,
+        "comments": 0,
+        "shares": 2,
+        "saved": 1,
+        "views": 461,
+        "total_interactions": 7,
+        "avg_watch_time_ms": 4248,
+        "total_watch_time_ms": 1550546
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-13-marmita",
+      "data": "2026-06-13",
+      "tipo": "reel",
+      "media_id": "18082484828556871",
+      "publicado_em": "2026-06-13T15:04:43.073Z",
+      "caption": "Sábado de marmita é o que segura a semana inteira. 🫙\n\nDuas horas hoje, cinco jantares sem pensar depois.\n\nSegue pra mais ideia de preparo da semana 🍳\n\n#luizanacozinha #sabado #mealprep #preparacaoantecipada #planejamentoalimentar #comidasaudavel #organizacao",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZh8oK5lcE7/",
+      "metricas": {
+        "reach": 800,
+        "likes": 8,
+        "comments": 0,
+        "shares": 3,
+        "saved": 4,
+        "views": 1083,
+        "total_interactions": 15,
+        "avg_watch_time_ms": 5277,
+        "total_watch_time_ms": 4185419
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-domingo-14jun",
+      "data": "2026-06-14",
+      "tipo": "post",
+      "media_id": "18077970524304148",
+      "publicado_em": "2026-06-16T18:53:02.000Z",
+      "caption": "Domingo de recomeço. Semana nova, cardápio novo. 🌿\n\nVocê não precisa reinventar a roda toda semana — só ter um ponto de partida.\n\nComenta: qual prato não pode faltar na sua semana? 👇\n\n#luizanacozinha #domingo #recomeço #planejamentoalimentar #comidasaudavel #rotinasaudavel #cozinhandoemcasa",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DZxoCbNm5h9/",
+      "metricas": {
+        "reach": 18,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 23,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-14-pao",
+      "data": "2026-06-15",
+      "tipo": "reel",
+      "media_id": "18002606561941582",
+      "erro": "Unsupported get request. Object with ID '18002606561941582' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "reel-food-15-bowl",
+      "data": "2026-06-16",
+      "tipo": "reel",
+      "media_id": "17886967944570556",
+      "publicado_em": "2026-06-16T18:54:20.000Z",
+      "caption": "Esse bowl parece difícil. Não é. É só ter os ingredientes certos em casa. 🥣\n\nE ter em casa é justo a parte que a gente sempre esquece, né?\n\nComenta: o que SEMPRE falta na sua geladeira? 👇\n\n#luizanacozinha #terca #almoco #bowl #graos #comidasaudavel #receitafacil #planejamentoalimentar",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZqFSDeAtsg/",
+      "metricas": {
+        "reach": 2835,
+        "likes": 8,
+        "comments": 0,
+        "shares": 2,
+        "saved": 2,
+        "views": 3491,
+        "total_interactions": 13,
+        "avg_watch_time_ms": 4215,
+        "total_watch_time_ms": 12120371
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-16-feira",
+      "data": "2026-06-17",
+      "tipo": "reel",
+      "media_id": "18343123903168455",
+      "publicado_em": "2026-06-19T19:52:13.439Z",
+      "caption": "Quarta-feira: metade da semana, geladeira pela metade. 🥕\n\nQuando a lista de compras já saiu pronta, nem isso vira problema.\n\nMarca quem precisa organizar a feira 👇\n\n#luizanacozinha #quarta #feiralivre #comprassaudaveis #planejamentoalimentar #comidasaudavel #verduras",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZx6R9QEhWt/",
+      "metricas": {
+        "reach": 668,
+        "likes": 4,
+        "comments": 0,
+        "shares": 1,
+        "saved": 0,
+        "views": 772,
+        "total_interactions": 6,
+        "avg_watch_time_ms": 2886,
+        "total_watch_time_ms": 1989003
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-17-ovos",
+      "data": "2026-06-18",
+      "tipo": "reel",
+      "media_id": "17917639029184922",
+      "publicado_em": "2026-06-19T19:52:51.056Z",
+      "caption": "Às vezes a receita mais inteligente é a mais simples. 🍳\n\nDois ovos, cebolinha, cinco minutos. Comida de verdade não precisa ser complicada.\n\nLink na bio pra testar grátis →\n\n#luizanacozinha #quinta #ovos #cafedamanha #receitafacil #comidasaudavel #cozinhandoemcasa",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZx6XA3gSYi/",
+      "metricas": {
+        "reach": 1351,
+        "likes": 15,
+        "comments": 0,
+        "shares": 1,
+        "saved": 1,
+        "views": 1926,
+        "total_interactions": 18,
+        "avg_watch_time_ms": 5349,
+        "total_watch_time_ms": 7296153
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-18-suco",
+      "data": "2026-06-19",
+      "tipo": "reel",
+      "media_id": "18357499888215091",
+      "publicado_em": "2026-06-20T15:06:35.943Z",
+      "caption": "Sexta-feira fechando a semana — e fechando bem. 🥤\n\nVerde, gelado, sem culpa. Igual a semana que sai do jeito que você planejou.\n\nSalva pra começar a semana que vem 🔖\n\n#luizanacozinha #sexta #suco #smoothie #detox #comidasaudavel #planejamentoalimentar #fimdesemana",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZz-bjegGeV/",
+      "metricas": {
+        "reach": 192,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 234,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 3282,
+        "total_watch_time_ms": 623727
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-19-mesa-cafe",
+      "data": "2026-06-20",
+      "tipo": "reel",
+      "media_id": "17864734887635308",
+      "publicado_em": "2026-06-20T15:08:00.577Z",
+      "caption": "Sábado de manhã sem pressa é um luxo subestimado. ☕\n\nMesa posta, café passado, ninguém correndo. Isso acontece quando a semana foi planejada.\n\nSegue pra mais café da manhã de fim de semana 🍳\n\n#luizanacozinha #sabado #cafedamanha #brunch #fimdesemana #comidasaudavel #mesaposta",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZz-j7ICMkI/",
+      "metricas": {
+        "reach": 179,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 193,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 2441,
+        "total_watch_time_ms": 402767
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-domingo-21jun",
+      "data": "2026-06-21",
+      "tipo": "post",
+      "media_id": "17919130167181195",
+      "publicado_em": "2026-06-27T14:48:01.499Z",
+      "caption": "Domingo de receita nova. Qual vai ser a novidade da semana? 🌿\n\nTestar prato diferente é mais fácil quando alguém já sugeriu por você.\n\nComenta: qual receita você quer aprender? 👇\n\n#luizanacozinha #domingo #planejamentoalimentar #ervas #receitanovas #cardapiosemanal #comidasaudavel",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DaF94nnkT5h/",
+      "metricas": {
+        "reach": 24,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 44,
+        "total_interactions": 2
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-20-sopa",
+      "data": "2026-06-22",
+      "tipo": "reel",
+      "media_id": "17955233565148331",
+      "publicado_em": "2026-06-22T22:46:01.652Z",
+      "caption": "Segunda de inverno só pede uma coisa: sopa quente e fim de papo. 🍲\n\nAquele conforto que faz a segunda parecer um pouco menos segunda.\n\nSalva pro próximo dia frio 🔖\n\n#luizanacozinha #segunda #sopa #inverno #comfortfood #planejamentoalimentar #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZ58kMdiG69/",
+      "metricas": {
+        "reach": 171,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 195,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 1963,
+        "total_watch_time_ms": 345513
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-21-compras",
+      "data": "2026-06-23",
+      "tipo": "reel",
+      "media_id": "17974721274100263",
+      "publicado_em": "2026-06-23T17:13:05.774Z",
+      "caption": "Lista de compras sem esquecer nada e sem comprar repetido. Existe? 🛒\n\nExiste quando ela já sai pronta — você só pega no mercado.\n\nComenta: você faz lista ou vai no improviso? 👇\n\n#luizanacozinha #terca #listadecompras #mercado #planejamentoalimentar #organizacao #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZ77Rp3iXDN/",
+      "metricas": {
+        "reach": 449,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 521,
+        "total_interactions": 5,
+        "avg_watch_time_ms": 4623,
+        "total_watch_time_ms": 1909426
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-22-temperos",
+      "data": "2026-06-24",
+      "tipo": "reel",
+      "media_id": "18052203194543713",
+      "publicado_em": "2026-06-24T22:05:57.583Z",
+      "caption": "A diferença entre 'tá bom' e 'que delícia' cabe numa pitada. 🌶️\n\nTempero na medida certa não é dom — é receita bem feita.\n\nMarca quem cozinha sempre no susto 👇\n\n#luizanacozinha #quarta #temperos #frango #receitafacil #comidasaudavel #truquesdecozinha",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DZ_Bkzsiv0b/",
+      "metricas": {
+        "reach": 260,
+        "likes": 6,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 311,
+        "total_interactions": 6,
+        "avg_watch_time_ms": 3657,
+        "total_watch_time_ms": 921796
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-23-mesa-jantar",
+      "data": "2026-06-25",
+      "tipo": "reel",
+      "media_id": "18118898071695231",
+      "publicado_em": "2026-06-25T17:04:47.145Z",
+      "caption": "Mesa posta, todo mundo em volta. É disso que a semana se trata. 🍽️\n\nE dá pra chegar aqui todo dia quando o cardápio já está decidido.\n\nLink na bio pra testar grátis →\n\n#luizanacozinha #quinta #jantarfamiliar #mesaposta #familia #planejamentoalimentar #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaBD6gCDkqh/",
+      "metricas": {
+        "reach": 87,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 1,
+        "views": 93,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 1910,
+        "total_watch_time_ms": 152809
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-24-macarrao",
+      "data": "2026-06-26",
+      "tipo": "reel",
+      "media_id": "18069173579423841",
+      "publicado_em": "2026-06-26T16:56:38.442Z",
+      "caption": "Sexta com gosto de conquista: a semana foi cumprida. 🍝\n\nVocê planejou, você executou. Esse macarrão é o troféu.\n\nSalva pra fechar a próxima semana assim 🔖\n\n#luizanacozinha #sexta #macarrao #massafria #receitafacil #comidasaudavel #fimdesemana",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaDnwsgCHgZ/",
+      "metricas": {
+        "reach": 218,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 258,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 3175,
+        "total_watch_time_ms": 692226
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-25-cafe",
+      "data": "2026-06-27",
+      "tipo": "reel",
+      "media_id": "18119244124696955",
+      "publicado_em": "2026-06-27T14:48:20.925Z",
+      "caption": "Sábado começa devagar. Do jeito que sábado merece. ☕\n\nSem pressa porque a semana inteira já foi resolvida antes.\n\nSegue pra mais momento de cozinha boa 🍳\n\n#luizanacozinha #sabado #cafe #paodequijo #cafedamanha #fimdesemana #comidasaudavel",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaF959mEx4f/",
+      "metricas": {
+        "reach": 9177,
+        "likes": 86,
+        "comments": 1,
+        "shares": 140,
+        "saved": 24,
+        "views": 11978,
+        "total_interactions": 256,
+        "avg_watch_time_ms": 3542,
+        "total_watch_time_ms": 34452746
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "post-domingo-28jun",
+      "data": "2026-06-28",
+      "tipo": "post",
+      "media_id": "17904360456445074",
+      "publicado_em": "2026-06-29T22:07:30.439Z",
+      "caption": "Domingo preparado, semana conquistada. 🫙\n\nDuas horas de preparo hoje valem cinco jantares tranquilos depois.\n\nComenta: você é time meal prep ou cozinha na hora? 👇\n\n#luizanacozinha #domingo #mealprep #preparacaoantecipada #planejamentoalimentar #organizacao #comidasaudavel",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "permalink": "https://www.instagram.com/p/DaL5xaHFZIG/",
+      "metricas": {
+        "reach": 22,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 31,
+        "total_interactions": 3
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-26-geladeira",
+      "data": "2026-06-29",
+      "tipo": "reel",
+      "media_id": "18042558227597758",
+      "publicado_em": "2026-06-29T22:08:09.306Z",
+      "caption": "Segunda-feira começa no domingo. Geladeira pronta = semana resolvida. 🥡\n\nAbrir a geladeira e já saber o que tem é um pequeno grande luxo.\n\nSalva pra organizar a sua 🔖\n\n#luizanacozinha #segunda #mealprep #geladeira #organizacao #planejamentoalimentar #preparacaoantecipada",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaL5ylbAbHI/",
+      "metricas": {
+        "reach": 1225,
+        "likes": 6,
+        "comments": 0,
+        "shares": 1,
+        "saved": 1,
+        "views": 1437,
+        "total_interactions": 8,
+        "avg_watch_time_ms": 3657,
+        "total_watch_time_ms": 4549702
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-27-fruta",
+      "data": "2026-06-30",
+      "tipo": "reel",
+      "media_id": "18319525561274569",
+      "publicado_em": "2026-06-30T17:02:20.373Z",
+      "caption": "Última terça do mês. Julho chegando com cara de recomeço. 🥭\n\nMês novo, cardápio novo, mesma vontade de comer bem sem complicar.\n\nComenta: qual fruta não pode faltar na sua casa? 👇\n\n#luizanacozinha #terca #frutas #tropicais #julho #comidasaudavel #planejamentoalimentar #receitafacil",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaN7mcGE0Sq/",
+      "metricas": {
+        "reach": 2060,
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 2785,
+        "total_interactions": 11,
+        "avg_watch_time_ms": 5854,
+        "total_watch_time_ms": 12083639
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-28",
+      "data": "2026-07-03",
+      "tipo": "reel",
+      "media_id": "18088389233567646",
+      "publicado_em": "2026-07-04T14:42:59.709Z",
+      "caption": "Julho pediu sopa. Você pediu delivery.\n\nNão porque você não quis cozinhar — porque você não sabia o que tinha em casa.\n\nIsso a gente resolve. 🫕\n\nSalva esse post pra quando bater o branco das 18h 🔖\n\n#luizanacozinha #sopa #inverno2026 #comidasaudavel #jantarrapido #sopacaseira #cozinhareal #receitafacil",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaX-0N9HIuA/",
+      "metricas": {
+        "reach": 308,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 356,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3485,
+        "total_watch_time_ms": 1069965
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-29",
+      "data": "2026-07-04",
+      "tipo": "reel",
+      "media_id": "17936070018276854",
+      "publicado_em": "2026-07-04T14:43:40.045Z",
+      "caption": "Sábado de inverno. Frio lá fora. Geladeira com cara de vergonha aqui dentro.\n\nO pão de forma está aí desde quinta. O ovo sobrou do almoço de sexta.\n\nIsso não é improviso — é a base do que a Luiza chama de culinária de verdade. 😄\n\nComenta: qual é a sua montagem de emergência de sábado? 👇\n\n#luizanacozinha #sabadogostoso #cozinhareal #fimdesemana #cafedamanha #paocommanteiga #manha",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DaX-5QMEu27/",
+      "metricas": {
+        "reach": 1131,
+        "likes": 8,
+        "comments": 1,
+        "shares": 1,
+        "saved": 2,
+        "views": 1423,
+        "total_interactions": 13,
+        "avg_watch_time_ms": 4295,
+        "total_watch_time_ms": 4849961
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-30",
+      "data": "2026-07-06",
+      "tipo": "reel",
+      "media_id": "18092813768042432",
+      "publicado_em": "2026-07-06T22:12:21.492Z",
+      "caption": "18h de segunda-feira de inverno.\nFrio.\nGeladeira com cara de 'não sei o que eu sou'.\n\nMacarrão é a resposta.\nMas qual macarrão? Com o quê? Por quanto tempo?\n\nIsso a gente resolve antes de você abrir o iFood.\n\n👉 Link na bio — cardápio da semana em 2 minutos.\n\n#luizanacozinha #segunda #jantarrapido #macarrao #cozinhadepressa #pasta #receitafacil #cardapio",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Dad71KNijOO/",
+      "metricas": {
+        "reach": 153,
+        "likes": 6,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 187,
+        "total_interactions": 6,
+        "avg_watch_time_ms": 3114,
+        "total_watch_time_ms": 492121
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-vitrine-jul06",
+      "data": "2026-07-06",
+      "tipo": "story",
+      "media_id": "18104306630120063",
+      "publicado_em": "2026-07-06T18:26:25.713Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3935451319935960900",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-31",
+      "data": "2026-07-07",
+      "tipo": "reel",
+      "media_id": "18127848106723833",
+      "publicado_em": "2026-07-07T17:07:23.850Z",
+      "caption": "Você não é preguiçosa.\nVocê está com frio.\n\nTem diferença. Grande.\n\nE o ovo frito de inverno é diferente do ovo frito de verão.\n(Não sei explicar. Mas você sabe.)\n\nMarca aquela amiga que entende isso 👇\n\n#luizanacozinha #ovofrito #inverno #cozinhareal #identificacao #terca #jantarsimples",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Daf9ullDfrY/",
+      "metricas": {
+        "reach": 175,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 221,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3869,
+        "total_watch_time_ms": 688705
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-checkin-jul07",
+      "data": "2026-07-07",
+      "tipo": "story",
+      "media_id": "17993451836808113",
+      "erro": "Unsupported get request. Object with ID '17993451836808113' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "reel-food-32",
+      "data": "2026-07-08",
+      "tipo": "reel",
+      "media_id": "18104517158111191",
+      "publicado_em": "2026-07-08T21:56:46.213Z",
+      "caption": "Frango toda semana.\n\nMas toda semana diferente. Porque o app sugere.\n\nQuando você tem o cardápio montado antes de segunda, o frango de quarta não é o mesmo de sempre — é o que faz sentido com o que você comprou, com o que está no inverno e com o que a sua semana precisa.\n\nTesta grátis. Link na bio 👆\n\n#luizanacozinha #frango #planejamentoalimentar #cardapiodaSemana #receitas #frangocaseiro #cozinha",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DajDoZZAC1e/",
+      "metricas": {
+        "reach": 130,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 166,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3138,
+        "total_watch_time_ms": 408022
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-33",
+      "data": "2026-07-09",
+      "tipo": "reel",
+      "media_id": "18197094148334712",
+      "publicado_em": "2026-07-09T17:13:16.232Z",
+      "caption": "Marmita de inverno é outro nível.\n\nNão é questão de fit ou saudável.\nÉ questão de chegar no almoço e ter algo quente esperando.\n\nEssa sensação começa no domingo, na lista, no planejamento.\n\nSalva pra quando você decidir que vale a pena planejar 🔖\n\n#luizanacozinha #marmita #inverno #almoconapresa #planejamento #mealprep #cozinha #organizacao",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DalH_eJFH4_/",
+      "metricas": {
+        "reach": 1290,
+        "likes": 4,
+        "comments": 1,
+        "shares": 1,
+        "saved": 0,
+        "views": 1467,
+        "total_interactions": 6,
+        "avg_watch_time_ms": 3851,
+        "total_watch_time_ms": 5069158
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-gancho-jul09",
+      "data": "2026-07-09",
+      "tipo": "story",
+      "media_id": "18108053038990090",
+      "publicado_em": "2026-07-09T15:41:13.002Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3937542438462454209",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-34",
+      "data": "2026-07-10",
+      "tipo": "reel",
+      "media_id": "18141787009540391",
+      "publicado_em": "2026-07-10T16:51:15.878Z",
+      "caption": "Spoiler: a torrada fria não vale a pena.\n\nMas a torrada quente com manteiga derretendo às 7h de sexta de inverno?\n\nEssa vale tudo.\n\nNão é receita. É filosofia.\n\nSegue pra mais filosofia culinária de segunda a sexta 🍳\n\n#luizanacozinha #tostada #manha #inverno #cafedamanha #manteiga #sexta #filosofia",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DanqPTIoH_O/",
+      "metricas": {
+        "reach": 335,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 1,
+        "views": 411,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 4265,
+        "total_watch_time_ms": 1420402
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-35",
+      "data": "2026-07-11",
+      "tipo": "reel",
+      "media_id": "18098789444261268",
+      "publicado_em": "2026-07-11T14:25:44.149Z",
+      "caption": "Batata doce assada.\n\nQuatro ingredientes. Forno ligado. Nada para decidir.\n\nIsso é o que acontece quando você tem o cardápio montado: você para de improvisar e começa a executar.\n\nA diferença entre uma semana boa e uma semana de delivery está num domingo de 10 minutos.\n\nTesta grátis, link na bio 👆\n\n#luizanacozinha #batatadoce #carboidrato #forno #planejamento #sabado #receita #app",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Dap-aVFCnz6/",
+      "metricas": {
+        "reach": 3853,
+        "likes": 17,
+        "comments": 0,
+        "shares": 0,
+        "saved": 2,
+        "views": 5160,
+        "total_interactions": 19,
+        "avg_watch_time_ms": 5545,
+        "total_watch_time_ms": 21126954
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-checkin-jul11",
+      "data": "2026-07-11",
+      "tipo": "story",
+      "media_id": "18166127248410483",
+      "publicado_em": "2026-07-11T14:01:28.961Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3938941783418521751",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-36",
+      "data": "2026-07-13",
+      "tipo": "reel",
+      "media_id": "17964088041135106",
+      "publicado_em": "2026-07-13T21:54:19.403Z",
+      "caption": "Chocolate quente às 18h de julho.\n\nCom filho em casa. Sem rotina. Com geladeira sem cardápio.\n\nEsse é o perrengue de julho que ninguém fala mas todo mundo vive.\n\nComenta: você planeja as refeições nas férias ou vai no achômetro? 👇\n\n#luizanacozinha #ferias #julho #chocolatequente #cozinhadefamilia #inverno #ferias2026",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Dav7UivEbNG/",
+      "metricas": {
+        "reach": 142,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 175,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 2749,
+        "total_watch_time_ms": 398687
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-vitrine-jul13",
+      "data": "2026-07-13",
+      "tipo": "story",
+      "media_id": "18058570958768376",
+      "publicado_em": "2026-07-13T15:22:47.940Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3940432251709009493",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-37",
+      "data": "2026-07-14",
+      "tipo": "reel",
+      "media_id": "18103026707140099",
+      "publicado_em": "2026-07-14T16:09:30.919Z",
+      "caption": "Tem um caldo que a sua mãe fazia que nenhuma receita da internet reproduz direito.\n\nNão é a receita. É o estado de espírito.\n\nQual é o prato que te lembra de casa no inverno? 👇\n\n(Pergunta honesta. Não tem resposta certa.)\n\n#luizanacozinha #caldo #inverno #comidadeconforto #nostalgia #cozinhacaseira #terca #familia",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Dax4rJPEngj/",
+      "metricas": {
+        "reach": 136,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 169,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 2683,
+        "total_watch_time_ms": 375679
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-38",
+      "data": "2026-07-15",
+      "tipo": "reel",
+      "media_id": "18215895085336606",
+      "publicado_em": "2026-07-15T21:45:22.765Z",
+      "caption": "Segundo semestre começou.\n\nA geladeira também precisava reiniciar.\n\nSopa de legumes: não é receita — é reset de rotina.\n\nO app já sugere o cardápio da semana. Você só executa.\n\nTesta grátis, link na bio 👆\n\n#luizanacozinha #sopa #segundosemestre #cardapio #inverno #planejamento #cozinha #qua",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Da1D5lPDkqx/",
+      "metricas": {
+        "reach": 181,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 196,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 2647,
+        "total_watch_time_ms": 465882
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-39",
+      "data": "2026-07-16",
+      "tipo": "reel",
+      "media_id": "18128041927629507",
+      "publicado_em": "2026-07-16T16:11:00.420Z",
+      "caption": "Feijão de sexta não é improviso.\n\nÉ tradição.\n\nMesmo com a semana toda passada em piloto automático, o feijão de sexta sai certo.\n\nComenta: feijão preto ou carioca? ☕️\n\n(Essa discussão está longe de acabar.)\n\n#luizanacozinha #feijao #sexta #cozinhabrasileira #tradicao #comidacaseira #inverno #qui",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Da3CctBHAQe/",
+      "metricas": {
+        "reach": 191,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 239,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 3719,
+        "total_watch_time_ms": 702928
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-gancho-jul16",
+      "data": "2026-07-16",
+      "tipo": "story",
+      "media_id": "18167874874436048",
+      "publicado_em": "2026-07-16T14:33:21.758Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3942581714615844099",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-40",
+      "data": "2026-07-17",
+      "tipo": "reel",
+      "media_id": "18118239268798174",
+      "publicado_em": "2026-07-17T16:09:06.615Z",
+      "caption": "Planejou a semana toda.\n\nFez a lista. Organizou as receitas.\n\nChegou na quarta e a geladeira riu na sua cara.\n\nIsso acontece. O app te ajuda a adaptar na hora.\n\nLink na bio — ajuste o cardápio em 2 minutos 👆\n\n#luizanacozinha #planejamento #realidade #geladeira #cardapio #app #cozinhareal #sexta",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Da5nAkdkT4H/",
+      "metricas": {
+        "reach": 202,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 240,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3673,
+        "total_watch_time_ms": 705302
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-41",
+      "data": "2026-07-18",
+      "tipo": "reel",
+      "media_id": "17876041647653636",
+      "publicado_em": "2026-07-18T14:22:52.242Z",
+      "caption": "Sábado de inverno.\n\nNão tem receita complicada.\nNão tem planejamento.\n\nTem ovo mexido com manteiga e a cozinha quente.\n\nIsso já é suficiente.\n\nSegue pra mais momentos honestos na cozinha 🍳\n\n#luizanacozinha #ovomexido #sabado #manteiga #manha #inverno #simplicidade #cozinha",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Da7_oqZjvnT/",
+      "metricas": {
+        "reach": 1100,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 1380,
+        "total_interactions": 5,
+        "avg_watch_time_ms": 4232,
+        "total_watch_time_ms": 4651582
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-checkin-jul18",
+      "data": "2026-07-18",
+      "tipo": "story",
+      "media_id": "17892304863583081",
+      "publicado_em": "2026-07-18T13:57:30.234Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3944013209564965230",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-42",
+      "data": "2026-07-20",
+      "tipo": "reel",
+      "media_id": "17947997247240641",
+      "publicado_em": "2026-07-23T00:17:21.288Z",
+      "caption": "Dia do Amigo é hoje.\n\nRestaurante? Delivery? Que nada.\n\nJantar em casa é o presente.\n\nNão precisa ser elaborado — precisa ser quente e feito com atenção.\n\nO que você serve para os amigos no inverno? 👇\n\n#luizanacozinha #diodoamigo #jantaremcasa #amigos #inverno #cozinhaparavisita #20dejulho",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbHW49sggXI/",
+      "metricas": {
+        "reach": 145,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 166,
+        "total_interactions": 4,
+        "avg_watch_time_ms": 2835,
+        "total_watch_time_ms": 408374
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-43",
+      "data": "2026-07-21",
+      "tipo": "reel",
+      "media_id": "18346646050220620",
+      "publicado_em": "2026-07-23T00:18:17.257Z",
+      "caption": "Arroz com alguma coisa.\n\nNão tem nome. Não tem receita escrita.\n\nTem o que sobrou, tem o que encontrou, tem o arroz que sempre salva.\n\nIsso é a culinária de verdade.\n\nO que você juntou com arroz essa semana? 👇\n\n#luizanacozinha #arroz #improvisacao #cozinhareal #terca #sobras #comidacaseira #inverno",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbHW-i5ApmP/",
+      "metricas": {
+        "reach": 206,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 289,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 5739,
+        "total_watch_time_ms": 1188088
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-vitrine-jul21",
+      "data": "2026-07-21",
+      "tipo": "story",
+      "media_id": "18111060494065256",
+      "publicado_em": "2026-07-23T14:42:03.060Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3947659510073235553",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-44",
+      "data": "2026-07-22",
+      "tipo": "reel",
+      "media_id": "18447711823143729",
+      "publicado_em": "2026-07-23T16:20:48.031Z",
+      "caption": "Férias escolares.\n\nVocê não tem rotina, a geladeira está aberta e o filho quer ajudar a cozinhar.\n\nIsso não é caos — é julho.\n\nE às vezes o melhor planejamento é: deixa ele sovar.\n\nComenta: seu filho ou sobrinho já cozinhou com você? 👇\n\n#luizanacozinha #ferias #filhoscozinhando #julho #cozinhadefamilia #panificacao #pao #qua",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbJFHO1kYrM/",
+      "metricas": {
+        "reach": 896,
+        "likes": 8,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 1080,
+        "total_interactions": 8,
+        "avg_watch_time_ms": 4681,
+        "total_watch_time_ms": 3979639
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-45",
+      "data": "2026-07-23",
+      "tipo": "reel",
+      "media_id": "18061422386733389",
+      "publicado_em": "2026-07-23T16:21:26.621Z",
+      "caption": "Cardápio de inverno não se improvisa.\n\nSe planeja.\n\nO app já tem as sugestões de julho. Você só precisa confirmar, gerar a lista e executar.\n\n2 minutos no domingo. A semana toda de piloto automático.\n\nTesta grátis, link na bio 👆\n\n#luizanacozinha #cardapio #inverno #planejamento #app #julho #cozinha #qui",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbJFMV8CIYe/",
+      "metricas": {
+        "reach": 133,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 157,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 2758,
+        "total_watch_time_ms": 366932
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-46",
+      "data": "2026-07-24",
+      "tipo": "reel",
+      "media_id": "18105767918117195",
+      "publicado_em": "2026-07-25T14:40:26.347Z",
+      "caption": "Você comeu o mesmo prato duas vezes essa semana.\n\nE não tem nada de errado nisso.\n\nRepetir um prato que funciona é inteligência, não falta de criatividade.\n\nIsso a Luiza defende.\n\nQual é o prato que você não se cansa de repetir? 👇\n\n#luizanacozinha #pratossemana #repeticao #cozinhareal #inverno #sexta #comidacaseira",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbODOJRAQxC/",
+      "metricas": {
+        "reach": 128,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 152,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 2899,
+        "total_watch_time_ms": 376964
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-gancho-jul24",
+      "data": "2026-07-24",
+      "tipo": "story",
+      "media_id": "17951250720015871",
+      "publicado_em": "2026-07-24T14:21:07.355Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3948373752967604825",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-47",
+      "data": "2026-07-25",
+      "tipo": "reel",
+      "media_id": "18101186866924990",
+      "publicado_em": "2026-07-25T14:41:04.251Z",
+      "caption": "Almoço de domingo que começa no sábado.\n\nQuem planejou na sexta, descansou no sábado e só terminou no domingo.\n\nIsso não é perfeccionismo — é timing.\n\nO app ajuda você a montar esse timing sem estresse.\n\nSalva esse post 🔖\n\n#luizanacozinha #almocodedomingo #sabado #cozinha #planejamento #porco #assado #inverno",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbODS8cD6LA/",
+      "metricas": {
+        "reach": 1756,
+        "likes": 13,
+        "comments": 0,
+        "shares": 3,
+        "saved": 3,
+        "views": 2393,
+        "total_interactions": 19,
+        "avg_watch_time_ms": 5131,
+        "total_watch_time_ms": 9246084
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-48",
+      "data": "2026-07-27",
+      "tipo": "reel",
+      "media_id": "18124916437680941",
+      "publicado_em": "2026-07-27T22:04:19.064Z",
+      "caption": "Segunda-feira de volta.\n\nFérias acabaram. Rotina começa.\n\nMas dessa vez você tem o cardápio da semana pronto.\n\nDiferença entre segunda com lista e segunda sem lista: você sabe.\n\nO app te recebe de volta. Link na bio 👆\n\n#luizanacozinha #segunda #voltadeferias #rotina #planejamento #cardapio #inverno #cafe",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbT_oAOjzEG/",
+      "metricas": {
+        "reach": 156,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 187,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 3114,
+        "total_watch_time_ms": 488935
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-49",
+      "data": "2026-07-28",
+      "tipo": "reel",
+      "media_id": "18057161084780315",
+      "publicado_em": "2026-07-28T16:29:38.904Z",
+      "caption": "Lista de compras de inverno é diferente.\n\nTem batata doce. Tem gengibre. Tem aquela cebola que vai em tudo.\n\nQuando você planeja antes de ir ao mercado, você para de comprar por impulso e começa a cozinhar com intenção.\n\nO app gera a lista pra você. Link na bio 👆\n\n#luizanacozinha #listadecompras #inverno #mercado #planejamento #compras #cozinha #economia",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbV-F3fgJVg/",
+      "metricas": {
+        "reach": 185,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 210,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 2317,
+        "total_watch_time_ms": 442696
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "story-checkin-jul28",
+      "data": "2026-07-28",
+      "tipo": "story",
+      "media_id": "18402788152081673",
+      "publicado_em": "2026-07-28T14:59:31.287Z",
+      "caption": null,
+      "media_type": "IMAGE",
+      "media_product_type": "STORY",
+      "permalink": "https://www.instagram.com/stories/luizanacozinha.app/3951292182842142477",
+      "metricas": {},
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-50",
+      "data": "2026-07-29",
+      "tipo": "reel",
+      "media_id": "18140346304561849",
+      "publicado_em": "2026-07-29T21:45:42.868Z",
+      "caption": "Quarta-feira.\n18h.\nGeladeira aberta há 3 minutos.\n\nSem ideia.\n\nMas tem ovo. Tem arroz. Tem o que virou jantar.\n\nIsso é a culinária real.\n\nO que você fez com o que tinha essa quarta? 👇\n\n#luizanacozinha #quarta #semideia #geladeira #cozinhareal #ovo #arroz #improviso",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbZHENsDD75/",
+      "metricas": {
+        "reach": 77,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 96,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 2684,
+        "total_watch_time_ms": 214763
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-51",
+      "data": "2026-07-30",
+      "tipo": "reel",
+      "media_id": "18144234031544022",
+      "publicado_em": "2026-07-30T16:21:17.650Z",
+      "caption": "Como você sobrevive ao inverno na cozinha?\n\nNão tem resposta certa.\n\nTem o que funciona pra você: o caldo, a sopa, a torrada, o ovo mexido de sábado.\n\nConta aqui nos comentários — essa conversa a gente não quer terminar 👇\n\n(Melhor thread do inverno 🧵)\n\n#luizanacozinha #inverno #cozinha #comfortfood #julho #comunidade #comidacaseira #sopa",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbbGvdECJgb/",
+      "metricas": {
+        "reach": 124,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 138,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 2541,
+        "total_watch_time_ms": 312592
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-52",
+      "data": "2026-07-31",
+      "tipo": "reel",
+      "media_id": "18110226740055819",
+      "publicado_em": "2026-07-31T16:30:54.033Z",
+      "caption": "Julho acabou.\n\nVocê cozinhou mais do que imaginava.\nImprovizou quando precisou.\nPlanejou quando deu.\n\nIsso é culinária de verdade.\n\nAgosto vem aí — com o cardápio pronto.\n\nLink na bio — começa o mês no controle 👆\n\n#luizanacozinha #julho #fechamento #agosto #planejamento #cozinha #cardapio #novomes",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbdsopogpdY/",
+      "metricas": {
+        "reach": 249,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 283,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 2485,
+        "total_watch_time_ms": 636218
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-53",
+      "data": "2026-08-03",
+      "tipo": "reel",
+      "media_id": "18091609661629270",
+      "erro": "Unsupported get request. Object with ID '18091609661629270' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+    },
+    {
+      "pasta": "reel-food-54",
+      "data": "2026-08-05",
+      "tipo": "reel",
+      "media_id": "17937629226341632",
+      "publicado_em": "2026-08-05T22:03:30.870Z",
+      "caption": "Sopa em agosto não é receita.\n\nÉ estratégia de sobrevivência.\n\nUma panela na quarta resolve quarta, quinta e o desespero de sexta.\n\nSalva pra quando bater o frio de novo 🔖\n\n#luizanacozinha #sopa #inverno #agosto #comfortfood #sopacaseira #cozinhareal #quarta",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbrKr_lkaio/",
+      "metricas": {
+        "reach": 211,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 244,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 2723,
+        "total_watch_time_ms": 569185
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-55",
+      "data": "2026-08-07",
+      "tipo": "reel",
+      "media_id": "17965991856006245",
+      "publicado_em": "2026-08-07T15:45:53.671Z",
+      "caption": "Domingo é Dia dos Pais.\n\nRestaurante lotado, fila de duas horas, conta alta.\n\nOu a mesa de casa, o prato que ele gosta, e tempo de verdade junto.\n\nO cardápio do almoço já está montado no app — você só executa.\n\nTesta grátis, link na bio 👆\n\n#luizanacozinha #diadospais #almocodefamilia #agosto #cozinhaemcasa #cardapio #planejamento #familia",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DbvpDtnGoEU/",
+      "metricas": {
+        "reach": 192,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 215,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 2369,
+        "total_watch_time_ms": 459722
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-56",
+      "data": "2026-08-10",
+      "tipo": "reel",
+      "media_id": "18137286778594404",
+      "publicado_em": "2026-08-10T21:38:51.928Z",
+      "caption": "\"Agosto, mês do desgosto.\"\n\nQuem inventou isso claramente abriu o armário numa segunda e encontrou macarrão pela quarta vez na semana.\n\nNão é o mês. É a falta de plano.\n\nMarca aquela amiga que também está no macarrão de novo 👇\n\n#luizanacozinha #agosto #macarrao #cozinhareal #humor #segunda #rotina #improviso",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Db3_1hTAEOJ/",
+      "metricas": {
+        "reach": 255,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 314,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 3985,
+        "total_watch_time_ms": 1048147
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-57",
+      "data": "2026-08-12",
+      "tipo": "reel",
+      "media_id": "17897268960574859",
+      "publicado_em": "2026-08-13T15:51:37.836Z",
+      "caption": "Café e pão na manteiga.\n\nNão tem receita. Não tem técnica. Não tem nada pra ensinar aqui.\n\nTem só o melhor momento do dia, e todo mundo sabe disso.\n\nSegue pra mais cinco minutos de paz por dia 🍞\n\n#luizanacozinha #cafedamanha #pao #manteiga #manha #rotina #simplicidade #quarta",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/Db_Gf80lGlu/",
+      "metricas": {
+        "reach": 390,
+        "likes": 6,
+        "comments": 0,
+        "shares": 4,
+        "saved": 1,
+        "views": 474,
+        "total_interactions": 11,
+        "avg_watch_time_ms": 2859,
+        "total_watch_time_ms": 1169731
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-58",
+      "data": "2026-08-14",
+      "tipo": "reel",
+      "media_id": "18007277657760612",
+      "publicado_em": "2026-08-14T15:43:08.495Z",
+      "caption": "Sexta-feira, 12h.\n\nVocê já sabe o que vai jantar hoje, amanhã e domingo.\n\nNão porque você é organizada. Porque você gastou 2 minutos no domingo passado.\n\nA diferença entre a semana boa e a semana do delivery é essa.\n\nTesta grátis, link na bio 👆\n\n#luizanacozinha #sexta #planejamento #cardapiosemanal #app #organizacao #cozinha #semanaplanejada",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DcBqSyqgKNl/",
+      "metricas": {
+        "reach": 235,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 266,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 2197,
+        "total_watch_time_ms": 516302
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-59",
+      "data": "2026-08-17",
+      "tipo": "reel",
+      "media_id": "18140345524601966",
+      "publicado_em": "2026-08-17T21:22:34.681Z",
+      "caption": "Você abriu o iFood.\n\nRolou por seis minutos. Não pediu nada. Fechou.\n\nA fome continua. A indecisão também.\n\nComenta: quantas vezes essa semana? (sem julgamento, é pesquisa) 👇\n\n#luizanacozinha #delivery #indecisao #cozinhareal #cotidiano #segunda #jantar #identificacao",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DcJ_i7YEwmT/",
+      "metricas": {
+        "reach": 129,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 151,
+        "total_interactions": 1,
+        "avg_watch_time_ms": 1469,
+        "total_watch_time_ms": 202768
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-60",
+      "data": "2026-08-19",
+      "tipo": "reel",
+      "media_id": "18106127627142474",
+      "publicado_em": "2026-08-19T21:14:24.835Z",
+      "caption": "Alho e óleo de verdade não leva alho queimado.\n\nTrês ingredientes, e mesmo assim quase todo mundo erra.\n\n📝 INGREDIENTES (2 porções)\n• 250g de espaguete\n• 6 dentes de alho fatiados FININHOS\n• ½ xícara de azeite bom\n• Pimenta calabresa a gosto\n• Salsinha picada\n• Sal grosso\n\n👩‍🍳 MODO DE FAZER\n1. Água fervendo com MUITO sal grosso — tem que ser salgada como água do mar\n2. Cozinhe o macarrão 1 minuto a MENOS que o pacote manda\n3. Enquanto isso: azeite FRIO na frigideira + o alho fatiado, fogo BAIXO\n4. O alho tem que dourar devagar, nunca fritar. Desligue quando ficar dourado claro\n5. Reserve 1 concha da água do macarrão ANTES de escorrer\n6. Junte o macarrão no azeite em fogo médio e vá pingando a água reservada\n7. Mexa até virar um molho brilhante que gruda no macarrão\n8. Salsinha e pimenta fora do fogo\n\n💡 A água do cozimento tem amido — é ela que transforma azeite em molho. Jogar essa água fora é o erro nº 1.\n\nSalva pra próxima quarta sem ideia 🔖\n\n#luizanacozinha #alhoeoleo #macarrao #receitafacil #jantarrapido #massa #receitasimples #cozinhabrasileira #espaguete #jantarfacil #receitas #cozinhando",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DcPIMt6DXmg/",
+      "metricas": {
+        "reach": 2967,
+        "likes": 11,
+        "comments": 0,
+        "shares": 0,
+        "saved": 3,
+        "views": 3527,
+        "total_interactions": 14,
+        "avg_watch_time_ms": 5243,
+        "total_watch_time_ms": 15405818
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-61",
+      "data": "2026-08-21",
+      "tipo": "reel",
+      "media_id": "18089932253152901",
+      "publicado_em": "2026-08-21T15:24:26.923Z",
+      "caption": "Você voltou do mercado com exatamente o que precisava.\n\nNada de sobra. Nada faltando. Nada apodrecendo na gaveta até domingo.\n\nIsso não é sorte — é a lista que o app montou antes de você sair de casa.\n\nTesta grátis, link na bio 👆\n\n#luizanacozinha #listadecompras #mercado #planejamento #app #economia #semdesperdicio #sexta",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DcTpvDKgEwY/",
+      "metricas": {
+        "reach": 259,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 317,
+        "total_interactions": 3,
+        "avg_watch_time_ms": 4408,
+        "total_watch_time_ms": 1128485
+      },
+      "aviso": null
+    },
+    {
+      "pasta": "reel-food-62",
+      "data": "2026-08-24",
+      "tipo": "reel",
+      "media_id": "17896323681386171",
+      "publicado_em": "2026-08-24T21:25:20.872Z",
+      "caption": "Última semana do mês.\n\nO cansaço não é de hoje — é acumulado desde o dia 1.\n\nE ainda assim alguém tem que decidir o que vai ter pra comer.\n\nMarca quem também está contando os dias 👇\n\n#luizanacozinha #cansaco #fimdomes #agosto #cozinhareal #cotidiano #segunda #rotina",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DccBa-fFFm1/",
+      "metricas": {
+        "reach": 48,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "views": 67,
+        "total_interactions": 2,
+        "avg_watch_time_ms": 4202,
+        "total_watch_time_ms": 226959
+      },
+      "aviso": null
+    }
+  ]
+}

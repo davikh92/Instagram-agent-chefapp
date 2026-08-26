@@ -54,43 +54,74 @@ Tem na Semana. Aqui não muda nada — a URL vem do contexto. Manual: link na bi
   exemplo do salmão: uma imagem gerada de como o prato deve ficar + passos escritos.
   Ele vai detalhar durante a construção do plano.
 
-## Ideias aprovadas para o futuro (não implementar agora)
+## Análise ponta a ponta — CONCLUÍDA (26/ago)
 
-1. **Comment-to-DM com entrega de valor** — o CTA não é "comenta pra receber o link",
-   é *"comenta DETOX que eu te mando o cardápio pronto na sua DM"*. A pessoa recebe o
-   cardápio da casa (link direto, com UTM do post). Combina com a série de cardápios:
-   cada um tem benefício e URL próprios. Tecnicamente: webhook de comentários +
-   private reply da Messaging API. **Entra depois do novo plano.**
-2. **Análise recorrente autoperfeiçoante** — a cada 15–30 dias, uma rotina puxa as
-   métricas de tudo que foi publicado, compara arquétipo × dia × formato e realimenta
-   o planejamento. **Depois que o novo plano estiver rodando.**
-3. **Série "1 semana = 1 cardápio"** — 7 cardápios = 7 semanas de pauta encadeada,
-   cada uma com destino de clique específico. **Matéria-prima do novo plano.**
+Relatório completo no artifact "3,2 Segundos"; dados brutos em `data/metricas/coleta-2026-08-26.json`.
+Painel profissional e API **batem** (90d: ~54,4k views, 373 curtidas, 160 shares, 51 salvos, 5 comentários).
+
+**Achados que orientam o plano:**
+- **Retenção decide o alcance:** reels ≥4s têm alcance mediano 6,4× maior que reels <3s.
+  Mediana da conta: 3,2s — e caindo (jun 3,5 → jul 3,1 → ago 2,8). **META: 3,2s → 5s.**
+- **Prompt × performance (57 reels):** topo abre com *ação transformando comida em close*
+  (cortar, abrir, fritar); fundo abre com *cena parada e aberta* (mesa posta, ambientação).
+  Os 2 piores da conta são os 2 com **celular na tela** (1,4s / 2,2s) — mostrar o app
+  literalmente expulsa. Mãos vs. pessoa, vapor, tamanho do prompt: não separam nada.
+- **Conversão:** 28 cliques na bio em 90d (12/30d, parte do Davi) vs 302 visitas ao
+  perfil. CTA "teste grátis na bio" é fraco demais — pede desvio que ninguém faz.
+- **Audiência:** conta reaproveitada (hotdogueria, já teve 10k+); ~80% das views são de
+  NÃO-seguidores — o conteúdo alcança gente nova, os seguidores herdados são peso morto.
+  90d: +73 seguidores ganhos / −76 perdidos. Público: 58% mulheres, núcleo 35–44, 100% BR.
+- **Horários de atividade dos seguidores (painel):** Dom 18–21 · Ter 18–21 · Qua 18–21.
+- **Contexto assumido:** material 100% IA é punido pelo algoritmo — engajamento menor já
+  esperado. A fase de quantidade cumpriu o papel (~80 posts = base de análise suficiente);
+  não adianta gerar mais 200 do mesmo.
+- **Voz colada soa robótica** (percepção direta do Davi) — provável fator de retenção; a
+  humanização dos vídeos (pessoas de verdade na cozinha, não só mãos) entra com o modelo novo.
+
+---
+
+## Direções para o novo plano (visões do Davi — pensar junto, não regras)
+
+1. **Dar algo em troca, JÁ.** Parar com "curte se gostou". Experimentar desde agora:
+   - **Receita completa na legenda** (ampliar além da quarta) — pessoa lê enquanto o
+     vídeo roda (retenção) e salva pra depois (alcance).
+   - **Passo a passo numerado NO vídeo** (Passo 1, 2, 3…) — prende e faz rever.
+   - **Comenta → recebe na DM** o link direto da receita/cardápio. O link abre no app →
+     login → daí em diante a conversão é problema do app. Instagram = levar gente; app = converter.
+   - Já temos os links: 486 receitas em páginas públicas (`/receita/:id`) + 7 cardápios
+     com URL própria em `atual.cardapios_da_casa`.
+2. **Conhecimento e dor, não só comida bonita.** Perfil de comida ganha seguidor por
+   imagem bonita que nunca lê legenda — o desafio é não ser só isso.
+3. **Grade e horários: testar, não fixar.** Ter/Sáb performaram melhor mas pode ser
+   sorte; seguidores ativos Dom/Ter/Qua 18–21. Rodar experimentos de dia E horário,
+   sem ficar preso a nenhum — inclusive testar dias "aleatórios" de vez em quando.
+4. **O prompt é o produto.** A melhor tática do mundo morre se o prompt gerar vídeo
+   fraco. Lote de 12/jun era mais cinematográfico; depois derivou pra "cara de feira".
+   Dar atenção de primeira classe aos prompts usando os padrões achados na análise.
+5. **Exemplo do que NÃO fazer** (post de 25/ago): pessoa de cara triste + legenda
+   "uma semana no mês" + áudio fraco. Nada entrega, nada pede, nada prende.
+6. **Ideia guardada:** formato *foto do prato pronto + passo a passo* (caso do salmão
+   no ChatGPT). Davi detalha na construção do plano.
+7. **Material orgânico com a chef Luiza:** planejado, mas sem contar com ela agora.
 
 ---
 
 ## Próximos passos, em ordem
 
-### 1. Análise ponta a ponta do Instagram ⬅️ PRÓXIMO
-Puxar via API as métricas de **tudo** que já foi publicado (cada `published.json`
-guarda o `instagram_media_id`): alcance, curtidas, salvamentos, compartilhamentos,
-comentários. Cruzar com o que sabemos de cada post — arquétipo, dia, horário, com/sem
-voz, tema. Sai um relatório: o que funcionou, o que não, e por quê.
-*Fato já conhecido: link na bio quase não converteu — o plano novo precisa atacar isso.*
+### 1. Novo plano de comunicação ⬅️ PRÓXIMO
+Com a análise na mão + as direções acima + o material novo de perfil/identidade que o
+Davi vai trazer. Decide: temas, formatos, CTAs give-to-get, prompts-padrão por tipo,
+grade de experimentos de dia/horário, papel da voz.
 
-### 2. Novo plano de comunicação
-Com a análise na mão + o material novo de perfil/identidade + posicionamento
-"chef assina" + os 7 cardápios como série. Decide: temas, formatos, CTAs, se/como
-usa voz, e o papel do comment-to-DM.
+### 2. Troca de modelo de vídeo
+Google Omni tier superior, na MESMA API (não é regra permanente — gerar, comparar
+resultado × custo com o barato). Avaliar áudio nativo antes de decidir voz. Critério
+de julgamento: **segundos retidos**, não beleza. Duração: testar take único esticado
+E emenda — nada decidido.
 
-### 3. Troca de modelo de vídeo
-Qualidade pra cima, frequência pra baixo, custo controlado. Testar candidatos
-(Omni atual × Higgsfield × outros), avaliar áudio nativo, duração máxima em take
-único. Decidir com os números da análise, não por impressão.
-
-### 4. Rodar e medir
-Publicar o novo plano, deixar rodar, e aí sim ligar a análise recorrente (ideia 2)
-e o comment-to-DM (ideia 1).
+### 3. Rodar e medir
+Publicar o novo plano, rodar experimentos, e ligar a análise recorrente (15–30 dias,
+`fetch-metrics.js` já coleta tudo, incluindo seguidores/dia e cliques na bio).
 
 ---
 

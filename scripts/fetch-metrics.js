@@ -30,11 +30,14 @@ const API       = 'https://graph.instagram.com/v23.0';
 
 const TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
 
-const CAMPOS_MIDIA = 'media_type,media_product_type,timestamp,like_count,comments_count,permalink';
+const CAMPOS_MIDIA = 'media_type,media_product_type,timestamp,like_count,comments_count,permalink,caption';
 // Conjunto válido pra REELS e FEED no v23; o que a mídia não suportar a API recusa
 // e a gente tenta o subconjunto básico.
 const METRICAS       = 'reach,likes,comments,shares,saved,views,total_interactions';
 const METRICAS_BASE  = 'reach,likes,comments';
+// Retenção — só existe pra REELS. É a métrica que mais importa: alcance sem tempo de
+// tela é vaidade. avg_watch_time vem em MILISSEGUNDOS.
+const METRICAS_REELS = 'ig_reels_avg_watch_time,ig_reels_video_view_total_time';
 
 function walkPublished(dir) {
   let out = [];
@@ -80,6 +83,17 @@ async function coletarMidia(mediaId) {
       avisoInsights = `insights indisponíveis: ${e2.message}`;
     }
   }
+
+  // Retenção (só REELS). Falha aqui não invalida o resto da coleta.
+  if (metricas && basico.media_product_type === 'REELS') {
+    try {
+      const ret = achatarInsights(await apiGet(`${mediaId}/insights?metric=${METRICAS_REELS}`));
+      metricas.avg_watch_time_ms = ret.ig_reels_avg_watch_time ?? null;
+      metricas.total_watch_time_ms = ret.ig_reels_video_view_total_time ?? null;
+    } catch (e) {
+      avisoInsights = [avisoInsights, `retenção indisponível: ${e.message}`].filter(Boolean).join(' | ');
+    }
+  }
   return { basico, metricas, avisoInsights };
 }
 
@@ -103,6 +117,29 @@ async function main() {
     console.warn(`   ⚠️  Não deu pra ler a conta: ${e.message}\n`);
   }
 
+  // Seguidores e cliques dos últimos 30 dias (limite da API). Cada coleta guarda a
+  // própria janela — rodando toda semana, o histórico se acumula nos arquivos.
+  let conta30d = null;
+  try {
+    const until = Math.floor(Date.now() / 1000);
+    const since = until - 30 * 86400;
+    const [seg, fluxo, cliques] = await Promise.all([
+      apiGet(`me/insights?metric=follower_count&period=day&since=${since}&until=${until}`),
+      apiGet(`me/insights?metric=follows_and_unfollows&period=day&metric_type=total_value&breakdown=follow_type&since=${since}&until=${until}`),
+      apiGet(`me/insights?metric=profile_views,website_clicks&period=day&metric_type=total_value&since=${since}&until=${until}`),
+    ]);
+    conta30d = {
+      seguidores_por_dia: (seg.data?.[0]?.values || []).map(v => ({ dia: v.end_time.slice(0, 10), ganho: v.value })),
+      saldo_seguidores: (fluxo.data?.[0]?.total_value?.breakdowns?.[0]?.results || [])
+        .reduce((s, r) => s + (r.value || 0), 0),
+      visitas_perfil: cliques.data?.find(m => m.name === 'profile_views')?.total_value?.value ?? null,
+      cliques_bio: cliques.data?.find(m => m.name === 'website_clicks')?.total_value?.value ?? null,
+    };
+    console.log(`   Últimos 30d: saldo ${conta30d.saldo_seguidores >= 0 ? '+' : ''}${conta30d.saldo_seguidores} seguidores · ${conta30d.cliques_bio} cliques na bio · ${conta30d.visitas_perfil} visitas\n`);
+  } catch (e) {
+    console.warn(`   ⚠️  Insights de conta indisponíveis: ${e.message}\n`);
+  }
+
   const itens = [];
   let ok = 0, semInsights = 0, falhas = 0;
 
@@ -124,14 +161,18 @@ async function main() {
         tipo: tipoPasta,
         media_id: pub.instagram_media_id,
         publicado_em: pub.published_at,
-        caption_preview: pub.caption_preview || null,
+        caption: basico.caption || pub.caption_preview || null,
         media_type: basico.media_type,
         media_product_type: basico.media_product_type,
         permalink: basico.permalink,
         metricas,
         aviso: avisoInsights,
       });
-      if (metricas) { ok++; process.stdout.write(`  ✓ ${pasta} — alcance ${metricas.reach ?? '?'}\n`); }
+      if (metricas) {
+        ok++;
+        const seg = metricas.avg_watch_time_ms ? ` · ${(metricas.avg_watch_time_ms / 1000).toFixed(1)}s` : '';
+        process.stdout.write(`  ✓ ${pasta} — alcance ${metricas.reach ?? '?'}${seg}\n`);
+      }
       else          { semInsights++; process.stdout.write(`  ○ ${pasta} — sem insights (${tipoPasta})\n`); }
     } catch (e) {
       falhas++;
@@ -146,6 +187,7 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify({
     _coletado_em: new Date().toISOString(),
     _conta: conta,
+    _conta_30d: conta30d,
     _totais: { publicacoes: itens.length, com_metricas: ok, sem_insights: semInsights, falhas },
     itens,
   }, null, 2), 'utf8');
