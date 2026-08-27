@@ -119,6 +119,25 @@ revisão final do Davi nos vídeos. Publicação agenda sozinha (pasta + cron).
 
 ---
 
+## 💡 Ideia registrada (27/08): expandir pra outras plataformas — PÓS-Instagram
+
+**Decisão do Davi: só depois que o Instagram estiver 100%** (65 vídeos gerados,
+overlay feito, tudo agendado). O material caro já existe; distribuir é barato.
+
+Ranking avaliado pro nosso caso (vídeo 9:16 de comida + tráfego pro app):
+1. **TikTok** — formato idêntico, algoritmo não pune conta nova, maior alcance de comida no BR
+2. **YouTube Shorts** — receita é BUSCADA; conteúdo acumula em vez de morrer em 48h
+3. **Facebook Reels** — mesma API Graph que já usamos + crosspost nativo; público 35-44 F = nosso
+4. **Pinterest** — pin É link (486 receitas com página pública); vida útil de meses; tráfego UTM
+5. **Threads** — vinculado ao IG, API própria, custo quase zero
+6. **X** — por último: comida PT-BR rende pouco, API de escrita paga
+
+**Atenção na adaptação:** não é só tom de texto — a arquitetura de CTA muda.
+"Comenta X → DM" é mecânica do Instagram; TikTok = link só na bio; Pinterest = o
+pin é o link; YouTube = link na descrição. Cada plataforma ganha seu `utm_source`.
+
+---
+
 ## Próximos passos, em ordem
 
 ### 1. Novo plano de comunicação ⬅️ EM EXECUÇÃO (virou o Ciclo 01)
