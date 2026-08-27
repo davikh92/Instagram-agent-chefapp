@@ -227,6 +227,13 @@ function extractCoverFrame(mp4Path, coverPath, timeSeconds = 2) {
 
 // ── Processamento de um reel ─────────────────────────────────────────────────
 
+// Hashtags podem vir como lista (filas do Ciclo 01) ou como texto (filas antigas).
+// Lista interpolada direto virava "#a,#b" — o Instagram quer separado por espaço.
+function juntarHashtags(hashtags) {
+  if (!hashtags) return '';
+  return Array.isArray(hashtags) ? hashtags.join(' ') : String(hashtags);
+}
+
 async function processReel(reelConfig, outRoot) {
   const { id, date, prompt, caption, hashtags } = reelConfig;
 
@@ -292,7 +299,7 @@ async function processReel(reelConfig, outRoot) {
   }
 
   if (caption) {
-    fs.writeFileSync(path.join(outDir, 'caption.txt'), `${caption}\n\n${hashtags || ''}`.trim(), 'utf8');
+    fs.writeFileSync(path.join(outDir, 'caption.txt'), `${caption}\n\n${juntarHashtags(hashtags)}`.trim(), 'utf8');
   }
 
   fs.writeFileSync(

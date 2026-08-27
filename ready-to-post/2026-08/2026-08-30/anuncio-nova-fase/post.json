@@ -1,0 +1,92 @@
+{
+  "id": "anuncio-nova-fase",
+  "date": "2026-08-30",
+  "archetype": "anuncio",
+  "funcao": "descoberta",
+  "gatilho_envio": "manda pra quem vive sem saber o que fazer pra janta",
+  "aspectRatio": "4:5",
+  "prompt": "A worn closed recipe notebook resting on a dark scratched wooden kitchen counter, a single hand just lifting away from its cover, dramatic single-source side lighting, warm golden 3800K from one window, deep shadows composing the frame, a faint curl of steam crossing the light, lush green plants out of focus in the dark background, film photography grain, muted palette with one warm amber highlight, 4K. Absolutely no text, no letters, no writing anywhere in the image.",
+  "slides": [
+    "A dark worn wooden table crowded edge to edge with many small plates of everyday Brazilian home food, dramatic single-source light raking across from the left, deep shadows pooling between the dishes, steam rising and catching the backlight, imperfect rustic surfaces, lush plants out of focus in the dark background, film photography grain, one vibrant tomato-red element against a muted palette, 4K. Absolutely no text, no letters, no writing anywhere in the image.",
+    "A home dinner table set and waiting, warm window light falling across two plates and a wooden board of fresh ingredients, a hand entering the frame placing a bowl down without showing a face, deep shadows, lush green plants out of focus, worn wooden surfaces, film photography grain, warm 3800K, one vibrant green herb element against a muted palette, 4K. Absolutely no text, no letters, no writing anywhere in the image."
+  ],
+  "overlays": [
+    {
+      "passo": "1/3",
+      "accent": "#E8784F",
+      "kicker": "nova fase",
+      "headline": "A gente refez tudo.<br><em>Do zero.</em>",
+      "headlineSize": 104,
+      "subtext": "O app que você conhecia virou outro — e não foi ajuste de detalhe.",
+      "rodape": "arrasta",
+      "seta": "→"
+    },
+    {
+      "passo": "2/3",
+      "accent": "#C49A3C",
+      "kicker": "o que mudou",
+      "headline": "Não foi retoque.<br>Foi <em>reconstrução</em>.",
+      "headlineSize": 82,
+      "subtext": "Em 45 dias, o acervo inteiro virou outro.",
+      "numeros": [
+        {
+          "valor": "419",
+          "rotulo": "receitas novas"
+        },
+        {
+          "valor": "7",
+          "rotulo": "cardápios da casa"
+        },
+        {
+          "valor": "45",
+          "rotulo": "dias"
+        }
+      ],
+      "rodape": "arrasta",
+      "seta": "→"
+    },
+    {
+      "passo": "3/3",
+      "accent": "#8FAF91",
+      "kicker": "começa aqui",
+      "headline": "Sua semana,<br><em>resolvida</em>.",
+      "headlineSize": 104,
+      "subtext": "Escolhe um cardápio da casa, a semana monta em minutos e a lista de compras sai junto.",
+      "rodape": "comenta NOVA",
+      "seta": "↓"
+    }
+  ],
+  "caption": "Fechamos um livro e abrimos outro.\n\nO Tem na Semana não é mais o mesmo app de dois meses atrás. E não foi ajuste de detalhe: foi reconstrução. Em 45 dias entraram 419 receitas novas e nasceram os 7 cardápios da casa — a semana inteira já montada, café, almoço e jantar, pensada por quem cozinha de verdade.\n\nMais limpo, mais rápido, mais fácil de usar. Você escolhe um cardápio, a semana monta em minutos e a lista de compras sai junto.\n\nAqui também começa fase nova: a partir de terça tem conteúdo em dias fixos — e domingo às 18h estreia uma história que a gente vai contar toda semana.\n\nComenta NOVA que te mando o link direto na sua DM 📩\n\nManda pra quem vive sem saber o que fazer pra janta 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#semanaresolvida",
+    "#cardapiodacasa",
+    "#listadecompras",
+    "#cardapiosemanal",
+    "#planejamentoalimentar",
+    "#comidareal",
+    "#semanaorganizada",
+    "#cozinhainteligente",
+    "#cozinhafacil",
+    "#receitasfaceis",
+    "#vidapratica",
+    "#organizacaofamiliar"
+  ],
+  "generatedAt": "2026-08-27T16:25:08.988Z",
+  "model": "gemini-3.1-flash-image",
+  "cloudinarySlides": [
+    {
+      "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787847756/luiza-generated/images/anuncio-nova-fase-slide-01.png",
+      "cloudinaryPublicId": "luiza-generated/images/anuncio-nova-fase-slide-01"
+    },
+    {
+      "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787847757/luiza-generated/images/anuncio-nova-fase-slide-02.png",
+      "cloudinaryPublicId": "luiza-generated/images/anuncio-nova-fase-slide-02"
+    },
+    {
+      "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787847758/luiza-generated/images/anuncio-nova-fase-slide-03.png",
+      "cloudinaryPublicId": "luiza-generated/images/anuncio-nova-fase-slide-03"
+    }
+  ],
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787847756/luiza-generated/images/anuncio-nova-fase-slide-01.png"
+}

@@ -1,34 +1,68 @@
 [
   {
-    "id": "post-domingo-07jun",
-    "date": "2026-06-07",
-    "aspectRatio": "3:4",
-    "prompt": "Top-down flat lay of a beautifully organized weekly meal plan spread on a dark worn wooden table. Small ceramic bowls with colorful ingredients — golden turmeric rice, dark roasted vegetables, bright green herbs, halved cherry tomatoes, olive oil in a small glass jar. Soft warm natural light from the side, 3800K. Deep moody shadows on table edges. Linen napkin folded in corner. Abundant, intentional, calm Sunday planning atmosphere. Film grain texture. Cinematic food styling, editorial magazine quality. 4:5 vertical.",
-    "caption": "Domingo é dia de decidir a semana inteira em 2 minutos. 🗓️\n\nCardápio montado, lista pronta, segunda-feira sem drama.\n\nComenta: você planeja a semana ou improvisa todo dia? 👇",
-    "hashtags": "#luizanacozinha #domingo #planejamentoalimentar #cardapiosemanal #mealprep #comidasaudavel #organizacaofamiliar #listadecompras"
-  },
-  {
-    "id": "post-domingo-14jun",
-    "date": "2026-06-14",
-    "aspectRatio": "3:4",
-    "prompt": "Close-up side view of a cozy kitchen windowsill with a steaming mug of tea, fresh herbs in small terracotta pots — basil, rosemary, thyme — morning golden hour light streaming through the window, 4200K warm diffused. Worn wooden windowsill with water marks and character. Blurred green garden outside. Calm, abundant, Sunday morning domestic atmosphere. Deep warmth and comfort. Film grain, cinematic depth of field. 4:5 vertical.",
-    "caption": "Domingo de recomeço. Semana nova, cardápio novo. 🌿\n\nVocê não precisa reinventar a roda toda semana — só ter um ponto de partida.\n\nComenta: qual prato não pode faltar na sua semana? 👇",
-    "hashtags": "#luizanacozinha #domingo #recomeço #planejamentoalimentar #comidasaudavel #rotinasaudavel #cozinhandoemcasa"
-  },
-  {
-    "id": "post-domingo-21jun",
-    "date": "2026-06-21",
-    "aspectRatio": "3:4",
-    "prompt": "Top-down medium shot of a rustic wooden table with an open handwritten recipe notebook showing ingredient lists in Portuguese, illustrated with small hand-drawn vegetables. Around it: three small terracotta pots with fresh herb seedlings — basil, rosemary, mint — a half-drunk cup of tea with a honey spoon resting on the saucer, scattered dried chamomile flowers. Soft warm morning light from a nearby window, 4200K. Personal, handcrafted, slow Sunday aesthetic. Film grain, editorial lifestyle photography. 3:4 vertical.",
-    "caption": "Domingo de receita nova. Qual vai ser a novidade da semana? 🌿\n\nTestar prato diferente é mais fácil quando alguém já sugeriu por você.\n\nComenta: qual receita você quer aprender? 👇",
-    "hashtags": "#luizanacozinha #domingo #planejamentoalimentar #ervas #receitanovas #cardapiosemanal #comidasaudavel"
-  },
-  {
-    "id": "post-domingo-28jun",
-    "date": "2026-06-28",
-    "aspectRatio": "3:4",
-    "prompt": "Overhead flat lay of six glass meal prep containers organized symmetrically on a dark slate surface, each filled with a different colorful meal — golden turmeric rice, dark leafy green salad, roasted root vegetables in terracotta colors, sliced grilled chicken, vibrant fruit salad, overnight oats with berries. Soft even natural light from above, 4000K. Masking tape labels handwritten in Portuguese on each lid. Organized, minimal, deeply satisfying composition. Film grain, organized lifestyle flat lay photography. 3:4 vertical.",
-    "caption": "Domingo preparado, semana conquistada. 🫙\n\nDuas horas de preparo hoje valem cinco jantares tranquilos depois.\n\nComenta: você é time meal prep ou cozinha na hora? 👇",
-    "hashtags": "#luizanacozinha #domingo #mealprep #preparacaoantecipada #planejamentoalimentar #organizacao #comidasaudavel"
+    "id": "anuncio-nova-fase",
+    "date": "2026-08-30",
+    "archetype": "anuncio",
+    "funcao": "descoberta",
+    "gatilho_envio": "manda pra quem vive sem saber o que fazer pra janta",
+    "aspectRatio": "4:5",
+    "prompt": "A worn closed recipe notebook resting on a dark scratched wooden kitchen counter, a single hand just lifting away from its cover, dramatic single-source side lighting, warm golden 3800K from one window, deep shadows composing the frame, a faint curl of steam crossing the light, lush green plants out of focus in the dark background, film photography grain, muted palette with one warm amber highlight, 4K. Absolutely no text, no letters, no writing anywhere in the image.",
+    "slides": [
+      "A dark worn wooden table crowded edge to edge with many small plates of everyday Brazilian home food, dramatic single-source light raking across from the left, deep shadows pooling between the dishes, steam rising and catching the backlight, imperfect rustic surfaces, lush plants out of focus in the dark background, film photography grain, one vibrant tomato-red element against a muted palette, 4K. Absolutely no text, no letters, no writing anywhere in the image.",
+      "A home dinner table set and waiting, warm window light falling across two plates and a wooden board of fresh ingredients, a hand entering the frame placing a bowl down without showing a face, deep shadows, lush green plants out of focus, worn wooden surfaces, film photography grain, warm 3800K, one vibrant green herb element against a muted palette, 4K. Absolutely no text, no letters, no writing anywhere in the image."
+    ],
+    "overlays": [
+      {
+        "passo": "1/3",
+        "accent": "#E8784F",
+        "kicker": "nova fase",
+        "headline": "A gente refez tudo.<br><em>Do zero.</em>",
+        "headlineSize": 104,
+        "subtext": "O app que você conhecia virou outro — e não foi ajuste de detalhe.",
+        "rodape": "arrasta",
+        "seta": "→"
+      },
+      {
+        "passo": "2/3",
+        "accent": "#C49A3C",
+        "kicker": "o que mudou",
+        "headline": "Não foi retoque.<br>Foi <em>reconstrução</em>.",
+        "headlineSize": 82,
+        "subtext": "Em 45 dias, o acervo inteiro virou outro.",
+        "numeros": [
+          { "valor": "419", "rotulo": "receitas novas" },
+          { "valor": "7", "rotulo": "cardápios da casa" },
+          { "valor": "45", "rotulo": "dias" }
+        ],
+        "rodape": "arrasta",
+        "seta": "→"
+      },
+      {
+        "passo": "3/3",
+        "accent": "#8FAF91",
+        "kicker": "começa aqui",
+        "headline": "Sua semana,<br><em>resolvida</em>.",
+        "headlineSize": 104,
+        "subtext": "Escolhe um cardápio da casa, a semana monta em minutos e a lista de compras sai junto.",
+        "rodape": "comenta NOVA",
+        "seta": "↓"
+      }
+    ],
+    "caption": "Fechamos um livro e abrimos outro.\n\nO Tem na Semana não é mais o mesmo app de dois meses atrás. E não foi ajuste de detalhe: foi reconstrução. Em 45 dias entraram 419 receitas novas e nasceram os 7 cardápios da casa — a semana inteira já montada, café, almoço e jantar, pensada por quem cozinha de verdade.\n\nMais limpo, mais rápido, mais fácil de usar. Você escolhe um cardápio, a semana monta em minutos e a lista de compras sai junto.\n\nAqui também começa fase nova: a partir de terça tem conteúdo em dias fixos — e domingo às 18h estreia uma história que a gente vai contar toda semana.\n\nComenta NOVA que te mando o link direto na sua DM 📩\n\nManda pra quem vive sem saber o que fazer pra janta 👇",
+    "hashtags": [
+      "#temnasemana",
+      "#semanaresolvida",
+      "#cardapiodacasa",
+      "#listadecompras",
+      "#cardapiosemanal",
+      "#planejamentoalimentar",
+      "#comidareal",
+      "#semanaorganizada",
+      "#cozinhainteligente",
+      "#cozinhafacil",
+      "#receitasfaceis",
+      "#vidapratica",
+      "#organizacaofamiliar"
+    ]
   }
 ]

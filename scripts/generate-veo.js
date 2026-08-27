@@ -266,6 +266,13 @@ function extractCoverFrame(mp4Path, coverPath, timeSeconds = 1.5) {
 /**
  * Processa um reel: gera vídeo + salva metadata + caption
  */
+// Hashtags podem vir como lista (filas do Ciclo 01) ou como texto (filas antigas).
+// Lista interpolada direto virava "#a,#b" — o Instagram quer separado por espaço.
+function juntarHashtags(hashtags) {
+  if (!hashtags) return '';
+  return Array.isArray(hashtags) ? hashtags.join(' ') : String(hashtags);
+}
+
 async function processReel(reelConfig) {
   const { id, date, prompt, caption, hashtags } = reelConfig;
 
@@ -331,7 +338,7 @@ async function processReel(reelConfig) {
     }
 
     // Salva caption.txt
-    const captionContent = `${caption}\n\n${hashtags}`;
+    const captionContent = `${caption}\n\n${juntarHashtags(hashtags)}`;
     fs.writeFileSync(path.join(outDir, 'caption.txt'), captionContent, 'utf8');
     console.log(`  ✓ caption.txt salvo`);
 
