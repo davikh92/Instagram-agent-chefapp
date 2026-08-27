@@ -124,13 +124,20 @@ revisão final do Davi nos vídeos. Publicação agenda sozinha (pasta + cron).
 **Decisão do Davi: só depois que o Instagram estiver 100%** (65 vídeos gerados,
 overlay feito, tudo agendado). O material caro já existe; distribuir é barato.
 
-Ranking avaliado pro nosso caso (vídeo 9:16 de comida + tráfego pro app):
-1. **TikTok** — formato idêntico, algoritmo não pune conta nova, maior alcance de comida no BR
-2. **YouTube Shorts** — receita é BUSCADA; conteúdo acumula em vez de morrer em 48h
-3. **Facebook Reels** — mesma API Graph que já usamos + crosspost nativo; público 35-44 F = nosso
-4. **Pinterest** — pin É link (486 receitas com página pública); vida útil de meses; tráfego UTM
-5. **Threads** — vinculado ao IG, API própria, custo quase zero
-6. **X** — por último: comida PT-BR rende pouco, API de escrita paga
+**Decidido com o Davi (27/08):**
+
+| Plataforma | Decisão | Observação |
+|---|---|---|
+| **TikTok** | ✅ vai | maior alcance de comida no BR; formato idêntico ao nosso |
+| **YouTube Shorts** | ✅ vai | **só Shorts, sem vídeo longo** — não entra na programação. Receita é BUSCADA: acumula em vez de morrer em 48h |
+| **Pinterest** | ✅ testar | o pin É link (486 receitas com página pública); vida útil de meses |
+| **Facebook Reels** | 🟡 oportunista | Davi acha datado, mas é a MESMA API Graph — custo marginal zero, então entra de carona |
+| **Threads** | 🟡 depois | vinculado ao IG, custo baixo; sem pressa |
+| **X** | ❌ fora | API de escrita paga — "nada que a gente tem que pagar pra fazer" |
+
+**Pendências pra checar quando chegar a hora:**
+- Existe canal no YouTube da marca? O Davi acha que hoje usa a conta pessoal dele — Shorts exige canal próprio (criar é grátis).
+- A API de publicação do TikTok exige app aprovado em auditoria; sem auditoria, publica só como rascunho/privado. Verificar antes de prometer automação completa.
 
 **Atenção na adaptação:** não é só tom de texto — a arquitetura de CTA muda.
 "Comenta X → DM" é mecânica do Instagram; TikTok = link só na bio; Pinterest = o
