@@ -1,0 +1,27 @@
+{
+  "id": "pt-03",
+  "date": "2026-09-19",
+  "archetype": "participacao",
+  "coverAt": 7,
+  "prompt": "Single continuous shot. Three ingredients in hard spotlight: sausages, potatoes, a jar of cream cheese — one second still. Then motion: potatoes sliced into thin rounds falling in a cascade, sausages cut diagonally, everything layered fast into a baking dish, cream cheese dolloped and dragged into streaks, cheese snowing over. Money shot: out of the oven bubbling, a spoon punching through the golden crust with a crack, lifting a steaming scoop with cheese stretching, backlit. Final beat: the scoop landing on a plate. Warm light, deep shadows, film grain. Dominant sound: the potato cascade, then the crust crack. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Como prometido: o trio da vergonha — que assado direito vira gratinado honesto que a casa disputa. **Sábado que vem: [A] sardinha em lata, macarrão e limão ou [B] pão amanhecido, leite e queijo? Comenta A ou B 👇**",
+  "hashtags": [
+    "#temnasemana",
+    "#oquetemnageladeira",
+    "#semanaresolvida",
+    "#comidareal",
+    "#semanaorganizada",
+    "#cozinhainteligente",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#dicasdecozinha",
+    "#vidapratica",
+    "#cozinhando"
+  ],
+  "generatedAt": "2026-08-27T15:18:00.031Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787843728/luiza-generated/veo/pt-03.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/pt-03",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787843729/luiza-generated/covers/pt-03-cover.png"
+}

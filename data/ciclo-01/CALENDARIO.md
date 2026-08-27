@@ -136,24 +136,30 @@ link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagr
 5. ✍️ **Participação** — mecânica + partida a frio + 5 reservas ([PARTICIPACAO.md](PARTICIPACAO.md)); `pt-03`+ são reativos por desenho
 6. ⬜ Stories de eco (ajuste da story-queue — depois da revisão dos blocos)
 
-## 📍 Produção — estado em 26/08 (fim do dia 1)
+## 📍 Produção — estado em 27/08 (dia 2)
 
-**22/65 gerados (~$22):**
-- ✅ Novela: **13/13 COMPLETA** (nv-12/13 saíram no retry noturno após o spend-rate esfriar)
-- ✅ Cardápios: **9/13** (cd-01…09) — faltam cd-10…13 (cota diária; retomar 27/08)
-- ⬜ Receitas rl (13) · rd (13) · Participação pt (13): filas ainda não criadas — os
-  textos estão prontos nos MDs, falta transcrever pra `fila/*.json` e gerar
-- ✅ Capas: todas no money shot, momento variado por vídeo (`coverAt`)
-- **Setembro precisa de 22 vídeos; 14 já existem.** Prazo confortável: 1ª publicação é
-  cd-01 em 01/09 (pronto). Novela inteira (T1+T2+T3) já no ar até 29/11.
+**38/65 gerados (~$38):**
+- ✅ **SETEMBRO COMPLETO — 22/22.** Nada mais a gerar pro mês de estreia.
+- ✅ Outubro: 11/21 · Novembro: 5/22
+- ✅ Novela 13/13 · Cardápios 9/13 · rl 8/13 · rd 4/13 · pt 4/13
+- ⏳ Faltam 27: `cd-10..13` · `rl-09..13` · `rd-05..13` · `pt-05..13`
+
+**Etapa nova — revisão de continuidade antes de gerar (decisão do Davi, 27/08):**
+todo prompt passa por leitura crítica antes da geração, procurando contradição entre
+o que a legenda promete e o que o vídeo mostra. A primeira rodada pegou 4:
+`rl-03` (creme × "sem creme de leite") · `pt-02` (mel × "sem açúcar") ·
+`pt-13` (4º ingrediente num desafio de 3) · `rd-09` (azeitona ausente da receita real).
+Sai mais barato do que refazer vídeo.
+
 
 **Limites da API descobertos na prática (importante pros lotes):**
 1. *Spend-rate*: ~$10 gastos em sequência → 429 temporário (esfria em ~1h)
 2. *Cota diária de requisições* → 429 até a virada do dia (fuso da conta Google)
 → Regra prática: lotes de ~5, respiro entre eles, ~15–20 vídeos/dia no máximo.
 
-**Amanhã (27/08):** transcrever filas rl/rd/pt → gerar restantes de setembro primeiro
-(rl-01…05, rd-01…04, pt-01…04, cd-10…13) → depois out/nov.
+**Rajada medida em 27/08:** 16 vídeos seguidos antes do 429 de spend-rate (ontem foram ~10).
+Continuação automática armada em background: espera 90 min, depois 3 lotes de 5 com 20 min
+de respiro entre eles. Sobra pro dia seguinte o que não couber.
 **Publicação NÃO precisa de agendamento manual:** pasta gerada + cron na grade nova =
 publicado sozinho no dia/hora. O "agendar tudo" já está feito por desenho.
 
