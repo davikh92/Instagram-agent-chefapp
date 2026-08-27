@@ -24,13 +24,13 @@ prompt:         EN, só AÇÃO/câmera/luz/som — consistência vem da imagem d
 legenda:        PT-BR, com o CTA DENTRO dela (CTA não é campo separado)
 hashtags:       mix 12-15 (brand.json → hashtags)
 voiceText:      fala curta estilo real, OU "—" (sem voz)
-overlay:        texto pós-geração via ffmpeg: falas / passos numerados / assinatura final
+overlay:        (DESCARTADO 27/08 — ver Decisões) texto ficaria pós-geração via ffmpeg
 modelo:         Omni Flash ($1) | Veo Lite ($0,40)
 ref_imagem:     data/ciclo-01/ref/ref-novela.png (episódios da novela) ou "—"
 link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagram&utm_campaign=<id>
 ```
 
-**Assinatura em TODO vídeo:** último ~1s, "Tem na Semana." em motion/texto — nunca narrada.
+**Assinatura no fim do vídeo:** desejada, ainda NÃO resolvida. Via ffmpeg está descartado (27/08). A testar: pedir na própria geração. Nunca narrada.
 
 ---
 
@@ -175,8 +175,11 @@ publicado sozinho no dia/hora. O "agendar tudo" já está feito por desenho.
 - **Colchão:** todo post gerado com 4+ dias de antecedência da publicação.
 - **Economia pontual aberta:** stories via batch API (metade do preço) · duração 8s
   nos slots que não precisam de 10 (exige campo `duration` por item — tarefa pequena).
-- **Experimento a testar 1×:** motion text renderizado NA geração (uma palavra curta) —
-  overlay ffmpeg continua sendo o padrão.
+- **Texto no vídeo — DECISÃO DO DAVI (27/08):** o **overlay ffmpeg foi descartado**.
+  Ele já conhece o resultado desse tipo de edição: estraga o vídeo. Assinatura no fim
+  e passos numerados continuam desejáveis, mas o caminho é **pedir na própria geração**
+  (Omni) — 1 vídeo de teste decide. Enquanto isso os reels publicam sem texto, e isso
+  **não é bloqueio de publicação** (não existe prazo de 01/09 — foi engano meu).
 
 ## 🔁 Refações por erro de geração (27/08)
 

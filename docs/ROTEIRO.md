@@ -114,15 +114,50 @@ brand.json sem a era carrossel), **20 vídeos já gerados** (~$20). Estado detal
 próximos lotes: `data/ciclo-01/CALENDARIO.md § Produção`.
 
 **Pendências pra estreia (01/09):** gerar os 45 restantes (27–28/08) · script de
-overlay ffmpeg (falas/passos/assinatura — ANTES de 01/09) · stories de eco ·
+stories de eco ·
 revisão final do Davi nos vídeos. Publicação agenda sozinha (pasta + cron).
+
+---
+
+## 🗓️ AGENDA DE TRABALHO — ordem acordada (27/08)
+
+Uma coisa por vez, na ordem. Nada começa antes de a anterior fechar.
+
+### 1. Terminar os vídeos ⬅️ AGORA
+22 restantes (`cd-10..13` · `rl-11..13` · `rd-07..13` · `pt-06..13`). 2–3 dias,
+limitado só pela cota diária da API. O Davi dá o sinal a cada dia.
+**43/65 prontos e auditados.**
+
+### 2. Teste de assinatura NA GERAÇÃO (1 vídeo, ~$1)
+Pedir a assinatura "Tem na Semana." e/ou números **dentro do prompt**, em vez de
+colar depois. Um vídeo decide se vira padrão do ciclo ou se fica sem texto mesmo.
+*Overlay ffmpeg: descartado — o Davi já testou, estraga o vídeo.*
+
+### 3. Tabela de DM
+Data + palavra que a pessoa comenta + link rastreado de cada `cd` e `rd`, pronta
+pro Davi programar na ferramenta de DM. Só faz sentido com os vídeos fechados.
+
+### 4. Rever os stories
+Fila vazia desde 28/07 — hoje roda só repost. Reescrever a fila de eco do ciclo.
+**Restrição do Davi: modelo de imagem barato** (o `gemini-3.1-flash-image`,
+~$0,04/imagem, que já está no `generate-story.js`), não o caro.
+
+### 5. Música — sem data
+Vai ajudar, mas não interrompe nada. Caminho provável: ferramenta de edição que
+já traz trilha. Entra quando a gente decidir que é a hora.
+
+### 6. Expansão multi-plataforma — depois de tudo acima
+TikTok · YouTube Shorts · Pinterest · Facebook de carona. Detalhes na seção abaixo.
+
+**Fora da agenda (com o Davi):** escolher bio, foto de perfil e campo Nome ·
+trocar o link da bio quando o domínio novo entrar no ar.
 
 ---
 
 ## 💡 Ideia registrada (27/08): expandir pra outras plataformas — PÓS-Instagram
 
-**Decisão do Davi: só depois que o Instagram estiver 100%** (65 vídeos gerados,
-overlay feito, tudo agendado). O material caro já existe; distribuir é barato.
+**Decisão do Davi: só depois que o Instagram estiver 100%** (65 vídeos gerados
+e agendados). O material caro já existe; distribuir é barato.
 
 **Decidido com o Davi (27/08):**
 
