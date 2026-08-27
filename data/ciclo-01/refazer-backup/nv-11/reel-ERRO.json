@@ -1,0 +1,25 @@
+{
+  "id": "nv-11",
+  "date": "2026-11-15",
+  "archetype": "novela",
+  "ref": "data/ciclo-01/ref/ref-novela.png",
+  "prompt": "Single continuous shot, no cuts. Two coffee cups on the counter, late-afternoon light. The fridge opens without hesitation, a hand pulling three ingredients in one confident sweep. The camera follows pasta hitting a hot pan with bursting cherry tomatoes, tossed high, olive oil catching the backlight in a golden arc. Money shot: the pasta tossed with the blistered tomatoes and torn basil, glossy strands lifting in macro, steam glowing. Final beat: two bowls set right on the counter, informal, two forks twirling side by side. Warm dusk light, deep shadows, film grain. Dominant sound: the tomato pops, then the pan toss. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Café das 17h que vira jantar das 19h: o teste supremo de uma cozinha resolvida.\n\nQuando a semana tá planejada, visita inesperada é alegria — não pânico.\n\nManda pra amiga que sempre fica pro jantar 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#receberemcasa",
+    "#comidadeverdade",
+    "#cozinhafacil",
+    "#vidapratica",
+    "#macarrao",
+    "#jantarrapido",
+    "#amigas",
+    "#visita"
+  ],
+  "generatedAt": "2026-08-26T19:04:40.484Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787770928/luiza-generated/veo/nv-11.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/nv-11",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787770929/luiza-generated/covers/nv-11-cover.png"
+}

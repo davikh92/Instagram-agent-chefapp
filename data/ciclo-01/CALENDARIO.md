@@ -170,3 +170,14 @@ publicado sozinho no dia/hora. O "agendar tudo" já está feito por desenho.
   nos slots que não precisam de 10 (exige campo `duration` por item — tarefa pequena).
 - **Experimento a testar 1×:** motion text renderizado NA geração (uma palavra curta) —
   overlay ffmpeg continua sendo o padrão.
+
+## 🔁 Refações por erro de geração (27/08)
+
+| Post | Erro visto pelo Davi | Causa | Correção no prompt |
+|---|---|---|---|
+| `nv-11` | Duas mãos ao provar o prato | Beat final pedia `two forks twirling side by side` (2 pessoas) com ref de 1 pessoa só → modelo duplicou membros | Beat final virou uma mão deslizando a 2ª tigela + trava explícita: *"only one hand is ever visible... no tasting from a spoon"* |
+| `cd-03` | Bate os ovos mas entrega ovo frito | **Prompt contraditório:** pedia `whisked fast` E `fried egg, yolk catching backlight` — impossível | Ovo quebrado inteiro direto na frigideira + trava: *"never beaten or whisked; the yolk stays whole from pan to plate"* |
+
+**Lição pro resto da fila:** todo prompt precisa passar no teste de continuidade —
+o que acontece com o ingrediente no meio tem que bater com o que aparece no money shot.
+Vídeos com erro guardados em `data/ciclo-01/refazer-backup/` (não apagados).
