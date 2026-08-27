@@ -1,7 +1,7 @@
 [
   {
     "id": "anuncio-nova-fase",
-    "date": "2026-08-30",
+    "date": "2026-08-31",
     "archetype": "anuncio",
     "funcao": "descoberta",
     "gatilho_envio": "manda pra quem vive sem saber o que fazer pra janta",
@@ -30,8 +30,14 @@
         "headlineSize": 76,
         "subtext": "Café, almoço e jantar da semana inteira — testado e assinado por chef de verdade.",
         "numeros": [
-          { "valor": "486", "rotulo": "receitas" },
-          { "valor": "7", "rotulo": "cardápios da casa" }
+          {
+            "valor": "486",
+            "rotulo": "receitas"
+          },
+          {
+            "valor": "7",
+            "rotulo": "cardápios da casa"
+          }
         ],
         "rodape": "arrasta",
         "seta": "→"

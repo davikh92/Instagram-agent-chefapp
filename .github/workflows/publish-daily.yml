@@ -4,7 +4,7 @@ on:
   schedule:
     # Horários em UTC (BRT = UTC-3) — grade do Ciclo 01 (set-nov/2026)
     - cron: '0 21 * * 0'   # Dom 18h BRT — Novela das 18h
-    - cron: '0 21 * * 1'   # Seg 18h BRT — catchup (último post da grade antiga: 31/08)
+    - cron: '0 21 * * 1'   # Seg 18h BRT — catchup (31/08: anúncio da nova fase; depois no-op)
     - cron: '0 21 * * 2'   # Ter 18h BRT — Cardápio da Semana DM
     - cron: '0 21 * * 3'   # Qua 18h BRT — Receita LEGENDA
     - cron: '0 22 * * 4'   # Qui 19h BRT — Receita DM (grade experimental de outubro)
