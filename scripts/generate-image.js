@@ -173,8 +173,10 @@ async function processItem(config, browser = null) {
 
       if (overlays[i]) {
         if (!browser) throw new Error('item tem overlays mas o navegador não foi aberto');
+        // Guarda o fundo cru: trocar o TEXTO depois não exige regerar a imagem
+        fs.writeFileSync(path.join(outDir, `bg-0${i + 1}.png`), buf);
         buf = await comporSlide(buf, overlays[i], browser);
-        console.log(`     ✎ overlay aplicado`);
+        console.log(`     ✎ overlay aplicado (fundo cru em bg-0${i + 1}.png)`);
       }
 
       const sp = path.join(outDir, `slide-0${i + 1}.png`);
