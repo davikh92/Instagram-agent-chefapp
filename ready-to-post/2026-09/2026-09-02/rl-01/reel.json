@@ -1,0 +1,29 @@
+{
+  "id": "rl-01",
+  "date": "2026-09-02",
+  "archetype": "receita-legenda",
+  "coverAt": 6,
+  "prompt": "Single continuous shot. Chicken thighs patted dry, laid skin-down into a cold pan that ticks alight — the sizzle building slowly from silence to a roar as fat renders and edges crisp. Money shot: one thigh lifted to reveal deep golden shattering skin, then flipped, butter melting and foaming around it, spooned over in macro. Final beat: sliced on a board, crust crackling audibly, steam backlit. Warm 3200K side light, deep shadows, film grain. Dominant sound: the building sizzle, then the crackle of the crust. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Frango de frigideira com casca crocante — sem forno, sem fritura funda.\n🧾 4 sobrecoxas desossadas · sal · alho · limão · 1 colher de manteiga\n1. Tempere e seque BEM o frango com papel toalha. 2. Pele pra baixo na frigideira FRIA, aí liga o fogo médio — 12 min sem mexer. 3. Vira, 4 min, manteiga no fim.\n💡 Começar com a frigideira fria derrete a gordura devagar — é isso que faz a pele virar casca. Salva pra fazer quarta 📌",
+  "hashtags": [
+    "#temnasemana",
+    "#semanaresolvida",
+    "#cardapiodacasa",
+    "#cardapiosemanal",
+    "#planejamentoalimentar",
+    "#comidareal",
+    "#semanaorganizada",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#dicasdecozinha",
+    "#vidapratica",
+    "#frango",
+    "#jantarrapido"
+  ],
+  "generatedAt": "2026-08-27T15:07:31.275Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787843098/luiza-generated/veo/rl-01.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/rl-01",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787843100/luiza-generated/covers/rl-01-cover.png"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "rd-04",
+  "date": "2026-09-25",
+  "archetype": "receita-dm",
+  "coverAt": 5.5,
+  "link_dm": "https://luizanacozinha.com/receita/4721636d-90fb-4712-87fb-be4a02207183?utm_source=instagram&utm_campaign=rd-04",
+  "prompt": "Single continuous shot. Opens mid-action: a white fillet dredged through flour with one swipe and laid into foaming butter, an immediate gentle roar, edges lacing gold. The camera holds as it flips to reveal a delicate golden crust. Capers rain into the butter and pop like tiny fireworks, lemon squeezed straight in — juice hissing. Money shot: the pale silky sauce spooned over the fillet in repeated glossy bastes, then a fork pressing down — the fish flaking open in snow-white layers with steam escaping, backlit, in extreme macro. Final beat: plated with the caper butter pooling, lemon slice laid over. Warm light, deep shadows, film grain. Dominant sound: the butter roar, then the caper pops. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "A técnica italiana que transforma qualquer peixe branco barato em prato de bistrô\n\nPeixe de quarta que tem cara de sábado.\n\nQuer o passo a passo completo, com a lista de compras junto? Comenta RECEITA que te mando o link na DM 📩\n\nManda pra quem só sabe fazer peixe no forno 👇",
+  "hashtags": [
+    "#temnasemana",
+    "#semanaresolvida",
+    "#listadecompras",
+    "#cardapiosemanal",
+    "#planejamentoalimentar",
+    "#comidareal",
+    "#cozinhainteligente",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#dicasdecozinha",
+    "#vidapratica",
+    "#peixe",
+    "#tilapia"
+  ],
+  "generatedAt": "2026-08-27T15:14:51.485Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787843539/luiza-generated/veo/rd-04.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/rd-04",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787843540/luiza-generated/covers/rd-04-cover.png"
+}
