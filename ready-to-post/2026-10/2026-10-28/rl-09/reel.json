@@ -1,0 +1,29 @@
+{
+  "id": "rl-09",
+  "date": "2026-10-28",
+  "archetype": "receita-legenda",
+  "coverAt": 5.5,
+  "prompt": "Single continuous shot. Eggs, milk and oil vortexing in a blender, flour clouding in. The batter pours in a wide ribbon into a dish, vegetables scattering across it — corn, tomato, carrot confetti — second ribbon of batter sealing them in. Money shot: the golden dome out of the oven, a knife cutting a square and lifting it to reveal the vegetables suspended inside like a mosaic, steam escaping, backlit. Final beat: the square wrapped for a lunchbox. Warm light, film grain. Dominant sound: the blender vortex, then the knife cut. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Torta de liquidificador que aceita QUALQUER legume parado na gaveta.\n🧾 3 ovos · 1 xíc. de leite · 1/2 xíc. de óleo · 1,5 xíc. de farinha · 1 col. de fermento · recheio: o que tiver (tomate, milho, cenoura, queijo)\n1. Bate os líquidos com a farinha (fermento por último, na colher). 2. Metade da massa, recheio, resto da massa. 3. Forno 180° por 35 min.\n💡 O fermento NUNCA vai no liquidificador — bater mata a força dele. Salva pra lancheira de amanhã 📌",
+  "hashtags": [
+    "#temnasemana",
+    "#semanaresolvida",
+    "#cardapiodacasa",
+    "#cardapiosemanal",
+    "#planejamentoalimentar",
+    "#comidareal",
+    "#semanaorganizada",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#dicasdecozinha",
+    "#vidapratica",
+    "#torta",
+    "#lancheira"
+  ],
+  "generatedAt": "2026-08-27T16:53:07.277Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787849435/luiza-generated/veo/rl-09.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/rl-09",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787849436/luiza-generated/covers/rl-09-cover.png"
+}

@@ -138,11 +138,12 @@ link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagr
 
 ## 📍 Produção — estado em 27/08 (dia 2)
 
-**38/65 gerados (~$38):**
-- ✅ **SETEMBRO COMPLETO — 22/22.** Nada mais a gerar pro mês de estreia.
-- ✅ Outubro: 11/21 · Novembro: 5/22
-- ✅ Novela 13/13 · Cardápios 9/13 · rl 8/13 · rd 4/13 · pt 4/13
-- ⏳ Faltam 27: `cd-10..13` · `rl-09..13` · `rd-05..13` · `pt-05..13`
+**43/65 gerados (~$43) — auditoria de 27/08: zero problemas nos 43:**
+- ✅ **SETEMBRO COMPLETO — 22/22** + anúncio de 30/08 (carrossel)
+- ✅ Novela 13/13 · rl 10/13 · Cardápios 9/13 · rd 6/13 · pt 5/13
+- ⏳ Faltam 22: `cd-10..13` · `rl-11..13` · `rd-07..13` · `pt-06..13`
+- Auditoria checou: cloudinaryUrl, mp4, capa, legenda, hashtags, prompt
+  atual da fila, ref da novela e UTM nos links de DM — item a item.
 
 **Etapa nova — revisão de continuidade antes de gerar (decisão do Davi, 27/08):**
 todo prompt passa por leitura crítica antes da geração, procurando contradição entre

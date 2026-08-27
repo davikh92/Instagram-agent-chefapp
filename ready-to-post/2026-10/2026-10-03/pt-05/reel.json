@@ -1,0 +1,27 @@
+{
+  "id": "pt-05",
+  "date": "2026-10-03",
+  "archetype": "participacao",
+  "coverAt": 7.5,
+  "prompt": "Single continuous shot. Three ingredients in hard spotlight: a hard day-old baguette, a bottle of milk, a block of cheese — one second still. Then motion: the bread sliced thick, dunked into seasoned milk that soaks visibly into the crumb, slices laid into a buttered dish, cheese grated over in a blizzard. Money shot: out of the oven — the top golden and blistered, a spatula lifting one slice with cheese pulling in long strands, custardy interior steaming, backlit. Final beat: a bite cut, the soft center collapsing. Warm light, deep shadows, film grain. Dominant sound: the milk soak, then the cheese pull. No speech, no voice, no narration, no dialogue, no music.",
+  "caption": "Como prometido: o pão de ontem que vira torrada de forno cremosa — quase uma rabanada salgada de queijo. **Sábado que vem: [A] carne moída, cenoura e batata-doce ou [B] atum, ovo e batata? Comenta A ou B 👇**",
+  "hashtags": [
+    "#temnasemana",
+    "#oquetemnageladeira",
+    "#semanaresolvida",
+    "#comidareal",
+    "#semanaorganizada",
+    "#cozinhainteligente",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#dicasdecozinha",
+    "#vidapratica",
+    "#cozinhando"
+  ],
+  "generatedAt": "2026-08-27T17:36:40.496Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787852048/luiza-generated/veo/pt-05.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/pt-05",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787852049/luiza-generated/covers/pt-05-cover.png"
+}
