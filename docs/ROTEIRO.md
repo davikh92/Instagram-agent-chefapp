@@ -119,6 +119,28 @@ revisão final do Davi nos vídeos. Publicação agenda sozinha (pasta + cron).
 
 ---
 
+## 🔴 ACHADO EM 28/08 — renovação do token falha em silêncio
+
+**O workflow `refresh-token` fica VERDE mas não atualiza o secret.** O último passo
+morre com `HTTP 403: Resource not accessible by personal access token` — o `GH_PAT`
+não tem permissão de escrever secrets. Roda desde 15/06 assim.
+
+Consequência: o `INSTAGRAM_ACCESS_TOKEN` no GitHub está congelado em **23/07**.
+O token funciona hoje (verificado: conta `temnasemana`, 4.957 seguidores, 85 posts),
+mas quem publica é o GitHub Actions — e ele usa a cópia que não se renova.
+
+**Correção (é do Davi, exige acesso à conta GitHub):**
+1. Gerar um PAT novo com permissão de **Secrets: Read and write** neste repositório
+   (fine-grained) ou escopo `repo` (clássico)
+2. Salvar em `GH_PAT` nos secrets do repo
+3. Rodar `refresh-token` manualmente e confirmar a linha
+   `✅ Secret INSTAGRAM_ACCESS_TOKEN atualizado no GitHub`
+
+**Correção do meu lado (pendente):** fazer o workflow FALHAR quando esse passo falhar,
+em vez de reportar sucesso. Check verde mentindo é pior que erro.
+
+---
+
 ## 🗓️ AGENDA DE TRABALHO — ordem acordada (27/08)
 
 Uma coisa por vez, na ordem. Nada começa antes de a anterior fechar.
