@@ -38,22 +38,50 @@ jobs:
         run: node scripts/refresh-token.js
 
       - name: Atualizar Secret do GitHub
-        # Requer GH_PAT com permissão de secrets:write no repo.
-        # Não é fatal: publicações continuam com o token atual mesmo se este step falhar.
-        continue-on-error: true
+        # ESTE PASSO NAO PODE FALHAR EM SILENCIO.
+        # Quem publica e o Actions, e ele usa o SECRET — nao o .env local.
+        # Se o secret nao for atualizado, o token congela e a publicacao morre
+        # no dia em que ele expirar, sem aviso nenhum.
+        # (Era 'continue-on-error: true' e mascarou um 403 de jun a ago/2026.)
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          if [ -z "$GH_TOKEN" ]; then
-            echo "⚠️  GH_PAT não configurado — pulando atualização do secret."
-            exit 0
+          set -euo pipefail
+
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::error::GH_PAT ausente — sem ele o token do Instagram nunca se renova."
+            echo "Como resolver: gere um PAT com 'Secrets: Read and write' neste repo"
+            echo "e salve em Settings > Secrets and variables > Actions > GH_PAT."
+            exit 1
           fi
-          if [ -f /tmp/new_instagram_token.txt ]; then
-            NEW_TOKEN=$(cat /tmp/new_instagram_token.txt)
-            echo "$NEW_TOKEN" | gh secret set INSTAGRAM_ACCESS_TOKEN \
-              --repo "$GITHUB_REPOSITORY"
-            rm /tmp/new_instagram_token.txt
-            echo "✅ Secret INSTAGRAM_ACCESS_TOKEN atualizado no GitHub."
-          else
-            echo "⚠️  Arquivo de token não encontrado — verifique o log acima."
+
+          if [ ! -f /tmp/new_instagram_token.txt ]; then
+            echo "::error::O refresh nao gerou token novo — veja o log do passo anterior."
+            exit 1
           fi
+
+          NEW_TOKEN=$(cat /tmp/new_instagram_token.txt)
+          rm -f /tmp/new_instagram_token.txt
+
+          if ! echo "$NEW_TOKEN" | gh secret set INSTAGRAM_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY"; then
+            echo "::error::Falha ao gravar o secret. 403 = o PAT nao tem permissao de escrever secrets."
+            echo "Como resolver: o GH_PAT precisa de 'Secrets: Read and write' neste repositorio"
+            echo "(fine-grained) ou do escopo 'repo' (classico). Depois rode este workflow de novo."
+            exit 1
+          fi
+
+          echo "✅ Secret INSTAGRAM_ACCESS_TOKEN atualizado no GitHub."
+
+      - name: Confirmar que o token gravado publica
+        # Rede de seguranca: confirma que o token que o Actions usa responde de fato.
+        env:
+          TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          IG_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+        run: |
+          set -euo pipefail
+          RESP=$(curl -s "https://graph.instagram.com/v21.0/${IG_ID}?fields=username&access_token=${TOKEN}")
+          if ! echo "$RESP" | grep -q '"username"'; then
+            echo "::error::O token do secret nao responde: $RESP"
+            exit 1
+          fi
+          echo "Conta respondendo: $RESP"
