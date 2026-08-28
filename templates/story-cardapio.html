@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1920px;
+    position: relative; overflow: hidden;
+    background: #1E1810;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  .bg {
+    position: absolute; inset: 0;
+    background-image: url("data:image/png;base64,{{BG_BASE64}}");
+    background-size: cover; background-position: center;
+  }
+
+  /* Escurece de baixo pra cima: o texto vive embaixo, a comida respira em cima */
+  .scrim {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to top,
+        rgba(19,16,13,.97) 0%, rgba(19,16,13,.93) 38%,
+        rgba(19,16,13,.55) 60%, rgba(19,16,13,.15) 78%, rgba(19,16,13,.55) 100%);
+  }
+
+  .grain {
+    position: absolute; inset: 0; opacity: .45; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.14 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* Faixa livre no topo: é onde o adesivo de link vai ser colado na mão */
+  .marca {
+    position: absolute; top: 300px; left: 72px; right: 72px;
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'DM Mono', monospace; font-size: 21px;
+    letter-spacing: .22em; text-transform: uppercase; color: #F7F2EA;
+  }
+  .ponto { width: 10px; height: 10px; border-radius: 50%; background: {{ACCENT}}; }
+  .gratis {
+    margin-left: auto; background: {{ACCENT}}; color: #1E1810;
+    font-size: 18px; letter-spacing: .16em; padding: 5px 14px; border-radius: 99px;
+  }
+
+  .conteudo {
+    position: absolute; left: 72px; right: 72px; bottom: 132px;
+    display: flex; flex-direction: column;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: {{TITULO_SIZE}}px; line-height: .90; letter-spacing: .012em;
+    color: #FFFDF9; text-shadow: 0 4px 34px rgba(0,0,0,.6);
+  }
+
+  .sub {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 46px; line-height: 1.25; color: {{ACCENT}};
+    margin-top: 16px;
+  }
+
+  /* Ficha: os números que o app entrega e que decidem a escolha */
+  .ficha {
+    display: flex; align-items: center; gap: 22px;
+    margin-top: 34px; padding: 20px 0;
+    border-top: 1px solid rgba(247,242,234,.26);
+    border-bottom: 1px solid rgba(247,242,234,.26);
+    font-family: 'DM Mono', monospace;
+  }
+  .ficha .item { display: flex; flex-direction: column; gap: 3px; }
+  .ficha .n { font-size: 40px; color: #FFFDF9; line-height: 1; }
+  .ficha .r { font-size: 17px; letter-spacing: .1em; text-transform: uppercase; color: #B9AE9C; }
+  .ficha .div { width: 1px; height: 46px; background: rgba(247,242,234,.22); }
+
+  .quem { margin-top: 30px; }
+  .quem .rot {
+    font-family: 'DM Mono', monospace; font-size: 18px; letter-spacing: .2em;
+    text-transform: uppercase; color: {{ACCENT}};
+  }
+  .quem p { font-size: 33px; line-height: 1.38; color: #EDE4D3; margin-top: 10px; }
+
+  .beneficios { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .beneficios span {
+    font-size: 26px; color: #F7F2EA;
+    background: rgba(247,242,234,.11);
+    border: 1px solid rgba(247,242,234,.2);
+    padding: 9px 18px; border-radius: 99px;
+  }
+
+  .cta {
+    margin-top: 38px; display: flex; align-items: center; gap: 12px;
+    font-family: 'DM Mono', monospace; font-size: 27px;
+    letter-spacing: .05em; color: #FFFDF9;
+  }
+  .seta { color: {{ACCENT}}; font-size: 32px; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="grain"></div>
+
+  <div class="marca">
+    <span class="ponto"></span>Cardápio da casa
+    {{BADGE_GRATIS}}
+  </div>
+
+  <div class="conteudo">
+    <h1>{{TITULO}}</h1>
+    <div class="sub">{{SUBTITULO}}</div>
+
+    <div class="ficha">
+      <div class="item"><span class="n">{{DIAS}}</span><span class="r">dias</span></div>
+      <div class="div"></div>
+      <div class="item"><span class="n">{{RECEITAS}}</span><span class="r">receitas</span></div>
+      <div class="div"></div>
+      <div class="item"><span class="n">{{MINUTOS}}</span><span class="r">min por refeição</span></div>
+    </div>
+
+    <div class="quem">
+      <div class="rot">pra quem é</div>
+      <p>{{PUBLICO}}</p>
+    </div>
+
+    <div class="beneficios">{{BENEFICIOS}}</div>
+
+    <div class="cta"><span class="seta">↑</span>{{CTA}}</div>
+  </div>
+</body>
+</html>
