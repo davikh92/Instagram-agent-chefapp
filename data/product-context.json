@@ -133,6 +133,7 @@
   "atual": {
     "receitas": {
       "total": 486,
+      "padrao_de_url": "https://temnasemana.com.br/receita/{id}",
       "url_da_estante": "https://temnasemana.com.br/receitas",
       "sao_paginas_publicas": true
     },
@@ -141,8 +142,24 @@
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/detox-pos-festa",
         "slug": "detox-pos-festa",
+        "tags": [
+          "Leve",
+          "Digestivo",
+          "Antioxidante",
+          "Hidratante"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "moderado",
+          "receitas": 28,
+          "categoria": "Detox",
+          "refeicoes": 28,
+          "dificuldade": "facil",
+          "minutos_por_refeicao": 25
+        },
         "titulo": "Detox Pós-Festa",
         "gratuito": true,
+        "descricao": "Cardápio leve e digestivo com sopas nutritivas, sucos verdes, smoothies revitalizantes e pratos de fácil digestão. Ideal para quem exagerou nas festas ou quer dar um reset no corpo.",
         "subtitulo": "Reset completo para o seu corpo",
         "beneficios": [
           "Digestão melhorada",
@@ -151,13 +168,106 @@
           "Menos inchaço",
           "Sono melhor"
         ],
-        "publico_alvo": "Pessoas que exageraram nas festas ou querem iniciar uma alimentação mais saudável"
+        "restricoes": [
+          "Sem açúcar refinado",
+          "Sem frituras",
+          "Sem processados"
+        ],
+        "nota_da_chef": "Esse cardápio foi pensado com carinho para quem precisa dar um respiro ao corpo. Use ingredientes frescos e orgânicos sempre que possível! 🌿",
+        "publico_alvo": "Pessoas que exageraram nas festas ou querem iniciar uma alimentação mais saudável",
+        "foco_nutricional": [
+          "Rica em fibras",
+          "Baixo sódio",
+          "Antioxidantes",
+          "Hidratação"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/89c9b3dc-15fd-4d99-b270-3f8dce634abb",
+            "titulo": "Smoothie Verde de Espinafre com Abacaxi",
+            "minutos": 8
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/1cf2a3e5-3474-483d-955b-1bcb087401fc",
+            "titulo": "Tabule com Grão-de-Bico e Tomate Cereja",
+            "minutos": 20
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/fd7b580b-958a-4276-8879-5427997ac062",
+            "titulo": "Paleta de Frutas com Água de Coco e Hortelã",
+            "minutos": 30
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/5794ecf6-9e21-41af-b48d-86614ba907bd",
+            "titulo": "Sopa de Abóbora com Gengibre e Sementes",
+            "minutos": 35
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/1f2fedf9-98a7-4869-9ff2-24213c2ffd33",
+            "titulo": "Vitamina de Mamão com Aveia e Mel",
+            "minutos": 8
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/07868446-2a66-4aa0-9ed8-994b5aaf4edb",
+            "titulo": "Espeto de Peixe Grelhado com Chimichurri",
+            "minutos": 25
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/89c9b3dc-15fd-4d99-b270-3f8dce634abb",
+              "titulo": "Smoothie Verde de Espinafre com Abacaxi",
+              "minutos": 8,
+              "momento": "cafe_manha",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/1cf2a3e5-3474-483d-955b-1bcb087401fc",
+              "titulo": "Tabule com Grão-de-Bico e Tomate Cereja",
+              "minutos": 20,
+              "momento": "almoco",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/fd7b580b-958a-4276-8879-5427997ac062",
+              "titulo": "Paleta de Frutas com Água de Coco e Hortelã",
+              "minutos": 30,
+              "momento": "lanche",
+              "porcoes": 6
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/5794ecf6-9e21-41af-b48d-86614ba907bd",
+              "titulo": "Sopa de Abóbora com Gengibre e Sementes",
+              "minutos": 35,
+              "momento": "jantar",
+              "porcoes": 4
+            }
+          ]
+        }
       },
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/emagrecimento-consciente",
         "slug": "emagrecimento-consciente",
+        "tags": [
+          "Baixa caloria",
+          "Saciedade",
+          "Nutritivo",
+          "Termogênico"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "moderado",
+          "receitas": 28,
+          "categoria": "Emagrecimento",
+          "refeicoes": 28,
+          "dificuldade": "medio",
+          "minutos_por_refeicao": 30
+        },
         "titulo": "Emagrecimento Consciente",
         "gratuito": false,
+        "descricao": "Receitas com baixo teor calórico mas ricas em nutrientes e sabor. Priorizamos a saciedade através de proteínas magras, fibras e gorduras boas. Nada de passar fome — aqui você come bem e emagrece com saúde.",
         "subtitulo": "Foco em saúde e resultados sustentáveis",
         "beneficios": [
           "Redução de medidas",
@@ -166,13 +276,106 @@
           "Controle de compulsão",
           "Rotina que se mantém"
         ],
-        "publico_alvo": "Quem busca perder peso de forma saudável sem dietas restritivas ou passar fome"
+        "restricoes": [
+          "Sem açúcar refinado",
+          "Carboidratos controlados",
+          "Sem frituras"
+        ],
+        "nota_da_chef": "Emagrecer não é sobre restrição, é sobre escolhas inteligentes. Cada receita foi pensada para nutrir seu corpo enquanto você alcança seus objetivos! 💪",
+        "publico_alvo": "Quem busca perder peso de forma saudável sem dietas restritivas ou passar fome",
+        "foco_nutricional": [
+          "Alta proteína",
+          "Rica em fibras",
+          "Baixo índice glicêmico",
+          "Gorduras boas"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/990d714c-b3e9-4e45-b675-bf1585d9e186",
+            "titulo": "Omelete de Espinafre e Queijo na Frigideira",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/dfe50624-bb69-4e44-a3e4-43a2736c5cf1",
+            "titulo": "Bowl de Frango Grelhado com Quinoa e Abacate",
+            "minutos": 25
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/f7ecd2ab-f45b-40f8-a61a-1c18a8e374f5",
+            "titulo": "Iogurte Grego com Granola e Frutas Vermelhas",
+            "minutos": 5
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/ecb4e244-30d3-4e62-9989-74be2562e0c1",
+            "titulo": "Filé de Peixe Assado com Crosta de Ervas e Limão",
+            "minutos": 25
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/ffb3f4e1-0372-4ad5-ae11-2b01503c063c",
+            "titulo": "Crepioca de Queijo Minas com Tomate",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/32aa450c-ecf9-4074-8cc9-230149c9ef46",
+            "titulo": "Carne Moída Refogada com Legumes e Arroz",
+            "minutos": 25
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/990d714c-b3e9-4e45-b675-bf1585d9e186",
+              "titulo": "Omelete de Espinafre e Queijo na Frigideira",
+              "minutos": 15,
+              "momento": "cafe_manha",
+              "porcoes": 1
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/dfe50624-bb69-4e44-a3e4-43a2736c5cf1",
+              "titulo": "Bowl de Frango Grelhado com Quinoa e Abacate",
+              "minutos": 25,
+              "momento": "almoco",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/f7ecd2ab-f45b-40f8-a61a-1c18a8e374f5",
+              "titulo": "Iogurte Grego com Granola e Frutas Vermelhas",
+              "minutos": 5,
+              "momento": "lanche",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/ecb4e244-30d3-4e62-9989-74be2562e0c1",
+              "titulo": "Filé de Peixe Assado com Crosta de Ervas e Limão",
+              "minutos": 25,
+              "momento": "jantar",
+              "porcoes": 2
+            }
+          ]
+        }
       },
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/massa-e-forca",
         "slug": "massa-e-forca",
+        "tags": [
+          "Rica em proteína",
+          "Pré-treino",
+          "Pós-treino",
+          "Alto carboidrato"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "premium",
+          "receitas": 28,
+          "categoria": "Fitness",
+          "refeicoes": 28,
+          "dificuldade": "medio",
+          "minutos_por_refeicao": 35
+        },
         "titulo": "Massa & Força",
         "gratuito": false,
+        "descricao": "Cardápio rico em proteínas de alta qualidade e carboidratos complexos, ideal para quem busca ganho de massa muscular e performance nos treinos. Refeições calibradas para pré e pós-treino.",
         "subtitulo": "Alimentação para quem treina pesado",
         "beneficios": [
           "Ganho de massa",
@@ -181,13 +384,104 @@
           "Força aumentada",
           "Resistência"
         ],
-        "publico_alvo": "Praticantes de musculação, atletas e quem busca hipertrofia muscular"
+        "restricoes": [
+          "Sem ultraprocessados",
+          "Açúcar controlado"
+        ],
+        "nota_da_chef": "Treinar duro exige comer bem! Cada refeição foi pensada para maximizar seus ganhos e acelerar a recuperação. Bora crescer! 🏋️",
+        "publico_alvo": "Praticantes de musculação, atletas e quem busca hipertrofia muscular",
+        "foco_nutricional": [
+          "Alta proteína",
+          "Carboidratos complexos",
+          "Carne, ovo e peixe"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/f4af0a22-4057-42d1-b883-ef6e9fef31f8",
+            "titulo": "Panqueca Proteica de Banana com Pasta de Amendoim",
+            "minutos": 25
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/3db92560-65ee-42e5-bc4b-238c87cc72ee",
+            "titulo": "Arroz Integral com Frango Desfiado e Feijão Preto",
+            "minutos": 70
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/d60af395-65e7-4f35-9e40-744ec9640a02",
+            "titulo": "Shake Proteico de Baunilha com Banana Congelada",
+            "minutos": 8
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/28c84c97-df37-4593-a571-15d1e15ee552",
+            "titulo": "Macarrão com Bolonhesa Lenta",
+            "minutos": 110
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/f77621db-5bb6-4622-ac0e-e0e874a6a5f4",
+            "titulo": "Ovos Mexidos com Queijo e Pão Integral",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/192943aa-1bfd-40ac-bd75-223f8d753c86",
+            "titulo": "Bife Acebolado com Arroz Soltinho",
+            "minutos": 22
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/f4af0a22-4057-42d1-b883-ef6e9fef31f8",
+              "titulo": "Panqueca Proteica de Banana com Pasta de Amendoim",
+              "minutos": 25,
+              "momento": "cafe_manha",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/3db92560-65ee-42e5-bc4b-238c87cc72ee",
+              "titulo": "Arroz Integral com Frango Desfiado e Feijão Preto",
+              "minutos": 70,
+              "momento": "almoco",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/d60af395-65e7-4f35-9e40-744ec9640a02",
+              "titulo": "Shake Proteico de Baunilha com Banana Congelada",
+              "minutos": 8,
+              "momento": "lanche",
+              "porcoes": 1
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/28c84c97-df37-4593-a571-15d1e15ee552",
+              "titulo": "Macarrão com Bolonhesa Lenta",
+              "minutos": 110,
+              "momento": "jantar",
+              "porcoes": 6
+            }
+          ]
+        }
       },
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/pele-e-intestino",
         "slug": "pele-e-intestino",
+        "tags": [
+          "Anti-inflamatório",
+          "Rica em fibras",
+          "Probióticos",
+          "Colágeno"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "moderado",
+          "receitas": 28,
+          "categoria": "Bem-estar",
+          "refeicoes": 28,
+          "dificuldade": "facil",
+          "minutos_por_refeicao": 25
+        },
         "titulo": "Pele & Intestino",
         "gratuito": false,
+        "descricao": "Ingredientes anti-inflamatórios, ricos em fibras, probióticos e antioxidantes para uma pele radiante e intestino funcionando perfeitamente. A saúde intestinal reflete diretamente na sua pele!",
         "subtitulo": "Beleza que vem de dentro",
         "beneficios": [
           "Pele mais bonita",
@@ -196,13 +490,107 @@
           "Cabelo saudável",
           "Unhas fortes"
         ],
-        "publico_alvo": "Pessoas com problemas de pele, intestino irregular ou que buscam beleza natural"
+        "restricoes": [
+          "Sem glúten (opcional)",
+          "Sem laticínios (opcional)",
+          "Baixo açúcar"
+        ],
+        "nota_da_chef": "A pele é o espelho do intestino! Esse cardápio vai transformar sua beleza de dentro pra fora. Prepare-se para brilhar! ✨",
+        "publico_alvo": "Pessoas com problemas de pele, intestino irregular ou que buscam beleza natural",
+        "foco_nutricional": [
+          "Probióticos",
+          "Prebióticos",
+          "Ômega 3",
+          "Vitamina C",
+          "Zinco"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/c22392ce-59ec-4533-9289-a42141e0f23b",
+            "titulo": "Taça de Açaí com Granola e Frutas",
+            "minutos": null
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/9f334807-b8cc-411d-b07c-35aa1f015d28",
+            "titulo": "Salmão Grelhado com Crosta de Amêndoas e Limão",
+            "minutos": 20
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/41867b56-9f04-42f3-837d-60e4e5124c20",
+            "titulo": "Smoothie de Frutas Vermelhas com Kefir e Baunilha",
+            "minutos": 8
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/54bee569-bf97-415c-a4fd-13235c4bbcc1",
+            "titulo": "Caldo de Legumes com Cúrcuma e Gengibre",
+            "minutos": 45
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/1f2fedf9-98a7-4869-9ff2-24213c2ffd33",
+            "titulo": "Vitamina de Mamão com Aveia e Mel",
+            "minutos": 8
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/32d16863-55d8-4330-916d-53ebe0367a05",
+            "titulo": "Frango Grelhado com Legumes na Frigideira",
+            "minutos": 25
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/c22392ce-59ec-4533-9289-a42141e0f23b",
+              "titulo": "Taça de Açaí com Granola e Frutas",
+              "minutos": null,
+              "momento": "cafe_manha",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/9f334807-b8cc-411d-b07c-35aa1f015d28",
+              "titulo": "Salmão Grelhado com Crosta de Amêndoas e Limão",
+              "minutos": 20,
+              "momento": "almoco",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/41867b56-9f04-42f3-837d-60e4e5124c20",
+              "titulo": "Smoothie de Frutas Vermelhas com Kefir e Baunilha",
+              "minutos": 8,
+              "momento": "lanche",
+              "porcoes": 1
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/54bee569-bf97-415c-a4fd-13235c4bbcc1",
+              "titulo": "Caldo de Legumes com Cúrcuma e Gengibre",
+              "minutos": 45,
+              "momento": "jantar",
+              "porcoes": 4
+            }
+          ]
+        }
       },
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/vegetariano-pratico",
         "slug": "vegetariano-pratico",
+        "tags": [
+          "Plant-based",
+          "Rápido",
+          "Nutritivo",
+          "Sustentável"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "economico",
+          "receitas": 28,
+          "categoria": "Vegetariano",
+          "refeicoes": 28,
+          "dificuldade": "facil",
+          "minutos_por_refeicao": 20
+        },
         "titulo": "Vegetariano Prático",
         "gratuito": false,
+        "descricao": "Refeições vegetarianas saborosas e práticas, com preparo rápido para o dia a dia corrido. Proteínas vegetais combinadas de forma inteligente para garantir todos os nutrientes.",
         "subtitulo": "Sem carne, com muito sabor",
         "beneficios": [
           "Preparo rápido",
@@ -211,13 +599,105 @@
           "Sustentável",
           "Digestão leve"
         ],
-        "publico_alvo": "Vegetarianos, veganos em transição ou quem quer reduzir o consumo de carne"
+        "restricoes": [
+          "Sem carne",
+          "Sem frutos do mar",
+          "Opção vegana disponível"
+        ],
+        "nota_da_chef": "Comer vegetariano não precisa ser complicado! Receitas simples, deliciosas e nutritivas que vão te fazer repensar a carne. 🌱",
+        "publico_alvo": "Vegetarianos, veganos em transição ou quem quer reduzir o consumo de carne",
+        "foco_nutricional": [
+          "Proteínas combinadas",
+          "Ferro vegetal",
+          "Cálcio vegetal"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/6907ce50-9e47-44e6-aa62-ece6ecd93435",
+            "titulo": "Pasta de Grão-de-Bico com Cenoura e Torrada",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/af60325a-9c22-4c52-b367-d9964b50ed59",
+            "titulo": "Buddha Bowl de Tofu Grelhado com Quinoa e Legumes",
+            "minutos": 20
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/c6a4ccd8-ebe1-4b8f-a01d-017b67292a87",
+            "titulo": "Homus Clássico com Palitos de Cenoura e Pepino",
+            "minutos": 10
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/19256965-8db9-40ac-9d5c-385985a4c3ea",
+            "titulo": "Risoto de Funghi com Parmesão e Tomilho",
+            "minutos": 45
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/a8d86123-76bd-45fb-b026-73cdb71adfad",
+            "titulo": "Bowl de Morango com Iogurte e Granola",
+            "minutos": 5
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/6db49df5-6318-4fa3-b489-1ad7f34e6540",
+            "titulo": "Feijão Carioca com Ovo Frito",
+            "minutos": 20
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/6907ce50-9e47-44e6-aa62-ece6ecd93435",
+              "titulo": "Pasta de Grão-de-Bico com Cenoura e Torrada",
+              "minutos": 15,
+              "momento": "cafe_manha",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/af60325a-9c22-4c52-b367-d9964b50ed59",
+              "titulo": "Buddha Bowl de Tofu Grelhado com Quinoa e Legumes",
+              "minutos": 20,
+              "momento": "almoco",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/c6a4ccd8-ebe1-4b8f-a01d-017b67292a87",
+              "titulo": "Homus Clássico com Palitos de Cenoura e Pepino",
+              "minutos": 10,
+              "momento": "lanche",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/19256965-8db9-40ac-9d5c-385985a4c3ea",
+              "titulo": "Risoto de Funghi com Parmesão e Tomilho",
+              "minutos": 45,
+              "momento": "jantar",
+              "porcoes": 4
+            }
+          ]
+        }
       },
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/foco-e-energia",
         "slug": "foco-e-energia",
+        "tags": [
+          "Brain food",
+          "Energia sustentada",
+          "Antioxidante",
+          "Sem pico de glicose"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "moderado",
+          "receitas": 28,
+          "categoria": "Performance",
+          "refeicoes": 28,
+          "dificuldade": "medio",
+          "minutos_por_refeicao": 25
+        },
         "titulo": "Foco & Energia",
         "gratuito": false,
+        "descricao": "Cardápio desenvolvido para melhorar foco mental, concentração e disposição ao longo do dia. Alimentos de verdade, sem picos de glicose e ricos em nutrientes para o cérebro.",
         "subtitulo": "Alimentação para alta performance mental",
         "beneficios": [
           "Mais foco",
@@ -226,13 +706,106 @@
           "Memória afiada",
           "Produtividade"
         ],
-        "publico_alvo": "Profissionais, estudantes, empreendedores e quem precisa de alta performance mental"
+        "restricoes": [
+          "Sem açúcar refinado",
+          "Baixo índice glicêmico",
+          "Sem cafeína excessiva"
+        ],
+        "nota_da_chef": "Seu cérebro precisa de combustível de qualidade! Essas receitas vão turbinar sua mente e manter sua energia estável o dia todo. 🧠",
+        "publico_alvo": "Profissionais, estudantes, empreendedores e quem precisa de alta performance mental",
+        "foco_nutricional": [
+          "Ômega 3 (DHA)",
+          "Magnésio",
+          "Vitaminas do complexo B",
+          "Antioxidantes"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/f3ae1a80-c6b8-4a7e-b68c-65f2138a8a47",
+            "titulo": "Overnight Oats de Chocolate com Pasta de Amendoim",
+            "minutos": 8
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/e439240d-4095-4538-849a-b7ff0359254c",
+            "titulo": "Filé de Salmão com Purê de Batata-Doce",
+            "minutos": 25
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/d74a4a83-e707-4814-a815-9b78d197264f",
+            "titulo": "Barra de Chocolate 70% com Amêndoas Tostadas",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/990d714c-b3e9-4e45-b675-bf1585d9e186",
+            "titulo": "Omelete de Espinafre e Queijo na Frigideira",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/458b8e9c-b0ae-4631-b6f9-7a1ba9b648c3",
+            "titulo": "Ovos Mexidos Cremosos com Torrada Integral",
+            "minutos": 12
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/65a73b2c-fd01-41ca-8211-71f0018c2d27",
+            "titulo": "Frango Grelhado com Chimichurri Verde",
+            "minutos": 25
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/f3ae1a80-c6b8-4a7e-b68c-65f2138a8a47",
+              "titulo": "Overnight Oats de Chocolate com Pasta de Amendoim",
+              "minutos": 8,
+              "momento": "cafe_manha",
+              "porcoes": 1
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/e439240d-4095-4538-849a-b7ff0359254c",
+              "titulo": "Filé de Salmão com Purê de Batata-Doce",
+              "minutos": 25,
+              "momento": "almoco",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/d74a4a83-e707-4814-a815-9b78d197264f",
+              "titulo": "Barra de Chocolate 70% com Amêndoas Tostadas",
+              "minutos": 15,
+              "momento": "lanche",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/990d714c-b3e9-4e45-b675-bf1585d9e186",
+              "titulo": "Omelete de Espinafre e Queijo na Frigideira",
+              "minutos": 15,
+              "momento": "jantar",
+              "porcoes": 1
+            }
+          ]
+        }
       },
       {
         "url": "https://temnasemana.com.br/cardapio-da-casa/low-carb-mediterraneo",
         "slug": "low-carb-mediterraneo",
+        "tags": [
+          "Low carb",
+          "Mediterrâneo",
+          "Gorduras boas",
+          "Anti-inflamatório"
+        ],
+        "ficha": {
+          "dias": 7,
+          "custo": "premium",
+          "receitas": 28,
+          "categoria": "Emagrecimento",
+          "refeicoes": 28,
+          "dificuldade": "medio",
+          "minutos_por_refeicao": 30
+        },
         "titulo": "Low Carb Mediterrâneo",
         "gratuito": false,
+        "descricao": "Combinação da dieta mediterrânea com princípios low carb. Azeite, peixes, vegetais abundantes e carboidratos inteligentes para quem quer emagrecer com sabor e saúde.",
         "subtitulo": "O melhor dos dois mundos",
         "beneficios": [
           "Emagrecimento",
@@ -241,7 +814,84 @@
           "Sabor intenso",
           "Saciedade"
         ],
-        "publico_alvo": "Quem busca emagrecer com saúde e comer com muito sabor"
+        "restricoes": [
+          "Poucos carboidratos",
+          "Sem açúcar refinado",
+          "Sem processados"
+        ],
+        "nota_da_chef": "A dieta mediterrânea é considerada a mais saudável do mundo! Adaptei ela com menos carboidratos para resultados ainda melhores. 🫒",
+        "publico_alvo": "Quem busca emagrecer com saúde e comer com muito sabor",
+        "foco_nutricional": [
+          "Ômega 3",
+          "Azeite extra virgem",
+          "Antioxidantes",
+          "Fibras"
+        ],
+        "receitas_exemplo": [
+          {
+            "url": "https://temnasemana.com.br/receita/a47304fa-4478-4668-b72f-248326618d02",
+            "titulo": "Ovos Pochê com Abacate e Tomate Cereja",
+            "minutos": 15
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/e3fbdda4-407c-4005-99f4-4cad181984c7",
+            "titulo": "Peixe à Grega com Tomate e Azeitona",
+            "minutos": 35
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/e387bb0e-d70b-4103-8f9e-0266306d1604",
+            "titulo": "Queijo Feta com Nozes e Azeite de Orégano",
+            "minutos": 10
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/98c1940e-1d03-44a1-9775-7e0862d2ded8",
+            "titulo": "Frango ao Limão com Alcaparras na Frigideira",
+            "minutos": 25
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/93900833-8a1d-4a14-b4af-a8b015acb5d1",
+            "titulo": "Omelete de Tomate Seco e Mussarela",
+            "minutos": 10
+          },
+          {
+            "url": "https://temnasemana.com.br/receita/a359deac-59ae-4134-976c-b08616501e2a",
+            "titulo": "Carne Moída com Berinjela e Tomate Gratinado",
+            "minutos": 45
+          }
+        ],
+        "exemplo_de_um_dia": {
+          "dia": 1,
+          "refeicoes": [
+            {
+              "url": "https://temnasemana.com.br/receita/a47304fa-4478-4668-b72f-248326618d02",
+              "titulo": "Ovos Pochê com Abacate e Tomate Cereja",
+              "minutos": 15,
+              "momento": "cafe_manha",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/e3fbdda4-407c-4005-99f4-4cad181984c7",
+              "titulo": "Peixe à Grega com Tomate e Azeitona",
+              "minutos": 35,
+              "momento": "almoco",
+              "porcoes": 4
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/e387bb0e-d70b-4103-8f9e-0266306d1604",
+              "titulo": "Queijo Feta com Nozes e Azeite de Orégano",
+              "minutos": 10,
+              "momento": "lanche",
+              "porcoes": 2
+            },
+            {
+              "url": "https://temnasemana.com.br/receita/98c1940e-1d03-44a1-9775-7e0862d2ded8",
+              "titulo": "Frango ao Limão com Alcaparras na Frigideira",
+              "minutos": 25,
+              "momento": "jantar",
+              "porcoes": 2
+            }
+          ]
+        }
       }
     ],
     "entrou_nos_ultimos_45_dias": {
@@ -278,10 +928,11 @@
       "receitas_novas": 59
     }
   },
-  "_gerado_em": "2026-08-28T16:06:28.484267+00:00",
+  "_gerado_em": "2026-08-28T21:17:08.249794+00:00",
   "_atualizado_em": "2026-08-28T15:23:39.122092+00:00",
   "_leia_primeiro": "Fonte única de verdade sobre o produto Tem na Semana, para quem cria conteúdo. O bloco `fixo` é escrito à mão e muda raramente. O bloco `atual` é gerado do banco a cada chamada e nunca envelhece. Nunca escreva a URL à mão: use fixo.app.url_canonica.",
+  "_cuidado_com_dieta": "Os campos de dieta presentes aqui (foco_nutricional, restricoes e tags do CARDÁPIO) são curadoria escrita pela chef e podem ser citados como descrição do cardápio. NÃO existem campos de alérgeno ou proteína por RECEITA neste contexto, e a ausência é deliberada: os metadados do catálogo não são confiáveis para afirmar dieta. Nunca afirme \"sem glúten\", \"sem lactose\", \"vegano\" ou equivalente sobre uma receita com base neste JSON.",
   "_aviso_de_cache": "CACHE — não edite à mão. Gerado por scripts/sync-contexto.js a partir do RPC do app. Para corrigir algo do bloco `fixo`, peça ao time do app; o bloco `atual` sai do banco sozinho.",
-  "_sincronizado_em": "2026-08-28T16:09:00.488Z",
+  "_sincronizado_em": "2026-08-28T21:17:08.689Z",
   "_fonte": "https://aywpqorkwewxdqectncu.supabase.co/rest/v1/rpc/contexto_do_conteudo"
 }
