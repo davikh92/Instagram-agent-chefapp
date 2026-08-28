@@ -1,0 +1,73 @@
+name: 📬 Responder comentários com DM
+
+# Comentou a palavra-chave no post, recebe o link na DM.
+#
+# Roda de 10 em 10 minutos das 9h às 23h BRT: é a faixa em que comentário
+# acontece, e o repositório é público (minutos de Actions são gratuitos).
+# Fora dessa faixa não roda — comentário de madrugada é respondido às 9h.
+#
+# O script só olha posts publicados nos últimos 14 dias (a "validade"), então
+# a varredura não cresce conforme o ciclo avança.
+
+on:
+  schedule:
+    - cron: '*/10 12-23,0-2 * * *'   # 09h–23h BRT (UTC-3)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Modo seco (mostra o que faria, sem enviar)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: responder-comentarios
+  cancel-in-progress: false
+
+jobs:
+  responder:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "INSTAGRAM_ACCESS_TOKEN=${{ secrets.INSTAGRAM_ACCESS_TOKEN }}" >> .env
+          echo "INSTAGRAM_USER_ID=${{ secrets.INSTAGRAM_USER_ID }}"           >> .env
+
+      - name: Responder comentários
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/responder-comentarios.js --dry-run
+          else
+            node scripts/responder-comentarios.js
+          fi
+
+      # O registro de quem já recebeu precisa sobreviver entre execuções —
+      # sem isso a mesma pessoa receberia a DM a cada 10 minutos.
+      - name: Guardar registro de envios
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          if [ -z "$(git status --porcelain data/dm-enviadas.json)" ]; then
+            echo "Nenhuma DM nova — nada a registrar."
+            exit 0
+          fi
+          git pull --rebase origin main
+          git add data/dm-enviadas.json
+          git commit -m "chore: registro de DMs enviadas [skip ci]"
+          git push

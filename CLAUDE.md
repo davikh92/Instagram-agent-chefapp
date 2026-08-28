@@ -220,10 +220,11 @@ Toda imagem/vídeo gerado segue estes princípios (ver `brand.json → art_direc
 | `publish.js` | Publica no Instagram via Graph API (reels, stories, catchup, marcador de falha) |
 | `build-dashboard.js` | Gera `dashboard.html` com tudo que foi publicado |
 | `refresh-token.js` | Renovação do token do Instagram |
+| `responder-comentarios.js` | **Comentou a palavra-chave → recebe o link na DM.** Lê comentários dos posts com `link_dm`, casa a palavra (sem acento, aceita plural) e responde em privado. Só olha posts dos últimos **14 dias** — a "validade", pra varredura não crescer com o ciclo. Registro em `data/dm-enviadas.json` impede envio repetido. `--dry-run` mostra sem enviar. |
 
 **Workflows** (`.github/workflows/`): `generate-veo` (ímpares) · `generate-veo-retry` (pares) ·
 `generate-story` · `generate-image(-retry)` · `publish-daily` (7/7 com catchup) ·
-`publish-stories` (3 slots/dia) · `refresh-token`.
+`publish-stories` (3 slots/dia) · `refresh-token` · `responder-comentarios` (10 em 10 min, 9h–23h BRT).
 
 **Segredos no GitHub:** `INSTAGRAM_ACCESS_TOKEN` (IGAA…, renovar se trocar senha!),
 `INSTAGRAM_USER_ID`, `GOOGLE_API_KEY`, `CLOUDINARY_*`, `ELEVENLABS_API_KEY`,
