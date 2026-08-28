@@ -210,9 +210,11 @@ Publicar o novo plano, rodar experimentos, e ligar a análise recorrente (15–3
 
 ## Pendências do Davi
 
-- [ ] Trocar **link na bio** quando o domínio novo estiver no ar (com `?utm_source=instagram&utm_campaign=bio`)
+- [x] ~~Domínio novo no ar~~ — **`temnasemana.com.br`** desde 28/08/2026. Os 26 links de DM
+      dos posts futuros já foram reescritos a partir do Contexto.
+- [ ] Trocar o **link na bio** para `temnasemana.com.br/?utm_source=instagram&utm_campaign=bio`
 - [ ] Decidir o **@ da conta** (`@luizanacozinha` × handle da marca — trocar custa alcance, manter amarra a marca a um nome)
-- [ ] Avisar quando a troca de domínio estiver concluída (o campo `url_canonica` do app atualiza tudo aqui sozinho)
+- [x] ~~Avisar quando a troca de domínio estiver concluída~~ — feito 28/08
 - [ ] Trazer o material novo de perfil/identidade pra sessão do novo plano
 
 ## Histórico de fases (contexto rápido)

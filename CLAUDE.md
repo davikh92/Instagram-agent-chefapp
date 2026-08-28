@@ -5,7 +5,8 @@ Equipe automatizada de produção de conteúdo para o Instagram do **Tem na Sema
 monta a semana de comida da casa em minutos, e a lista de compras sai junto.
 
 > ⚠️ **O nome do produto é "Tem na Semana", não "Luiza na Cozinha".**
-> `luizanacozinha.com` é só o domínio de hoje, e vai mudar. **Nunca escreva URL à mão:**
+> Domínio: **`temnasemana.com.br`** (migrado em 28/08/2026; o antigo era `luizanacozinha.com`).
+> **Nunca escreva URL à mão** — domínio muda:
 > leia sempre de `data/product-context.json → fixo.app.url_canonica` e monte o caminho
 > a partir de `fixo.links_uteis`. Link congelado vira link quebrado no dia da migração.
 

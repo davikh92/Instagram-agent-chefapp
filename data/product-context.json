@@ -3,8 +3,8 @@
     "app": {
       "nome": "Tem na Semana",
       "onde_acessa": "Site que funciona como aplicativo (PWA): abre no navegador e pode ser instalado na tela de início. Ainda não está nas lojas — Android está no plano, depois da troca de domínio.",
-      "url_canonica": "https://luizanacozinha.com",
-      "aviso_sobre_a_url": "O domínio vai mudar. Nunca escreva a URL à mão no conteúdo: leia sempre deste campo.",
+      "url_canonica": "https://temnasemana.com.br",
+      "aviso_sobre_a_url": "Migrado em 27/08/2026. O endereço antigo (luizanacozinha.com) redireciona para cá. Continue montando todo link a partir deste campo, nunca à mão.",
       "proposta_uma_frase": "Monta a semana de comida da sua casa em minutos, e a lista de compras sai junto.",
       "nome_antigo_nao_usar": "Luiza na Cozinha — é o domínio atual, NÃO o nome do produto"
     },
@@ -133,13 +133,13 @@
   "atual": {
     "receitas": {
       "total": 486,
-      "url_da_estante": "https://luizanacozinha.com/receitas",
+      "url_da_estante": "https://temnasemana.com.br/receitas",
       "sao_paginas_publicas": true
     },
     "novidades": [],
     "cardapios_da_casa": [
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/detox-pos-festa",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/detox-pos-festa",
         "slug": "detox-pos-festa",
         "titulo": "Detox Pós-Festa",
         "gratuito": true,
@@ -154,7 +154,7 @@
         "publico_alvo": "Pessoas que exageraram nas festas ou querem iniciar uma alimentação mais saudável"
       },
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/emagrecimento-consciente",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/emagrecimento-consciente",
         "slug": "emagrecimento-consciente",
         "titulo": "Emagrecimento Consciente",
         "gratuito": false,
@@ -169,7 +169,7 @@
         "publico_alvo": "Quem busca perder peso de forma saudável sem dietas restritivas ou passar fome"
       },
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/massa-e-forca",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/massa-e-forca",
         "slug": "massa-e-forca",
         "titulo": "Massa & Força",
         "gratuito": false,
@@ -184,7 +184,7 @@
         "publico_alvo": "Praticantes de musculação, atletas e quem busca hipertrofia muscular"
       },
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/pele-e-intestino",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/pele-e-intestino",
         "slug": "pele-e-intestino",
         "titulo": "Pele & Intestino",
         "gratuito": false,
@@ -199,7 +199,7 @@
         "publico_alvo": "Pessoas com problemas de pele, intestino irregular ou que buscam beleza natural"
       },
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/vegetariano-pratico",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/vegetariano-pratico",
         "slug": "vegetariano-pratico",
         "titulo": "Vegetariano Prático",
         "gratuito": false,
@@ -214,7 +214,7 @@
         "publico_alvo": "Vegetarianos, veganos em transição ou quem quer reduzir o consumo de carne"
       },
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/foco-e-energia",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/foco-e-energia",
         "slug": "foco-e-energia",
         "titulo": "Foco & Energia",
         "gratuito": false,
@@ -229,7 +229,7 @@
         "publico_alvo": "Profissionais, estudantes, empreendedores e quem precisa de alta performance mental"
       },
       {
-        "url": "https://luizanacozinha.com/cardapio-da-casa/low-carb-mediterraneo",
+        "url": "https://temnasemana.com.br/cardapio-da-casa/low-carb-mediterraneo",
         "slug": "low-carb-mediterraneo",
         "titulo": "Low Carb Mediterrâneo",
         "gratuito": false,
@@ -278,10 +278,10 @@
       "receitas_novas": 59
     }
   },
-  "_gerado_em": "2026-08-27T21:29:09.000263+00:00",
-  "_atualizado_em": "2026-08-25T19:01:21.636732+00:00",
+  "_gerado_em": "2026-08-28T16:06:28.484267+00:00",
+  "_atualizado_em": "2026-08-28T15:23:39.122092+00:00",
   "_leia_primeiro": "Fonte única de verdade sobre o produto Tem na Semana, para quem cria conteúdo. O bloco `fixo` é escrito à mão e muda raramente. O bloco `atual` é gerado do banco a cada chamada e nunca envelhece. Nunca escreva a URL à mão: use fixo.app.url_canonica.",
   "_aviso_de_cache": "CACHE — não edite à mão. Gerado por scripts/sync-contexto.js a partir do RPC do app. Para corrigir algo do bloco `fixo`, peça ao time do app; o bloco `atual` sai do banco sozinho.",
-  "_sincronizado_em": "2026-08-27T21:29:09.329Z",
+  "_sincronizado_em": "2026-08-28T16:09:00.488Z",
   "_fonte": "https://aywpqorkwewxdqectncu.supabase.co/rest/v1/rpc/contexto_do_conteudo"
 }
