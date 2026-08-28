@@ -148,47 +148,50 @@ em vez de reportar sucesso. Check verde mentindo é pior que erro.
 
 ---
 
-## 🗓️ AGENDA DE TRABALHO — ordem acordada (27/08)
+## 🗓️ AGENDA DE TRABALHO — revisada em 28/08
 
-Uma coisa por vez, na ordem. Nada começa antes de a anterior fechar.
+### ✅ Fechado
 
-### 1. Terminar os vídeos ⬅️ AGORA
-22 restantes (`cd-10..13` · `rl-11..13` · `rd-07..13` · `pt-06..13`). 2–3 dias,
-limitado só pela cota diária da API. O Davi dá o sinal a cada dia.
-**43/65 prontos e auditados.**
+| | O quê | Prova |
+|---|---|---|
+| 1 | **65 vídeos** do ciclo | auditoria: 64/64 da fila íntegros + `nv-01`, zero pendências |
+| 2 | **Teste de texto na geração** | veredito registrado: não serve, salvo numeração 1·2·3 |
+| 3 | **Tabela de DM** | 26 regras com link rastreado no domínio novo |
+| 4 | **Automação comentário → DM** | + resposta pública no post; janela de 14 dias |
+| 5 | **7 stories de cardápio** | agendadas 01–07/09, custo zero de API |
+| 6 | **Migração de domínio** | 26 links reescritos a partir do Contexto |
+| 7 | **Token renovando sozinho** | falha silenciosa de junho corrigida e comprovada |
+| 8 | **Anúncio da nova fase** | carrossel de 3 slides, agendado 31/08 |
 
-### 2. ✅ CONCLUÍDO (28/08) — teste de texto na geração
-4 vídeos testados. O modelo escreve certo em português, mas **o resultado não serve**:
-assinatura sai como texto cru (lê como rascunho e enfraquece a marca) e rótulo de
-ingrediente não tem impacto. **Única hipótese viva: numeração 1·2·3**, por valor
-psicológico de retenção, e só em receitas com passos visualmente distintos.
-Não especificar tipografia no prompt — corrompe a cena. Detalhes no CALENDARIO.
+### 🎯 Estreia — sem nada pendente do meu lado
+`30/08` último reel da era antiga · `31/08` anúncio · `01/09` ciclo começa.
+Mídia testada (HTTP 200), publicação saudável, token válido.
 
-### 3. Tabela de DM
-Data + palavra que a pessoa comenta + link rastreado de cada `cd` e `rd`, pronta
-pro Davi programar na ferramenta de DM. Só faz sentido com os vídeos fechados.
+### ⬜ O que resta
 
-### 4. Rever os stories
-Fila vazia desde 28/07 — hoje roda só repost. Reescrever a fila de eco do ciclo.
-**Restrição do Davi: modelo de imagem barato** (o `gemini-3.1-flash-image`,
-~$0,04/imagem, que já está no `generate-story.js`), não o caro.
+**A. Primeiro envio real da DM** — terça 01/09, o Davi comenta e confere.
+Rodo o modo seco antes. É o único item com data.
 
-### 5. Música + assinatura visual — sem data, mesma solução
-Ideia do Davi (28/08): as duas coisas se resolvem na **mesma ferramenta de edição
-externa**. O plano:
-1. Gerar **uma imagem perfeita da marca** — "Tem na Semana" com a tipografia e a cor
-   certas, **fundo transparente** (PNG). Isso a gente já sabe fazer aqui: o mesmo
-   Puppeteer que faz stories e posts renderiza PNG transparente, custo zero de API.
-2. Escolher uma ferramenta de edição boa que aceite sobrepor esse PNG **e** colocar
-   trilha. Uma ferramenta resolve assinatura + música de uma vez.
-3. A numeração 1·2·3 pode entrar pelo mesmo caminho, com qualidade de motion de verdade.
-Entra quando a gente decidir que é a hora — não bloqueia nada.
+**B. Destaque "Começa aqui"** — o Davi grava o app; eu corto, componho e monto.
+Sem data, depende só do vídeo dele.
 
-### 6. Expansão multi-plataforma — depois de tudo acima
-TikTok · YouTube Shorts · Pinterest · Facebook de carona. Detalhes na seção abaixo.
+**C. Música + assinatura visual** — sem data. As duas se resolvem na mesma
+ferramenta de edição externa. O PNG transparente da marca sai daqui em minutos,
+com custo zero, quando a ferramenta for escolhida.
 
-**Fora da agenda (com o Davi):** escolher bio, foto de perfil e campo Nome ·
-trocar o link da bio quando o domínio novo entrar no ar.
+**D. Expansão multi-plataforma** — depois de tudo acima.
+TikTok · YouTube Shorts · Pinterest · Facebook de carona. X está fora.
+
+**E. Checkpoint D+30 (fim de setembro)** — o mais importante da lista, e o único
+que depende de dado que ainda não existe. Ver hipóteses do SUBPLANO-01:
+retenção 3,2s → 5s, envios/alcance, 30 comentários/mês, cliques UTM → `montou_semana`.
+É aqui que se decide o que o Ciclo 02 mantém, corta ou dobra — inclusive se a
+fila de eco dos stories volta pra mesa.
+
+### 🔴 Com o Davi
+Nada bloqueia a estreia. Pendente: **link da bio com UTM**
+(`temnasemana.com.br/?utm_source=instagram&utm_campaign=bio`) — sem ele, quem vem
+do perfil entra como "(direto)" e a única medição do perfil se perde.
 
 ---
 
