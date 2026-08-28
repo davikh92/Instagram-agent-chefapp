@@ -2,6 +2,8 @@ node_modules/
 templates/generated/*.html
 *.log
 .env
+.env.*
+!.env.example
 
 # Binários de vídeo — armazenados no Cloudinary, não no repositório
 # (reels.mp4 podem ter 10-100 MB cada)

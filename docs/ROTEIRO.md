@@ -129,7 +129,14 @@ Consequência: o `INSTAGRAM_ACCESS_TOKEN` no GitHub está congelado em **23/07**
 O token funciona hoje (verificado: conta `temnasemana`, 4.957 seguidores, 85 posts),
 mas quem publica é o GitHub Actions — e ele usa a cópia que não se renova.
 
-**Correção (é do Davi, exige acesso à conta GitHub):**
+**Estado em 28/08 — risco imediato REMOVIDO:** o token foi renovado e gravado no
+secret manualmente (o `gh` local tem escopo `repo`, que permite escrever secrets).
+Secret agora datado de 28/08, token válido até **27/10/2026**.
+
+⚠️ **Mas o ciclo vai até 29/11.** Sem a correção abaixo, o token expira em 27/10 e a
+publicação morre no último mês. A correção recorrente continua pendente.
+
+**Correção definitiva (é do Davi, exige acesso à conta GitHub):**
 1. Gerar um PAT novo com permissão de **Secrets: Read and write** neste repositório
    (fine-grained) ou escopo `repo` (clássico)
 2. Salvar em `GH_PAT` nos secrets do repo
