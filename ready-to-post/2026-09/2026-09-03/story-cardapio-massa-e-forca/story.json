@@ -1,0 +1,9 @@
+{
+  "id": "story-cardapio-massa-e-forca",
+  "date": "2026-09-03",
+  "pillar": "cardapio",
+  "titulo": "Massa & Força",
+  "url_cardapio": "https://temnasemana.com.br/cardapio-da-casa/massa-e-forca",
+  "origem": "gerar-destaque-cardapios.js",
+  "_nota": "Sem adesivo de link: a API não publica link em story. O link é colado à mão ao fixar no destaque."
+}

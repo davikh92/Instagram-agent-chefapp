@@ -1,0 +1,9 @@
+{
+  "id": "story-cardapio-pele-e-intestino",
+  "date": "2026-09-04",
+  "pillar": "cardapio",
+  "titulo": "Pele & Intestino",
+  "url_cardapio": "https://temnasemana.com.br/cardapio-da-casa/pele-e-intestino",
+  "origem": "gerar-destaque-cardapios.js",
+  "_nota": "Sem adesivo de link: a API não publica link em story. O link é colado à mão ao fixar no destaque."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "story-cardapio-detox-pos-festa",
+  "date": "2026-09-01",
+  "pillar": "cardapio",
+  "titulo": "Detox Pós-Festa",
+  "url_cardapio": "https://temnasemana.com.br/cardapio-da-casa/detox-pos-festa",
+  "origem": "gerar-destaque-cardapios.js",
+  "_nota": "Sem adesivo de link: a API não publica link em story. O link é colado à mão ao fixar no destaque."
+}

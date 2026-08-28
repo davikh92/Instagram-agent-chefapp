@@ -5,6 +5,7 @@
  * Uso:
  *   node scripts/gerar-destaque-cardapios.js
  *   node scripts/gerar-destaque-cardapios.js --saida assets/destaques/cardapios
+ *   node scripts/gerar-destaque-cardapios.js --agendar 2026-09-01   (uma por dia)
  *
  * Custo ZERO de API: o fundo de cada story é a capa do post `cd-XX` que já foi
  * gerado para aquele cardápio — o que também deixa a story visualmente irmã do
@@ -14,8 +15,10 @@
  * nome, subtítulo, ficha, público-alvo e benefícios são escritos pelo time do app.
  * Se um cardápio mudar lá, é só rodar de novo — nada aqui é digitado à mão.
  *
- * As stories são publicadas MANUALMENTE pelo Davi, porque o adesivo de link
- * (que leva ao cardápio) não existe na API — só no aplicativo.
+ * Com `--agendar`, elas entram no fluxo normal de stories: uma pasta datada por
+ * dia, que o `publish.js --stories-today` publica sozinho. O adesivo de link não
+ * existe na API, então a story publicada sai sem link — o Davi cola o link
+ * depois, ao fixar a story no destaque. Os PNGs ficam em assets/ pra isso.
  */
 
 require('dotenv').config();
@@ -109,11 +112,52 @@ function montarHtml(cardapio, capaBase64) {
   return html.replace(/\{\{[^}]+\}\}/g, '');
 }
 
+/**
+ * Coloca a story na esteira normal: pasta datada com story.json + slide-01.png.
+ * O publish.js varre `story-*` com data <= hoje e publica a mais antiga por slot,
+ * então uma pasta por dia vira uma story por dia, sem intervenção.
+ */
+function agendar(pngPath, cardapio, data) {
+  const pasta = path.join(READY_DIR, data.slice(0, 7), data, `story-cardapio-${cardapio.slug}`);
+  fs.mkdirSync(pasta, { recursive: true });
+
+  if (fs.existsSync(path.join(pasta, 'published.json'))) {
+    return { pasta, pulou: true };
+  }
+
+  fs.copyFileSync(pngPath, path.join(pasta, 'slide-01.png'));
+  fs.writeFileSync(path.join(pasta, 'story.json'), JSON.stringify({
+    id: `story-cardapio-${cardapio.slug}`,
+    date: data,
+    pillar: 'cardapio',
+    titulo: cardapio.titulo,
+    url_cardapio: cardapio.url,
+    origem: 'gerar-destaque-cardapios.js',
+    _nota: 'Sem adesivo de link: a API não publica link em story. O link é colado à mão ao fixar no destaque.',
+  }, null, 2) + '\n', 'utf8');
+
+  return { pasta, pulou: false };
+}
+
+/** Soma dias a uma data ISO sem depender de fuso. */
+function somarDias(dataIso, dias) {
+  const d = new Date(`${dataIso}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + dias);
+  return d.toISOString().slice(0, 10);
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const idxSaida = args.indexOf('--saida');
   const SAIDA = path.join(ROOT, idxSaida !== -1 ? args[idxSaida + 1] : 'assets/destaques/cardapios');
   fs.mkdirSync(SAIDA, { recursive: true });
+
+  const idxAgendar = args.indexOf('--agendar');
+  const dataInicial = idxAgendar !== -1 ? args[idxAgendar + 1] : null;
+  if (dataInicial && !/^\d{4}-\d{2}-\d{2}$/.test(dataInicial)) {
+    console.error('❌ --agendar precisa de uma data no formato AAAA-MM-DD');
+    process.exit(1);
+  }
 
   const contexto = lerJson(CONTEXTO);
   const cardapios = contexto.atual.cardapios_da_casa;
@@ -137,22 +181,39 @@ async function main() {
       await page.evaluateHandle('document.fonts.ready');
 
       const nome = `${String(i + 1).padStart(2, '0')}-${c.slug}.png`;
-      await page.screenshot({ path: path.join(SAIDA, nome), type: 'png' });
-      console.log(`  ✓ ${nome}  (fundo: ${idPost})`);
-      feitos.push({ nome, titulo: c.titulo, url: c.url });
+      const png = path.join(SAIDA, nome);
+      await page.screenshot({ path: png, type: 'png' });
+
+      let quando = null;
+      if (dataInicial) {
+        quando = somarDias(dataInicial, feitos.length);
+        const { pulou } = agendar(png, c, quando);
+        console.log(`  ✓ ${nome}  (fundo: ${idPost}) → agendada ${quando}${pulou ? ' [já publicada, mantida]' : ''}`);
+      } else {
+        console.log(`  ✓ ${nome}  (fundo: ${idPost})`);
+      }
+      feitos.push({ nome, titulo: c.titulo, url: c.url, quando });
     }
   } finally {
     await browser.close();
   }
 
   // Guia de publicação: a ordem e o link de cada uma
-  const guia = ['# Destaque "Cardápios" — ordem de publicação\n',
-    '> Publicar como story e salvar no destaque **CARDÁPIOS**.',
-    '> Em cada uma, colar o **adesivo de link** com a URL abaixo (o topo da imagem',
-    '> foi deixado livre pro adesivo). O link já leva pro cardápio certo.\n',
-    '| # | Story | Link do adesivo |', '|---|---|---|',
-    ...feitos.map((f, i) => `| ${i + 1} | \`${f.nome}\` — ${f.titulo} | ${f.url} |`),
-    '\nRegerar quando o app mudar algum cardápio: `node scripts/gerar-destaque-cardapios.js`\n'];
+  const agendadas = feitos.some((f) => f.quando);
+  const guia = ['# Destaque "Cardápios"\n',
+    agendadas
+      ? '> **As stories publicam sozinhas** nas datas abaixo, pelo fluxo normal.\n'
+        + '> Elas saem **sem link** (a API não publica adesivo de link).\n'
+        + '> Ao fixar cada uma no destaque **CARDÁPIOS**, é aí que você cola o link.'
+      : '> Publicar como story e salvar no destaque **CARDÁPIOS**, colando o adesivo\n'
+        + '> de link com a URL abaixo (o topo da imagem foi deixado livre pro adesivo).',
+    '',
+    `| # | ${agendadas ? 'Publica' : 'Story'} | Cardápio | Link pro adesivo (no destaque) |`,
+    '|---|---|---|---|',
+    ...feitos.map((f, i) => `| ${i + 1} | ${f.quando ? `**${f.quando.slice(8)}/${f.quando.slice(5, 7)}**` : `\`${f.nome}\``} | ${f.titulo} | ${f.url} |`),
+    '',
+    'Os PNGs ficam nesta pasta — use-os ao fixar no destaque.',
+    'Regerar quando o app mudar algum cardápio: `node scripts/gerar-destaque-cardapios.js`\n'];
   fs.writeFileSync(path.join(SAIDA, 'COMO-PUBLICAR.md'), guia.join('\n'), 'utf8');
 
   console.log(`\n✅ ${feitos.length} stories geradas · guia em COMO-PUBLICAR.md`);

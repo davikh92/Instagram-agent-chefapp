@@ -1,0 +1,9 @@
+{
+  "id": "story-cardapio-vegetariano-pratico",
+  "date": "2026-09-05",
+  "pillar": "cardapio",
+  "titulo": "Vegetariano Prático",
+  "url_cardapio": "https://temnasemana.com.br/cardapio-da-casa/vegetariano-pratico",
+  "origem": "gerar-destaque-cardapios.js",
+  "_nota": "Sem adesivo de link: a API não publica link em story. O link é colado à mão ao fixar no destaque."
+}
