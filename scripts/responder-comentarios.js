@@ -47,6 +47,30 @@ const MODELOS = {
     + 'Depois me conta se fez!',
 };
 
+/**
+ * Resposta PÚBLICA no comentário, depois da DM. Serve a duas coisas: a pessoa
+ * não fica falando sozinha, e quem lê os comentários vê que a mecânica responde
+ * de verdade — é prova social, além de engajamento.
+ *
+ * São variações porque repetir a mesma frase dezenas de vezes lê como robô (e o
+ * Instagram trata repetição idêntica como spam). A escolha é pelo id do
+ * comentário, então re-execuções não mudam a resposta.
+ */
+const RESPOSTAS_PUBLICAS = [
+  'Oi @{user}! Acabei de mandar o link na sua DM 📩',
+  '@{user} mandei pra você na DM! 📩',
+  'Prontinho, @{user}! Tá na sua DM 📩',
+  'Oi @{user}! Já foi pra sua DM 📩 qualquer dúvida é só chamar',
+  '@{user} olha lá na DM que mandei o link 📩',
+  'Mandei na sua DM, @{user}! 📩 Bom proveito',
+];
+
+function respostaPublica(commentId, username) {
+  const soma = [...String(commentId)].reduce((a, c) => a + c.charCodeAt(0), 0);
+  const modelo = RESPOSTAS_PUBLICAS[soma % RESPOSTAS_PUBLICAS.length];
+  return modelo.replace('{user}', username || 'tudo bem');
+}
+
 // ── Utilidades ───────────────────────────────────────────────────────────────
 const lerJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8').replace(/^﻿/, ''));
 
@@ -162,6 +186,18 @@ async function responderNaDm(commentId, texto) {
   return corpo;
 }
 
+/** Resposta pública pendurada no comentário da pessoa. */
+async function responderNoComentario(commentId, texto) {
+  const r = await fetch(`${API}/${commentId}/replies`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: texto, access_token: TOKEN }),
+  });
+  const corpo = await r.json();
+  if (!r.ok) throw new Error(`resposta pública (${r.status}): ${JSON.stringify(corpo?.error?.message || corpo).slice(0, 250)}`);
+  return corpo;
+}
+
 // ── Principal ────────────────────────────────────────────────────────────────
 async function main() {
   checarAmbiente();
@@ -202,29 +238,46 @@ async function main() {
         .replace('{titulo}', post.titulo || post.palavra)
         .replace('{link}', post.link);
 
+      const publica = respostaPublica(c.id, c.username);
+
       if (seco) {
         console.log(`\n  [SECO] responderia @${c.username || '?'} em ${post.id}`);
         console.log(`         comentário: "${(c.text || '').slice(0, 60)}"`);
-        console.log(`         mandaria:   ${post.link}`);
+        console.log(`         DM:         ${post.link}`);
+        console.log(`         no post:    "${publica}"`);
         enviadas++;
         continue;
       }
 
       try {
+        // A DM primeiro: só prometo publicamente o que já entreguei.
         await responderNaDm(c.id, texto);
-        estado.enviadas.push({
+
+        const registro = {
           comment_id: c.id,
           media_id: post.mediaId,
           post: post.id,
           palavra: post.palavra,
           username: c.username || null,
           enviado_em: new Date().toISOString(),
-        });
+          respondido_no_post: false,
+        };
+
+        try {
+          await responderNoComentario(c.id, publica);
+          registro.respondido_no_post = true;
+        } catch (errPub) {
+          // DM entregue é o que importa; a resposta pública é bônus.
+          console.warn(`    ⚠️  DM ok, mas a resposta pública falhou: ${errPub.message}`);
+          log.warn('dm', `Resposta pública falhou em ${post.id}: ${errPub.message}`, { post: post.id });
+        }
+
+        estado.enviadas.push(registro);
         salvarEstado(estado);
         jaEnviadas.add(c.id);
         enviadas++;
-        console.log(`  ✓ DM enviada para @${c.username || '?'} (${post.id})`);
-        log.ok('dm', `DM enviada: ${post.id} → @${c.username || '?'}`, { post: post.id, palavra: post.palavra });
+        console.log(`  ✓ @${c.username || '?'} (${post.id}) — DM enviada${registro.respondido_no_post ? ' + respondido no post' : ''}`);
+        log.ok('dm', `DM enviada: ${post.id} → @${c.username || '?'}`, { post: post.id, palavra: post.palavra, publica: registro.respondido_no_post });
         await new Promise((r) => setTimeout(r, PAUSA_ENTRE_ENVIOS));
       } catch (err) {
         console.error(`  ✗ @${c.username || '?'} (${post.id}): ${err.message}`);
