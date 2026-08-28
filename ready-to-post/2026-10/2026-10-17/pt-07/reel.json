@@ -1,0 +1,27 @@
+{
+  "id": "pt-07",
+  "date": "2026-10-17",
+  "archetype": "participacao",
+  "coverAt": 6.5,
+  "prompt": "Single continuous shot. Three ingredients in hard spotlight: a tuna can, three eggs, potatoes — one second still. Then motion: potato rounds sliding into olive oil and softening golden, eggs whisked in a deep bowl, tuna flaked in, everything folded together and poured back into the pan. Money shot: the flip — a plate pressed over the pan and the whole tortilla inverted in one confident motion, landing back to reveal a golden dome, then sliced to show the layered interior steaming, backlit. Final beat: a wedge lifted, layers holding. Warm light, deep shadows, film grain. Dominant sound: the whisk, then the flip landing. No speech, no voice, no narration, no dialogue, no music. During the first second, three short bold white sans-serif title overlays appear one after another in the lower third, synced to each ingredient in the spotlight, reading exactly: ATUM, then OVO, then BATATA. In the final second a large centered overlay reads exactly: A ou B? They are clean graphic title overlays composited over the image, NOT text written on any object, wall, board or packaging in the scene. No other words, letters or writing appear anywhere in the video.",
+  "caption": "Como prometido: a tortilha espanhola de despensa — alta, dourada, e vira até jantar de visita. **Sábado que vem: [A] frango desfiado, milho e requeijão ou [B] arroz, feijão de ontem e ovo? Comenta A ou B 👇**",
+  "hashtags": [
+    "#temnasemana",
+    "#oquetemnageladeira",
+    "#semanaresolvida",
+    "#comidareal",
+    "#semanaorganizada",
+    "#cozinhainteligente",
+    "#receitasfaceis",
+    "#cozinhafacil",
+    "#dicasdecozinha",
+    "#vidapratica",
+    "#cozinhando"
+  ],
+  "generatedAt": "2026-08-28T15:31:57.327Z",
+  "model": "gemini-omni-flash-preview",
+  "durationSec": 10,
+  "cloudinaryUrl": "https://res.cloudinary.com/dtvktwupd/video/upload/v1787930963/luiza-generated/veo/pt-07.mp4",
+  "cloudinaryPublicId": "luiza-generated/veo/pt-07",
+  "cloudinaryCoverUrl": "https://res.cloudinary.com/dtvktwupd/image/upload/v1787930965/luiza-generated/covers/pt-07-cover.png"
+}
