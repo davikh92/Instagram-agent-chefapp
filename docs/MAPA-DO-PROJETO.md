@@ -53,26 +53,20 @@ O Instagram nasceu quando era a única plataforma, então vive **solto na raiz**
 - `templates/*.html` (story-overlay, post-overlay, story-cardapio)
 - `ready-to-post/` (saída datada + `published.json`)
 
-**Por que não foi movido junto com esta organização:** os 9 workflows do GitHub
-Actions apontam pros caminhos exatos desses scripts, e a estreia do Ciclo 01 é
-em 2 dias (30/08 → 01/09). Mover a máquina viva às vésperas do lançamento é o
-único jeito de a organização causar o problema que ela existe pra evitar.
+**Decisão (Davi, 28/08): fica na raiz — permanente.** A primeira versão
+deste mapa agendava uma migração pra "depois da estreia", e o Davi derrubou o
+plano com o argumento correto: a máquina roda por cron 7 dias por semana, pra
+sempre — **não existe janela calma**. Qualquer migração seria sempre "durante o
+processo". A escolha real era mexer tudo antes da estreia ou nunca; e como os
+namespaces novos vão conter só scripts pequenos de agendamento via API, que
+nunca precisam encostar no Instagram, migrar pagaria risco real (9 workflows +
+12 scripts) por simetria estética.
 
-### Migração agendada — primeira semana de setembro (~04–05/09)
+**A raiz é oficialmente o namespace do Instagram.** Regra prática: arquivo
+solto em `scripts/`, `data/` ou `templates/` = Instagram. Plataforma nova
+jamais escreve nesses lugares — nasce no seu diretório.
 
-Quando a estreia estiver estável, numa janela calma:
-
-1. `git mv` dos 12 scripts → `scripts/instagram/` (ajustando `__dirname` e requires)
-2. Filas → `data/instagram/` (`veo-queue`, `story-queue`, `image-queue`, `dm-enviadas`, `ciclo-01/`)
-3. Templates → `templates/instagram/`
-4. Editar os 9 workflows **no mesmo commit**: `generate-veo(-retry)`,
-   `generate-image(-retry)`, `generate-story`, `publish-daily`, `publish-stories`,
-   `refresh-token`, `responder-comentarios`
-5. Verificar com `workflow_dispatch` (dry-run do responder-comentarios + um
-   publish manual) antes de deixar o cron encontrar os caminhos novos
-6. Atualizar CLAUDE.md e os docs que citam caminhos
-
-**O que NÃO se move nem depois:**
+**Fixos na raiz por razões próprias (nem são "do Instagram"):**
 
 - `ready-to-post/` — fica na raiz. O histórico de `published.json` está acoplado
   a esses caminhos e o dashboard lê dali. Renomear quebraria histórico por estética.
