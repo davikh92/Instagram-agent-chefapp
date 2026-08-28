@@ -60,6 +60,7 @@ e calorosa, "a gente", "pode deixar". A *chef* cozinha — primeira pessoa, quen
 | `docs/DIRECAO_PARA_A_AUTOMACAO.md` | O contrato vindo do time do app: o que o conteúdo comunicava errado, o endpoint, e como pedir mudança do lado deles. |
 | `docs/veo-prompt-guide.md` | **Cérebro editorial** — os 3 arquétipos (ESPELHO/RECEITA/VIRADA) e como escrever prompts de vídeo. |
 | `docs/ROTEIRO.md` | **Estado atual + decisões tomadas + próximos passos.** Leia no início de qualquer sessão de planejamento. |
+| `docs/PLANO-MULTIPLATAFORMA.md` | **Expansão além do Instagram** — ordem (Pinterest → Shorts → TikTok), custo real de cada plataforma, rotina semanal, e o que a ida pra Play Store muda nos links. Planejamento, sem código. |
 | `data/ciclo-01/fila/*.json` | **Filas de geração do Ciclo 01** (uma por bloco: novela, cardápios…). Consumidas por `generate-omni.js --queue`; os crons de geração iteram todas como rede de auto-cura. Campos extras: `ref` (imagem de referência), `coverAt` (segundo da capa), `link_dm` (link com UTM pra DM). |
 | `data/veo-queue.json` | **Legado** — fila da grade antiga, 100% gerada até 31/08. Não recebe itens novos. |
 | `data/story-queue.json` | Fila de Stories — Imagen 4 (fundo) + overlay HTML (texto), pilares Vitrine/Check-in/Gancho. **Prompts Imagen: cena pura, SEM palavras que induzem texto** (list, notes, handwriting, screen showing, "vertical photo of", "9:16") **e SEMPRE terminar com "absolutely no text, no letters, no writing anywhere in the image"**. Telefone SEMPRE virado pra baixo (face down). |

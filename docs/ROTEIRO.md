@@ -175,18 +175,26 @@ Rodo o modo seco antes. É o único item com data.
 **B. Destaque "Começa aqui"** — o Davi grava o app; eu corto, componho e monto.
 Sem data, depende só do vídeo dele.
 
-**C. Música + assinatura visual** — sem data. As duas se resolvem na mesma
-ferramenta de edição externa. O PNG transparente da marca sai daqui em minutos,
-com custo zero, quando a ferramenta for escolhida.
+**C. Música + assinatura visual** — **congelado por decisão do Davi (28/08):**
+o formato atual entra em teste como está, sem enfeite, pra sentir se funciona.
+Mexer agora seria mudar duas variáveis ao mesmo tempo. As duas se resolvem na
+mesma ferramenta de edição externa; o PNG transparente da marca sai daqui em
+minutos quando a hora chegar. *(Vira requisito no dia em que o TikTok entrar —
+ver §2.1 do plano multiplataforma.)*
 
-**D. Expansão multi-plataforma** — depois de tudo acima.
-TikTok · YouTube Shorts · Pinterest · Facebook de carona. X está fora.
+**D. Expansão multi-plataforma** — ⬅️ **EM PLANEJAMENTO desde 28/08.**
+Plano escrito em [`PLANO-MULTIPLATAFORMA.md`](PLANO-MULTIPLATAFORMA.md): nenhum
+código, ordem proposta (Pinterest → Shorts → TikTok), rotina semanal de ~20 min,
+e o que a ida pra Play Store muda em cada link.
 
 **E. Checkpoint D+30 (fim de setembro)** — o mais importante da lista, e o único
 que depende de dado que ainda não existe. Ver hipóteses do SUBPLANO-01:
 retenção 3,2s → 5s, envios/alcance, 30 comentários/mês, cliques UTM → `montou_semana`.
 É aqui que se decide o que o Ciclo 02 mantém, corta ou dobra — inclusive se a
 fila de eco dos stories volta pra mesa.
+**Não se constrói nada dele agora:** ferramenta feita hoje pra usar em 30–60 dias
+chega desatualizada e sem saber que pergunta responder. Monta-se quando os
+números existirem.
 
 ### 🔴 Com o Davi
 Nada bloqueia a estreia. Pendente: **link da bio com UTM**
@@ -195,7 +203,28 @@ do perfil entra como "(direto)" e a única medição do perfil se perde.
 
 ---
 
+## 📱 Estado do produto (28/08) — o app vai virar app
+
+Informação do Davi, e ela muda o planejamento de conteúdo:
+
+- O **desenvolvimento está praticamente concluído**; o período de transição acabou.
+- Agora é fase de **ajustar os primeiros pontos de entrada** — onde a pessoa cai e o
+  que ela vê nos primeiros segundos.
+- **O próximo passo é a Play Store:** virar aplicativo Android de verdade, não site.
+  Motivo declarado: site converte pouco.
+
+Consequência pra cá: **o destino dos nossos links vai mudar.** Por isso nenhuma bio
+de plataforma nova pode ter o destino final escrito — todas apontam pra
+`fixo.app.url_canonica`, e quem redireciona é o site. Detalhado no §1 do
+[`PLANO-MULTIPLATAFORMA.md`](PLANO-MULTIPLATAFORMA.md).
+
+---
+
 ## 💡 Ideia registrada (27/08): expandir pra outras plataformas — PÓS-Instagram
+
+> **Atualização 28/08:** saiu de "ideia" e virou plano —
+> [`PLANO-MULTIPLATAFORMA.md`](PLANO-MULTIPLATAFORMA.md). A tabela de decisões
+> abaixo continua valendo; o plano diz *em que ordem* e *quanto custa cada uma*.
 
 **Decisão do Davi: só depois que o Instagram estiver 100%** (65 vídeos gerados
 e agendados). O material caro já existe; distribuir é barato.
