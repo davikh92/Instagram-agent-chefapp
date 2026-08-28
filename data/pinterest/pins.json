@@ -1,0 +1,176 @@
+[
+  {
+    "id": "pin-cd-01",
+    "tipo": "cardapio",
+    "origem": "cd-01",
+    "slug": "detox-pos-festa",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio detox de 7 dias",
+    "linha": "reset completo depois dos excessos",
+    "accent": "#8FAF91",
+    "descricao": "Cardápio detox de 7 dias com comida de verdade: café, almoço e jantar já montados, e a lista de compras sai junto. Assinado por chef, feito pra semana real de quem trabalha. Esse é o cardápio grátis da casa."
+  },
+  {
+    "id": "pin-cd-02",
+    "tipo": "cardapio",
+    "origem": "cd-02",
+    "slug": "emagrecimento-consciente",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio de emagrecimento pra semana inteira",
+    "linha": "sem passar fome, sem comida triste",
+    "accent": "#E8784F",
+    "descricao": "Cardápio semanal de emagrecimento consciente: 7 dias de refeições montadas, com foco em saúde e resultado que se sustenta. A lista de compras sai junto — você só cozinha."
+  },
+  {
+    "id": "pin-cd-03",
+    "tipo": "cardapio",
+    "origem": "cd-03",
+    "slug": "massa-e-forca",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio pra quem treina pesado",
+    "linha": "proteína de verdade, 7 dias montados",
+    "accent": "#E8784F",
+    "descricao": "Cardápio semanal Massa & Força pra quem treina: refeições com proteína suficiente, montadas dia a dia, sem virar marmita repetida. Lista de compras inclusa."
+  },
+  {
+    "id": "pin-cd-04",
+    "tipo": "cardapio",
+    "origem": "cd-04",
+    "slug": "pele-e-intestino",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio pele e intestino",
+    "linha": "beleza que vem de dentro",
+    "accent": "#C49A3C",
+    "descricao": "Cardápio de 7 dias pensado pra pele e intestino: fibras, comida fresca e refeições que desincham, já organizadas na semana. A lista de compras sai junto."
+  },
+  {
+    "id": "pin-cd-05",
+    "tipo": "cardapio",
+    "origem": "cd-05",
+    "slug": "vegetariano-pratico",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio vegetariano prático de 7 dias",
+    "linha": "sem carne, com muito sabor",
+    "accent": "#8FAF91",
+    "descricao": "Cardápio vegetariano semanal com receitas práticas de verdade: 7 dias montados, sem ingrediente difícil de achar e sem repetir o mesmo prato. Lista de compras inclusa."
+  },
+  {
+    "id": "pin-cd-06",
+    "tipo": "cardapio",
+    "origem": "cd-06",
+    "slug": "foco-e-energia",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio pra foco e energia",
+    "linha": "comida que segura o dia inteiro",
+    "accent": "#C49A3C",
+    "descricao": "Cardápio semanal Foco & Energia: refeições que sustentam o dia sem apagar depois do almoço, montadas pros 7 dias. A lista de compras sai junto com a semana."
+  },
+  {
+    "id": "pin-cd-07",
+    "tipo": "cardapio",
+    "origem": "cd-07",
+    "slug": "low-carb-mediterraneo",
+    "board": "Cardápio da Semana",
+    "eyebrow": "Cardápio da casa",
+    "titulo": "Cardápio low carb mediterrâneo",
+    "linha": "o melhor dos dois mundos",
+    "accent": "#E8784F",
+    "descricao": "Cardápio low carb com tempero mediterrâneo: 7 dias de refeições leves, com azeite, peixe e legumes, já montadas. Lista de compras inclusa, sem planilha."
+  },
+
+  {
+    "id": "pin-rd-01",
+    "tipo": "receita",
+    "origem": "rd-01",
+    "board": "Jantar Rápido de Semana",
+    "eyebrow": "Receita da casa",
+    "titulo": "O jantar de 5 minutos que salva a noite",
+    "linha": "quando não sobrou ideia nem energia",
+    "accent": "#E8784F",
+    "descricao": "Receita de jantar rápido de 5 minutos pra noite em que não sobrou energia — melhor que delivery e com o que já tem em casa. Passo a passo completo na página da receita."
+  },
+  {
+    "id": "pin-rd-04",
+    "tipo": "receita",
+    "origem": "rd-04",
+    "board": "Jantar Rápido de Semana",
+    "eyebrow": "Receita da casa",
+    "titulo": "Peixe branco barato com cara de bistrô",
+    "linha": "peixe de quarta com jeito de sábado",
+    "accent": "#8FAF91",
+    "descricao": "A técnica italiana que transforma qualquer peixe branco barato em prato de bistrô. Receita rápida de jantar, com passo a passo e ingredientes de mercado."
+  },
+  {
+    "id": "pin-rd-07",
+    "tipo": "receita",
+    "origem": "rd-07",
+    "board": "Jantar Rápido de Semana",
+    "eyebrow": "Receita da casa",
+    "titulo": "Escondidinho em 12 minutos",
+    "linha": "conforto de domingo numa quinta",
+    "accent": "#E8784F",
+    "descricao": "Escondidinho que cabe na semana: o corte de 1 cm derruba o tempo pra 12 minutos. Receita de jantar de conforto com passo a passo completo."
+  },
+  {
+    "id": "pin-rd-09",
+    "tipo": "receita",
+    "origem": "rd-09",
+    "board": "Jantar Rápido de Semana",
+    "eyebrow": "Receita da casa",
+    "titulo": "Jantar 100% de despensa",
+    "linha": "pra noite em que a geladeira desistiu",
+    "accent": "#C49A3C",
+    "descricao": "Receita de jantar feito só com o que fica na despensa — pra noite em que você não foi ao mercado e nem precisa. Ingredientes que já estão no armário."
+  },
+  {
+    "id": "pin-rd-13",
+    "tipo": "receita",
+    "origem": "rd-13",
+    "board": "Jantar Rápido de Semana",
+    "eyebrow": "Receita da casa",
+    "titulo": "Jantar indiano de 5 minutos",
+    "linha": "a ervilha congelada entra direto no molho",
+    "accent": "#C49A3C",
+    "descricao": "Receita de jantar rápido com cara de restaurante indiano em 5 minutos — a ervilha congelada vai direto pro molho, sem descongelar. Passo a passo completo."
+  },
+
+  {
+    "id": "pin-rd-02",
+    "tipo": "receita",
+    "origem": "rd-02",
+    "board": "Massas e Macarrão",
+    "eyebrow": "Receita da casa",
+    "titulo": "Carbonara sem creme de leite",
+    "linha": "o segredo é o que você tira do fogo",
+    "accent": "#E8784F",
+    "descricao": "Receita de carbonara original, sem creme de leite: o segredo é o que você tira do fogo, não o que põe. Passo a passo pra não talhar o ovo."
+  },
+  {
+    "id": "pin-rd-08",
+    "tipo": "receita",
+    "origem": "rd-08",
+    "board": "Massas e Macarrão",
+    "eyebrow": "Receita da casa",
+    "titulo": "Massa de três ingredientes",
+    "linha": "fim de mês com jantar de trattoria",
+    "accent": "#C49A3C",
+    "descricao": "Receita de massa com três ingredientes que Roma inteira janta — e dá pra fazer com o queijo que você já tem em casa. Jantar de fim de mês com passo a passo."
+  },
+  {
+    "id": "pin-rd-11",
+    "tipo": "receita",
+    "origem": "rd-11",
+    "board": "Massas e Macarrão",
+    "eyebrow": "Receita da casa",
+    "titulo": "Mac and cheese cremoso de verdade",
+    "linha": "a criança senta na mesa sem chamar duas vezes",
+    "accent": "#E8784F",
+    "descricao": "Receita de mac and cheese cremoso de verdade, com uma colherinha de ingrediente secreto que ninguém sente. O jantar que a criança come sem reclamar."
+  }
+]

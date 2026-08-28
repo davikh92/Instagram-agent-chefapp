@@ -222,6 +222,7 @@ Toda imagem/vídeo gerado segue estes princípios (ver `brand.json → art_direc
 | `build-dashboard.js` | Gera `dashboard.html` com tudo que foi publicado |
 | `refresh-token.js` | Renovação do token do Instagram |
 | `gerar-destaque-cardapios.js` | **As 7 stories dos cardápios** — fundo é a capa do post `cd-01..07` (custo zero), texto sai do Contexto. `--agendar AAAA-MM-DD` cria as pastas datadas e elas publicam pelo fluxo normal. Regerar quando o app mudar um cardápio. |
+| `gerar-pins.js` | **Os 15 pins do teste de Pinterest** — recompõe as capas 9:16 já geradas em 2:3 (1000×1500), a proporção que o Pinterest não corta. Custo zero de API. Link e selo "grátis" saem do Contexto; nada digitado à mão. Guia em `assets/pinterest/COMO-PUBLICAR.md`. |
 | `responder-comentarios.js` | **Comentou a palavra-chave → recebe o link na DM + resposta no post.** Lê comentários dos posts com `link_dm`, casa a palavra (sem acento, aceita plural), manda a DM e **responde publicamente no comentário** (6 variações, escolhidas pelo id — repetir frase idêntica lê como spam). A pública só sai se a DM foi entregue. Só olha posts dos últimos **14 dias** — a "validade", pra varredura não crescer com o ciclo. Registro em `data/dm-enviadas.json` impede envio repetido. `--dry-run` mostra sem enviar. |
 
 **Workflows** (`.github/workflows/`): `generate-veo` (ímpares) · `generate-veo-retry` (pares) ·
