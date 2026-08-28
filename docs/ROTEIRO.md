@@ -128,10 +128,12 @@ Uma coisa por vez, na ordem. Nada começa antes de a anterior fechar.
 limitado só pela cota diária da API. O Davi dá o sinal a cada dia.
 **43/65 prontos e auditados.**
 
-### 2. Teste de assinatura NA GERAÇÃO (1 vídeo, ~$1)
-Pedir a assinatura "Tem na Semana." e/ou números **dentro do prompt**, em vez de
-colar depois. Um vídeo decide se vira padrão do ciclo ou se fica sem texto mesmo.
-*Overlay ffmpeg: descartado — o Davi já testou, estraga o vídeo.*
+### 2. ✅ CONCLUÍDO (28/08) — teste de texto na geração
+4 vídeos testados. O modelo escreve certo em português, mas **o resultado não serve**:
+assinatura sai como texto cru (lê como rascunho e enfraquece a marca) e rótulo de
+ingrediente não tem impacto. **Única hipótese viva: numeração 1·2·3**, por valor
+psicológico de retenção, e só em receitas com passos visualmente distintos.
+Não especificar tipografia no prompt — corrompe a cena. Detalhes no CALENDARIO.
 
 ### 3. Tabela de DM
 Data + palavra que a pessoa comenta + link rastreado de cada `cd` e `rd`, pronta
@@ -142,9 +144,16 @@ Fila vazia desde 28/07 — hoje roda só repost. Reescrever a fila de eco do cic
 **Restrição do Davi: modelo de imagem barato** (o `gemini-3.1-flash-image`,
 ~$0,04/imagem, que já está no `generate-story.js`), não o caro.
 
-### 5. Música — sem data
-Vai ajudar, mas não interrompe nada. Caminho provável: ferramenta de edição que
-já traz trilha. Entra quando a gente decidir que é a hora.
+### 5. Música + assinatura visual — sem data, mesma solução
+Ideia do Davi (28/08): as duas coisas se resolvem na **mesma ferramenta de edição
+externa**. O plano:
+1. Gerar **uma imagem perfeita da marca** — "Tem na Semana" com a tipografia e a cor
+   certas, **fundo transparente** (PNG). Isso a gente já sabe fazer aqui: o mesmo
+   Puppeteer que faz stories e posts renderiza PNG transparente, custo zero de API.
+2. Escolher uma ferramenta de edição boa que aceite sobrepor esse PNG **e** colocar
+   trilha. Uma ferramenta resolve assinatura + música de uma vez.
+3. A numeração 1·2·3 pode entrar pelo mesmo caminho, com qualidade de motion de verdade.
+Entra quando a gente decidir que é a hora — não bloqueia nada.
 
 ### 6. Expansão multi-plataforma — depois de tudo acima
 TikTok · YouTube Shorts · Pinterest · Facebook de carona. Detalhes na seção abaixo.

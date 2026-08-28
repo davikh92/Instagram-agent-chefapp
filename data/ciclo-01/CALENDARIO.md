@@ -24,13 +24,15 @@ prompt:         EN, só AÇÃO/câmera/luz/som — consistência vem da imagem d
 legenda:        PT-BR, com o CTA DENTRO dela (CTA não é campo separado)
 hashtags:       mix 12-15 (brand.json → hashtags)
 voiceText:      fala curta estilo real, OU "—" (sem voz)
-overlay:        (DESCARTADO 27/08 — ver Decisões) texto ficaria pós-geração via ffmpeg
+overlay:        — (rotas de texto fechadas em 28/08; ver Decisões de produção)
 modelo:         Omni Flash ($1) | Veo Lite ($0,40)
 ref_imagem:     data/ciclo-01/ref/ref-novela.png (episódios da novela) ou "—"
 link_utm:       só se funcao=trafego: {url_canonica}/caminho?utm_source=instagram&utm_campaign=<id>
 ```
 
-**Assinatura no fim do vídeo:** desejada, ainda NÃO resolvida. Via ffmpeg está descartado (27/08). A testar: pedir na própria geração. Nunca narrada.
+**Assinatura no fim do vídeo:** desejada, **fora da geração**. As duas rotas internas foram testadas
+e fechadas (ffmpeg 27/08 · texto na geração 28/08). Caminho aberto: PNG transparente da marca +
+ferramenta de edição externa — mesma ferramenta que resolve a música. Nunca narrada.
 
 ---
 
@@ -175,11 +177,20 @@ publicado sozinho no dia/hora. O "agendar tudo" já está feito por desenho.
 - **Colchão:** todo post gerado com 4+ dias de antecedência da publicação.
 - **Economia pontual aberta:** stories via batch API (metade do preço) · duração 8s
   nos slots que não precisam de 10 (exige campo `duration` por item — tarefa pequena).
-- **Texto no vídeo — DECISÃO DO DAVI (27/08):** o **overlay ffmpeg foi descartado**.
-  Ele já conhece o resultado desse tipo de edição: estraga o vídeo. Assinatura no fim
-  e passos numerados continuam desejáveis, mas o caminho é **pedir na própria geração**
-  (Omni) — 1 vídeo de teste decide. Enquanto isso os reels publicam sem texto, e isso
-  **não é bloqueio de publicação** (não existe prazo de 01/09 — foi engano meu).
+- **Texto no vídeo — TESTE CONCLUÍDO (28/08), veredito do Davi:**
+  4 vídeos testados pedindo o texto na própria geração (`rd-07`, `rl-12`, `pt-07`, `cd-11`).
+  O modelo **escreve certo em português**, mas o resultado não serve:
+  - ❌ **Assinatura** (`rd-07`): sai como texto cru, sem motion design nas letras — lê como
+    "texto inacabado", não como marca. **Pior que não ter assinatura.** Descartada.
+  - ❌ **Rótulos de ingrediente** (`pt-07`): aparecem, mas com zero impacto visual. Descartados.
+  - 🟡 **Numeração** (`rl-12`): a única hipótese viva — e pelo valor **psicológico**, não estético:
+    quem vê o "2" quer ver o "3" (retenção). Talvez só o número, sem a palavra "PASSO".
+    **Só em receitas com passos visualmente distintos** — o `rl-12` (arroz cremoso: mexe → fica
+    cremoso) foi má escolha minha, não tem etapa distinta pra numerar.
+  - **Regra técnica descoberta:** NÃO especificar tipografia no prompt. O modelo trata texto como
+    parte da cena; detalhar fonte/posição/animação corrompe a imagem. Ou texto cru (inútil), ou
+    cena estragada — por isso assinatura bonita só fora da geração.
+  - **Os 4 vídeos do teste ficam e publicam normalmente** (decisão do Davi).
 
 ## 🔁 Refações por erro de geração (27/08)
 
