@@ -138,21 +138,22 @@ ferramenta de edição externa — mesma ferramenta que resolve a música. Nunca
 5. ✍️ **Participação** — mecânica + partida a frio + 5 reservas ([PARTICIPACAO.md](PARTICIPACAO.md)); `pt-03`+ são reativos por desenho
 6. ⬜ Stories de eco (ajuste da story-queue — depois da revisão dos blocos)
 
-## 📍 Produção — estado em 27/08 (dia 2)
+## 📍 Produção — CONCLUÍDA em 28/08
 
-**43/65 gerados (~$43) — auditoria de 27/08: zero problemas nos 43:**
-- ✅ **SETEMBRO COMPLETO — 22/22** + anúncio de 30/08 (carrossel)
-- ✅ Novela 13/13 · rl 10/13 · Cardápios 9/13 · rd 6/13 · pt 5/13
-- ⏳ Faltam 22: `cd-10..13` · `rl-11..13` · `rd-07..13` · `pt-06..13`
-- Auditoria checou: cloudinaryUrl, mp4, capa, legenda, hashtags, prompt
-  atual da fila, ref da novela e UTM nos links de DM — item a item.
+**65/65 gerados (~$65).** Auditoria final: 64/64 da fila íntegros + `nv-01`.
+Zero pendências, zero problemas.
 
-**Etapa nova — revisão de continuidade antes de gerar (decisão do Davi, 27/08):**
-todo prompt passa por leitura crítica antes da geração, procurando contradição entre
-o que a legenda promete e o que o vídeo mostra. A primeira rodada pegou 4:
-`rl-03` (creme × "sem creme de leite") · `pt-02` (mel × "sem açúcar") ·
-`pt-13` (4º ingrediente num desafio de 3) · `rd-09` (azeitona ausente da receita real).
-Sai mais barato do que refazer vídeo.
+- ✅ Novela 13/13 · Cardápios 13/13 · Receita legenda 13/13 · Receita DM 13/13 · Participação 13/13
+- ✅ Todo post tem: MP4 no Cloudinary, capa no money shot, legenda com hashtags
+  corretas, prompt batendo com a fila, ref da novela e UTM nos links de DM
+- ✅ Publicação agenda sozinha: pasta datada + cron da grade nova
+- 📌 3 meses de Instagram prontos (01/09 → 29/11), mais o anúncio de 31/08
+
+**O que a produção ensinou (para o próximo ciclo):**
+1. *Spend-rate* da API: ~10–16 vídeos por rajada, esfria em ~1h. Cota diária separada.
+2. Revisão de continuidade ANTES de gerar pega contradição legenda × vídeo por $0.
+3. Filas guardam hashtag como lista — junção tem que ser por espaço, nunca vírgula.
+4. Texto dentro do vídeo: as duas rotas foram fechadas (ver Decisões de produção).
 
 
 **Limites da API descobertos na prática (importante pros lotes):**
