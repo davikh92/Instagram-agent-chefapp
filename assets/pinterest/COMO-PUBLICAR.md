@@ -97,4 +97,4 @@ Nome do board é campo de busca no Pinterest — não renomeie pra algo bonitinh
 **O que medir:** cliques no link (só a conta comercial mostra), salvamentos,
 e no nosso lado o `utm_source=pinterest` chegando no app.
 
-Regerar quando um cardápio ou uma receita mudar: `node scripts/gerar-pins.js`
+Regerar quando um cardápio ou uma receita mudar: `node scripts/pinterest/gerar-pins.js`

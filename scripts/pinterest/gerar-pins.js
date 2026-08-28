@@ -3,8 +3,8 @@
  * gerar-pins.js — os pins do teste de Pinterest.
  *
  * Uso:
- *   node scripts/gerar-pins.js
- *   node scripts/gerar-pins.js --saida assets/pinterest
+ *   node scripts/pinterest/gerar-pins.js
+ *   node scripts/pinterest/gerar-pins.js --saida assets/pinterest
  *
  * Custo ZERO de API: o fundo de cada pin é a `cover.png` do post que já foi
  * gerado — a mesma capa que rodou no Instagram, recomposta em 2:3.
@@ -23,10 +23,10 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const log = require('./lib/logger');
+const log = require('../lib/logger');
 
-const ROOT = path.resolve(__dirname, '..');
-const TEMPLATE = path.join(ROOT, 'templates', 'pin-pinterest.html');
+const ROOT = path.resolve(__dirname, '..', '..');
+const TEMPLATE = path.join(ROOT, 'templates', 'pinterest', 'pin.html');
 const PINS = path.join(ROOT, 'data', 'pinterest', 'pins.json');
 const CONTEXTO = path.join(ROOT, 'data', 'product-context.json');
 const FILA_RECEITAS = path.join(ROOT, 'data', 'ciclo-01', 'fila', 'fila-receitas-dm.json');
@@ -177,7 +177,7 @@ async function main() {
     '---\n',
     '**O que medir:** cliques no link (só a conta comercial mostra), salvamentos,',
     'e no nosso lado o `utm_source=pinterest` chegando no app.\n',
-    'Regerar quando um cardápio ou uma receita mudar: `node scripts/gerar-pins.js`\n',
+    'Regerar quando um cardápio ou uma receita mudar: `node scripts/pinterest/gerar-pins.js`\n',
   ];
   fs.writeFileSync(path.join(SAIDA, 'COMO-PUBLICAR.md'), guia.join('\n'), 'utf8');
 
