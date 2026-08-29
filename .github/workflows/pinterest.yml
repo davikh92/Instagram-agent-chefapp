@@ -1,0 +1,81 @@
+name: 📌 Pinterest — redistribuir
+
+# Republica no Pinterest o que já saiu no Instagram há 2 dias.
+#
+# Não gera material nenhum: pega o MP4 e a capa que já estão no Cloudinary
+# e o texto que já está na legenda. Custo de geração zero.
+#
+# Um pin por dia, de propósito: o Pinterest lê despejo como spam, e o pin
+# tem vida útil de meses — não há pressa nenhuma em esvaziar a fila.
+#
+# ⚠️ Enquanto o app estiver em Trial access, os pins ficam visíveis só pra
+# própria conta. Ver docs/setup-pinterest.md.
+
+on:
+  schedule:
+    - cron: '30 14 * * *'   # 11h30 BRT — fora dos horários do Instagram
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Modo seco (mostra o que faria, sem publicar)'
+        type: boolean
+        default: false
+      limite:
+        description: 'Quantos pins nesta execução (vazio = usa o config)'
+        type: string
+        default: ''
+
+concurrency:
+  group: pinterest
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar .env
+        run: |
+          echo "PINTEREST_APP_ID=${{ secrets.PINTEREST_APP_ID }}"                 >> .env
+          echo "PINTEREST_APP_SECRET=${{ secrets.PINTEREST_APP_SECRET }}"         >> .env
+          echo "PINTEREST_REFRESH_TOKEN=${{ secrets.PINTEREST_REFRESH_TOKEN }}"   >> .env
+
+      - name: Publicar
+        run: |
+          set -euo pipefail
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "${{ inputs.limite }}" ]; then ARGS="$ARGS --limite ${{ inputs.limite }}"; fi
+          node scripts/pinterest/publicar.js $ARGS
+
+      # Sem isso o mesmo post seria republicado todo dia: o registro de quem
+      # já virou pin precisa sobreviver entre execuções.
+      - name: Guardar registro de pins
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          if [ -z "$(git status --porcelain data/pinterest/publicados.json)" ]; then
+            echo "Nenhum pin novo — nada a registrar."
+            exit 0
+          fi
+          git pull --rebase origin main
+          git add data/pinterest/publicados.json
+          git commit -m "chore: pins do Pinterest registrados [skip ci]"
+          git push

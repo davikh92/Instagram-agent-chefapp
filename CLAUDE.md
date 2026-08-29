@@ -223,12 +223,16 @@ Toda imagem/vídeo gerado segue estes princípios (ver `brand.json → art_direc
 | `build-dashboard.js` | Gera `dashboard.html` com tudo que foi publicado |
 | `refresh-token.js` | Renovação do token do Instagram |
 | `gerar-destaque-cardapios.js` | **As 7 stories dos cardápios** — fundo é a capa do post `cd-01..07` (custo zero), texto sai do Contexto. `--agendar AAAA-MM-DD` cria as pastas datadas e elas publicam pelo fluxo normal. Regerar quando o app mudar um cardápio. |
+| `pinterest/oauth.js` | **Refresh token da Pinterest** — roda uma vez, na máquina do Davi. Servidor local + OAuth; imprime o token no terminal dele (nunca em chat, nunca commitado). |
+| `pinterest/criar-boards.js` | Cria/reconhece os boards do `data/pinterest/config.json` e grava os ids em `boards.json`. Idempotente. |
+| `pinterest/publicar.js` | **Redistribui pro Pinterest o que já saiu no Instagram** (video pin: MP4 + capa do Cloudinary, texto da legenda). **Não gera material nenhum.** Fila derivada de `ready-to-post/` — entra quem tem `published.json` há 2+ dias e regra de board. `--dry-run` mostra sem publicar. |
 | `pinterest/gerar-pins.js` | **Os 15 pins do teste de Pinterest** — recompõe as capas 9:16 já geradas em 2:3 (1000×1500), a proporção que o Pinterest não corta. Custo zero de API. Link e selo "grátis" saem do Contexto; nada digitado à mão. Guia em `assets/pinterest/COMO-PUBLICAR.md`. |
 | `responder-comentarios.js` | **Comentou a palavra-chave → recebe o link na DM + resposta no post.** Lê comentários dos posts com `link_dm`, casa a palavra (sem acento, aceita plural), manda a DM e **responde publicamente no comentário** (6 variações, escolhidas pelo id — repetir frase idêntica lê como spam). A pública só sai se a DM foi entregue. Só olha posts dos últimos **14 dias** — a "validade", pra varredura não crescer com o ciclo. Registro em `data/dm-enviadas.json` impede envio repetido. `--dry-run` mostra sem enviar. |
 
 **Workflows** (`.github/workflows/`): `generate-veo` (ímpares) · `generate-veo-retry` (pares) ·
 `generate-story` · `generate-image(-retry)` · `publish-daily` (7/7 com catchup) ·
-`publish-stories` (3 slots/dia) · `refresh-token` · `responder-comentarios` (10 em 10 min, 9h–23h BRT).
+`publish-stories` (3 slots/dia) · `refresh-token` · `responder-comentarios` (10 em 10 min, 9h–23h BRT) ·
+`pinterest` (1 pin/dia, 11h30 BRT — redistribui o que já saiu no Instagram).
 
 **Segredos no GitHub:** `INSTAGRAM_ACCESS_TOKEN` (IGAA…, renovar se trocar senha!),
 `INSTAGRAM_USER_ID`, `GOOGLE_API_KEY`, `CLOUDINARY_*`, `ELEVENLABS_API_KEY`,

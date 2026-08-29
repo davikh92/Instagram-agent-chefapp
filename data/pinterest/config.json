@@ -1,0 +1,56 @@
+{
+  "_comment": "Regras da redistribuição pro Pinterest. Nenhuma URL aqui: 'destino' nomeia uma chave de fixo.links_uteis do Contexto, ou 'link_dm' pra usar o link que o próprio post já carrega. Ver docs/MAPA-DO-PROJETO.md e docs/PLANO-MULTIPLATAFORMA.md.",
+
+  "boards": [
+    {
+      "nome": "Cardápio da Semana",
+      "descricao": "Cardápios de 7 dias com a lista de compras junto. Comida de verdade de todo dia, assinada por chef."
+    },
+    {
+      "nome": "Jantar Rápido de Semana",
+      "descricao": "Receitas de jantar pra semana real: rápidas, com ingrediente de mercado, sem complicação."
+    },
+    {
+      "nome": "Cozinha do Dia a Dia",
+      "descricao": "A rotina da cozinha resolvida — o que dá pra fazer com o que já tem em casa."
+    }
+  ],
+
+  "regras": [
+    {
+      "prefixo": "cd",
+      "board": "Cardápio da Semana",
+      "destino": "link_dm",
+      "_nota": "Cardápio já carrega o link da própria página; só troca o utm_source."
+    },
+    {
+      "prefixo": "rd",
+      "board": "Jantar Rápido de Semana",
+      "destino": "link_dm",
+      "_nota": "Receita-DM aponta pra página pública real da receita no app."
+    },
+    {
+      "prefixo": "rl",
+      "board": "Jantar Rápido de Semana",
+      "destino": "receitas",
+      "_nota": "Receita-legenda não tem link próprio: vai pra estante de receitas."
+    },
+    {
+      "prefixo": "nv",
+      "board": "Cozinha do Dia a Dia",
+      "destino": "montar_a_semana",
+      "_nota": "Novela é história; o passo natural depois dela é montar a semana."
+    }
+  ],
+
+  "pular": {
+    "prefixos": ["pt"],
+    "_motivo": "Participação A/B é mecânica de comentário do Instagram. No Pinterest, onde o pin é o link, pedir comentário não faz sentido nenhum."
+  },
+
+  "cadencia": {
+    "pins_por_execucao": 1,
+    "dias_apos_instagram": 2,
+    "_nota": "Um pin por dia, e só depois que o post já saiu no Instagram há 2 dias. O Pinterest lê despejo como spam, e a ordem importa: o Instagram estreia, o Pinterest arquiva."
+  }
+}
