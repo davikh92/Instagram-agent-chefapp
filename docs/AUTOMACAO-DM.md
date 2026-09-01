@@ -7,21 +7,34 @@
 
 ## 1. Por que a nossa automação não funciona (e a do ManyChat funciona)
 
-Não é bug, não é falta de permissão, não é jeito de chamar a API.
+**Fato observado (01/09):** o Davi comentou DETOX; o ManyChat entregou a DM.
+A nossa API, no mesmo instante, via `comments_count: 1` e lista **vazia**.
+Mesmo comentário, mesma conta — só o app de acesso muda. O código não é a variável.
 
-O app `luiza-publisher` está **em modo de desenvolvimento** no painel da Meta.
-Nesse modo a Meta só devolve dados de contas que têm função no app. A conta
-`@temnasemana` tem — por isso publicar funciona. Qualquer seguidor real **não
-tem** — por isso o comentário dele existe (`comments_count` conta) mas a API se
-recusa a mostrar o objeto.
+O modelo de acesso da Meta tem três camadas (o diagnóstico anterior, "é só
+publicar o app", era simples demais — correção após o Davi contestar):
 
-O ManyChat funciona porque **o app deles já passou pelo App Review da Meta**. É a
-única diferença. A vantagem deles é regulatória, não técnica.
+1. **Modo do app** — Development × Live. Um toggle, sem revisão.
+2. **Nível por permissão** — *Standard* (só dados de contas com função no app)
+   × *Advanced* (dados de qualquer usuário). **É o Advanced que passa por
+   revisão da Meta**, permissão a permissão.
+3. **Funções** — quem tem papel no app (`Funções` no painel). Hoje:
+   `@temnasemana` (Testador do Instagram) e o Davi como admin do painel — mas
+   **`@Dav.hoffmann` não está lá**, e foi ele quem comentou.
 
-> **Consequência prática:** copiar o desenho dos fluxos deles não resolve nada.
-> Nosso `responder-comentarios.js` está correto e passaria a funcionar sozinho no
-> dia em que o app for publicado. O trabalho que falta é burocrático — política de
-> privacidade, termos de uso, gravação do fluxo, revisão da Meta.
+A hipótese que explica tudo: `instagram_business_manage_comments` está em
+Standard, então a API só mostraria comentário **de conta com função no app**.
+O ManyChat tem Advanced Access — vantagem regulatória, não técnica.
+
+### O experimento que decide (5 min, pendente)
+
+Adicionar `@Dav.hoffmann` como **Testador do Instagram** em Funções → ele aceita
+o convite (Instagram → Configurações → Site e apps) → comenta de novo → rodar
+`node scripts/responder-comentarios.js --dry-run`.
+
+- **Comentário aparece** → hipótese confirmada; pra valer pro público é pedir
+  Advanced Access nas duas permissões (comments + messages).
+- **Não aparece** → tem outra coisa, investigar de novo.
 
 ## 2. O limite do plano grátis do ManyChat
 
@@ -56,6 +69,24 @@ e links já escritos, é copiar e colar).
 
 **Não assinar** o ManyChat: sem faturamento, não se paga ferramenta por conforto.
 Decisão do Davi, 01/09.
+
+## 3b. O caminho do meio (ideia do Davi, 01/09): palavra-chave direto na DM
+
+O gatilho **"pessoa manda a palavra na DM → recebe o link"** é grátis no ManyChat
+e — a diferença que importa — **é da conta, não do post**. Dá pra deixar as 26
+palavras configuradas **de uma vez, antecipadamente**, sem depender de horário de
+publicação. Elimina exatamente a dor do modo grátis por post: ficar de plantão
+pra marcar o post depois que ele sai.
+
+Custo do trade-off, nas palavras do Davi: comentário no post engaja mais e a
+pessoa não muda de lugar (comentou → DM chega); mandar DM é um passo a mais e
+não alimenta o post. **Não substitui o comentário→DM — é a ponte pré-configurável
+enquanto ele não existe pro público.**
+
+Se for adotar: legendas futuras ganham a variação *"comenta DETOX **ou me manda
+DETOX aqui na DM**"* — o comentário continua existindo pro engajamento, e a DM é
+o caminho garantido. As 26 palavras e links já estão prontos em
+`data/ciclo-01/PROGRAMACAO-DM.md`.
 
 ## 4. Ideias que valem explorar (grátis)
 
