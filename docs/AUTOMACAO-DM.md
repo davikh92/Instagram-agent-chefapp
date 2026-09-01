@@ -111,13 +111,26 @@ uma lista de pessoas engajadas, que é exatamente o ativo que a gente não tem e
 nenhum post recupera depois. Vale entender se dá pra reproduzir isso do nosso lado
 quando o app estiver publicado.
 
-## 5. O que decide tudo
+## 5. Decisão final (01/09): não perseguir o Advanced Access
 
-**Fazer ou não o App Review do `luiza-publisher`.**
+Pesquisado o processo real. Advanced Access exige, por permissão:
+**verificação de empresa** no Business Manager (documentos, antes do review) +
+**App Review com screencast** (comments e messages = dois pedidos) + política de
+privacidade em HTTPS no domínio próprio + rodadas de rejeição como padrão.
 
-- **Fez:** comentário→DM volta a ser automático e grátis pra sempre, sob nosso
-  controle, e a etiquetagem de quem interage vira possível.
-- **Não fez:** ou paga ManyChat, ou marca post na mão 2× por semana pra sempre.
+Pra um app interno de **uma conta**, são semanas de burocracia com risco real de
+rejeição — pra ganhar o que o ManyChat dá de graça. A intuição do Davi ("duvido
+que seja simples assim") estava certa. **Custo-benefício não fecha agora.**
 
-Sem data. Ver `docs/setup-pinterest.md` para o precedente: lá o mesmo tipo de
-revisão é exigido pela Pinterest, e a gravação do fluxo funcionando é o pedido.
+Consequências executadas:
+
+- **Cron do `responder-comentarios.yml` desligado** (01/09). O código fica
+  intacto e rodável à mão; religar é descomentar o schedule. Motivo: rodava a
+  cada 10 min sem conseguir ler nada, e se um dia lesse, duplicaria DM com o
+  ManyChat.
+- O experimento do testador (§1) fica como curiosidade diagnóstica — provaria o
+  mecanismo, mas o mecanismo não leva a lugar nenhum sem a burocracia.
+- **ManyChat é o canal operante de DM.** Revisitar tudo isso só se o produto
+  ganhar CNPJ verificado no Business Manager e volume que justifique — aí o
+  Advanced Access vira "grátis pra sempre + etiquetagem própria de quem
+  interage", e este documento é o ponto de partida.

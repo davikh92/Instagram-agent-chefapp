@@ -9,9 +9,15 @@ name: 📬 Responder comentários com DM
 # O script só olha posts publicados nos últimos 14 dias (a "validade"), então
 # a varredura não cresce conforme o ciclo avança.
 
+# ⏸️ CRON DESLIGADO em 01/09/2026.
+# A leitura de comentários exige Advanced Access da Meta (verificação de
+# empresa + App Review por permissão), custo que não fecha pra um app de uma
+# conta só. A DM opera via ManyChat; rodar isto a cada 10 min não fazia nada
+# e, se um dia funcionasse, duplicaria DMs. Religar = descomentar o schedule.
+# O script continua intacto e rodável à mão. Contexto: docs/AUTOMACAO-DM.md
 on:
-  schedule:
-    - cron: '*/10 12-23,0-2 * * *'   # 09h–23h BRT (UTC-3)
+  # schedule:
+  #   - cron: '*/10 12-23,0-2 * * *'   # 09h–23h BRT (UTC-3)
   workflow_dispatch:
     inputs:
       dry_run:
