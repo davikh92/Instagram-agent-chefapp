@@ -1,9 +1,11 @@
 name: 🔁 Retry Geração Veo
 
 on:
-  schedule:
+# PAUSADO em 01/09/2026 - Retry da geracao de reels - com 64/64 gerados, nao ha o que refazer.
+# Religar = descomentar o bloco schedule abaixo. Rodavel a mao por workflow_dispatch.
+#  schedule:
     # Dias pares do mês às 09:00 BRT (12:00 UTC) — retry do lote do dia anterior
-    - cron: '0 12 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30 * *'
+#    - cron: '0 12 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30 * *'
   workflow_dispatch:
 
 concurrency:
@@ -67,7 +69,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git stash -u
           git pull --rebase origin main
-          git stash pop
+          git stash pop || true   # sem stash (nada mudou) nao e erro
           git add ready-to-post/ dashboard.html data/product-context.json
           git diff --staged --quiet \
             || git commit -m "chore: retry reels Veo + dashboard atualizado [skip ci]"

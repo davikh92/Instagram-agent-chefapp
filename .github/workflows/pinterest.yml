@@ -12,8 +12,11 @@ name: 📌 Pinterest — redistribuir
 # própria conta. Ver docs/setup-pinterest.md.
 
 on:
-  schedule:
-    - cron: '30 14 * * *'   # 11h30 BRT — fora dos horários do Instagram
+# PAUSADO em 01/09/2026 - Pinterest ainda nao tem app nem token configurados (3 execucoes falharam).
+# Religar quando os secrets PINTEREST_* existirem - ver docs/setup-pinterest.md.
+# Religar = descomentar o bloco schedule abaixo. Rodavel a mao por workflow_dispatch.
+#  schedule:
+#    - cron: '30 14 * * *'   # 11h30 BRT — fora dos horários do Instagram
   workflow_dispatch:
     inputs:
       dry_run:

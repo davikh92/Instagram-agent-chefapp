@@ -1,9 +1,12 @@
 name: 🖼️ Gerar Imagens Domingo
 
 on:
-  schedule:
-    - cron: '30 12 1 * *'   # dia  1 às 09:30 BRT (12:30 UTC)
-    - cron: '30 12 15 * *'  # dia 15 às 09:30 BRT (12:30 UTC)
+# PAUSADO em 01/09/2026 - Nada na fila: o unico item (anuncio-nova-fase) foi publicado em 31/08.
+# O Ciclo 01 e todo em reels - nao ha post de imagem planejado.
+# Religar = descomentar o bloco schedule abaixo. Rodavel a mao por workflow_dispatch.
+#  schedule:
+#    - cron: '30 12 1 * *'   # dia  1 às 09:30 BRT (12:30 UTC)
+#    - cron: '30 12 15 * *'  # dia 15 às 09:30 BRT (12:30 UTC)
   workflow_dispatch:
 
 concurrency:
@@ -47,7 +50,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git stash -u
           git pull --rebase origin main
-          git stash pop
+          git stash pop || true   # sem stash (nada mudou) nao e erro
           git add ready-to-post/
           git diff --staged --quiet \
             || git commit -m "chore: imagens Imagen geradas automaticamente [skip ci]"

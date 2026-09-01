@@ -68,7 +68,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git stash -u
           git pull --rebase origin main
-          git stash pop
+          git stash pop || true   # sem stash (nada mudou) nao e erro
           git add ready-to-post/ dashboard.html
           git diff --staged --quiet \
             || git commit -m "chore: stories publicadas + dashboard atualizado [skip ci]"

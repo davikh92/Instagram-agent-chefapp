@@ -229,10 +229,23 @@ Toda imagem/vídeo gerado segue estes princípios (ver `brand.json → art_direc
 | `pinterest/gerar-pins.js` | **Os 15 pins do teste de Pinterest** — recompõe as capas 9:16 já geradas em 2:3 (1000×1500), a proporção que o Pinterest não corta. Custo zero de API. Link e selo "grátis" saem do Contexto; nada digitado à mão. Guia em `assets/pinterest/COMO-PUBLICAR.md`. |
 | `responder-comentarios.js` | **Comentou a palavra-chave → recebe o link na DM + resposta no post.** Lê comentários dos posts com `link_dm`, casa a palavra (sem acento, aceita plural), manda a DM e **responde publicamente no comentário** (6 variações, escolhidas pelo id — repetir frase idêntica lê como spam). A pública só sai se a DM foi entregue. Só olha posts dos últimos **14 dias** — a "validade", pra varredura não crescer com o ciclo. Registro em `data/dm-enviadas.json` impede envio repetido. `--dry-run` mostra sem enviar. |
 
-**Workflows** (`.github/workflows/`): `generate-veo` (ímpares) · `generate-veo-retry` (pares) ·
-`generate-story` · `generate-image(-retry)` · `publish-daily` (7/7 com catchup) ·
-`publish-stories` (3 slots/dia) · `refresh-token` · `responder-comentarios` (10 em 10 min, 9h–23h BRT) ·
-`pinterest` (1 pin/dia, 11h30 BRT — redistribui o que já saiu no Instagram).
+**Workflows** (`.github/workflows/`) — limpeza de 01/09/2026: **4 ativos, 6 pausados.**
+
+| Ativo | Quando |
+|---|---|
+| `publish-daily` | 7/7 com catchup — o coração da máquina |
+| `publish-stories` | 3 slots/dia (09h30 · 13h30 · 19h30 BRT) |
+| `generate-story` | diário 08h BRT — ainda há stories na fila |
+| `refresh-token` | dias 1 e 15 — nunca desligar |
+
+**Pausados** (cron comentado; rodáveis à mão por `workflow_dispatch`, religar = descomentar):
+`generate-veo` + `generate-veo-retry` (64/64 do Ciclo 01 gerados) ·
+`generate-image` + `generate-image-retry` (fila vazia; o ciclo é todo em reels) ·
+`pinterest` (sem app/token — ver `docs/setup-pinterest.md`) ·
+`responder-comentarios` (Advanced Access — ver `docs/AUTOMACAO-DM.md`).
+
+> **Regra:** workflow que não tem o que fazer fica **pausado, não deletado**. Cron
+> rodando à toa gera email de falha e ruído que faz falha real passar despercebida.
 
 **Segredos no GitHub:** `INSTAGRAM_ACCESS_TOKEN` (IGAA…, renovar se trocar senha!),
 `INSTAGRAM_USER_ID`, `GOOGLE_API_KEY`, `CLOUDINARY_*`, `ELEVENLABS_API_KEY`,
