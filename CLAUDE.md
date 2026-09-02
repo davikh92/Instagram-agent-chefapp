@@ -61,6 +61,7 @@ e calorosa, "a gente", "pode deixar". A *chef* cozinha — primeira pessoa, quen
 | `docs/veo-prompt-guide.md` | **Cérebro editorial** — os 3 arquétipos (ESPELHO/RECEITA/VIRADA) e como escrever prompts de vídeo. |
 | `docs/ROTEIRO.md` | **Estado atual + decisões tomadas + próximos passos.** Leia no início de qualquer sessão de planejamento. |
 | `docs/PLANO-MULTIPLATAFORMA.md` | **Expansão além do Instagram** — ordem (Pinterest → Shorts → TikTok), custo real de cada plataforma, rotina semanal, e o que a ida pra Play Store muda nos links. Planejamento, sem código. |
+| `docs/CUSTOS.md` | **Custos reais de fatura** (não estimativa) — R$ 5,90 por vídeo Omni, série histórica jun/jul/ago, e como orçar o Ciclo 02. Consultar antes de prometer qualquer número de custo. |
 | `docs/MAPA-DO-PROJETO.md` | **O contrato de diretórios** — plataforma nova nasce em `scripts/<p>/`, `data/<p>/`, `templates/<p>/`, `assets/<p>/` e não escreve fora deles. **A raiz é o namespace do Instagram — permanente** (decisão do Davi 28/08: não existe janela calma pra migrar máquina que roda 7/7). **Consultar antes de criar qualquer arquivo novo.** |
 | `data/ciclo-01/fila/*.json` | **Filas de geração do Ciclo 01** (uma por bloco: novela, cardápios…). Consumidas por `generate-omni.js --queue`; os crons de geração iteram todas como rede de auto-cura. Campos extras: `ref` (imagem de referência), `coverAt` (segundo da capa), `link_dm` (link com UTM pra DM). |
 | `data/veo-queue.json` | **Legado** — fila da grade antiga, 100% gerada até 31/08. Não recebe itens novos. |
@@ -79,7 +80,7 @@ PLANEJAMENTO (mensal, no chat com o Davi)
 
 GERAÇÃO (GitHub Actions, sozinho)
   ├─ sync-contexto.js         → puxa a verdade do produto do Supabase do app
-  ├─ generate-omni.js         → reels 10s 9:16 via Gemini Omni Flash (~$1/vídeo)
+  ├─ generate-omni.js         → reels 10s 9:16 via Gemini Omni Flash (R$ 5,90/vídeo)
   ├─ add-voice.js             → voz PT-BR (Livia/ElevenLabs) nos reels com voiceText
   ├─ generate-story.js        → stories: Imagen 4 (fundo) + story-overlay.html (texto)
   └─ upload automático        → Cloudinary
@@ -99,7 +100,7 @@ PUBLICAÇÃO (GitHub Actions, sozinho)
 - Identificação emocional **SEMPRE** antes de mostrar o app — e **celular nunca é o foco da cena** (os 2 piores reels da história tinham tela em close)
 - **Desde set/2026 vale o CICLO 01 — "A Cozinha que Resolve"** (`docs/SUBPLANO-01.md` + `data/ciclo-01/`): 3 motores — Novela das 18h (Dom) · Utilidade (Cardápio DM Ter, Receita LEGENDA Qua, Receita DM Sex/Qui) · Participação A/B (Sáb). *Os 3 arquétipos antigos (ESPELHO/RECEITA/VIRADA) estão aposentados; a parte técnica do `docs/veo-prompt-guide.md` continua valendo.*
 - **Gramática de vídeo:** take único sem cortes · abre em ação (nunca em cena parada) · money shot declarado · vapor sempre em contraluz · som dominante por beat · assinatura "Tem na Semana." em motion/texto no último segundo (nunca narrada) · consistência de personagem via **imagem de referência** (`ref` na fila), jamais descrita no prompt
-- **Reels são gerados pelo Gemini Omni Flash** (`generate-omni.js`) — 10s, 9:16, ~$1/vídeo, som ambiente (`No speech...`). Veo 3.1 Lite/Fast ficam como alavanca de custo. **Texto no vídeo: os reels saem SEM texto.** Duas rotas testadas e fechadas: overlay ffmpeg (descartado 27/08 — estraga o vídeo) e texto pedido na geração (testado 28/08 — renderiza certo, mas sai como texto cru, sem motion design: a assinatura lê como rascunho e enfraquece a marca). **Não especificar tipografia no prompt** — o modelo trata texto como parte da cena, então detalhar fonte/posição/animação corrompe a imagem. Única hipótese viva: **numeração (1, 2, 3)** por valor psicológico de retenção, só em receitas com passos visualmente distintos. Assinatura e música ficam para uma ferramenta de edição externa (ver ROTEIRO).
+- **Reels são gerados pelo Gemini Omni Flash** (`generate-omni.js`) — 10s, 9:16, **R$ 5,90/vídeo** (fatura real — ver `docs/CUSTOS.md`), som ambiente (`No speech...`). Veo 3.1 Lite/Fast ficam como alavanca de custo. **Texto no vídeo: os reels saem SEM texto.** Duas rotas testadas e fechadas: overlay ffmpeg (descartado 27/08 — estraga o vídeo) e texto pedido na geração (testado 28/08 — renderiza certo, mas sai como texto cru, sem motion design: a assinatura lê como rascunho e enfraquece a marca). **Não especificar tipografia no prompt** — o modelo trata texto como parte da cena, então detalhar fonte/posição/animação corrompe a imagem. Única hipótese viva: **numeração (1, 2, 3)** por valor psicológico de retenção, só em receitas com passos visualmente distintos. Assinatura e música ficam para uma ferramenta de edição externa (ver ROTEIRO).
 - **Voz:** sem voz no ciclo até o A/B (hipótese H5, outubro). Voz oficial se voltar: Livia (ElevenLabs `UZ8QqWVrz7tMdxiglcLh`, `eleven_multilingual_v2`).
 - Cadência: **5 reels/semana** (Dom 18h · Ter 18h · Qua 18h · Sex 12h · Sáb 11h; em out, Sex→Qui 19h) + stories diárias
 - Todo post declara `funcao` (descoberta/salvamento/trafego) e `gatilho_envio` — post sem função não entra na fila; "curte se gostou" é proibido
