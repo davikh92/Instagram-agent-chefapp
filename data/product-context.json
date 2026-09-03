@@ -928,11 +928,11 @@
       "receitas_novas": 59
     }
   },
-  "_gerado_em": "2026-09-02T14:48:27.875886+00:00",
+  "_gerado_em": "2026-09-03T14:48:03.401555+00:00",
   "_atualizado_em": "2026-08-28T15:23:39.122092+00:00",
   "_leia_primeiro": "Fonte única de verdade sobre o produto Tem na Semana, para quem cria conteúdo. O bloco `fixo` é escrito à mão e muda raramente. O bloco `atual` é gerado do banco a cada chamada e nunca envelhece. Nunca escreva a URL à mão: use fixo.app.url_canonica.",
   "_cuidado_com_dieta": "Os campos de dieta presentes aqui (foco_nutricional, restricoes e tags do CARDÁPIO) são curadoria escrita pela chef e podem ser citados como descrição do cardápio. NÃO existem campos de alérgeno ou proteína por RECEITA neste contexto, e a ausência é deliberada: os metadados do catálogo não são confiáveis para afirmar dieta. Nunca afirme \"sem glúten\", \"sem lactose\", \"vegano\" ou equivalente sobre uma receita com base neste JSON.",
   "_aviso_de_cache": "CACHE — não edite à mão. Gerado por scripts/sync-contexto.js a partir do RPC do app. Para corrigir algo do bloco `fixo`, peça ao time do app; o bloco `atual` sai do banco sozinho.",
-  "_sincronizado_em": "2026-09-02T14:48:28.466Z",
+  "_sincronizado_em": "2026-09-03T14:48:03.799Z",
   "_fonte": "https://aywpqorkwewxdqectncu.supabase.co/rest/v1/rpc/contexto_do_conteudo"
 }
