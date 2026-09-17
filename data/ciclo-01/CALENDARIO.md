@@ -51,7 +51,7 @@ ferramenta de edição externa — mesma ferramenta que resolve a música. Nunca
 | `pt-02` | 2026-09-12 | Sáb 11h | Participação | Veo Lite | ⬜ |  |
 | `nv-02` | 2026-09-13 | Dom 18h | Novela das 18h | Omni | ⬜ |  |
 | `cd-03` | 2026-09-15 | Ter 18h | Cardápio da Semana DM | Omni | ⬜ |  |
-| `rl-03` | 2026-09-16 | Qua 18h | Receita LEGENDA | Veo Lite | ⬜ |  |
+| `rl-03` | 2026-09-21 | Seg 18h | Receita LEGENDA | Veo Lite | ⬜ |  |
 | `rd-03` | 2026-09-18 | Sex 12h | Receita DM | Omni | ⬜ |  |
 | `pt-03` | 2026-09-19 | Sáb 11h | Participação | Veo Lite | ⬜ |  |
 | `nv-03` | 2026-09-20 | Dom 18h | Novela das 18h | Omni | ⬜ |  |
