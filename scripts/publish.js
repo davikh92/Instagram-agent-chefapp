@@ -778,7 +778,12 @@ async function main() {
     // Garante resiliência quando o PC fica desligado no horário agendado:
     //   • published.json previne republicar o que já foi
     //   • MAX_CATCHUP_PER_RUN evita spam no feed se o PC ficou off por vários dias
-    const MAX_CATCHUP_PER_RUN = 2;
+    //
+    // 1 por rodada, decisão do Davi em 17/09/2026: dois posts no mesmo dia
+    // confundem o feed e foi exatamente o que ele estranhou em 13/09 (pt-02 e
+    // nv-02 juntos). Atraso maior é preferível a dobradinha — quando sobra
+    // pendência, ela é remarcada à mão para um dia vazio (segunda ou quinta).
+    const MAX_CATCHUP_PER_RUN = 1;
 
     const allPending = findPublishableFolders(); // tudo com data <= hoje sem published.json
 
