@@ -176,6 +176,7 @@ async function waitForContainer(containerId) {
   const maxWait = 5 * 60 * 1000; // 5 min
   const interval = 10_000;       // 10s
   const start = Date.now();
+  let erroPersistente = false;   // só derruba se o ERROR durar até o fim da janela
 
   while (Date.now() - start < maxWait) {
     const res  = await fetch(
@@ -191,11 +192,25 @@ async function waitForContainer(containerId) {
       console.log(`\r  ✓ Container pronto              `);
       return;
     }
+
+    // ERROR aqui NÃO é definitivo. Medido em 16/09/2026: o Instagram devolveu
+    // ERROR na primeira consulta (10s) em cd-03 e rl-03, o script desistiu, e
+    // os mesmos containers depois apareceram FINISHED — os vídeos estavam bons.
+    // Custou 2 posts e 4 dias de silêncio. Agora insistimos até o fim da janela
+    // e só desistimos se o ERROR persistir: vídeo realmente quebrado falha em
+    // 5 min, vídeo bom com processamento lento publica normalmente.
     if (data.status_code === 'ERROR') {
-      throw new Error('Instagram rejeitou o vídeo (ERROR). Verifique formato e codec.');
+      erroPersistente = true;
+      process.stdout.write(`\r  ⏳ Status: ERROR (pode ser transitório, insistindo…) `);
+    } else {
+      erroPersistente = false;
     }
 
     await sleep(interval);
+  }
+
+  if (erroPersistente) {
+    throw new Error('Instagram rejeitou o vídeo (ERROR persistente por 5min). Verifique formato e codec.');
   }
   throw new Error('Timeout aguardando processamento do Instagram (>5min)');
 }
