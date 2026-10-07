@@ -895,44 +895,15 @@
       }
     ],
     "entrou_nos_ultimos_45_dias": {
-      "cardapios": [
-        {
-          "slug": "detox-pos-festa",
-          "titulo": "Detox Pós-Festa"
-        },
-        {
-          "slug": "pele-e-intestino",
-          "titulo": "Pele & Intestino"
-        },
-        {
-          "slug": "vegetariano-pratico",
-          "titulo": "Vegetariano Prático"
-        },
-        {
-          "slug": "emagrecimento-consciente",
-          "titulo": "Emagrecimento Consciente"
-        },
-        {
-          "slug": "massa-e-forca",
-          "titulo": "Massa & Força"
-        },
-        {
-          "slug": "low-carb-mediterraneo",
-          "titulo": "Low Carb Mediterrâneo"
-        },
-        {
-          "slug": "foco-e-energia",
-          "titulo": "Foco & Energia"
-        }
-      ],
+      "cardapios": [],
       "receitas_novas": 59
     }
   },
-  "_gerado_em": "2026-10-06T16:59:15.023618+00:00",
+  "_gerado_em": "2026-10-07T17:36:11.067372+00:00",
   "_atualizado_em": "2026-08-28T15:23:39.122092+00:00",
   "_leia_primeiro": "Fonte única de verdade sobre o produto Tem na Semana, para quem cria conteúdo. O bloco `fixo` é escrito à mão e muda raramente. O bloco `atual` é gerado do banco a cada chamada e nunca envelhece. Nunca escreva a URL à mão: use fixo.app.url_canonica.",
   "_cuidado_com_dieta": "Os campos de dieta presentes aqui (foco_nutricional, restricoes e tags do CARDÁPIO) são curadoria escrita pela chef e podem ser citados como descrição do cardápio. NÃO existem campos de alérgeno ou proteína por RECEITA neste contexto, e a ausência é deliberada: os metadados do catálogo não são confiáveis para afirmar dieta. Nunca afirme \"sem glúten\", \"sem lactose\", \"vegano\" ou equivalente sobre uma receita com base neste JSON.",
   "_aviso_de_cache": "CACHE — não edite à mão. Gerado por scripts/sync-contexto.js a partir do RPC do app. Para corrigir algo do bloco `fixo`, peça ao time do app; o bloco `atual` sai do banco sozinho.",
-  "_sincronizado_em": "2026-10-06T16:59:15.371Z",
+  "_sincronizado_em": "2026-10-07T17:36:11.571Z",
   "_fonte": "https://aywpqorkwewxdqectncu.supabase.co/rest/v1/rpc/contexto_do_conteudo"
 }
